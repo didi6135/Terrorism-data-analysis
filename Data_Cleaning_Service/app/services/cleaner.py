@@ -1,12 +1,13 @@
 import pandas as pd
 import os
+import uuid
 
 from Data_Cleaning_Service.app.db.config import RAW_DATA_PATH, CLEANED_DATA_PATH
 
 
 def merge_to_one_csv(global_file, rand_file, output_file):
     """
-    Merges two terrorism CSV files into one unified CSV file with additional fields.
+    Merges two terrorism CSV files into one unified CSV file with additional fields and replaces missing/invalid eventid with UUIDs.
     """
     print(f"Processing and Merging Files: {global_file}, {rand_file}")
 
@@ -26,6 +27,14 @@ def merge_to_one_csv(global_file, rand_file, output_file):
             axis=1
         )
 
+        # Replace missing/invalid `eventid` with UUID
+        def generate_valid_eventid(eventid):
+            if pd.isna(eventid) or not str(eventid).isdigit():
+                return str(uuid.uuid4())
+            return str(eventid)
+
+        global_data['eventid'] = global_data['eventid'].apply(generate_valid_eventid)
+
         # Drop the original date-related columns
         global_data.drop(columns=['iyear', 'imonth', 'iday'], inplace=True)
 
@@ -34,7 +43,7 @@ def merge_to_one_csv(global_file, rand_file, output_file):
 
         # Standardize RAND columns to match Global Terrorism Database
         additional_columns = {
-            'eventid': range(1, len(rand_data) + 1),  # Unique IDs for RAND events
+            'eventid': [str(uuid.uuid4()) for _ in range(len(rand_data))],  # Generate UUIDs for all RAND events
             'region_txt': "Unknown",
             'latitude': pd.NA,
             'longitude': pd.NA,
@@ -113,6 +122,7 @@ if __name__ == "__main__":
         "RAND_Database_of_Worldwide_Terrorism_Incidents - 5000 rows.csv",
         "merged_terrorism_data.csv"
     )
+
 
 
 

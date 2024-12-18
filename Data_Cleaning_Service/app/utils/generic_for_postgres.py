@@ -1,7 +1,7 @@
 from typing import TypeVar, List, Optional, Type
 from sqlalchemy.exc import SQLAlchemyError
 
-from Data_Cleaning_Service.app.db.postgres_db import session_maker
+from Data_Cleaning_Service.app.db.postgres_db.database import session_maker
 from Data_Cleaning_Service.app.utils.logger import log
 
 T = TypeVar('T')  # Generic type for models

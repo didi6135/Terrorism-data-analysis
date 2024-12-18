@@ -1,19 +1,19 @@
 import pytest
-from Data_Cleaning_Service.app.models import (
-    Region, Country, City, Coordinate, Location, Group, EventType, Casualty, WeaponType, TargetType, Event
+from Data_Cleaning_Service.app.db.postgres_db.models import (
+    Country, City, Location, Casualty, WeaponType, TargetType, Event
 )
-from Data_Cleaning_Service.app.repository.casualty_repo import insert_new_casualty
-from Data_Cleaning_Service.app.repository.coordinates import insert_or_get_coordinate
-from Data_Cleaning_Service.app.repository.region_repo import insert_or_get_region
-from Data_Cleaning_Service.app.repository.country_repo import insert_or_get_country
-from Data_Cleaning_Service.app.repository.city_repo import insert_or_get_city
-from Data_Cleaning_Service.app.repository.location_repo import insert_or_get_location
-from Data_Cleaning_Service.app.repository.group_repo import insert_or_get_group
-from Data_Cleaning_Service.app.repository.event_type_repo import insert_or_get_event_type
+from Data_Cleaning_Service.app.repository.postgres_repo.casualty_repo import insert_new_casualty
+from Data_Cleaning_Service.app.repository.postgres_repo.coordinates import insert_or_get_coordinate
+from Data_Cleaning_Service.app.repository.postgres_repo.region_repo import insert_or_get_region
+from Data_Cleaning_Service.app.repository.postgres_repo.country_repo import insert_or_get_country
+from Data_Cleaning_Service.app.repository.postgres_repo.city_repo import insert_or_get_city
+from Data_Cleaning_Service.app.repository.postgres_repo.location_repo import insert_or_get_location
+from Data_Cleaning_Service.app.repository.postgres_repo.group_repo import insert_or_get_group
+from Data_Cleaning_Service.app.repository.postgres_repo.event_type_repo import insert_or_get_event_type
 
-from Data_Cleaning_Service.app.repository.event_repo import insert_new_event
-from Data_Cleaning_Service.app.repository.target_type_repo import insert_or_get_target_type
-from Data_Cleaning_Service.app.repository.weapon_type_repo import insert_or_get_weapon_type
+from Data_Cleaning_Service.app.repository.postgres_repo.event_repo import insert_new_event
+from Data_Cleaning_Service.app.repository.postgres_repo.target_type_repo import insert_or_get_target_type
+from Data_Cleaning_Service.app.repository.postgres_repo.weapon_type_repo import insert_or_get_weapon_type
 
 
 @pytest.fixture
