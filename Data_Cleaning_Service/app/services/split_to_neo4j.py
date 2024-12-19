@@ -15,6 +15,44 @@ from Data_Cleaning_Service.app.repository.neo4j_repo.group_repo import insert_or
 from Data_Cleaning_Service.app.repository.neo4j_repo.casualty_repo import insert_or_get_casualty
 from Data_Cleaning_Service.app.utils.generic_for_neo4j import Neo4jCRUD
 
+def process_region_and_country_to_neo4j(row):
+    """Insert Region, Country, and link Event to Country."""
+    region_data = {"region_id": str(uuid.uuid4()), "name": row.get("region_txt", "Unknown")}
+    region_node = insert_or_get_region(region_data)
+
+    country_data = {"country_id": str(uuid.uuid4()), "name": row.get("country_txt", "Unknown"), "region": region_node["region_id"]}
+    country_node = insert_or_get_country(country_data)
+
+    Neo4jCRUD.create_relationship(
+        "Country",
+        "country_id",
+        country_node["country_id"],
+        "Region",
+        "region_id",
+        region_data["region_id"],
+        "LOCATED_IN_REGIN",
+        {'region_id':region_data['region_id'], 'country_id': country_data['country_id']}
+    )
+    return country_data
+
+
+
+def process_city_to_neo4j(row, country_data):
+    """Insert City and link to Event."""
+    city_data = {"city_id": str(uuid.uuid4()), "name": row.get("city", "Unknown"), "country": country_data['name']}
+    city_node = insert_or_get_city(city_data)
+
+    Neo4jCRUD.create_relationship(
+        "City",
+        "city_id",
+        city_node["city_id"],
+        "Country",
+        "country_id",
+        country_data["country_id"],
+        "LOCATED_IN_COUNTRY",
+        {'country_id': country_data['country_id'], 'city_id': city_data['city_id']}
+    )
+
 
 def process_event_to_neo4j(row):
     """Insert Event into Neo4j."""
@@ -46,39 +84,17 @@ def process_location_to_neo4j(row, event_node):
         )
 
 
-def process_region_and_country_to_neo4j(row, event_node):
-    """Insert Region, Country, and link Event to Country."""
-    region_data = {"region_id": str(uuid.uuid4()), "name": row.get("region_txt", "Unknown")}
-    region_node = insert_or_get_region(region_data)
-
-    country_data = {"country_id": str(uuid.uuid4()), "name": row.get("country_txt", "Unknown"), "region": region_node["region_id"]}
-    country_node = insert_or_get_country(country_data)
-
-    Neo4jCRUD.create_relationship(
-        "Event", "event_id", event_node["event_id"],
-        "Country", "country_id", country_node["country_id"],
-        "LOCATED_IN"
-    )
 
 
-def process_city_to_neo4j(row, event_node):
-    """Insert City and link to Event."""
-    city_data = {"city_id": str(uuid.uuid4()), "name": row.get("city", "Unknown"), "country": row.get("country_txt", "Unknown")}
-    city_node = insert_or_get_city(city_data)
-
-    Neo4jCRUD.create_relationship(
-        "Event", "event_id", event_node["event_id"],
-        "City", "city_id", city_node["city_id"],
-        "LOCATED_AT"
-    )
 
 
 def process_attack_types_to_neo4j(row, event_node):
     """Insert AttackType and link to Event."""
     attack_types = [row.get(f"attacktype{i}_txt") for i in range(1, 4)]
     for attack_type in attack_types:
-        if attack_type and attack_type != "Unknown":
+        if attack_type and attack_type != "Unknown" and attack_types is not None:
             attack_type_data = {"attack_type_id": str(uuid.uuid4()), "name": attack_type}
+
             attack_type_node = insert_or_get_attack_type(attack_type_data)
             Neo4jCRUD.create_relationship(
                 "Event", "event_id", event_node["event_id"],
@@ -122,12 +138,12 @@ def process_row_to_neo4j(row):
     event_node = process_event_to_neo4j(row)
 
     # Insert related nodes and relationships
-    process_location_to_neo4j(row, event_node)
-    process_region_and_country_to_neo4j(row, event_node)
-    process_city_to_neo4j(row, event_node)
-    process_attack_types_to_neo4j(row, event_node)
-    process_groups_to_neo4j(row, event_node)
-    process_casualties_to_neo4j(row, event_node)
+    # process_location_to_neo4j(row, event_node)
+    country_data = process_region_and_country_to_neo4j(row)
+    process_city_to_neo4j(row, country_data)
+    # process_attack_types_to_neo4j(row, event_node)
+    # process_groups_to_neo4j(row, event_node)
+    # process_casualties_to_neo4j(row, event_node)
 
 
 def main_process_neo4j(row):

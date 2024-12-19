@@ -6,6 +6,17 @@ from Data_Cleaning_Service.app.db.neo4j_db.database import driver
 class Neo4jCRUD:
 
     @staticmethod
+    def query_single(query: str, params: dict):
+
+        with driver.session() as session:
+            try:
+                result = session.run(query, params).single()
+                return dict(result["l"]) if result and "l" in result else None
+            except Exception as e:
+                print(f"Error executing query_single: {e}")
+                return None
+
+    @staticmethod
     def create_relationship(
             start_entity: str,
             start_identifier_key: str,
@@ -14,8 +25,6 @@ class Neo4jCRUD:
             end_identifier_key: str,
             end_identifier_value: str,
             relationship: str,
-            start_properties: dict = None,
-            end_properties: dict = None,
             rel_properties: dict = None
     ):
         with driver.session() as session:

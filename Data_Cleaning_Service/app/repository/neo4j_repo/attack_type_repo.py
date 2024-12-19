@@ -3,7 +3,7 @@ from Data_Cleaning_Service.app.utils.generic_for_neo4j import Neo4jCRUD
 
 
 def insert_or_get_attack_type(attack_type_data):
-
+    print(f'ffff: {attack_type_data}')
     existing_attack_type = Neo4jCRUD.get_one("Event", "attack_type_id", attack_type_data["attack_type_id"])
     if existing_attack_type:
         print(f"Attack type with ID {attack_type_data['attack_type_id']} already exists.")

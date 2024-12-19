@@ -24,3 +24,27 @@ class EventInvolvesGroup:
 class EventCasualties:
     event_id: str
     casualty_id: str
+
+########################################
+########################################
+
+@dataclass
+class CountryInRegionRel:
+    region_id: str
+    country_id: str
+
+@dataclass
+class CityInCountryRel:
+    city_id:str
+    country_id: str
+
+@dataclass
+class LocationInCityRel:
+    city_id:str
+    location_id:str
+
+@dataclass
+class EventInLocationRel:
+    event_id:str
+    location_id:str
+
