@@ -82,6 +82,7 @@
                 <label for="query">Choose Analysis:</label>
                 <select id="query" name="query" onchange="updateParameters()" required>
                     <option value="" disabled selected>-- Select --</option>
+                    <option value="most_deadly_attack_types">1. Most Deadly Attack Types</option>
                     <option value="most_deadly/map">Most Deadly Events Map</option>
                     <option value="top_countries/map">Top Countries by Events</option>
                     <option value="heatmap">Heatmap of Events</option>
@@ -103,6 +104,10 @@
 
     <script>
         const queryConfig = {
+            "most_deadly_attack_types": {
+                description: "Displays the most deadly attack types with total killed, injured, and score.",
+                params: ["limit"]
+            },
             "most_deadly/map": {
                 description: "Displays the most deadly events on a map.",
                 params: ["limit"]
@@ -145,13 +150,13 @@
                     inputGroup.className = 'form-group';
 
                     const label = document.createElement('label');
-                    label.textContent = `Enter ${param}:`;
+                    label.textContent = `Enter ${param} (Optional):`;
                     inputGroup.appendChild(label);
 
                     const input = document.createElement('input');
                     input.type = param === 'year' || param === 'limit' ? 'number' : 'text';
                     input.name = param;
-                    input.required = true;
+                    input.placeholder = `Enter ${param}`;
                     inputGroup.appendChild(input);
 
                     parameterInputs.appendChild(inputGroup);
@@ -168,7 +173,7 @@
 
             const params = new URLSearchParams();
             formData.forEach((value, key) => {
-                if (key !== 'query') params.append(key, value);
+                if (key !== 'query' && value.trim() !== '') params.append(key, value);
             });
 
             const iframe = document.getElementById('visualizationFrame');
