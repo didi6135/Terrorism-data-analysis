@@ -36,6 +36,7 @@ class Neo4jCRUD:
             }
             try:
                 res = session.run(query, params).single()
+                print(f'relrelrelrel: {res}')
                 return {
                     'relationship': res['relationship'],
                     'rel_properties': res['rel_properties']

@@ -28,11 +28,22 @@ class Neo4jCRUD:
             rel_properties: dict = None
     ):
         with driver.session() as session:
+            # Ensure both nodes exist
+            start_node = Neo4jCRUD.get_one(start_entity, start_identifier_key, start_identifier_value)
+            end_node = Neo4jCRUD.get_one(end_entity, end_identifier_key, end_identifier_value)
+
+            if not start_node or not end_node:
+                print(
+                    f"Missing nodes: {start_entity} ({start_identifier_value}) or {end_entity} ({end_identifier_value})")
+                return None
+
+            # Create or merge the relationship
             query = f"""
-                MATCH (a:{start_entity} {{{start_identifier_key}: $start_identifier_value}}),
-                      (b:{end_entity} {{{end_identifier_key}: $end_identifier_value}})
+                MATCH (a:{start_entity} {{{start_identifier_key}: $start_identifier_value}})
+                MATCH (b:{end_entity} {{{end_identifier_key}: $end_identifier_value}})
                 MERGE (a)-[r:{relationship}]->(b)
-                ON CREATE SET r += $rel_properties
+                ON CREATE SET r = $rel_properties
+                ON MATCH SET r += $rel_properties
                 RETURN type(r) AS relationship, properties(r) AS rel_properties
             """
             params = {
@@ -40,14 +51,16 @@ class Neo4jCRUD:
                 'end_identifier_value': end_identifier_value,
                 'rel_properties': rel_properties or {}
             }
+
             try:
                 res = session.run(query, params).single()
+                print(f"Relationship created/updated: {res}")
                 return {
                     'relationship': res['relationship'],
                     'rel_properties': res['rel_properties']
                 } if res else None
             except Exception as e:
-                print(f"Error creating relationship: {str(e)}")
+                print(f"Error creating relationship: {e}")
                 return {"error": "Database Error", "details": str(e)}
 
     @staticmethod

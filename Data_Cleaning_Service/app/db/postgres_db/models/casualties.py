@@ -9,6 +9,10 @@ class Casualty(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     total_victims = Column(Integer, default=0, index=True)
+
+    total_killed = Column(Integer, default=0, index=True)
+    total_injured = Column(Integer, default=0, index=True)
+
     killed_victims = Column(Integer, default=0, index=True)
     injured_victims = Column(Integer, default=0, index=True)
     killed_americans = Column(Integer, default=0, index=True)

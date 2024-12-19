@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terrorism Analysis Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .error {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Terrorism Analysis Dashboard</h1>
+        <form id="queryForm" onsubmit="fetchVisualization(event)">
+            <div class="form-group">
+                <label for="query">Choose Analysis:</label>
+                <select id="query" name="query" onchange="updateParameters()" required>
+                    <option value="" disabled selected>-- Select --</option>
+                    <option value="most_deadly/map">Most Deadly Events Map</option>
+                    <option value="top_countries/map">Top Countries by Events</option>
+                    <option value="heatmap">Heatmap of Events</option>
+                    <option value="top_groups_map">Top Groups Map</option>
+                    <option value="attack_target_correlation">Attack-Target Correlation</option>
+                    <option value="event_trends">Event Trends (Yearly/Monthly)</option>
+                    <option value="attack_change">Attack Change by Region</option>
+                </select>
+            </div>
+
+            <div id="parameterInputs" class="form-group"></div>
+
+            <button type="submit">Generate Visualization</button>
+        </form>
+
+        <iframe id="visualizationFrame" style="display: none;"></iframe>
+        <p id="errorMessage" class="error" style="display: none;"></p>
+    </div>
+
+    <script>
+        const queryConfig = {
+            "most_deadly/map": {
+                description: "Displays the most deadly events on a map.",
+                params: ["limit"]
+            },
+            "top_countries/map": {
+                description: "Displays the top countries by event count on a map.",
+                params: []
+            },
+            "heatmap": {
+                description: "Displays a heatmap of events.",
+                params: []
+            },
+            "top_groups_map": {
+                description: "Displays a map of the top terrorist groups.",
+                params: []
+            },
+            "attack_target_correlation": {
+                description: "Displays a chart correlating attack types to target types.",
+                params: []
+            },
+            "event_trends": {
+                description: "Displays event trends by year or month.",
+                params: ["year"]
+            },
+            "attack_change": {
+                description: "Displays attack change percentages by region.",
+                params: ["top_5"]
+            }
+        };
+
+        function updateParameters() {
+            const query = document.getElementById('query').value;
+            const config = queryConfig[query];
+            const parameterInputs = document.getElementById('parameterInputs');
+            parameterInputs.innerHTML = '';
+
+            if (config && config.params.length > 0) {
+                config.params.forEach(param => {
+                    const inputGroup = document.createElement('div');
+                    inputGroup.className = 'form-group';
+
+                    const label = document.createElement('label');
+                    label.textContent = `Enter ${param}:`;
+                    inputGroup.appendChild(label);
+
+                    const input = document.createElement('input');
+                    input.type = param === 'year' || param === 'limit' ? 'number' : 'text';
+                    input.name = param;
+                    input.required = true;
+                    inputGroup.appendChild(input);
+
+                    parameterInputs.appendChild(inputGroup);
+                });
+            }
+        }
+
+        async function fetchVisualization(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('queryForm');
+            const formData = new FormData(form);
+            const query = formData.get('query');
+
+            const params = new URLSearchParams();
+            formData.forEach((value, key) => {
+                if (key !== 'query') params.append(key, value);
+            });
+
+            const iframe = document.getElementById('visualizationFrame');
+            const errorMessage = document.getElementById('errorMessage');
+
+            iframe.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            try {
+                const url = `/api/statistics/${query}?${params}`;
+                iframe.src = url;
+                iframe.style.display = 'block';
+            } catch (error) {
+                errorMessage.textContent = 'Failed to load visualization. Please try again.';
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

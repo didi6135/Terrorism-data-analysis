@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6eb24edabe452e6db006fa56d2c95632 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6eb24edabe452e6db006fa56d2c95632" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6eb24edabe452e6db006fa56d2c95632 = L.map(
+                "map_6eb24edabe452e6db006fa56d2c95632",
+                {
+                    center: [40.697132, -73.931351],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a213c8024211b7be66d1cfa39298dd79 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a213c8024211b7be66d1cfa39298dd79.addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+            var circle_marker_87bc4c2fba39d5a453530a6a7df94c5e = L.circleMarker(
+                [40.697132, -73.931351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 109.58, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_62021944befa72e1a3363b5fed2015f7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc0e8aa91743e8cf02b126ef5253ecf3 = $(`<div id="html_dc0e8aa91743e8cf02b126ef5253ecf3" style="width: 100.0%; height: 100.0%;"><b>09/11/2001: This was one of four related attacks that occurred in the United States that are known collectively as the 9/11 Terrorist Attacks. In the first attack, which occurred at 8:46 am local time, American Airlines Flight 11 crashed into the North Tower of the World Trade Center Complex in New York City, New York. Five hijackers belonging to Al-Qaida took control of the Boeing 767 aircraft on a flight originating from Logan International Airport in Boston, Massachusetts, and destined for Los Angeles International Airport. There were 76 passengers, 11 crew members and five hijackers on the plane, all of whom died upon impact. The North Tower collapsed at 10:28 a.m. local time after the South Tower had collapsed at 9:59 a.m. local time. At least 2,767 people died as a result of the attacks in New York City, including 10 hijackers as well as responders who contracted cancer and respiratory illnesses at the attack site and passed away years later. More than 16,000 others were injured. Al-Qaida leaders including Osama bin Laden and Khalid Shaikh Mohammed claimed responsibility for the attacks in multiple videotaped interviews.</b></b><br> <b>Total deadly:</b> 1384</b><br> <b>Total injured:</b> 8190<br> <b>Score:</b> 10958</div>`)[0];
+                popup_62021944befa72e1a3363b5fed2015f7.setContent(html_dc0e8aa91743e8cf02b126ef5253ecf3);
+            
+        
+
+        circle_marker_87bc4c2fba39d5a453530a6a7df94c5e.bindPopup(popup_62021944befa72e1a3363b5fed2015f7)
+        ;
+
+        
+    
+    
+            var circle_marker_0a2fe74928d9e29590970d2a2c29d0a4 = L.circleMarker(
+                [40.697132, -73.931351],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 109.57, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_3f03c53116874f9a8e6329c6cfc3c9b0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_af566380f7552b16eb9d4be068722b46 = $(`<div id="html_af566380f7552b16eb9d4be068722b46" style="width: 100.0%; height: 100.0%;"><b>09/11/2001: This was one of four related attacks that occurred in the United States that are known collectively as the 9/11 Terrorist Attacks. In the second of these attacks, which occurred at 9:03 a.m. local time, United Airlines Flight 175 crashed into the South Tower of the World Trade Center Complex in New York City, New York. Five hijackers belonging to Al-Qaida hijacked the Boeing 767 aircraft on a flight originating from Logan International Airport in Boston, Massachusetts, and destined for Los Angeles International Airport. There were 56 passengers, nine crew members and five hijackers on the plane, all of whom died upon impact. The South Tower collapsed at 9:59 a.m. local time, killing all who were trapped inside or located nearby. The North Tower collapsed, after having been struck by American Airlines Flight 11, at 10:28 a.m. local time. At least 2,767 people died as a result of the attacks in New York City, including 10 hijackers as well as responders who contracted cancer and respiratory illnesses at the attack site and passed away years later. More than 16,000 others were injured. Al-Qaida leaders including Osama bin Laden and Khalid Shaikh Mohammed claimed responsibility for the attacks in multiple videotaped interviews.</b></b><br> <b>Total deadly:</b> 1383</b><br> <b>Total injured:</b> 8191<br> <b>Score:</b> 10957</div>`)[0];
+                popup_3f03c53116874f9a8e6329c6cfc3c9b0.setContent(html_af566380f7552b16eb9d4be068722b46);
+            
+        
+
+        circle_marker_0a2fe74928d9e29590970d2a2c29d0a4.bindPopup(popup_3f03c53116874f9a8e6329c6cfc3c9b0)
+        ;
+
+        
+    
+    
+            var circle_marker_f270358f3688e466140c8c22fad11f3b = L.circleMarker(
+                [35.689125, 139.747742],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 55.26, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_19e484ebe215792138fa44e46c0ef18e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9765e3704bd95565fec8e18545f1a77c = $(`<div id="html_9765e3704bd95565fec8e18545f1a77c" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 13</b><br> <b>Total injured:</b> 5500<br> <b>Score:</b> 5526</div>`)[0];
+                popup_19e484ebe215792138fa44e46c0ef18e.setContent(html_9765e3704bd95565fec8e18545f1a77c);
+            
+        
+
+        circle_marker_f270358f3688e466140c8c22fad11f3b.bindPopup(popup_19e484ebe215792138fa44e46c0ef18e)
+        ;
+
+        
+    
+    
+            var circle_marker_d161114725eaaabbb84f6e47335f8d8f = L.circleMarker(
+                [-1.28518, 36.821107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 44.48, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_b12624941d15bbddd425fc46cdeceb91 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_571083b3a33f72a3b59ce4ec942201a1 = $(`<div id="html_571083b3a33f72a3b59ce4ec942201a1" style="width: 100.0%; height: 100.0%;"><b>08/07/1998: Suicide attackers detonated a vehicle bomb outside of the United States Embassy in Nairobi, Kenya, killing 224 people, including 12 Americans. Four thousand people were also injured in the attack, which was perpetrated by Al-Qaida.</b></b><br> <b>Total deadly:</b> 224</b><br> <b>Total injured:</b> 4000<br> <b>Score:</b> 4448</div>`)[0];
+                popup_b12624941d15bbddd425fc46cdeceb91.setContent(html_571083b3a33f72a3b59ce4ec942201a1);
+            
+        
+
+        circle_marker_d161114725eaaabbb84f6e47335f8d8f.bindPopup(popup_b12624941d15bbddd425fc46cdeceb91)
+        ;
+
+        
+    
+    
+            var circle_marker_4e1bc6f875ec2bd95be60578fef65853 = L.circleMarker(
+                [-1.932787, 30.332456],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.6, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_f161087e294a20438f45dcaade3e1170 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d7d8e2fd060b4a4fa56c7d59e75b3193 = $(`<div id="html_d7d8e2fd060b4a4fa56c7d59e75b3193" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 1180</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 2360</div>`)[0];
+                popup_f161087e294a20438f45dcaade3e1170.setContent(html_d7d8e2fd060b4a4fa56c7d59e75b3193);
+            
+        
+
+        circle_marker_4e1bc6f875ec2bd95be60578fef65853.bindPopup(popup_f161087e294a20438f45dcaade3e1170)
+        ;
+
+        
+    
+    
+            var circle_marker_1d859b4c84f1ab8a17c13dc6d02f8a7b = L.circleMarker(
+                [6.941837, 79.861687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.52, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_9e93e2d56ee9e33bb9eb3bb4602f3b78 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b8f49595237b70410d4093f613d8d70a = $(`<div id="html_b8f49595237b70410d4093f613d8d70a" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 90</b><br> <b>Total injured:</b> 1272<br> <b>Score:</b> 1452</div>`)[0];
+                popup_9e93e2d56ee9e33bb9eb3bb4602f3b78.setContent(html_b8f49595237b70410d4093f613d8d70a);
+            
+        
+
+        circle_marker_1d859b4c84f1ab8a17c13dc6d02f8a7b.bindPopup(popup_9e93e2d56ee9e33bb9eb3bb4602f3b78)
+        ;
+
+        
+    
+    
+            var circle_marker_5a1072488b816f8046ac58a064fb9a18 = L.circleMarker(
+                [43.191626, 44.541763],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.15, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_40b84e3ede51997c0ec80c42b6dd8e0d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d290fb6bc3ace3da91af834dc4c743a9 = $(`<div id="html_d290fb6bc3ace3da91af834dc4c743a9" style="width: 100.0%; height: 100.0%;"><b>09/01/2004: A group of thirty to thirty-five armed Chechen and Ingush rebels, including men and women, many wearing suicide bomber belts, seized a school in Beslan in the Pravoberezhny district of North Ossetia, Russia. The perpetrators took approximately 1200 children, parents, and teachers hostage in the school gym. By the conclusion of the siege 727 people had been injured and approximately 344 had been killed.</b></b><br> <b>Total deadly:</b> 344</b><br> <b>Total injured:</b> 727<br> <b>Score:</b> 1415</div>`)[0];
+                popup_40b84e3ede51997c0ec80c42b6dd8e0d.setContent(html_d290fb6bc3ace3da91af834dc4c743a9);
+            
+        
+
+        circle_marker_5a1072488b816f8046ac58a064fb9a18.bindPopup(popup_40b84e3ede51997c0ec80c42b6dd8e0d)
+        ;
+
+        
+    
+    
+            var circle_marker_31c3365e0e2ed8b16204bd808253b238 = L.circleMarker(
+                [12.126693, 15.0284],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.21, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_c00d1bd56a365d582a8d14377fce171b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c4fdee36d0b665de6fe3ee726d9d239 = $(`<div id="html_1c4fdee36d0b665de6fe3ee726d9d239" style="width: 100.0%; height: 100.0%;"><b>2/2/2008: Chadian rebels attacked the capital city of N'Djamena, in N'Djamena region, Chad.  The rebels engaged in three days of fighting with military forces, finally agreeing to a cease-fire on February 5, 2008.  Hundreds of civilians and an unknown number of rebels and military personnel were killed in the attack; more than one thousand people were wounded.  Stores and businesses in the downtown sector were looted, as were the parliament buildings and the state broadcasting station.  Approximately 20,000 residents fled the city during the assault.  The rebels entered the city with the intention of toppling President Deby; they directed their attack towrds the presidential palace.</b></b><br> <b>Total deadly:</b> 160</b><br> <b>Total injured:</b> 1001<br> <b>Score:</b> 1321</div>`)[0];
+                popup_c00d1bd56a365d582a8d14377fce171b.setContent(html_1c4fdee36d0b665de6fe3ee726d9d239);
+            
+        
+
+        circle_marker_31c3365e0e2ed8b16204bd808253b238.bindPopup(popup_c00d1bd56a365d582a8d14377fce171b)
+        ;
+
+        
+    
+    
+            var circle_marker_30bb9e2e948ce321983d3e3d126db90c = L.circleMarker(
+                [27.959441, 84.895897],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.52, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_b6230f97c8821d95e724ec67aa8e47af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2c7ad40f717a443c63ab6aec2907d954 = $(`<div id="html_2c7ad40f717a443c63ab6aec2907d954" style="width: 100.0%; height: 100.0%;"><b>03/21/2004: Nepalese Communist Party (Maoist) members attacked a small town in Bedi, Nepal. During the attack, the Maoists bombed a bridge, looted a state-owned bank, bombed local administrative offices, freed prisoners from a local jail, and bombed an airport. Government forces battled confronted Maoists in long battle, which reportedly killed 500 Maoists and 18 security personnel and wounded 200 Maoists and 16 security personnel.</b></b><br> <b>Total deadly:</b> 518</b><br> <b>Total injured:</b> 216<br> <b>Score:</b> 1252</div>`)[0];
+                popup_b6230f97c8821d95e724ec67aa8e47af.setContent(html_2c7ad40f717a443c63ab6aec2907d954);
+            
+        
+
+        circle_marker_30bb9e2e948ce321983d3e3d126db90c.bindPopup(popup_b6230f97c8821d95e724ec67aa8e47af)
+        ;
+
+        
+    
+    
+            var circle_marker_5b1bb5247a366cfa7b24bd33d77b4ffd = L.circleMarker(
+                [36.183247, 41.591599],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_131093d219b381c7e79c641347c35803 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5f951215f807cb86c85d6caf0271931 = $(`<div id="html_d5f951215f807cb86c85d6caf0271931" style="width: 100.0%; height: 100.0%;"><b>08/14/2007: Four coordinated vehicle bombs killed at least 500 and and injured 1500 in the towns of Qahtaniya and Jazeera, Iraq. The blasts targeted minority Yazidis, who speak a dialect of Kurdish and follow a pre-Islamic religion. The exact locations of the explosions within each town were not reported, but rescue workers report that 80 percent of the villages were destroyed or damaged. No group claimed responsibility for the attack, but authorities blamed al Qaida in Iraq.</b></b><br> <b>Total deadly:</b> 250</b><br> <b>Total injured:</b> 750<br> <b>Score:</b> 1250</div>`)[0];
+                popup_131093d219b381c7e79c641347c35803.setContent(html_d5f951215f807cb86c85d6caf0271931);
+            
+        
+
+        circle_marker_5b1bb5247a366cfa7b24bd33d77b4ffd.bindPopup(popup_131093d219b381c7e79c641347c35803)
+        ;
+
+        
+    
+    
+            var circle_marker_0e4737185d02b401d6de00eec208e7a6 = L.circleMarker(
+                [36.202354, 41.687168],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_dbe822da0eb3a43ecd9bc9c215711b31 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48199c81e8b69eb74367030a49cb45c5 = $(`<div id="html_48199c81e8b69eb74367030a49cb45c5" style="width: 100.0%; height: 100.0%;"><b>08/14/2007: Four coordinated vehicle bombs killed at least 500 and and injured 1500 in the towns of Qahtaniya and Jazeera, Iraq. The blasts targeted minority Yazidis, who speak a dialect of Kurdish and follow a pre-Islamic religion. The exact locations of the explosions within each town were not reported, but rescue workers report that 80 percent of the villages were destroyed or damaged. No group claimed responsibility for the attack, but authorities blamed al Qaida in Iraq.</b></b><br> <b>Total deadly:</b> 250</b><br> <b>Total injured:</b> 750<br> <b>Score:</b> 1250</div>`)[0];
+                popup_dbe822da0eb3a43ecd9bc9c215711b31.setContent(html_48199c81e8b69eb74367030a49cb45c5);
+            
+        
+
+        circle_marker_0e4737185d02b401d6de00eec208e7a6.bindPopup(popup_dbe822da0eb3a43ecd9bc9c215711b31)
+        ;
+
+        
+    
+    
+            var circle_marker_d70dd597954bc36e844522a7fb27adfc = L.circleMarker(
+                [19.075984, 72.877656],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.93, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_6bd830384370f56ab03e1bb5784cd446 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b033393230777998cb55b83381c1ef1 = $(`<div id="html_7b033393230777998cb55b83381c1ef1" style="width: 100.0%; height: 100.0%;"><b>07/11/2006: A series of train bombings killed at least 188 civilians in Mumbai, India. The train bombing injured another 817 others injured in a string of seven blasts that spanned 56 kms, from Churchgate to Mira Road. One of the 13 arrested suspects, Asif Bashir Khan alias Junaid, emerged as the chief operative of the militant outfit, Lashkar-e Taiba. Fifteen others remained wanted at the time, including nine Pakistani nationals.</b></b><br> <b>Total deadly:</b> 188</b><br> <b>Total injured:</b> 817<br> <b>Score:</b> 1193</div>`)[0];
+                popup_6bd830384370f56ab03e1bb5784cd446.setContent(html_7b033393230777998cb55b83381c1ef1);
+            
+        
+
+        circle_marker_d70dd597954bc36e844522a7fb27adfc.bindPopup(popup_6bd830384370f56ab03e1bb5784cd446)
+        ;
+
+        
+    
+    
+            var circle_marker_bc0c955d3b36e57bfeeab6600c2f2e3c = L.circleMarker(
+                [35.472015, -97.520354],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.86, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_662a6971527de575298d68fd40db447c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2daab599372775b97f2726d0273d9971 = $(`<div id="html_2daab599372775b97f2726d0273d9971" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 168</b><br> <b>Total injured:</b> 650<br> <b>Score:</b> 986</div>`)[0];
+                popup_662a6971527de575298d68fd40db447c.setContent(html_2daab599372775b97f2726d0273d9971);
+            
+        
+
+        circle_marker_bc0c955d3b36e57bfeeab6600c2f2e3c.bindPopup(popup_662a6971527de575298d68fd40db447c)
+        ;
+
+        
+    
+    
+            var circle_marker_15972c223c9c7c1dc455735933cb6cab = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.62, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_a658418e79667cb446a1b450ca3d273c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00382d7bc3be2f3431c3fe83a617a8f6 = $(`<div id="html_00382d7bc3be2f3431c3fe83a617a8f6" style="width: 100.0%; height: 100.0%;"><b>09/14/2005: A rash of more than a dozen of bombs rocked Baghdad beginning shortly after dawn and continuing until about 4 p.m. The explosions took place mainly in the heavily Shi i neighborhood of Kazimiyah where laborers had gathered shortly after dawn. At least 160 people were killed and another 570 were wounded. A senior US military official said the bombings could have been retaliation for the joint U.S.-Iraqi sweep through the northern city of Tal Afar to evict insurgents from their strongholds there. Al-Qaida in Iraq posted a statement on a website claiming responsibility for the attack.  However, the authenticity of the claim had not been confirmed.</b></b><br> <b>Total deadly:</b> 160</b><br> <b>Total injured:</b> 542<br> <b>Score:</b> 862</div>`)[0];
+                popup_a658418e79667cb446a1b450ca3d273c.setContent(html_00382d7bc3be2f3431c3fe83a617a8f6);
+            
+        
+
+        circle_marker_15972c223c9c7c1dc455735933cb6cab.bindPopup(popup_a658418e79667cb446a1b450ca3d273c)
+        ;
+
+        
+    
+    
+            var circle_marker_cc5974cf6219be4bfc50365819e63147 = L.circleMarker(
+                [-23.738177, 34.974707],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.46, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_41712cdca19a15cdf3ea7871483c0245 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e40385dba3519f0c84ddf77933098167 = $(`<div id="html_e40385dba3519f0c84ddf77933098167" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 388</b><br> <b>Total injured:</b> 70<br> <b>Score:</b> 846</div>`)[0];
+                popup_41712cdca19a15cdf3ea7871483c0245.setContent(html_e40385dba3519f0c84ddf77933098167);
+            
+        
+
+        circle_marker_cc5974cf6219be4bfc50365819e63147.bindPopup(popup_41712cdca19a15cdf3ea7871483c0245)
+        ;
+
+        
+    
+    
+            var circle_marker_0408753781bafa854e2fd5180807f57a = L.circleMarker(
+                [30.345997, 48.287136],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.44, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_e4bab0636dae7b1836000f15a4f06a71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb46125ad294226f0005420d12455b91 = $(`<div id="html_cb46125ad294226f0005420d12455b91" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 422</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 844</div>`)[0];
+                popup_e4bab0636dae7b1836000f15a4f06a71.setContent(html_cb46125ad294226f0005420d12455b91);
+            
+        
+
+        circle_marker_0408753781bafa854e2fd5180807f57a.bindPopup(popup_e4bab0636dae7b1836000f15a4f06a71)
+        ;
+
+        
+    
+    
+            var circle_marker_21267544f5ee779220396af69cce1694 = L.circleMarker(
+                [35.724533, 51.40519],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.2, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_7fb0d6e6b0e0d0a2058f2805ae194c20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_07dd8df1895d16195d60463ddd94f89c = $(`<div id="html_07dd8df1895d16195d60463ddd94f89c" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 60</b><br> <b>Total injured:</b> 700<br> <b>Score:</b> 820</div>`)[0];
+                popup_7fb0d6e6b0e0d0a2058f2805ae194c20.setContent(html_07dd8df1895d16195d60463ddd94f89c);
+            
+        
+
+        circle_marker_21267544f5ee779220396af69cce1694.bindPopup(popup_7fb0d6e6b0e0d0a2058f2805ae194c20)
+        ;
+
+        
+    
+    
+            var circle_marker_278e3ea996127432f207ede3c7fc6b3c = L.circleMarker(
+                [3.292111, 29.168137],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_218d795f2d63906babb2910fd5a9a509 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f338c910cdafce2128b2f4d655750f56 = $(`<div id="html_f338c910cdafce2128b2f4d655750f56" style="width: 100.0%; height: 100.0%;"><b>01/17/2009: On Saturday evening, in the village of Tora and Libombi, near Tora, Orientale, Democratic Republic of the Congo, assailants set fire to a church, killing hundreds of worshippers. The assailants then attacked residents of several homesteads with axes and similar weapons, killing several civilians at each homestead. The assailants also set fire to and damaged several residences and businesses. No group claimed responsibility, although it was widely believed the Lord's Resistance Army was responsible.</b></b><br> <b>Total deadly:</b> 400</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 800</div>`)[0];
+                popup_218d795f2d63906babb2910fd5a9a509.setContent(html_f338c910cdafce2128b2f4d655750f56);
+            
+        
+
+        circle_marker_278e3ea996127432f207ede3c7fc6b3c.bindPopup(popup_218d795f2d63906babb2910fd5a9a509)
+        ;
+
+        
+    
+    
+            var circle_marker_40e7a3abf2d7573f334c9c6338a163bd = L.circleMarker(
+                [28.291564, -16.62913],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_51a84b41b66b7c020a4fcdfff0438def = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_24f46ab698b6b3621844c19b1a65a3bd = $(`<div id="html_24f46ab698b6b3621844c19b1a65a3bd" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 0</b><br> <b>Total injured:</b> 800<br> <b>Score:</b> 800</div>`)[0];
+                popup_51a84b41b66b7c020a4fcdfff0438def.setContent(html_24f46ab698b6b3621844c19b1a65a3bd);
+            
+        
+
+        circle_marker_40e7a3abf2d7573f334c9c6338a163bd.bindPopup(popup_51a84b41b66b7c020a4fcdfff0438def)
+        ;
+
+        
+    
+    
+            var circle_marker_308602b46bf973dd969154d263af5e9b = L.circleMarker(
+                [-1.587877, 29.381578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.69, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_7b755f8949958bfd086545c2352ac4fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4f9c1d8fed341780d0c2291090611eb = $(`<div id="html_b4f9c1d8fed341780d0c2291090611eb" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 271</b><br> <b>Total injured:</b> 227<br> <b>Score:</b> 769</div>`)[0];
+                popup_7b755f8949958bfd086545c2352ac4fa.setContent(html_b4f9c1d8fed341780d0c2291090611eb);
+            
+        
+
+        circle_marker_308602b46bf973dd969154d263af5e9b.bindPopup(popup_7b755f8949958bfd086545c2352ac4fa)
+        ;
+
+        
+    
+    
+            var circle_marker_2cbcebdb3064ef8448530de075c84d41 = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.56, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_78504fa3fada7e676a70997ae6e969d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f4eb6827580620747bb140c576a1697b = $(`<div id="html_f4eb6827580620747bb140c576a1697b" style="width: 100.0%; height: 100.0%;"><b>08/19/2009: On Wednesday morning between 1030 and 1100, in the Ar Rusafa and Al Karkh districts of Baghdad, Iraq, a suicide bomber detonated a vehicle-borne improvised explosive device (VBIED) on an overpass near the Finance Ministry in the central Bab al Muazzam neighborhood. Simultaneously, assailants detonated a VBIED outside the Foreign Ministry near the central International (Green) Zone, killing 101 government employees, civilians, and children; wounding 552 government employees, civilians, and children; and damaging one overpass, scores of vehicles, three government buildings, at least one hundred residences including apartment buildings, one school, one hotel, and over at lease one hundred other buildings. Authorities discovered and safely defused two more VBIEDs near the Foreign Ministry. The Islamic State of Iraq (ISI) claimed responsibility, but authorities also blamed Baathists from the former regime.</b></b><br> <b>Total deadly:</b> 102</b><br> <b>Total injured:</b> 552<br> <b>Score:</b> 756</div>`)[0];
+                popup_78504fa3fada7e676a70997ae6e969d0.setContent(html_f4eb6827580620747bb140c576a1697b);
+            
+        
+
+        circle_marker_2cbcebdb3064ef8448530de075c84d41.bindPopup(popup_78504fa3fada7e676a70997ae6e969d0)
+        ;
+
+        
+    
+    
+            var circle_marker_37cb65614915ee31afaf0539fe292bdf = L.circleMarker(
+                [45.601555, -121.183434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.51, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_c7d0360c06d4ceb084fc13d6e10ea975 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb7eb9688320669bb5453485876e5545 = $(`<div id="html_cb7eb9688320669bb5453485876e5545" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 0</b><br> <b>Total injured:</b> 751<br> <b>Score:</b> 751</div>`)[0];
+                popup_c7d0360c06d4ceb084fc13d6e10ea975.setContent(html_cb7eb9688320669bb5453485876e5545);
+            
+        
+
+        circle_marker_37cb65614915ee31afaf0539fe292bdf.bindPopup(popup_c7d0360c06d4ceb084fc13d6e10ea975)
+        ;
+
+        
+    
+    
+            var circle_marker_db6258bc32da3194bcfb39cee8bea562 = L.circleMarker(
+                [-3.016027, 29.450726],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_beb836c324dabb3e9addb3f06d7e6306 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2ea1ae9f9223bdcfe0e751a2fcf92af = $(`<div id="html_c2ea1ae9f9223bdcfe0e751a2fcf92af" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 375</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 750</div>`)[0];
+                popup_beb836c324dabb3e9addb3f06d7e6306.setContent(html_c2ea1ae9f9223bdcfe0e751a2fcf92af);
+            
+        
+
+        circle_marker_db6258bc32da3194bcfb39cee8bea562.bindPopup(popup_beb836c324dabb3e9addb3f06d7e6306)
+        ;
+
+        
+    
+    
+            var circle_marker_1aa0f8bf374fb7e8d14fdc4c1383130e = L.circleMarker(
+                [36.612427, 3.124495],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.06, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d36f87e09507d199b8acf2bc8b11e6cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31421281bbe7e5c6b5354a2503ad36e1 = $(`<div id="html_31421281bbe7e5c6b5354a2503ad36e1" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 256</b><br> <b>Total injured:</b> 194<br> <b>Score:</b> 706</div>`)[0];
+                popup_d36f87e09507d199b8acf2bc8b11e6cc.setContent(html_31421281bbe7e5c6b5354a2503ad36e1);
+            
+        
+
+        circle_marker_1aa0f8bf374fb7e8d14fdc4c1383130e.bindPopup(popup_d36f87e09507d199b8acf2bc8b11e6cc)
+        ;
+
+        
+    
+    
+            var circle_marker_9f4b030f98335ff9505ca47dc8869c30 = L.circleMarker(
+                [9.356784, 42.795518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_2eddcfffe37512e1e37fc323f5d14d2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60cde5af7c91f25dc28d962be759e328 = $(`<div id="html_60cde5af7c91f25dc28d962be759e328" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 200</b><br> <b>Total injured:</b> 300<br> <b>Score:</b> 700</div>`)[0];
+                popup_2eddcfffe37512e1e37fc323f5d14d2e.setContent(html_60cde5af7c91f25dc28d962be759e328);
+            
+        
+
+        circle_marker_9f4b030f98335ff9505ca47dc8869c30.bindPopup(popup_2eddcfffe37512e1e37fc323f5d14d2e)
+        ;
+
+        
+    
+    
+            var circle_marker_4f0fb85001af669ba0afdcbc16f49c70 = L.circleMarker(
+                [35.443708, 139.638026],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.71, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_6672e72a3cd4c04a6132fb724e977e4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6aeb5db37faa885cc3414135dda5bf9a = $(`<div id="html_6aeb5db37faa885cc3414135dda5bf9a" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 0</b><br> <b>Total injured:</b> 671<br> <b>Score:</b> 671</div>`)[0];
+                popup_6672e72a3cd4c04a6132fb724e977e4e.setContent(html_6aeb5db37faa885cc3414135dda5bf9a);
+            
+        
+
+        circle_marker_4f0fb85001af669ba0afdcbc16f49c70.bindPopup(popup_6672e72a3cd4c04a6132fb724e977e4e)
+        ;
+
+        
+    
+    
+            var circle_marker_d968b331449f212bcce651f7ae09ae8f = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.67, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_247da89d49f199551fc69eba5a01c681 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cfa46454d10171885236b41e41d1e53d = $(`<div id="html_cfa46454d10171885236b41e41d1e53d" style="width: 100.0%; height: 100.0%;"><b>11/23/2006: Five car bombs exploded, three suicide bombs and two detonated in parked cars, and two mortars struck Sadr City, the Shi i slum in Baghdad, Iraq, killing 202 and injuring 257. The car bombs exploded at 15 minute intervals while the mortars struck at the same time. The car bombs struck Jamila market, al-Hay market and al-Shahidein Square, while the mortars landed in al-Shahidein Square and Mudhafar Square; there were no security forces present at the bombing sites. No group immediately claimed responsibility for the attacks.</b></b><br> <b>Total deadly:</b> 205</b><br> <b>Total injured:</b> 257<br> <b>Score:</b> 667</div>`)[0];
+                popup_247da89d49f199551fc69eba5a01c681.setContent(html_cfa46454d10171885236b41e41d1e53d);
+            
+        
+
+        circle_marker_d968b331449f212bcce651f7ae09ae8f.bindPopup(popup_247da89d49f199551fc69eba5a01c681)
+        ;
+
+        
+    
+    
+            var circle_marker_616eb0cff43fcad0cdb04fdb64d2f3ad = L.circleMarker(
+                [43.666667, -79.416667],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.58, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_a56f04f29dcb9e6aa45b87d583d6e099 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_968065e370678f818214ad4a2bbb53da = $(`<div id="html_968065e370678f818214ad4a2bbb53da" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 329</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 658</div>`)[0];
+                popup_a56f04f29dcb9e6aa45b87d583d6e099.setContent(html_968065e370678f818214ad4a2bbb53da);
+            
+        
+
+        circle_marker_616eb0cff43fcad0cdb04fdb64d2f3ad.bindPopup(popup_a56f04f29dcb9e6aa45b87d583d6e099)
+        ;
+
+        
+    
+    
+            var circle_marker_38761073b6c5bafdc97f0b42e4664464 = L.circleMarker(
+                [36.376823, 42.448875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.53, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_12ce905b84456b21cfaa79d5a7866bec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5059e959c224abc1a0c88b4b4b791534 = $(`<div id="html_5059e959c224abc1a0c88b4b4b791534" style="width: 100.0%; height: 100.0%;"><b>03/27/2007: In one of two truck bombings carried out by suspected Sunni militants in Tal Afar, Iraq, 152 people were killed and 347 were wounded when a truck containing flour exploded near a wholesale market on the city's north side.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 153</b><br> <b>Total injured:</b> 347<br> <b>Score:</b> 653</div>`)[0];
+                popup_12ce905b84456b21cfaa79d5a7866bec.setContent(html_5059e959c224abc1a0c88b4b4b791534);
+            
+        
+
+        circle_marker_38761073b6c5bafdc97f0b42e4664464.bindPopup(popup_12ce905b84456b21cfaa79d5a7866bec)
+        ;
+
+        
+    
+    
+            var circle_marker_df0e93ab1c59c1a38efb38525c9605b3 = L.circleMarker(
+                [9.380289, 80.377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.4, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d1d4a8f01f661f0722bba1a27903a748 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cf475425db295d66b7c799b3ea65636 = $(`<div id="html_0cf475425db295d66b7c799b3ea65636" style="width: 100.0%; height: 100.0%;"><b>02/01/1998: Sri Lankan troops beat back an assault by the Liberation Tamil Tigers if Eelam (LTTE), killing 300 guerrillas. Twenty soldiers were also killed and another 80 wounded in the five-hour battle near Kilinochchi, Sri Lanka, about 265 kilometers north of Colombo.</b></b><br> <b>Total deadly:</b> 320</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 640</div>`)[0];
+                popup_d1d4a8f01f661f0722bba1a27903a748.setContent(html_0cf475425db295d66b7c799b3ea65636);
+            
+        
+
+        circle_marker_df0e93ab1c59c1a38efb38525c9605b3.bindPopup(popup_d1d4a8f01f661f0722bba1a27903a748)
+        ;
+
+        
+    
+    
+            var circle_marker_29485f4e7f72cb237e867379fd020b03 = L.circleMarker(
+                [-1.679123, 29.261201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_410afec8e094b59cc4522815c61cd374 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd910335e0097e6a81b34c202643de2f = $(`<div id="html_bd910335e0097e6a81b34c202643de2f" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 300</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 600</div>`)[0];
+                popup_410afec8e094b59cc4522815c61cd374.setContent(html_bd910335e0097e6a81b34c202643de2f);
+            
+        
+
+        circle_marker_29485f4e7f72cb237e867379fd020b03.bindPopup(popup_410afec8e094b59cc4522815c61cd374)
+        ;
+
+        
+    
+    
+            var circle_marker_8e8f408a7fd63a4ddc66617f7bc395bb = L.circleMarker(
+                [13.933732, -89.025836],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_5a30e1adb9e5e1371f5136f02a370eb3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c754cea3ee7c5c1b55f615c823487d78 = $(`<div id="html_c754cea3ee7c5c1b55f615c823487d78" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 300</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 600</div>`)[0];
+                popup_5a30e1adb9e5e1371f5136f02a370eb3.setContent(html_c754cea3ee7c5c1b55f615c823487d78);
+            
+        
+
+        circle_marker_8e8f408a7fd63a4ddc66617f7bc395bb.bindPopup(popup_5a30e1adb9e5e1371f5136f02a370eb3)
+        ;
+
+        
+    
+    
+            var circle_marker_919530b44274993e0089deb82a8207c6 = L.circleMarker(
+                [9.999547, 29.398746],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_12bb2344330e86b9280bc4d1647d044d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78b79200014bb1e2b6d1c0d7bb46a85a = $(`<div id="html_78b79200014bb1e2b6d1c0d7bb46a85a" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 300</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 600</div>`)[0];
+                popup_12bb2344330e86b9280bc4d1647d044d.setContent(html_78b79200014bb1e2b6d1c0d7bb46a85a);
+            
+        
+
+        circle_marker_919530b44274993e0089deb82a8207c6.bindPopup(popup_12bb2344330e86b9280bc4d1647d044d)
+        ;
+
+        
+    
+    
+            var circle_marker_e45350efc6dfac564f640ded8845c594 = L.circleMarker(
+                [12.030552, 39.046849],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_574cf5b6971c4372a3ab036042250587 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4c639e308a066256b48c4c67bbf21e8f = $(`<div id="html_4c639e308a066256b48c4c67bbf21e8f" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 200</b><br> <b>Total injured:</b> 200<br> <b>Score:</b> 600</div>`)[0];
+                popup_574cf5b6971c4372a3ab036042250587.setContent(html_4c639e308a066256b48c4c67bbf21e8f);
+            
+        
+
+        circle_marker_e45350efc6dfac564f640ded8845c594.bindPopup(popup_574cf5b6971c4372a3ab036042250587)
+        ;
+
+        
+    
+    
+            var circle_marker_2c2812b77c7a395156c7abaf2e9ab9c4 = L.circleMarker(
+                [40.465595, -3.696263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.96, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_c6f4acdbafccad86f4fde3c23ab0c306 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f729a9da6d854ac12d8767d55705605b = $(`<div id="html_f729a9da6d854ac12d8767d55705605b" style="width: 100.0%; height: 100.0%;"><b>03/11/2004: At 7:41 am local time, two bombs exploded in the fourth and fifth carriages of a train at El Pozo station in Madrid, Spain. The attack was a part of a series of ten bombs that exploded on trains on Madrid's commuter line during the morning rush hour, killing 191 people and wounding more than 1800 others. The attack, carried out by Islamic extremists who detonated backpack bombs with cell phones, was the deadliest of the four train attacks, killing at least 70 people and wounding many more. Police initially accused the Basque separatist group Euskadi ta Askatasuna (ETA) of the attack, which occurred three days before Spain's general election, but Islamic extremists were soon found to be the perpetrators. Abu Hafs al-Masri Brigades, a group said to be associated with Al-Qaida, claimed responsibility for the attack, stating that it was retribution for Spain's cooperation with the United States in the Iraq War. In October 2007, twenty-one suspects were convicted and seven others were acquitted of charges related to the attacks. In July 2008, four of the convictions and one of the acquittals were reversed. Court proceedings indicate that Islamist extremists coordinated by Al-Qaida were responsible for the attacks, but it is unclear if the claim of responsibility from Abu Hafs al-Masri Brigades is valid.</b></b><br> <b>Total deadly:</b> 73</b><br> <b>Total injured:</b> 450<br> <b>Score:</b> 596</div>`)[0];
+                popup_c6f4acdbafccad86f4fde3c23ab0c306.setContent(html_f729a9da6d854ac12d8767d55705605b);
+            
+        
+
+        circle_marker_2c2812b77c7a395156c7abaf2e9ab9c4.bindPopup(popup_c6f4acdbafccad86f4fde3c23ab0c306)
+        ;
+
+        
+    
+    
+            var circle_marker_ab6220ca80f0c9b35b86646b95f5d170 = L.circleMarker(
+                [40.465595, -3.696263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.74, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_9ad18b3ccc8ba8e11399d539782cb18e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20fd6025f5ce6639086b29919b4a9080 = $(`<div id="html_20fd6025f5ce6639086b29919b4a9080" style="width: 100.0%; height: 100.0%;"><b>03/11/2004: At 7:39 am local time, four bombs exploded in a train about 500 meters away from the Atocha train station in Madrid, Spain, occurring almost simultaneously as another attack at the train station. The bombs, placed by Islamic extremists in backpacks and detonated by cell phones, exploded in the first, fourth and sixth carriages of the train. At least 59 people were killed and many more were injured. The attack was a part of a series of ten bombs that exploded on trains on Madrid's commuter line during the morning rush hour, killing 191 people and wounding more than 1800 others. Police initially accused the Basque separatist group Euskadi ta Askatasuna (ETA) of the attack, which occurred three days before Spain's general election, but Islamic extremists were soon found to be the perpetrators. Abu Hafs al-Masri Brigades, a group said to be associated with Al-Qaida, claimed responsibility for the attack, stating that it was retribution for Spain's cooperation with the United States in the Iraq War. In October 2007, twenty-one suspects were convicted and seven others were acquitted of charges related to the attacks. In July 2008, four of the convictions and one of the acquittals were reversed. Court proceedings indicate that Islamist extremists coordinated by Al-Qaida were responsible for the attacks, but it is unclear if the claim of responsibility from Abu Hafs al-Masri Brigades is valid.</b></b><br> <b>Total deadly:</b> 62</b><br> <b>Total injured:</b> 450<br> <b>Score:</b> 574</div>`)[0];
+                popup_9ad18b3ccc8ba8e11399d539782cb18e.setContent(html_20fd6025f5ce6639086b29919b4a9080);
+            
+        
+
+        circle_marker_ab6220ca80f0c9b35b86646b95f5d170.bindPopup(popup_9ad18b3ccc8ba8e11399d539782cb18e)
+        ;
+
+        
+    
+    
+            var circle_marker_bab4b60e679da3b34dc60bc01e670531 = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.57, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_1ccc054909404883335c12c2e6e18094 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_23c56fdcc7683f07336dfdad5ccb2e15 = $(`<div id="html_23c56fdcc7683f07336dfdad5ccb2e15" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 241</b><br> <b>Total injured:</b> 75<br> <b>Score:</b> 557</div>`)[0];
+                popup_1ccc054909404883335c12c2e6e18094.setContent(html_23c56fdcc7683f07336dfdad5ccb2e15);
+            
+        
+
+        circle_marker_bab4b60e679da3b34dc60bc01e670531.bindPopup(popup_1ccc054909404883335c12c2e6e18094)
+        ;
+
+        
+    
+    
+            var circle_marker_94c30ee425169a17a572627a39ef85f7 = L.circleMarker(
+                [34.726269, 44.584908],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_288ea558003d9ed16eaff22dfafb56f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_190c6c0beff7d47a7a2b4b0fda6f595d = $(`<div id="html_190c6c0beff7d47a7a2b4b0fda6f595d" style="width: 100.0%; height: 100.0%;"><b>07/07/2007: The largest suicide bombing of the Iraq war to date was set off in the small village of Amerli in the Diyala Governorate of Iraq.  Over 150 people were killed and 250 wounded in the truck bomb attack on the Turkomen village.  Fifty homes were destroyed in the attack where many people were trapped beneath the rubble.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 150</b><br> <b>Total injured:</b> 250<br> <b>Score:</b> 550</div>`)[0];
+                popup_288ea558003d9ed16eaff22dfafb56f5.setContent(html_190c6c0beff7d47a7a2b4b0fda6f595d);
+            
+        
+
+        circle_marker_94c30ee425169a17a572627a39ef85f7.bindPopup(popup_288ea558003d9ed16eaff22dfafb56f5)
+        ;
+
+        
+    
+    
+            var circle_marker_9bcaa87168f0d92a99fe31178aae4da7 = L.circleMarker(
+                [55.120154, -3.355942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.4, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_452d9869232c15c948ae3973525c3519 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_892102f460ab072193f7262f0010ea7a = $(`<div id="html_892102f460ab072193f7262f0010ea7a" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 270</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 540</div>`)[0];
+                popup_452d9869232c15c948ae3973525c3519.setContent(html_892102f460ab072193f7262f0010ea7a);
+            
+        
+
+        circle_marker_9bcaa87168f0d92a99fe31178aae4da7.bindPopup(popup_452d9869232c15c948ae3973525c3519)
+        ;
+
+        
+    
+    
+            var circle_marker_fe849a75444c964cdd9835b8aa0e9110 = L.circleMarker(
+                [24.891115, 67.143311],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.32, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_61202eab05f32ca256862e83565deeb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4dde9bd8b4e820772ff26690f925e8c2 = $(`<div id="html_4dde9bd8b4e820772ff26690f925e8c2" style="width: 100.0%; height: 100.0%;"><b>10/18/2007: Approximately 139 Pakistanis were killed, more than 250 others were wounded, and at least three police vans and several other vehicles were destroyed when one suspected Harkatul Jihad-e-Islami (HUJI) perpetrator threw a grenade and a suicide bomber immediately detonated a vehicle-borne improvised explosive device (VBIED) at approximately 12:52 AM adjacent to a homecoming procession for exiled former Pakistani Prime Minister Benazir Bhutto in Karsaz neighborhood, Karachi, Sindh Province, Pakistan.</b></b><br> <b>Total deadly:</b> 141</b><br> <b>Total injured:</b> 250<br> <b>Score:</b> 532</div>`)[0];
+                popup_61202eab05f32ca256862e83565deeb2.setContent(html_4dde9bd8b4e820772ff26690f925e8c2);
+            
+        
+
+        circle_marker_fe849a75444c964cdd9835b8aa0e9110.bindPopup(popup_61202eab05f32ca256862e83565deeb2)
+        ;
+
+        
+    
+    
+            var circle_marker_3e2d8bbefe38392987af97d97e6e90fe = L.circleMarker(
+                [40.465595, -3.696263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.24, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d97c40de609bfbbc8479a4600213baa2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a849ee04203e1c0c8dc14d8cc931d98a = $(`<div id="html_a849ee04203e1c0c8dc14d8cc931d98a" style="width: 100.0%; height: 100.0%;"><b>03/11/2004: At 7:37 a.m. local time three bombs exploded inside the third, fourth, and sixth cars of a train inside Atocha Station, killing at least 34 people and wounding many more.  The attack was a part of a series of ten bombs that exploded on trains on Madrid's commuter line during the morning rush hour, killing 191 people and wounding more than 1800 others. Police initially accused the Basque separatist group Euskadi ta Askatasuna (ETA) of the attack, which occurred three days before Spain's general election, but Islamic extremists were soon found to be the perpetrators. Abu Hafs al-Masri Brigades, a group said to be associated with Al-Qaida, claimed responsibility for the attack, stating that it was retribution for Spain's cooperation with the United States in the Iraq War. In October 2007, twenty-one suspects were convicted and seven others were acquitted of charges related to the attacks. In July 2008, four of the convictions and one of the acquittals were reversed. Court proceedings indicate that Islamist extremists coordinated by Al-Qaida were responsible for the attacks, but it is unclear if the claim of responsibility from Abu Hafs al-Masri Brigades is valid.</b></b><br> <b>Total deadly:</b> 37</b><br> <b>Total injured:</b> 450<br> <b>Score:</b> 524</div>`)[0];
+                popup_d97c40de609bfbbc8479a4600213baa2.setContent(html_a849ee04203e1c0c8dc14d8cc931d98a);
+            
+        
+
+        circle_marker_3e2d8bbefe38392987af97d97e6e90fe.bindPopup(popup_d97c40de609bfbbc8479a4600213baa2)
+        ;
+
+        
+    
+    
+            var circle_marker_7de392c11b6d081bc7c546aba9eada83 = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.14, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_6c5c8aeebae8a61fc43102207db72fbb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fc39b9f94c94085820e2f40531e8053 = $(`<div id="html_5fc39b9f94c94085820e2f40531e8053" style="width: 100.0%; height: 100.0%;"><b>10/25/2009: On Sunday morning at 1030, one of two suicide bombers detonated at an intersection near the justice and municipalities ministries in Haifa street in the Al Karkh district in the As Salihiyah neighborhood in Baghdad, Baghdad, Iraq. One of the vehicles was identified in footage, when driving up to the justice ministry building, as a white Renault truck with the logo of the Department of Water in Fallujah. The truck was loaded with two tons of explosives. A total of 77 people were killed, including thirty-five employees of the Ministry of Justice, and 360 were wounded including two U.S. contractors. The explosions damaged the Ministry of Justice building, one hotel, one embassy, 156 vehicles, and destroyed dozens of cars and smashed water pipes. The Islamic State of Iraq has claimed responsibility for the attack by posting the claim on the internet.</b></b><br> <b>Total deadly:</b> 77</b><br> <b>Total injured:</b> 360<br> <b>Score:</b> 514</div>`)[0];
+                popup_6c5c8aeebae8a61fc43102207db72fbb.setContent(html_5fc39b9f94c94085820e2f40531e8053);
+            
+        
+
+        circle_marker_7de392c11b6d081bc7c546aba9eada83.bindPopup(popup_6c5c8aeebae8a61fc43102207db72fbb)
+        ;
+
+        
+    
+    
+            var circle_marker_7a8f1e391499450d566569184a271afa = L.circleMarker(
+                [35.689125, 139.747742],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.14, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_9cce78eaf7934c6906198752cf3d4ad0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5e2bec854511afa2142344c9fa6bde03 = $(`<div id="html_5e2bec854511afa2142344c9fa6bde03" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 7</b><br> <b>Total injured:</b> 500<br> <b>Score:</b> 514</div>`)[0];
+                popup_9cce78eaf7934c6906198752cf3d4ad0.setContent(html_5e2bec854511afa2142344c9fa6bde03);
+            
+        
+
+        circle_marker_7a8f1e391499450d566569184a271afa.bindPopup(popup_9cce78eaf7934c6906198752cf3d4ad0)
+        ;
+
+        
+    
+    
+            var circle_marker_d3eba60b084b6dec94b936f60c26a6f7 = L.circleMarker(
+                [6.855948, 79.862968],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.13, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_81ea4afaa3fb70b79016294e74a2e20a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0758f6e177c2562030f7b7d46b4e4264 = $(`<div id="html_0758f6e177c2562030f7b7d46b4e4264" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 61</b><br> <b>Total injured:</b> 391<br> <b>Score:</b> 513</div>`)[0];
+                popup_81ea4afaa3fb70b79016294e74a2e20a.setContent(html_0758f6e177c2562030f7b7d46b4e4264);
+            
+        
+
+        circle_marker_d3eba60b084b6dec94b936f60c26a6f7.bindPopup(popup_81ea4afaa3fb70b79016294e74a2e20a)
+        ;
+
+        
+    
+    
+            var circle_marker_321bc71066fb26a0251c18badcf41471 = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.12, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_0fb0a4eb341681cb1c1fccb3fd01a7d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4cb55474c19d7c94d6e566759da9c5b6 = $(`<div id="html_4cb55474c19d7c94d6e566759da9c5b6" style="width: 100.0%; height: 100.0%;"><b>10/25/2009: On Sunday morning at 1030, one of two suicide bombers detonated nearby Baghdad provincial government offices in the Al Karkh District of the Salhiyeh neighborhood in Baghdad, Baghdad, Iraq, which also houses Baghdad's governor. A minibus packed with explosives detonated killing 76, including twenty-five staff members of the Baghdad Provincial Council. The attack also wounded 360, including one U.S. contractor. The explosion damaged the Ministry of Municipalities and Public Works, and the Baghdad Provincial Administration building, one hotel, one embassy, and 156 vehicles, as well as destroyed dozens of cars and smashed water pipes. The Islamic State of Iraq has claimed responsibility for the attack by posting the claim on the internet.</b></b><br> <b>Total deadly:</b> 76</b><br> <b>Total injured:</b> 360<br> <b>Score:</b> 512</div>`)[0];
+                popup_0fb0a4eb341681cb1c1fccb3fd01a7d0.setContent(html_4cb55474c19d7c94d6e566759da9c5b6);
+            
+        
+
+        circle_marker_321bc71066fb26a0251c18badcf41471.bindPopup(popup_0fb0a4eb341681cb1c1fccb3fd01a7d0)
+        ;
+
+        
+    
+    
+            var circle_marker_a385f6fda3ea838f03ece0542374e4d7 = L.circleMarker(
+                [6.941837, 79.861687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.07, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_426a2340e9293dd1f26c467d3cf213a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e62a7e6088748fe3f6251849dc33833c = $(`<div id="html_e62a7e6088748fe3f6251849dc33833c" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 106</b><br> <b>Total injured:</b> 295<br> <b>Score:</b> 507</div>`)[0];
+                popup_426a2340e9293dd1f26c467d3cf213a2.setContent(html_e62a7e6088748fe3f6251849dc33833c);
+            
+        
+
+        circle_marker_a385f6fda3ea838f03ece0542374e4d7.bindPopup(popup_426a2340e9293dd1f26c467d3cf213a2)
+        ;
+
+        
+    
+    
+            var circle_marker_56d632cb59ef32d72705453773acc91f = L.circleMarker(
+                [13.364485, -85.29338],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_393d205b9d9661c4a44ae8dd3c0f0c83 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d12bbeacf8318a785dca5098c5ed1137 = $(`<div id="html_d12bbeacf8318a785dca5098c5ed1137" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 250</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 500</div>`)[0];
+                popup_393d205b9d9661c4a44ae8dd3c0f0c83.setContent(html_d12bbeacf8318a785dca5098c5ed1137);
+            
+        
+
+        circle_marker_56d632cb59ef32d72705453773acc91f.bindPopup(popup_393d205b9d9661c4a44ae8dd3c0f0c83)
+        ;
+
+        
+    
+    
+            var circle_marker_d78eee6c206e8e9209799e1164ebac2b = L.circleMarker(
+                [40.465595, -3.696263],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.88, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_043c82c17edccabf9b3bdff9522db1c9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_277567e18846f64d86c5349afdfd7f67 = $(`<div id="html_277567e18846f64d86c5349afdfd7f67" style="width: 100.0%; height: 100.0%;"><b>03/11/2004: At 7:42 am local time, a bomb exploded on the fourth carriage of a train passing through the Santa Eugenia station in Madrid, Spain. At least 17 people were killed and many more were injured. The bombs were placed in backpacks by Islamic extremists and detonated by cell phones. The attack was a part of a series of ten bombs that exploded on trains on Madrid's commuter line during the morning rush hour, killing 191 people and wounding more than 1800 others. Police initially accused the Basque separatist group Euskadi ta Askatasuna (ETA) of the attack, which occurred three days before Spain's general election, but Islamic extremists were soon found to be the perpetrators. Abu Hafs al-Masri Brigades, a group said to be associated with Al-Qaida, claimed responsibility for the attack, stating that it was retribution for Spain's cooperation with the United States in the Iraq War. In October 2007, twenty-one suspects were convicted and seven others were acquitted of charges related to the attacks. In July 2008, four of the convictions and one of the acquittals were reversed. Court proceedings indicate that Islamist extremists coordinated by Al-Qaida were responsible for the attacks, but it is unclear if the claim of responsibility from Abu Hafs al-Masri Brigades is valid.</b></b><br> <b>Total deadly:</b> 19</b><br> <b>Total injured:</b> 450<br> <b>Score:</b> 488</div>`)[0];
+                popup_043c82c17edccabf9b3bdff9522db1c9.setContent(html_277567e18846f64d86c5349afdfd7f67);
+            
+        
+
+        circle_marker_d78eee6c206e8e9209799e1164ebac2b.bindPopup(popup_043c82c17edccabf9b3bdff9522db1c9)
+        ;
+
+        
+    
+    
+            var circle_marker_44e1eb94118f9947505b9d1943529507 = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.86, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d62c8fa0d441ce44578eff3adceeae39 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6ab16a900866b8a538b7ea284ebc5729 = $(`<div id="html_6ab16a900866b8a538b7ea284ebc5729" style="width: 100.0%; height: 100.0%;"><b>02/03/2007: 120 civilians were killed in a bombing attack on a market Baghdad, Iraq. The perpetrators of this incident were unknown.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 120</b><br> <b>Total injured:</b> 246<br> <b>Score:</b> 486</div>`)[0];
+                popup_d62c8fa0d441ce44578eff3adceeae39.setContent(html_6ab16a900866b8a538b7ea284ebc5729);
+            
+        
+
+        circle_marker_44e1eb94118f9947505b9d1943529507.bindPopup(popup_d62c8fa0d441ce44578eff3adceeae39)
+        ;
+
+        
+    
+    
+            var circle_marker_6a2c65f187a7389a11503a1962e54ba5 = L.circleMarker(
+                [38.878742, -77.100006],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.86, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_55504431937d29118ad4482f39596be3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f0bcf48ab978e7913b573b142d9899c1 = $(`<div id="html_f0bcf48ab978e7913b573b142d9899c1" style="width: 100.0%; height: 100.0%;"><b>09/11/2001: This was one of four related attacks that occurred in the United States that are known collectively as the 9/11 Terrorist Attacks. In the third of these attacks, which occurred at 9:37 am local time, American Airlines Flight 77 crashed into the Pentagon in Arlington, Virginia. Five hijackers belonging to Al-Qaida hijacked the Boeing 757 aircraft on a flight from Washington Dulles International Airport to for Los Angeles International Airport and proceeded to fly the plane into the western side of the Pentagon. At least 190 people died as a result of the attack at the Pentagon. There were 53 passengers, six crew members and five hijackers on the plane, all of whom died on impact. In addition, 125 people died in the Pentagon due to the impact or in the resulting fire, and at least one first responder died as a result of illness contracted due to exposure to contaminants at the attack site. Al-Qaida leaders including Osama bin Laden and Khalid Shaikh Mohammed claimed responsibility for the attacks in multiple videotaped interviews.</b></b><br> <b>Total deadly:</b> 190</b><br> <b>Total injured:</b> 106<br> <b>Score:</b> 486</div>`)[0];
+                popup_55504431937d29118ad4482f39596be3.setContent(html_f0bcf48ab978e7913b573b142d9899c1);
+            
+        
+
+        circle_marker_6a2c65f187a7389a11503a1962e54ba5.bindPopup(popup_55504431937d29118ad4482f39596be3)
+        ;
+
+        
+    
+    
+            var circle_marker_73b4c825ddc32acef444b4fa49d6f995 = L.circleMarker(
+                [-18.293199, 35.939217],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.8, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_405e5a613d1ae48d3be6cce7acc9857b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ccff32990a18a23299e4af23a8119dd8 = $(`<div id="html_ccff32990a18a23299e4af23a8119dd8" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 240</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 480</div>`)[0];
+                popup_405e5a613d1ae48d3be6cce7acc9857b.setContent(html_ccff32990a18a23299e4af23a8119dd8);
+            
+        
+
+        circle_marker_73b4c825ddc32acef444b4fa49d6f995.bindPopup(popup_405e5a613d1ae48d3be6cce7acc9857b)
+        ;
+
+        
+    
+    
+            var circle_marker_27e8f53ad28cd054a6d157637583da26 = L.circleMarker(
+                [-12.590426, 13.416202],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.73, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_a07fd049ebf213d9ebe00879678b3281 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87ea90a8c938c6f1fcd099522627a881 = $(`<div id="html_87ea90a8c938c6f1fcd099522627a881" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 77</b><br> <b>Total injured:</b> 319<br> <b>Score:</b> 473</div>`)[0];
+                popup_a07fd049ebf213d9ebe00879678b3281.setContent(html_87ea90a8c938c6f1fcd099522627a881);
+            
+        
+
+        circle_marker_27e8f53ad28cd054a6d157637583da26.bindPopup(popup_a07fd049ebf213d9ebe00879678b3281)
+        ;
+
+        
+    
+    
+            var circle_marker_57e93e7fdf48eda0c1f8ea698461a0ac = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.66, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_69d7f19e50a24aeffbcad0a835ab570b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1fbe7ffd309b8cb369e34569c0a21d63 = $(`<div id="html_1fbe7ffd309b8cb369e34569c0a21d63" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 83</b><br> <b>Total injured:</b> 300<br> <b>Score:</b> 466</div>`)[0];
+                popup_69d7f19e50a24aeffbcad0a835ab570b.setContent(html_1fbe7ffd309b8cb369e34569c0a21d63);
+            
+        
+
+        circle_marker_57e93e7fdf48eda0c1f8ea698461a0ac.bindPopup(popup_69d7f19e50a24aeffbcad0a835ab570b)
+        ;
+
+        
+    
+    
+            var circle_marker_decd1f8186cd38edf000061ca6024179 = L.circleMarker(
+                [36.376823, 42.448875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.6, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_1e5652723be03bf8505f856733f5512a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dec66f819d5f1b0ca4240df5d87f906e = $(`<div id="html_dec66f819d5f1b0ca4240df5d87f906e" style="width: 100.0%; height: 100.0%;"><b>03/30/2007: In the Tal Afar District of Iraq, several booby-trapped cars blew up in residential areas, leading to revenge killings later that day. The events lead to the deaths of 190 people.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 145</b><br> <b>Total injured:</b> 170<br> <b>Score:</b> 460</div>`)[0];
+                popup_1e5652723be03bf8505f856733f5512a.setContent(html_dec66f819d5f1b0ca4240df5d87f906e);
+            
+        
+
+        circle_marker_decd1f8186cd38edf000061ca6024179.bindPopup(popup_1e5652723be03bf8505f856733f5512a)
+        ;
+
+        
+    
+    
+            var circle_marker_bb3c00f10e90382a1338316ecccefcbf = L.circleMarker(
+                [36.376823, 42.448875],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.6, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_33b4acdabe4c6a082817a7bf867ba29a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20bc8f206c6d80dbd9314fe1f9d84547 = $(`<div id="html_20bc8f206c6d80dbd9314fe1f9d84547" style="width: 100.0%; height: 100.0%;"><b>03/30/2007: Shortly after bombings in Tal Afar, Iraq, militias retaliated and stormed houses of the residents of Al-Wihdah neighborhood at night, detained them outside and executed them. The events lead to the deaths of 190 people and 40 kidnapped.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 145</b><br> <b>Total injured:</b> 170<br> <b>Score:</b> 460</div>`)[0];
+                popup_33b4acdabe4c6a082817a7bf867ba29a.setContent(html_20bc8f206c6d80dbd9314fe1f9d84547);
+            
+        
+
+        circle_marker_bb3c00f10e90382a1338316ecccefcbf.bindPopup(popup_33b4acdabe4c6a082817a7bf867ba29a)
+        ;
+
+        
+    
+    
+            var circle_marker_45601b051db51e551fb06728cf6db163 = L.circleMarker(
+                [1.687313, 31.713846],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.56, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_04a6a74783cc4b726f0ee1e3d8c23f4f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fe06c91c2aad00326d10424879bcba6 = $(`<div id="html_7fe06c91c2aad00326d10424879bcba6" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 228</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 456</div>`)[0];
+                popup_04a6a74783cc4b726f0ee1e3d8c23f4f.setContent(html_7fe06c91c2aad00326d10424879bcba6);
+            
+        
+
+        circle_marker_45601b051db51e551fb06728cf6db163.bindPopup(popup_04a6a74783cc4b726f0ee1e3d8c23f4f)
+        ;
+
+        
+    
+    
+            var circle_marker_d59c3edcc19ba1d02909158481ca07eb = L.circleMarker(
+                [-25.891968, 32.605135],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.54, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_9ed6462d346eea058afea3073b2d1d0e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82152dd5f683b64854680e340669aec6 = $(`<div id="html_82152dd5f683b64854680e340669aec6" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 227</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 454</div>`)[0];
+                popup_9ed6462d346eea058afea3073b2d1d0e.setContent(html_82152dd5f683b64854680e340669aec6);
+            
+        
+
+        circle_marker_d59c3edcc19ba1d02909158481ca07eb.bindPopup(popup_9ed6462d346eea058afea3073b2d1d0e)
+        ;
+
+        
+    
+    
+            var circle_marker_7c35d3e7e69c5898a02cb754aedcd1cd = L.circleMarker(
+                [32.604393, 44.007145],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.53, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_deed07fe901d7e9057a2d75cd1854aa2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c5fafeee70834b1a881f023335a684a = $(`<div id="html_9c5fafeee70834b1a881f023335a684a" style="width: 100.0%; height: 100.0%;"><b>03/02/2004: In related incidents, al-Qaida suicide bombers targeted Shi'ite pilgrims during the holy month of Ashura. A suicide bomber and other perpetrators using non-suicide explosive devices targeted the holy shrine of Hussain in Karbala, Iraq. At least 106 people were killed and 233 injured in the attacks. US military authorities believed Abu Musab al-Zarqawi planned the attack.</b></b><br> <b>Total deadly:</b> 110</b><br> <b>Total injured:</b> 233<br> <b>Score:</b> 453</div>`)[0];
+                popup_deed07fe901d7e9057a2d75cd1854aa2.setContent(html_9c5fafeee70834b1a881f023335a684a);
+            
+        
+
+        circle_marker_7c35d3e7e69c5898a02cb754aedcd1cd.bindPopup(popup_deed07fe901d7e9057a2d75cd1854aa2)
+        ;
+
+        
+    
+    
+            var circle_marker_2c2321ff4af46500f722e53f29933b9c = L.circleMarker(
+                [24.891115, 67.143311],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_c02f3b6f02f39d2ad7f119a61a8209af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e369cb52288ca77ce3ceafcf46ead546 = $(`<div id="html_e369cb52288ca77ce3ceafcf46ead546" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 75</b><br> <b>Total injured:</b> 300<br> <b>Score:</b> 450</div>`)[0];
+                popup_c02f3b6f02f39d2ad7f119a61a8209af.setContent(html_e369cb52288ca77ce3ceafcf46ead546);
+            
+        
+
+        circle_marker_2c2321ff4af46500f722e53f29933b9c.bindPopup(popup_c02f3b6f02f39d2ad7f119a61a8209af)
+        ;
+
+        
+    
+    
+            var circle_marker_22aebd95c19882e759598966d0e976b1 = L.circleMarker(
+                [34.006004, 71.53743],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.4, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_1b22fd70e72f0565d1fa104e368a7682 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b0c496cad1887410f0674b68ae381f5 = $(`<div id="html_5b0c496cad1887410f0674b68ae381f5" style="width: 100.0%; height: 100.0%;"><b>10/28/2009: On Wednesday afternoon, at about 1300, in People's Mandi, Peshawar, North West Fontier Province, Pakistan, assailants detonated a remote-controlled vehicle-borne improvised explosive device at the crowded Mina Bazaar market, killing 120 civilians and children, injuring 200 others, and damaging at least 50 shops, 50 vehicles, several residences, several buildings, and a nearby mosque. The probable motive for the attack was in revenge for the Pakistan army's offensive against Taliban fighters in South Waziristan. No group has claimed responsibility for the attack, but the Taliban is thought to be responsible.</b></b><br> <b>Total deadly:</b> 120</b><br> <b>Total injured:</b> 200<br> <b>Score:</b> 440</div>`)[0];
+                popup_1b22fd70e72f0565d1fa104e368a7682.setContent(html_5b0c496cad1887410f0674b68ae381f5);
+            
+        
+
+        circle_marker_22aebd95c19882e759598966d0e976b1.bindPopup(popup_1b22fd70e72f0565d1fa104e368a7682)
+        ;
+
+        
+    
+    
+            var circle_marker_81c09dad9c539881ea5639abcc1db345 = L.circleMarker(
+                [26.26622, 50.150466],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.24, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_04ccedfcba30013b62d2d87979c648f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e70d2a904ea766a6bcabaabe5a28353 = $(`<div id="html_1e70d2a904ea766a6bcabaabe5a28353" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 19</b><br> <b>Total injured:</b> 386<br> <b>Score:</b> 424</div>`)[0];
+                popup_04ccedfcba30013b62d2d87979c648f9.setContent(html_1e70d2a904ea766a6bcabaabe5a28353);
+            
+        
+
+        circle_marker_81c09dad9c539881ea5639abcc1db345.bindPopup(popup_04ccedfcba30013b62d2d87979c648f9)
+        ;
+
+        
+    
+    
+            var circle_marker_9c9b2dc47faad669e748d49ea3e67055 = L.circleMarker(
+                [35.961111, 0.918889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.12, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_cc2f3b449dbed5ef0d1cfb3fc29d459a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2162a8fe97a1a0c281e8406b4aa76c57 = $(`<div id="html_2162a8fe97a1a0c281e8406b4aa76c57" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 206</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 412</div>`)[0];
+                popup_cc2f3b449dbed5ef0d1cfb3fc29d459a.setContent(html_2162a8fe97a1a0c281e8406b4aa76c57);
+            
+        
+
+        circle_marker_9c9b2dc47faad669e748d49ea3e67055.bindPopup(popup_cc2f3b449dbed5ef0d1cfb3fc29d459a)
+        ;
+
+        
+    
+    
+            var circle_marker_5a484735ce2cdd30f3874fd4cbae604f = L.circleMarker(
+                [36.200833, 1.733611],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.12, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_789b724207bf937eff1d2a7b58a45e6c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_16c50fff018522b88c80ff368d47a505 = $(`<div id="html_16c50fff018522b88c80ff368d47a505" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 206</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 412</div>`)[0];
+                popup_789b724207bf937eff1d2a7b58a45e6c.setContent(html_16c50fff018522b88c80ff368d47a505);
+            
+        
+
+        circle_marker_5a484735ce2cdd30f3874fd4cbae604f.bindPopup(popup_789b724207bf937eff1d2a7b58a45e6c)
+        ;
+
+        
+    
+    
+            var circle_marker_5d54f2c795f3888c1401ae3d295cac6e = L.circleMarker(
+                [-2.961686, 29.194196],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.1, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_52c05ea9b5fc757cf2bc9221e5fd6b71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e38dfdd3d5c88bcbc2d960e933bc446e = $(`<div id="html_e38dfdd3d5c88bcbc2d960e933bc446e" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 135</b><br> <b>Total injured:</b> 140<br> <b>Score:</b> 410</div>`)[0];
+                popup_52c05ea9b5fc757cf2bc9221e5fd6b71.setContent(html_e38dfdd3d5c88bcbc2d960e933bc446e);
+            
+        
+
+        circle_marker_5d54f2c795f3888c1401ae3d295cac6e.bindPopup(popup_52c05ea9b5fc757cf2bc9221e5fd6b71)
+        ;
+
+        
+    
+    
+            var circle_marker_dd03c99c3de20721406205d9513d336a = L.circleMarker(
+                [6.941837, 79.861687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.08, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_e8f897b368fba9bf96f27a46a8551b93 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5cd8caf9908fd9c9da4a6b5321cd351f = $(`<div id="html_5cd8caf9908fd9c9da4a6b5321cd351f" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 54</b><br> <b>Total injured:</b> 300<br> <b>Score:</b> 408</div>`)[0];
+                popup_e8f897b368fba9bf96f27a46a8551b93.setContent(html_5cd8caf9908fd9c9da4a6b5321cd351f);
+            
+        
+
+        circle_marker_dd03c99c3de20721406205d9513d336a.bindPopup(popup_e8f897b368fba9bf96f27a46a8551b93)
+        ;
+
+        
+    
+    
+            var circle_marker_7dddc8d1344d5024a845d1bf090b91c2 = L.circleMarker(
+                [-34.61768, -58.444435],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.06, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_03d93b1ee48cbbf432bc3afa8c03cb75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad2e46d80407d8ac05027faf33f4be6c = $(`<div id="html_ad2e46d80407d8ac05027faf33f4be6c" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 85</b><br> <b>Total injured:</b> 236<br> <b>Score:</b> 406</div>`)[0];
+                popup_03d93b1ee48cbbf432bc3afa8c03cb75.setContent(html_ad2e46d80407d8ac05027faf33f4be6c);
+            
+        
+
+        circle_marker_7dddc8d1344d5024a845d1bf090b91c2.bindPopup(popup_03d93b1ee48cbbf432bc3afa8c03cb75)
+        ;
+
+        
+    
+    
+            var circle_marker_7691d004aceb80ac6321ac92277da9ec = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.02, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_9ba1518004899986002def5089bc87fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e2bd041fb0fa69771823cc4465fec972 = $(`<div id="html_e2bd041fb0fa69771823cc4465fec972" style="width: 100.0%; height: 100.0%;"><b>04/18/2007: At least 127 people died and 148 were wounded when a car bomb exploded in Sadriyah market in Baghdad, Iraq where buses were picking up passengers. The U.S. military suspects that al-Qaida in Iraq was responsible for the attack that also damaged local shops and vehicles in the area.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 127</b><br> <b>Total injured:</b> 148<br> <b>Score:</b> 402</div>`)[0];
+                popup_9ba1518004899986002def5089bc87fc.setContent(html_e2bd041fb0fa69771823cc4465fec972);
+            
+        
+
+        circle_marker_7691d004aceb80ac6321ac92277da9ec.bindPopup(popup_9ba1518004899986002def5089bc87fc)
+        ;
+
+        
+    
+    
+            var circle_marker_5b5b23c9feba888722b51e13a6307261 = L.circleMarker(
+                [6.418291, 3.165647],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_30d2b2e1e3bbb571b7a31a619654a96e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_af85dd7dcd1364b5fae48a2b7a7b4e81 = $(`<div id="html_af85dd7dcd1364b5fae48a2b7a7b4e81" style="width: 100.0%; height: 100.0%;"><b>05/12/2006: An unknown number of members of the Movement for the Emancipation of the Niger Delta (MEND) used explosives to blow up an oil pipline killing 200 in Atlas Creek Island, Nigeria.</b></b><br> <b>Total deadly:</b> 200</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 400</div>`)[0];
+                popup_30d2b2e1e3bbb571b7a31a619654a96e.setContent(html_af85dd7dcd1364b5fae48a2b7a7b4e81);
+            
+        
+
+        circle_marker_5b5b23c9feba888722b51e13a6307261.bindPopup(popup_30d2b2e1e3bbb571b7a31a619654a96e)
+        ;
+
+        
+    
+    
+            var circle_marker_c08bc8dcb51614dd7c238ad65acac8d0 = L.circleMarker(
+                [32.000596, 44.330818],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_bbc4a3bb8eb3b4306b63016698b33dbb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b9536f8975492b8650f17be716099d21 = $(`<div id="html_b9536f8975492b8650f17be716099d21" style="width: 100.0%; height: 100.0%;"><b>08/29/2003: A car bomb detonated near the Tomb of Ali in Najaf, Iraq, killing more than 100 people and injured over 200 others. Among the dead was Ayatollah Mohammad Baqer al-Hakim, a leader Shi ite cleric and the head of the Iran-backed Supreme Assembly of the Islamic Revolution in Iraq (SAIRI). Initial reports indicate that the perpetrators were linked to al Qaida and in 2007 Oras Muhammad Abdul-Aziz, a suspected member of al Qaida in Iraq confessed to his involvement in the bombing and was executed in Iraq.</b></b><br> <b>Total deadly:</b> 100</b><br> <b>Total injured:</b> 200<br> <b>Score:</b> 400</div>`)[0];
+                popup_bbc4a3bb8eb3b4306b63016698b33dbb.setContent(html_b9536f8975492b8650f17be716099d21);
+            
+        
+
+        circle_marker_c08bc8dcb51614dd7c238ad65acac8d0.bindPopup(popup_bbc4a3bb8eb3b4306b63016698b33dbb)
+        ;
+
+        
+    
+    
+            var circle_marker_ea914856b6969119e253e7eed37cbddf = L.circleMarker(
+                [0.066857, 30.065281],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_ce9e802bdbcbd91ff299cc84fb3c5e1e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cff1daabaca4d5e67757f756fdb53e02 = $(`<div id="html_cff1daabaca4d5e67757f756fdb53e02" style="width: 100.0%; height: 100.0%;"><b>03/17/2000:  Followers of the Movement for the Restoration of the Ten Commandments of God were killed when they drank tea tainted with an unknown chemical.  The attack killed 200 followers in the Kasese District of Uganda.</b></b><br> <b>Total deadly:</b> 200</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 400</div>`)[0];
+                popup_ce9e802bdbcbd91ff299cc84fb3c5e1e.setContent(html_cff1daabaca4d5e67757f756fdb53e02);
+            
+        
+
+        circle_marker_ea914856b6969119e253e7eed37cbddf.bindPopup(popup_ce9e802bdbcbd91ff299cc84fb3c5e1e)
+        ;
+
+        
+    
+    
+            var circle_marker_f9805695834da8aeb70bfb98bee1c23c = L.circleMarker(
+                [7.73173, 10.816375],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_98dd2c92d4af243a3e56e498ee84daa2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee48f3c1152f153777aae59d0a25671d = $(`<div id="html_ee48f3c1152f153777aae59d0a25671d" style="width: 100.0%; height: 100.0%;"><b>06/19/1999: Unidentified armed bandits, suspected to be from neighboring Chad and Niger, killed over 100 people in Taraba state, Nigeria. Over 200 victims received treatment at the Taraba state hospital in Jalingo. Reports noted that nursing mothers and babies were primarily affected by the attack, suffering serious wounds that were inflicted by machetes.</b></b><br> <b>Total deadly:</b> 100</b><br> <b>Total injured:</b> 200<br> <b>Score:</b> 400</div>`)[0];
+                popup_98dd2c92d4af243a3e56e498ee84daa2.setContent(html_ee48f3c1152f153777aae59d0a25671d);
+            
+        
+
+        circle_marker_f9805695834da8aeb70bfb98bee1c23c.bindPopup(popup_98dd2c92d4af243a3e56e498ee84daa2)
+        ;
+
+        
+    
+    
+            var circle_marker_dbc0719b4454ee8cecca64b6ad8d11de = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_5229f2bf886131d3ec31d337221837a5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0705b9ea12b07443489bbc58162edb17 = $(`<div id="html_0705b9ea12b07443489bbc58162edb17" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 75</b><br> <b>Total injured:</b> 250<br> <b>Score:</b> 400</div>`)[0];
+                popup_5229f2bf886131d3ec31d337221837a5.setContent(html_0705b9ea12b07443489bbc58162edb17);
+            
+        
+
+        circle_marker_dbc0719b4454ee8cecca64b6ad8d11de.bindPopup(popup_5229f2bf886131d3ec31d337221837a5)
+        ;
+
+        
+    
+    
+            var circle_marker_0d8404a8c96b55bf3f079d433ca42633 = L.circleMarker(
+                [9.433589, 80.571195],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d8547939a19ca5d553e80a6ba10b8761 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53ec6290280ca4f5027ff4ca3138e57f = $(`<div id="html_53ec6290280ca4f5027ff4ca3138e57f" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 200</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 400</div>`)[0];
+                popup_d8547939a19ca5d553e80a6ba10b8761.setContent(html_53ec6290280ca4f5027ff4ca3138e57f);
+            
+        
+
+        circle_marker_0d8404a8c96b55bf3f079d433ca42633.bindPopup(popup_d8547939a19ca5d553e80a6ba10b8761)
+        ;
+
+        
+    
+    
+            var circle_marker_8687b13f12d1b1c7b9ea81910d47fe8b = L.circleMarker(
+                [51.504387, -0.140041],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.94, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_55dfa2fb09b571944b8b89aa6008300f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a866b452f9b99cfe1fcd7c274447118d = $(`<div id="html_a866b452f9b99cfe1fcd7c274447118d" style="width: 100.0%; height: 100.0%;"><b>07/07/2005: One of four suicide bombers detonated himself inside the number 216 train as it traveled between Russell Square and Kings Cross Stations in LondonÂs underground subway. Twenty-six people, not including that suicide bomber, were killed and scores were injured in the attack. Abu Hafs al-Masri Brigades and the Secret Organization of al-Qaida in Europe both claimed responsibility, although it is generally believed that the claim by Abu Hafs al-Masri Brigades were not credible. Documents found by German authorities in 2011 indicate al-Qaida's role in planning and coordinating the attacks.</b></b><br> <b>Total deadly:</b> 27</b><br> <b>Total injured:</b> 340<br> <b>Score:</b> 394</div>`)[0];
+                popup_55dfa2fb09b571944b8b89aa6008300f.setContent(html_a866b452f9b99cfe1fcd7c274447118d);
+            
+        
+
+        circle_marker_8687b13f12d1b1c7b9ea81910d47fe8b.bindPopup(popup_55dfa2fb09b571944b8b89aa6008300f)
+        ;
+
+        
+    
+    
+            var circle_marker_774d77476419d013bc1319612b3a4237 = L.circleMarker(
+                [8.345185, 80.388133],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.92, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_b8dcb53c32bcca14fed269c436cb39d6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_205545f7f1eed1655f8ade0602f833eb = $(`<div id="html_205545f7f1eed1655f8ade0602f833eb" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 146</b><br> <b>Total injured:</b> 100<br> <b>Score:</b> 392</div>`)[0];
+                popup_b8dcb53c32bcca14fed269c436cb39d6.setContent(html_205545f7f1eed1655f8ade0602f833eb);
+            
+        
+
+        circle_marker_774d77476419d013bc1319612b3a4237.bindPopup(popup_b8dcb53c32bcca14fed269c436cb39d6)
+        ;
+
+        
+    
+    
+            var circle_marker_cadd965a74c6a55cb75f9639181f6ad8 = L.circleMarker(
+                [32.469238, 44.416637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.84, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_ffd9ae2479cbe47152410158422cd43d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf4186d9decf9134c2bfc0f5a1ec6abd = $(`<div id="html_bf4186d9decf9134c2bfc0f5a1ec6abd" style="width: 100.0%; height: 100.0%;"><b>03/06/2007: Two suicide bombings killed at least 90 Shi i pilgrims and wounded over 200 in Al Hillah, Babil, Iraq when two attackers wearing explosive belts blew themselves up near crowds travelling to Karbala. The Islamic State of Iraq claimed responsibility for the attack.</b></b><br> <b>Total deadly:</b> 92</b><br> <b>Total injured:</b> 200<br> <b>Score:</b> 384</div>`)[0];
+                popup_ffd9ae2479cbe47152410158422cd43d.setContent(html_bf4186d9decf9134c2bfc0f5a1ec6abd);
+            
+        
+
+        circle_marker_cadd965a74c6a55cb75f9639181f6ad8.bindPopup(popup_ffd9ae2479cbe47152410158422cd43d)
+        ;
+
+        
+    
+    
+            var circle_marker_eae3128ec25088f11799203ff898feec = L.circleMarker(
+                [35.303047, 44.329933],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.77, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d8d66beb7210db1ed11eb028cd447c75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be9ac43b80083fb239cb2924037b42be = $(`<div id="html_be9ac43b80083fb239cb2924037b42be" style="width: 100.0%; height: 100.0%;"><b>06/20/2009: On Saturday afternoon at 1300, in Tuz Khurmatu, At Ta'mim, Iraq, a suicide bomber, driving a vehicle-borne improvised explosive device, attacked the Shia Al-Rasul Mosque as worshippers were departing noon prayers, killing 82 civilians, wounding 211 others, and damaging between 30-50 homes, several shops, two dozen cars, and the mosque. A truck, carrying over an estimated ton of explosives was used as the VBIED. There was no motive reported and no group claimed responsibility, but it was widely believed that the Islamic State of Iraq perpetrated this attack.</b></b><br> <b>Total deadly:</b> 83</b><br> <b>Total injured:</b> 211<br> <b>Score:</b> 377</div>`)[0];
+                popup_d8d66beb7210db1ed11eb028cd447c75.setContent(html_be9ac43b80083fb239cb2924037b42be);
+            
+        
+
+        circle_marker_eae3128ec25088f11799203ff898feec.bindPopup(popup_d8d66beb7210db1ed11eb028cd447c75)
+        ;
+
+        
+    
+    
+            var circle_marker_a7ac824621f758d0691d5787af35ace9 = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.74, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_e2db8b3acf0f314172cf52182c55fb13 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dae9d7c73aeebc2d1188c713e1884fe1 = $(`<div id="html_dae9d7c73aeebc2d1188c713e1884fe1" style="width: 100.0%; height: 100.0%;"><b>03/12/2006: An unidentified group of militants orchestrated a string of six bombing at markets in Shi i neighborhoods of Baghdad. The bomb exploded within minutes of each other in various parts of the city killing 62 and injuring at least 250. There was no immediate claim of responsibility.</b></b><br> <b>Total deadly:</b> 62</b><br> <b>Total injured:</b> 250<br> <b>Score:</b> 374</div>`)[0];
+                popup_e2db8b3acf0f314172cf52182c55fb13.setContent(html_dae9d7c73aeebc2d1188c713e1884fe1);
+            
+        
+
+        circle_marker_a7ac824621f758d0691d5787af35ace9.bindPopup(popup_e2db8b3acf0f314172cf52182c55fb13)
+        ;
+
+        
+    
+    
+            var circle_marker_b8fb0741aebee1079327bf59b1ed5a0d = L.circleMarker(
+                [36.763763, 3.055413],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.72, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_ef1ad33aafa2e0be71844e614dbb8f14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b99ed5caf53aac010ce7a125a4291fb = $(`<div id="html_9b99ed5caf53aac010ce7a125a4291fb" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 43</b><br> <b>Total injured:</b> 286<br> <b>Score:</b> 372</div>`)[0];
+                popup_ef1ad33aafa2e0be71844e614dbb8f14.setContent(html_9b99ed5caf53aac010ce7a125a4291fb);
+            
+        
+
+        circle_marker_b8fb0741aebee1079327bf59b1ed5a0d.bindPopup(popup_ef1ad33aafa2e0be71844e614dbb8f14)
+        ;
+
+        
+    
+    
+            var circle_marker_e0741a8df7f90a878c34270cba33aa59 = L.circleMarker(
+                [22.451393, 86.992203],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.7, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_9645b4f8c949ac13b43b178115886c6d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d1c7a42aaf47810c5177cc56e7b2b84d = $(`<div id="html_d1c7a42aaf47810c5177cc56e7b2b84d" style="width: 100.0%; height: 100.0%;"><b>05/28/2010: On Friday night around 0130, near Jhargram, Midnapore, West Bengal, India, the Calcutta-Mumbai Express passenger train derailed and was hit by a cargo train. At least 115 people were killed and more than 140 were injured. Officials disagreed on the cause of the derailment, with some saying it was caused by an explosion but others blaming sabotaged rail lines. No group claimed responsibility, but a Communist Party of India-Maoist (CPI-M) faction was blamed for the attack. According to police, Umakangta Mahato and Bapi Mahato of the PeopleÂs Committee Against Police Atrocities (PCPA) sabotaged the train track which caused the train to derail. The CPI-Maoists denied being involved with the incident. On 08/27/2010, Umakangta Mahato was killed in a clash with security forces in Lodhashuli in Jhargram.</b></b><br> <b>Total deadly:</b> 115</b><br> <b>Total injured:</b> 140<br> <b>Score:</b> 370</div>`)[0];
+                popup_9645b4f8c949ac13b43b178115886c6d.setContent(html_d1c7a42aaf47810c5177cc56e7b2b84d);
+            
+        
+
+        circle_marker_e0741a8df7f90a878c34270cba33aa59.bindPopup(popup_9645b4f8c949ac13b43b178115886c6d)
+        ;
+
+        
+    
+    
+            var circle_marker_d48554d5714cfa3feffa9f0f0d5ff96a = L.circleMarker(
+                [2.059819, 45.326115],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.69, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_59a1601b05452b8d0be0bb0f008db881 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55d90dd93690ecec1bf9bc8b13374639 = $(`<div id="html_55d90dd93690ecec1bf9bc8b13374639" style="width: 100.0%; height: 100.0%;"><b>10/04/2011: On Tuesday, in Mogadishu, Banaadir, Somalia, at least 100 people were killed and more than 160 people were injured when a Somali national, Bashar Abdulahi Nur, detonated a suicide vehicle borne improvised explosive device (SVBIED) targeting the compound that houses several Somali government ministries. The SVBIED was made of a truck that had been loaded with drums of fuel. The attack caused an unknown amount of material damage. The militant group Al-Shabaab claimed responsibility for the attack by unknown means.</b></b><br> <b>Total deadly:</b> 101</b><br> <b>Total injured:</b> 167<br> <b>Score:</b> 369</div>`)[0];
+                popup_59a1601b05452b8d0be0bb0f008db881.setContent(html_55d90dd93690ecec1bf9bc8b13374639);
+            
+        
+
+        circle_marker_d48554d5714cfa3feffa9f0f0d5ff96a.bindPopup(popup_59a1601b05452b8d0be0bb0f008db881)
+        ;
+
+        
+    
+    
+            var circle_marker_1e1a35fa6930e109d0a8dc0f36d5dcfc = L.circleMarker(
+                [43.825645, 87.616823],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.68, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_11858f4b292676d35f6accb81c7545f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5cd84f343fa0e4acb121cfabe9c90112 = $(`<div id="html_5cd84f343fa0e4acb121cfabe9c90112" style="width: 100.0%; height: 100.0%;"><b>07/05/2009: On Sunday, Muslim Uighurs rampaged through the streets and attacked Han Chinese in Urumqi, the capital of China's north-west Xinjiang region. The protestors began attacking ethnic Han pedestrians, burning vehicles and attacking buses with batons and rocks. Sources report that protestors from the Uighur Muslim ethnicity took to the street carrying knives, wooden batons, bricks and stones. Updated reports maintain a death toll of 184, 137 of which were Han Chinese, 46 Uighur, and one of Hui ethnicity. The number of people injured in ethnic violence in China's Urumqi has risen to 1,650. Reports did not say whether any of the dead were killed by security forces.</b></b><br> <b>Total deadly:</b> 184</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 368</div>`)[0];
+                popup_11858f4b292676d35f6accb81c7545f5.setContent(html_5cd84f343fa0e4acb121cfabe9c90112);
+            
+        
+
+        circle_marker_1e1a35fa6930e109d0a8dc0f36d5dcfc.bindPopup(popup_11858f4b292676d35f6accb81c7545f5)
+        ;
+
+        
+    
+    
+            var circle_marker_f98cba6c6d7dd18783c51d2ae0e83c08 = L.circleMarker(
+                [29.483576, 60.862701],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.61, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_625f6fadb0d6b0fa91dc202b9e06a3fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_892ca8fdec5a18a5ca147de69023b720 = $(`<div id="html_892ca8fdec5a18a5ca147de69023b720" style="width: 100.0%; height: 100.0%;"><b>07/15/2010: On Thursday, in Zahedan, Sistan and Baluchestan, Iran, two suicide bombers, Mohammad Rigi and Abdolbasset Rigi, detonated suicide improvised explosive devices near the Grand Zahedan Shiite Mosque targeting a Revolutionary Guards gathering, killing 28 people including an unknown number of Revolutionary Guards and injuring over 300 others who were worshipping at the mosque. The mosque sustained an unknown amount of property damage and many nearby shops sustained extensive property damage from the blasts as well. The Sunni Muslim rebel group Jundullah claimed responsibility telling Al Arabiya television in an email it carried out the attacks in retaliation for Iran's execution in June of the group's leader, Abdolmalek Rigi.</b></b><br> <b>Total deadly:</b> 30</b><br> <b>Total injured:</b> 301<br> <b>Score:</b> 361</div>`)[0];
+                popup_625f6fadb0d6b0fa91dc202b9e06a3fd.setContent(html_892ca8fdec5a18a5ca147de69023b720);
+            
+        
+
+        circle_marker_f98cba6c6d7dd18783c51d2ae0e83c08.bindPopup(popup_625f6fadb0d6b0fa91dc202b9e06a3fd)
+        ;
+
+        
+    
+    
+            var circle_marker_26d7d416fd69caf3c5651fa57624fe43 = L.circleMarker(
+                [55.751377, 37.579914],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_44ced51bf0c174242261d8514defa407 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6cf13eec73d75fd5fe7f97c7c1a0ff4b = $(`<div id="html_6cf13eec73d75fd5fe7f97c7c1a0ff4b" style="width: 100.0%; height: 100.0%;"><b>09/09/1999: Chechen rebels were suspected of planting a bomb at an apartment building on Guryanova Street in the Pechatniky neighborhood in southeast Moscow, Russian Federation, which killed 90 people, injured at least 180 others and caused significant damage to the building. Witnesses said they saw four men, who were carrying heavy bags, leave the building by car shortly before the explosion. In 2004, Adam Dekkushev, 42, and Yusuf Krymshamkhalov, 37 were sentenced to life imprisonment for their parts in organizing and perpetrating this bombing, as well as the second Moscow apartment bombing and the Volgodonsk apartment bombing, all in September 1999.</b></b><br> <b>Total deadly:</b> 90</b><br> <b>Total injured:</b> 180<br> <b>Score:</b> 360</div>`)[0];
+                popup_44ced51bf0c174242261d8514defa407.setContent(html_6cf13eec73d75fd5fe7f97c7c1a0ff4b);
+            
+        
+
+        circle_marker_26d7d416fd69caf3c5651fa57624fe43.bindPopup(popup_44ced51bf0c174242261d8514defa407)
+        ;
+
+        
+    
+    
+            var circle_marker_9ceea8b49bce649cb56208c279144027 = L.circleMarker(
+                [12.82166, -84.203876],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_42c29a63d1113859a022d442d7cd112e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a27d11bcb1ca39b5a2f479523749f2a0 = $(`<div id="html_a27d11bcb1ca39b5a2f479523749f2a0" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 180</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 360</div>`)[0];
+                popup_42c29a63d1113859a022d442d7cd112e.setContent(html_a27d11bcb1ca39b5a2f479523749f2a0);
+            
+        
+
+        circle_marker_9ceea8b49bce649cb56208c279144027.bindPopup(popup_42c29a63d1113859a022d442d7cd112e)
+        ;
+
+        
+    
+    
+            var circle_marker_c26968090c3651cf510587dc40054e61 = L.circleMarker(
+                [45.338317, 16.09098],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_a2385029bf3d600a4e128977b7dc2a55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9eaeab9c2e983aba261c7845a5ae3a2b = $(`<div id="html_9eaeab9c2e983aba261c7845a5ae3a2b" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 180</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 360</div>`)[0];
+                popup_a2385029bf3d600a4e128977b7dc2a55.setContent(html_9eaeab9c2e983aba261c7845a5ae3a2b);
+            
+        
+
+        circle_marker_c26968090c3651cf510587dc40054e61.bindPopup(popup_a2385029bf3d600a4e128977b7dc2a55)
+        ;
+
+        
+    
+    
+            var circle_marker_5fce300e50d51a397171a988a3aa06c9 = L.circleMarker(
+                [33.303566, 44.371773],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.58, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_4aa00a3acdf80a529ea70601fed51e9b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efa335df5945225a53b5cffd889ac4ec = $(`<div id="html_efa335df5945225a53b5cffd889ac4ec" style="width: 100.0%; height: 100.0%;"><b>06/19/2007: A truck bomber attacked a revered Shi i shrine in the heart of Baghdad, Iraq, on Tuesday, killing at least 78 people and wounding more than 200.  No claim of responsibility was reported.</b></b><br> <b>Total deadly:</b> 79</b><br> <b>Total injured:</b> 200<br> <b>Score:</b> 358</div>`)[0];
+                popup_4aa00a3acdf80a529ea70601fed51e9b.setContent(html_efa335df5945225a53b5cffd889ac4ec);
+            
+        
+
+        circle_marker_5fce300e50d51a397171a988a3aa06c9.bindPopup(popup_4aa00a3acdf80a529ea70601fed51e9b)
+        ;
+
+        
+    
+    
+            var circle_marker_24bd814985548496be637b03f4811b28 = L.circleMarker(
+                [44.49419, 11.346518],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.58, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_afa517c778a3160e67ea002fd5984a60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb7dddf32d5e7cc37b98fdf67a70ae99 = $(`<div id="html_bb7dddf32d5e7cc37b98fdf67a70ae99" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 85</b><br> <b>Total injured:</b> 188<br> <b>Score:</b> 358</div>`)[0];
+                popup_afa517c778a3160e67ea002fd5984a60.setContent(html_bb7dddf32d5e7cc37b98fdf67a70ae99);
+            
+        
+
+        circle_marker_24bd814985548496be637b03f4811b28.bindPopup(popup_afa517c778a3160e67ea002fd5984a60)
+        ;
+
+        
+    
+    
+            var circle_marker_bff5dfb1fb0d6aec837790f81d0a9657 = L.circleMarker(
+                [36.632677, 43.256512],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.56, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_361b61b7a74341fabb95de5d14ca2cf7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4ea8e28f3fee7b55954545209c047c91 = $(`<div id="html_4ea8e28f3fee7b55954545209c047c91" style="width: 100.0%; height: 100.0%;"><b>08/07/2009: On Friday afternoon at 1300, in Shirakhan, Ninawa, Iraq, a suicide bomber detonated a vehicle-borne improvised explosive device near a Shiite Turkmen mosque as worshippers were leaving a joint prayer and funeral service, killing 39 civilians, wounding 276 others, and destroying the mosque and a dozen surrounding houses. There was no motive reported and no group claimed responsibility, but authorities suspected the Islamic State of Iraq (ISI) was responsible.</b></b><br> <b>Total deadly:</b> 40</b><br> <b>Total injured:</b> 276<br> <b>Score:</b> 356</div>`)[0];
+                popup_361b61b7a74341fabb95de5d14ca2cf7.setContent(html_4ea8e28f3fee7b55954545209c047c91);
+            
+        
+
+        circle_marker_bff5dfb1fb0d6aec837790f81d0a9657.bindPopup(popup_361b61b7a74341fabb95de5d14ca2cf7)
+        ;
+
+        
+    
+    
+            var circle_marker_05a7498a56cb37364694126e98ef685e = L.circleMarker(
+                [8.577826, 81.218719],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.56, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_f4636b2e73ff6866281020b50034e2ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63357d0dd51d248152e230ae18a3172a = $(`<div id="html_63357d0dd51d248152e230ae18a3172a" style="width: 100.0%; height: 100.0%;"><b>10/16/2006: Liberation Tigers of Tamil Eelam (LTTE) suicide bombers rammed a truck laden with explosives in a Trincomalee bus transit point for Sri Lankan security forces. 103 Sri Lankan soldiers were killed and another 150 were wounded. The soldiers were believed to be unarmed and were on buses en route to posts or leave destinations. 15 buses were present, and two bore the brunt of the damage. No claim of responsibility was immediately forthcoming.</b></b><br> <b>Total deadly:</b> 103</b><br> <b>Total injured:</b> 150<br> <b>Score:</b> 356</div>`)[0];
+                popup_f4636b2e73ff6866281020b50034e2ba.setContent(html_63357d0dd51d248152e230ae18a3172a);
+            
+        
+
+        circle_marker_05a7498a56cb37364694126e98ef685e.bindPopup(popup_f4636b2e73ff6866281020b50034e2ba)
+        ;
+
+        
+    
+    
+            var circle_marker_a5b52c6286876582a6841b425940e601 = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.56, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_def2165970884f76671ac6df2ba39b44 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd44cfdfa560519673d43d2fb03a90b6 = $(`<div id="html_cd44cfdfa560519673d43d2fb03a90b6" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 98</b><br> <b>Total injured:</b> 160<br> <b>Score:</b> 356</div>`)[0];
+                popup_def2165970884f76671ac6df2ba39b44.setContent(html_cd44cfdfa560519673d43d2fb03a90b6);
+            
+        
+
+        circle_marker_a5b52c6286876582a6841b425940e601.bindPopup(popup_def2165970884f76671ac6df2ba39b44)
+        ;
+
+        
+    
+    
+            var circle_marker_1bf7666ded34b73e3b9c6366125e576d = L.circleMarker(
+                [-8.722791, 115.17229],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.52, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_e94ad5396930512d85a9e53d4463648b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_503e648f675515116c1a744ba0301934 = $(`<div id="html_503e648f675515116c1a744ba0301934" style="width: 100.0%; height: 100.0%;"><b>10/12/2002: A bomb placed in a van parked outside of the Sari Club in Kuta, Bali exploded, blowing out shop windows up to 500 yards away. At the time of this attack another bomb exploded in Paddy's Bar, opposite the Sari Club. 202 people were killed and 300 estimated injured from the simultaneous attacks. Nearly three-quarters of the victims were foreigners and most were in the crowded bars in the Bali district. The explosion was blamed on the Jemaah Islamiyah, but al-Qaida claimed credit for the attack. On January 29, 2004, one Islamic militant, Sarjiyo, was jailed for life for making the bombs used in this attack. Sarjiyo was found guilty of mixing the chemicals used in the attack and packing the explosives into the back of the van.</b></b><br> <b>Total deadly:</b> 101</b><br> <b>Total injured:</b> 150<br> <b>Score:</b> 352</div>`)[0];
+                popup_e94ad5396930512d85a9e53d4463648b.setContent(html_503e648f675515116c1a744ba0301934);
+            
+        
+
+        circle_marker_1bf7666ded34b73e3b9c6366125e576d.bindPopup(popup_e94ad5396930512d85a9e53d4463648b)
+        ;
+
+        
+    
+    
+            var circle_marker_bd94eeb24000122e15aea4ee2c964fa2 = L.circleMarker(
+                [-8.722791, 115.17229],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.52, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_3338c6fbcb820084db529643b3e531e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b9fae974577383067068bec88c2a0526 = $(`<div id="html_b9fae974577383067068bec88c2a0526" style="width: 100.0%; height: 100.0%;"><b>10/12/2002: A bomb left in a bag Paddy's Bar in Kuta, Bali exploded, blowing out shop windows up to 500 yards away. At the time of this attack another bomb exploded in a van that was parked outside of the Sari Club, opposite Paddy's. 202 people were killed and 300 estimated injured from the simultaneous attacks. Nearly three-quarters of the victims were foreigners and most were in the crowded bars in the Bali district. The explosion was blamed on the Jemaah Islamiyah, but al-Qaida claimed credit for the attack.</b></b><br> <b>Total deadly:</b> 101</b><br> <b>Total injured:</b> 150<br> <b>Score:</b> 352</div>`)[0];
+                popup_3338c6fbcb820084db529643b3e531e5.setContent(html_b9fae974577383067068bec88c2a0526);
+            
+        
+
+        circle_marker_bd94eeb24000122e15aea4ee2c964fa2.bindPopup(popup_3338c6fbcb820084db529643b3e531e5)
+        ;
+
+        
+    
+    
+            var circle_marker_4244a7375ff6cc73f7b2b869818b0942 = L.circleMarker(
+                [32.469238, 44.416637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_b1e3282727d3b6da328d7be32d7b7ffe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e4028bf115e67fc438fc82773ec460df = $(`<div id="html_e4028bf115e67fc438fc82773ec460df" style="width: 100.0%; height: 100.0%;"><b>02/28/2005: A suicide bomber blew up his car in the middle of a town square in the Shi i town of Al-Hilla, killing 110 people and wounding at least 133 others. Most of the victims were former civil servants trying to reclaim their jobs lost when Saddam Hussein fell from power.</b></b><br> <b>Total deadly:</b> 110</b><br> <b>Total injured:</b> 130<br> <b>Score:</b> 350</div>`)[0];
+                popup_b1e3282727d3b6da328d7be32d7b7ffe.setContent(html_e4028bf115e67fc438fc82773ec460df);
+            
+        
+
+        circle_marker_4244a7375ff6cc73f7b2b869818b0942.bindPopup(popup_b1e3282727d3b6da328d7be32d7b7ffe)
+        ;
+
+        
+    
+    
+            var circle_marker_22eb10140631c3a39e79372d5a6c593a = L.circleMarker(
+                [13.6, -88.85],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.45, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_f320bc1209604e11c7e291610ca6ea84 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_09da7d913eac64644c5d22ab0fbe0377 = $(`<div id="html_09da7d913eac64644c5d22ab0fbe0377" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 165</b><br> <b>Total injured:</b> 15<br> <b>Score:</b> 345</div>`)[0];
+                popup_f320bc1209604e11c7e291610ca6ea84.setContent(html_09da7d913eac64644c5d22ab0fbe0377);
+            
+        
+
+        circle_marker_22eb10140631c3a39e79372d5a6c593a.bindPopup(popup_f320bc1209604e11c7e291610ca6ea84)
+        ;
+
+        
+    
+    
+            var circle_marker_82f290021ea89d56b95ca1974153b292 = L.circleMarker(
+                [35.45211, 44.375465],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.43, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_a47ae895d3800108f0b26490194e6067 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b04ee64352c5844c40a98a314f6bd9fb = $(`<div id="html_b04ee64352c5844c40a98a314f6bd9fb" style="width: 100.0%; height: 100.0%;"><b>07/18/2007: Eighty people were killed when a suicide truck bomb detonated in Kirkuk, Iraq. The attack, which damaged the headquarters of the Patriotic Union of Kurdistan, took place in a busy commercial area. Another 183 people were wounded. No claim of responsibility was issued.</b></b><br> <b>Total deadly:</b> 80</b><br> <b>Total injured:</b> 183<br> <b>Score:</b> 343</div>`)[0];
+                popup_a47ae895d3800108f0b26490194e6067.setContent(html_b04ee64352c5844c40a98a314f6bd9fb);
+            
+        
+
+        circle_marker_82f290021ea89d56b95ca1974153b292.bindPopup(popup_a47ae895d3800108f0b26490194e6067)
+        ;
+
+        
+    
+    
+            var circle_marker_f622458f0540bfd152cd6bea027cde85 = L.circleMarker(
+                [16.864946, 11.953771],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.42, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_d17e9c26a8d2aa243b2b07518708ff68 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_076e053399223ae569a2cb3261fc23ae = $(`<div id="html_076e053399223ae569a2cb3261fc23ae" style="width: 100.0%; height: 100.0%;"><b>Unknown</b></b><br> <b>Total deadly:</b> 171</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 342</div>`)[0];
+                popup_d17e9c26a8d2aa243b2b07518708ff68.setContent(html_076e053399223ae569a2cb3261fc23ae);
+            
+        
+
+        circle_marker_f622458f0540bfd152cd6bea027cde85.bindPopup(popup_d17e9c26a8d2aa243b2b07518708ff68)
+        ;
+
+        
+    
+    
+            var circle_marker_cece955aa511e3d142593906afad26da = L.circleMarker(
+                [36.354145, 43.14357],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_a3dcaee4733f6a2733b3d123212f47de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac6c68e459fb7ae56a80e3b69c7a9f06 = $(`<div id="html_ac6c68e459fb7ae56a80e3b69c7a9f06" style="width: 100.0%; height: 100.0%;"><b>06/24/2004: The northern Iraqi city of Mosul was hit when multiple morning car bombings killed 62 people and wounded 220. The military wing of Abu Musab al-Zarqawi's group, the Tawhid and Jihad movement, claimed responsibility for the attacks in an internet statement.</b></b><br> <b>Total deadly:</b> 60</b><br> <b>Total injured:</b> 220<br> <b>Score:</b> 340</div>`)[0];
+                popup_a3dcaee4733f6a2733b3d123212f47de.setContent(html_ac6c68e459fb7ae56a80e3b69c7a9f06);
+            
+        
+
+        circle_marker_cece955aa511e3d142593906afad26da.bindPopup(popup_a3dcaee4733f6a2733b3d123212f47de)
+        ;
+
+        
+    
+    
+            var circle_marker_5f9caa38992b0461864e731b79da52b4 = L.circleMarker(
+                [55.751377, 37.579914],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_5f15d9642353704f9ab4c6283accdf69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a36d9acfa514ed1cdbeeec3b092bf92 = $(`<div id="html_8a36d9acfa514ed1cdbeeec3b092bf92" style="width: 100.0%; height: 100.0%;"><b>10/23/2002: Forty Chechen rebels attacked Dubrovka Theater in Moscow, Russia and took 912 hostages.Â  The assailants demanded a complete pullout of all Russian military forces from Chechnya in exchange for the release of the hostages.Â  The siege lasted until 26 October 2002, when Russian special forces filled the building with an unidentified gas intended to subdue the perpetrators. The gas killed all 40 perpetrators and 125 hostages. Five additional hostages were killed by the attackers during a shoot-out.</b></b><br> <b>Total deadly:</b> 170</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 340</div>`)[0];
+                popup_5f15d9642353704f9ab4c6283accdf69.setContent(html_8a36d9acfa514ed1cdbeeec3b092bf92);
+            
+        
+
+        circle_marker_5f9caa38992b0461864e731b79da52b4.bindPopup(popup_5f15d9642353704f9ab4c6283accdf69)
+        ;
+
+        
+    
+    
+            var circle_marker_2c8e863c0e317296edb325f466028248 = L.circleMarker(
+                [27.930484, 82.330002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4, "stroke": true, "weight": 3}
+            ).addTo(map_6eb24edabe452e6db006fa56d2c95632);
+        
+    
+        var popup_5233262682fc836bf047234501724e85 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52cff1df1306ec2d53fd5138e2cb6b2d = $(`<div id="html_52cff1df1306ec2d53fd5138e2cb6b2d" style="width: 100.0%; height: 100.0%;"><b>04/11/2002: A group of rebel Maoists attacked the Nepal Armed Police Force outpost near Sadbariya in the Dang District. 84 police officers, four civilians, and approximately 62 rebels were killed in the attack. The exact motive is unknown.</b></b><br> <b>Total deadly:</b> 170</b><br> <b>Total injured:</b> 0<br> <b>Score:</b> 340</div>`)[0];
+                popup_5233262682fc836bf047234501724e85.setContent(html_52cff1df1306ec2d53fd5138e2cb6b2d);
+            
+        
+
+        circle_marker_2c8e863c0e317296edb325f466028248.bindPopup(popup_5233262682fc836bf047234501724e85)
+        ;
+
+        
+    
+</script>
+</html>

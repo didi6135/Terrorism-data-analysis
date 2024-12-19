@@ -117,17 +117,17 @@ def merge_to_one_csv(global_file, rand_file, output_file):
 
 if __name__ == "__main__":
     # Example usage
-    merge_to_one_csv(
-        "globalterrorismdb_0718dist-1000 rows.csv",
-        "RAND_Database_of_Worldwide_Terrorism_Incidents - 5000 rows.csv",
-        "merged_terrorism_data.csv"
-    )
-
-
-
-
     # merge_to_one_csv(
-    #     "global_terrorism_db.csv",
-    #     "RAND_Database_of_Worldwide_Terrorism_Incidents.csv",
-    #     "merged_terrorism_big_data.csv"
+    #     "globalterrorismdb_0718dist-1000 rows.csv",
+    #     "RAND_Database_of_Worldwide_Terrorism_Incidents - 5000 rows.csv",
+    #     "merged_terrorism_data.csv"
     # )
+
+
+
+
+    merge_to_one_csv(
+        "global_terrorism_db.csv",
+        "RAND_Database_of_Worldwide_Terrorism_Incidents.csv",
+        "merged_terrorism_big_data.csv"
+    )

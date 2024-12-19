@@ -95,14 +95,23 @@ def process_weapon_types(row, event_id):
 
 
 def process_casualties(row):
-    """Insert casualties and return their ID."""
+    total_killed = row.get('nkill', 0) + row.get('nkillus', 0) + row.get('nkillter', 0)
+    total_injured = row.get('nwound', 0) + row.get('nwoundus', 0) + row.get('nwoundte', 0)
+    total_score = total_killed * 2 + total_injured * 1
+
     casualty = Casualty(
-        total_victims=row.get('nkill', 0) + row.get('nwound', 0),
+
+        total_killed= total_killed,
+        total_injured=total_injured,
+
+        total_victims= total_score,
+
         killed_victims=row.get('nkill', 0),
-        injured_victims=row.get('nwound', 0),
         killed_americans=row.get('nkillus', 0),
-        injured_americans=row.get('nwoundus', 0),
         killed_attackers=row.get('nkillter', 0),
+
+        injured_victims=row.get('nwound', 0),
+        injured_americans=row.get('nwoundus', 0),
         injured_attackers=row.get('nwoundte', 0)
     )
     return insert_new_casualty(casualty).id
@@ -126,6 +135,7 @@ def process_event(row, location_id, casualty_id):
         casualty_id=casualty_id
     )
     return insert_new_event(event).id
+
 
 def main_split(row):
     try:
