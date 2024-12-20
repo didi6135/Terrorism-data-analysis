@@ -2,17 +2,18 @@ from flask import Blueprint, jsonify, request, send_file
 
 from Statistics_Service.app.repository.attack_type_repository import analyze_attack_target_correlation, \
     get_most_deadly_attack_types
-from Statistics_Service.app.repository.city_repository import get_cities_by_country, calculate_average_victims_by_city
-from Statistics_Service.app.repository.country_repository import get_countries_by_region, \
+from Statistics_Service.app.repository.city_repository import get_all_cities, calculate_average_victims_by_city
+from Statistics_Service.app.repository.country_repository import get_all_countries, \
     calculate_average_victims_by_country
 from Statistics_Service.app.repository.event_repository import get_event_trends_cleaned, get_monthly_trends, \
     get_yearly_trends
 from Statistics_Service.app.repository.group_repository import get_most_deadly_repo, get_top_5_groups_by_casualties
-from Statistics_Service.app.repository.region_repository import get_all_regions, calculate_average_victims_by_region
+from Statistics_Service.app.repository.region_repository import get_all_regions, \
+    calculate_average_victims_per_event_in_region
 from Statistics_Service.app.services.plot_service import plot_event_trends_cleaned, plot_monthly_trends, \
     plot_yearly_trends
 from Statistics_Service.app.services.visualization_service import generate_map_file, generate_top_countries_map, \
-    generate_heatmap, generate_top_groups_map
+    generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis
 
 statistics_bp = Blueprint("statistics", __name__)
 
@@ -36,8 +37,6 @@ def most_deadly_attack_types():
             "error": "Failed to fetch most deadly attack types",
             "message": str(e)
         }), 500
-
-
 ##############################################
 @statistics_bp.route("/regions", methods=["GET"])
 def get_regions():
@@ -47,43 +46,70 @@ def get_regions():
     except Exception as e:
         return jsonify({"error": "Failed to fetch regions", "message": str(e)}), 500
 
-
-
-@statistics_bp.route("/countries/<int:region_id>", methods=["GET"])
-def get_countries(region_id):
+@statistics_bp.route("/countries", methods=["GET"])
+def get_countries():
     try:
-        countries = get_countries_by_region(region_id)
+        # region_id = request.args.get("region_id")
+        countries = get_all_countries()
         return jsonify({"countries": countries}), 200
     except Exception as e:
         return jsonify({"error": "Failed to fetch countries", "message": str(e)}), 500
 
-
-
-@statistics_bp.route("/cities/<int:country_id>", methods=["GET"])
-def get_cities(country_id):
+@statistics_bp.route("/cities", methods=["GET"])
+def get_cities():
     try:
-        cities = get_cities_by_country(country_id)
+        cities = get_all_cities()
         return jsonify({"cities": cities}), 200
     except Exception as e:
         return jsonify({"error": "Failed to fetch cities", "message": str(e)}), 500
 
-
-@statistics_bp.route("/average_victims", methods=["GET"])
-def get_average_victims():
+@statistics_bp.route('/avg_injured_by_origen', methods=["GET"])
+def get_avg_injured_by_origen():
     try:
-        level = request.args.get("level")
-        level_id = request.args.get("id", type=int)
+        origen_id = request.args.get("region_id")
+        limit = request.args.get("limit")
+        print(origen_id)
+        data = calculate_average_victims_per_event_in_region(origen_id, limit)
+        if not data:
+            return jsonify({"error": "No data found"}), 404
 
-        if level == "region":
-            data = calculate_average_victims_by_region(level_id)
-        elif level == "country":
-            data = calculate_average_victims_by_country(level_id)
-        elif level == "city":
-            data = calculate_average_victims_by_city(level_id)
-        else:
-            raise ValueError("Invalid level. Use 'region', 'country', or 'city'.")
+        map_file = generate_map_for_victims_analysis(data)
+        return jsonify({"map_file": map_file}), 200
 
-        return jsonify({"data": data}), 200
+    except ValueError as ve:
+        return jsonify({"error": str(ve)}), 400
+    except Exception as e:
+        return jsonify({"error": "Failed to calculate average victims", "message": str(e)}), 500
+
+@statistics_bp.route('/avg_injured_by_country', methods=["GET"])
+def get_avg_injured_by_country():
+    try:
+        country_id = request.args.get("country_id")
+        limit = request.args.get("limit")
+        data = calculate_average_victims_by_country(country_id, limit)
+        if not data:
+            return jsonify({"error": "No data found"}), 404
+
+        map_file = generate_map_for_victims_analysis(data)
+        return jsonify({"map_file": map_file}), 200
+
+    except ValueError as ve:
+        return jsonify({"error": str(ve)}), 400
+    except Exception as e:
+        return jsonify({"error": "Failed to calculate average victims", "message": str(e)}), 500
+
+@statistics_bp.route('/avg_injured_by_city', methods=["GET"])
+def get_avg_injured_by_city():
+    try:
+        city_id = request.args.get("city_id")
+        limit = request.args.get("limit")
+        data = calculate_average_victims_by_city(city_id, limit)
+        if not data:
+            return jsonify({"error": "No data found"}), 404
+
+        map_file = generate_map_for_victims_analysis(data)
+        return jsonify({"map_file": map_file}), 200
+
     except ValueError as ve:
         return jsonify({"error": str(ve)}), 400
     except Exception as e:

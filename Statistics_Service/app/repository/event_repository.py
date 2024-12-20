@@ -94,4 +94,3 @@ def clean_and_extract_dates():
         return df
 
 
-print(get_event_trends_cleaned(2000))

@@ -161,3 +161,55 @@ def generate_top_groups_map():
     # Save map as an HTML file
     world_map.save("top_groups_by_region_map.html")
     return world_map
+
+
+
+
+import os
+
+def generate_map_for_victims_analysis(data, output_file="victims_analysis_map.html"):
+    if not data:
+        print("No data provided to generate the map.")
+        return None
+
+    # Ensure the directory exists
+    save_dir = "static/maps/"
+    os.makedirs(save_dir, exist_ok=True)
+
+    # Full path to save the file
+    full_output_path = os.path.join(save_dir, output_file)
+
+    # Create a base map (centered at the first event)
+    first_event = data[0]
+    base_map = folium.Map(location=[first_event["latitude"], first_event["longitude"]], zoom_start=5)
+
+    # Add markers for each event
+    for event in data:
+        if event["latitude"] is not None and event["longitude"] is not None:
+            folium.CircleMarker(
+                location=[event["latitude"], event["longitude"]],
+                radius=10 if event['score'] == 0 else event["score"] / 100,  # Scale radius based on casualties
+                color=(
+                    "green" if event["score"] == 0 else
+                    "orange" if 0 < event["score"] <= 30 else
+                    "red"
+                ),
+                fill=True,
+                fill_opacity=0.7,
+                popup=folium.Popup(
+                    f"<b>Event:</b> {event['event_description']}<br>"
+                    f"<b>Region:</b> {event.get('region_name', 'N/A')}<br>"
+                    f"<b>Country:</b> {event.get('country_name', 'N/A')}<br>"
+                    f"<b>City:</b> {event.get('city_name', 'N/A')}<br>"
+                    f"<b>Average Injured:</b> {event['average_injured']}<br>"
+                    f"<b>Average Killed:</b> {event['average_killed']}<br>"
+                    f"<b>Score:</b> {event['score']}",
+                    max_width=300
+                ),
+            ).add_to(base_map)
+
+    # Save the map as an HTML file in the specified directory
+    base_map.save(full_output_path)
+    print(f"Map generated and saved as '{full_output_path}'")
+    return full_output_path
+

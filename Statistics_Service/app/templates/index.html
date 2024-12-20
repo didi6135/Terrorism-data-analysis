@@ -45,6 +45,11 @@
             box-sizing: border-box;
         }
 
+        .inline-input {
+            display: flex;
+            gap: 10px;
+        }
+
         button {
             background-color: #007bff;
             color: #fff;
@@ -60,6 +65,10 @@
         button:hover {
             background-color: #0056b3;
         }
+        button:disabled {
+            background-color: #b8d4fc;
+            cursor: not-allowed;
+        }
 
         iframe {
             width: 100%;
@@ -70,6 +79,13 @@
 
         .error {
             color: #dc3545;
+            margin-top: 10px;
+        }
+        #loading {
+            display: none;
+            text-align: center;
+            color: #007bff;
+            font-weight: bold;
             margin-top: 10px;
         }
     </style>
@@ -83,21 +99,17 @@
                 <select id="query" name="query" onchange="updateParameters()" required>
                     <option value="" disabled selected>-- Select --</option>
                     <option value="most_deadly_attack_types">1. Most Deadly Attack Types</option>
-                    <option value="most_deadly/map">Most Deadly Events Map</option>
-                    <option value="top_countries/map">Top Countries by Events</option>
-                    <option value="heatmap">Heatmap of Events</option>
-                    <option value="top_groups_map">Top Groups Map</option>
-                    <option value="attack_target_correlation">Attack-Target Correlation</option>
-                    <option value="event_trends">Event Trends (Yearly/Monthly)</option>
-                    <option value="attack_change">Attack Change by Region</option>
+                    <option value="avg_injured_by_origen">2. Avg of Injured by Origin</option>
+                    <option value="avg_injured_by_country">3. Avg of Injured by country</option>
+                    <option value="avg_injured_by_city">4. Avg of Injured by city</option>
                 </select>
             </div>
 
             <div id="parameterInputs" class="form-group"></div>
 
-            <button type="submit">Generate Visualization</button>
+            <button id="submitButton" type="submit">Generate Visualization</button>
         </form>
-
+        <div id="loading">Loading, please wait...</div>
         <iframe id="visualizationFrame" style="display: none;"></iframe>
         <p id="errorMessage" class="error" style="display: none;"></p>
     </div>
@@ -108,89 +120,252 @@
                 description: "Displays the most deadly attack types with total killed, injured, and score.",
                 params: ["limit"]
             },
-            "most_deadly/map": {
-                description: "Displays the most deadly events on a map.",
-                params: ["limit"]
+            "avg_injured_by_origen": {
+                description: "Displays the average of injured by origin.",
+                params: ["region_id", "limit"]
             },
-            "top_countries/map": {
-                description: "Displays the top countries by event count on a map.",
-                params: []
+            "avg_injured_by_country": {
+                description: "Displays the average of injured by country.",
+                params: ["country_id", "limit"]
             },
-            "heatmap": {
-                description: "Displays a heatmap of events.",
-                params: []
-            },
-            "top_groups_map": {
-                description: "Displays a map of the top terrorist groups.",
-                params: []
-            },
-            "attack_target_correlation": {
-                description: "Displays a chart correlating attack types to target types.",
-                params: []
-            },
-            "event_trends": {
-                description: "Displays event trends by year or month.",
-                params: ["year"]
-            },
-            "attack_change": {
-                description: "Displays attack change percentages by region.",
-                params: ["top_5"]
+            "avg_injured_by_city": {
+                description: "Displays the average of injured by city.",
+                params: ["city_id", "limit"]
             }
         };
 
-        function updateParameters() {
+        async function fetchRegions() {
+            try {
+                const response = await fetch('/api/statistics/regions');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json(); // Ensure body is read only once
+            } catch (error) {
+                console.error("Failed to fetch regions:", error);
+                throw error; // Re-throw for the caller to handle
+            }
+        }
+
+        async function fetchCountries(){
+            try {
+                const response = await fetch('/api/statistics/countries');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json(); // Ensure body is read only once
+            } catch (error) {
+                console.error("Failed to fetch regions:", error);
+                throw error; // Re-throw for the caller to handle
+            }
+        }
+
+        async function fetchCities(){
+            try {
+                const response = await fetch('/api/statistics/cities');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json(); // Ensure body is read only once
+            } catch (error) {
+                console.error("Failed to fetch regions:", error);
+                throw error; // Re-throw for the caller to handle
+            }
+        }
+
+        async function updateParameters() {
             const query = document.getElementById('query').value;
-            const config = queryConfig[query];
             const parameterInputs = document.getElementById('parameterInputs');
             parameterInputs.innerHTML = '';
 
-            if (config && config.params.length > 0) {
-                config.params.forEach(param => {
-                    const inputGroup = document.createElement('div');
-                    inputGroup.className = 'form-group';
+            if (query === 'most_deadly_attack_types') {
+                // Add input for limit
+                const label = document.createElement('label');
+                label.textContent = 'Enter Limit:';
 
-                    const label = document.createElement('label');
-                    label.textContent = `Enter ${param} (Optional):`;
-                    inputGroup.appendChild(label);
+                const input = document.createElement('input');
+                input.type = 'number';
+                input.name = 'limit';
+                input.placeholder = 'Enter limit';
 
-                    const input = document.createElement('input');
-                    input.type = param === 'year' || param === 'limit' ? 'number' : 'text';
-                    input.name = param;
-                    input.placeholder = `Enter ${param}`;
-                    inputGroup.appendChild(input);
+                parameterInputs.appendChild(label);
+                parameterInputs.appendChild(input);
+            }
 
-                    parameterInputs.appendChild(inputGroup);
-                });
+            if (query === 'avg_injured_by_origen') {
+                // Create a row for origin select and limit input
+                const row = document.createElement('div');
+                row.className = 'inline-input';
+
+                // Add dropdown for regions
+                const select = document.createElement('select');
+                select.name = 'region_id';
+                select.id = 'originSelect';
+                select.innerHTML = '<option value="" selected>All Regions</option>';
+
+                const selectLabel = document.createElement('label');
+                selectLabel.textContent = 'Select Origin:';
+                selectLabel.style.flex = '1 1 auto';
+
+                // Add input for limit
+                const limitInput = document.createElement('input');
+                limitInput.type = 'number';
+                limitInput.name = 'limit';
+                limitInput.placeholder = 'Optional Limit';
+                limitInput.style.flex = '1 1 auto';
+
+                row.appendChild(select);
+                row.appendChild(limitInput);
+
+                parameterInputs.appendChild(selectLabel);
+                parameterInputs.appendChild(row);
+
+                try {
+                    const regions = await fetchRegions();
+                    regions['regions'].forEach(region => {
+                        const option = document.createElement('option');
+                        option.value = region.id;
+                        option.textContent = region.name;
+                        select.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Failed to fetch regions:", error);
+                }
+            }
+
+            if (query === 'avg_injured_by_country') {
+                // Create a row for country select and limit input
+                const row = document.createElement('div');
+                row.className = 'inline-input';
+
+                // Add dropdown for country
+                const select = document.createElement('select');
+                select.name = 'country_id';
+                select.id = 'countrySelect';
+                select.innerHTML = '<option value="" selected>All Countries</option>';
+
+                const selectLabel = document.createElement('label');
+                selectLabel.textContent = 'Select Country:';
+                selectLabel.style.flex = '1 1 auto';
+
+                // Add input for limit
+                const limitInput = document.createElement('input');
+                limitInput.type = 'number';
+                limitInput.name = 'limit';
+                limitInput.placeholder = 'Optional Limit';
+                limitInput.style.flex = '1 1 auto';
+
+                row.appendChild(select);
+                row.appendChild(limitInput);
+
+                parameterInputs.appendChild(selectLabel);
+                parameterInputs.appendChild(row);
+
+                try {
+                    const countries = await fetchCountries();
+                    console.log(countries)
+                    countries['countries'].forEach(region => {
+                        const option = document.createElement('option');
+                        option.value = region.id;
+                        option.textContent = region.name;
+                        select.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Failed to fetch regions:", error);
+                }
+            }
+
+            if (query === 'avg_injured_by_city') {
+                // Create a row for city select and limit input
+                const row = document.createElement('div');
+                row.className = 'inline-input';
+
+                // Add dropdown for city
+                const select = document.createElement('select');
+                select.name = 'city_id';
+                select.id = 'citySelect';
+                select.innerHTML = '<option value="" selected>All Cities</option>';
+
+                const selectLabel = document.createElement('label');
+                selectLabel.textContent = 'Select city:';
+                selectLabel.style.flex = '1 1 auto';
+
+                // Add input for limit
+                const limitInput = document.createElement('input');
+                limitInput.type = 'number';
+                limitInput.name = 'limit';
+                limitInput.placeholder = 'Optional Limit';
+                limitInput.style.flex = '1 1 auto';
+
+                row.appendChild(select);
+                row.appendChild(limitInput);
+
+                parameterInputs.appendChild(selectLabel);
+                parameterInputs.appendChild(row);
+
+                try {
+                    const cities = await fetchCities();
+                    cities['cities'].forEach(region => {
+                        const option = document.createElement('option');
+                        option.value = region.id;
+                        option.textContent = region.name;
+                        select.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error("Failed to fetch regions:", error);
+                }
             }
         }
 
-        async function fetchVisualization(event) {
-            event.preventDefault();
+async function fetchVisualization(event) {
+    event.preventDefault();
 
-            const form = document.getElementById('queryForm');
-            const formData = new FormData(form);
-            const query = formData.get('query');
+    const form = document.getElementById('queryForm');
+    const loading = document.getElementById('loading');
+    submitButton.disabled = true;
+    loading.style.display = 'block';
 
-            const params = new URLSearchParams();
-            formData.forEach((value, key) => {
-                if (key !== 'query' && value.trim() !== '') params.append(key, value);
-            });
+    const formData = new FormData(form);
+    const query = formData.get('query');
 
-            const iframe = document.getElementById('visualizationFrame');
-            const errorMessage = document.getElementById('errorMessage');
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => {
+        if (key !== 'query' && value.trim() !== '') params.append(key, value);
+    });
 
-            iframe.style.display = 'none';
-            errorMessage.style.display = 'none';
+    const iframe = document.getElementById('visualizationFrame');
+    const errorMessage = document.getElementById('errorMessage');
 
-            try {
-                const url = `/api/statistics/${query}?${params}`;
-                iframe.src = url;
-                iframe.style.display = 'block';
-            } catch (error) {
-                errorMessage.textContent = 'Failed to load visualization. Please try again.';
-                errorMessage.style.display = 'block';
-            }
+    iframe.style.display = 'none';
+    errorMessage.style.display = 'none';
+
+    try {
+        const url = `/api/statistics/${query}?${params}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        const result = await response.json();
+
+        // Check if the response contains a map file
+        if (result.map_file) {
+            iframe.src = `/${result.map_file}`; // Ensure the path is correct
+            iframe.style.display = 'block';
+        } else {
+            errorMessage.textContent = 'No map file found in the response.';
+            errorMessage.style.display = 'block';
+        }
+    } catch (error) {
+        errorMessage.textContent = 'Failed to load visualization. Please try again.';
+        errorMessage.style.display = 'block';
+        console.error(error);
+    } finally {
+        submitButton.disabled = false;
+        loading.style.display = 'none';
+    }
+}
+
     </script>
 </body>
 </html>
