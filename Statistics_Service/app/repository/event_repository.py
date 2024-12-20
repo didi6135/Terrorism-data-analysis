@@ -6,6 +6,23 @@ from Statistics_Service.app.db.postgres_db.database import session_maker
 from Data_Cleaning_Service.app.db.postgres_db.models import Event, Location, Coordinate, Casualty
 
 
+def clean_and_extract_dates():
+
+    with session_maker() as session:
+        results = session.query(Event.event_date).all()
+
+        df = pd.DataFrame(results, columns=["event_date"])
+
+        df["event_date"] = pd.to_datetime(df["event_date"], errors="coerce")
+
+        df = df.dropna(subset=["event_date"])
+
+        df["year"] = df["event_date"].dt.year
+        df["month"] = df["event_date"].dt.month
+
+        return df
+
+
 def get_events_with_coordinates_and_victims():
     """
     Retrieves events with their coordinates and total victims.
@@ -30,6 +47,23 @@ def get_events_with_coordinates_and_victims():
             for row in results
         ]
 
+def get_all_years_repo():
+    df = clean_and_extract_dates()
+    yearly_df = (
+        df.groupby("year")
+        .size()
+        .reset_index(name="event_count")
+        .sort_values(by="year")
+    )
+
+    # Constructing the desired JSON structure
+    result = {
+        "years": [
+            {"id": int(row["year"]), "name": str(row["year"])}
+            for index, row in yearly_df.iterrows()
+        ]
+    }
+    return result
 
 
 
@@ -46,6 +80,7 @@ def get_yearly_trends():
     return yearly_df
 
 
+
 def get_monthly_trends(year):
 
     df = clean_and_extract_dates()
@@ -57,7 +92,6 @@ def get_monthly_trends(year):
         .sort_values(by="month")
     )
     return monthly_df
-
 
 
 def get_event_trends_cleaned(year=None):
@@ -77,20 +111,5 @@ def get_event_trends_cleaned(year=None):
 
 
 
-def clean_and_extract_dates():
-
-    with session_maker() as session:
-        results = session.query(Event.event_date).all()
-
-        df = pd.DataFrame(results, columns=["event_date"])
-
-        df["event_date"] = pd.to_datetime(df["event_date"], errors="coerce")
-
-        df = df.dropna(subset=["event_date"])
-
-        df["year"] = df["event_date"].dt.year
-        df["month"] = df["event_date"].dt.month
-
-        return df
 
 

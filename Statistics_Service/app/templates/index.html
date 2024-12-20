@@ -1,3 +1,421 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Terrorism Analysis Dashboard</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            background-color: #f8f9fa;-->
+<!--            color: #212529;-->
+<!--        }-->
+
+<!--        .container {-->
+<!--            max-width: 800px;-->
+<!--            margin: 50px auto;-->
+<!--            padding: 20px;-->
+<!--            background: #ffffff;-->
+<!--            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);-->
+<!--            border-radius: 8px;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--            color: #343a40;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+
+<!--        .form-group {-->
+<!--            margin-bottom: 15px;-->
+<!--        }-->
+
+<!--        label {-->
+<!--            display: block;-->
+<!--            font-weight: bold;-->
+<!--            margin-bottom: 5px;-->
+<!--        }-->
+
+<!--        select, input {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            font-size: 16px;-->
+<!--            border: 1px solid #ced4da;-->
+<!--            border-radius: 4px;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+
+<!--        .inline-input {-->
+<!--            display: flex;-->
+<!--            gap: 10px;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            background-color: #007bff;-->
+<!--            color: #fff;-->
+<!--            font-size: 16px;-->
+<!--            padding: 10px 15px;-->
+<!--            border: none;-->
+<!--            border-radius: 4px;-->
+<!--            cursor: pointer;-->
+<!--            display: block;-->
+<!--            margin: 20px auto 0;-->
+<!--        }-->
+
+<!--        button:hover {-->
+<!--            background-color: #0056b3;-->
+<!--        }-->
+<!--        button:disabled {-->
+<!--            background-color: #b8d4fc;-->
+<!--            cursor: not-allowed;-->
+<!--        }-->
+
+<!--        iframe {-->
+<!--            width: 100%;-->
+<!--            height: 600px;-->
+<!--            border: none;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+
+<!--        .error {-->
+<!--            color: #dc3545;-->
+<!--            margin-top: 10px;-->
+<!--        }-->
+<!--        #loading {-->
+<!--            display: none;-->
+<!--            text-align: center;-->
+<!--            color: #007bff;-->
+<!--            font-weight: bold;-->
+<!--            margin-top: 10px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1>Terrorism Analysis Dashboard</h1>-->
+<!--        <form id="queryForm" onsubmit="fetchVisualization(event)">-->
+<!--            <div class="form-group">-->
+<!--                <label for="query">Choose Analysis:</label>-->
+<!--                <select id="query" name="query" onchange="updateParameters()" required>-->
+<!--                    <option value="" disabled selected>&#45;&#45; Select &#45;&#45;</option>-->
+<!--                    <option value="most_deadly_attack_types">1. Most Deadly Attack Types</option>-->
+<!--                    <option value="avg_injured_by_origen">2. Avg of Injured by Origin</option>-->
+<!--                    <option value="avg_injured_by_country">3. Avg of Injured by country</option>-->
+<!--                    <option value="avg_injured_by_city">4. Avg of Injured by city</option>-->
+<!--                    <option value="top_5_group_most_casualties">5. Get top 5 group with most casualties</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <div id="parameterInputs" class="form-group"></div>-->
+
+<!--            <button id="submitButton" type="submit">Generate Visualization</button>-->
+<!--        </form>-->
+<!--        <div id="loading">Loading, please wait...</div>-->
+<!--        <iframe id="visualizationFrame" style="display: none;"></iframe>-->
+<!--        <p id="errorMessage" class="error" style="display: none;"></p>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        const queryConfig = {-->
+<!--            "most_deadly_attack_types": {-->
+<!--                description: "Displays the most deadly attack types with total killed, injured, and score.",-->
+<!--                params: ["limit"]-->
+<!--            },-->
+<!--            "avg_injured_by_origen": {-->
+<!--                description: "Displays the average of injured by origin.",-->
+<!--                params: ["region_id", "limit"]-->
+<!--            },-->
+<!--            "avg_injured_by_country": {-->
+<!--                description: "Displays the average of injured by country.",-->
+<!--                params: ["country_id", "limit"]-->
+<!--            },-->
+<!--            "avg_injured_by_city": {-->
+<!--                description: "Displays the average of injured by city.",-->
+<!--                params: ["city_id", "limit"]-->
+<!--            },-->
+<!--            "top_5_group_most_casualties": {-->
+<!--                description: "Displays the top 5 group with most casualties.",-->
+<!--                params: []-->
+<!--            }-->
+
+<!--        };-->
+
+<!--        async function fetchRegions() {-->
+<!--            try {-->
+<!--                const response = await fetch('/api/statistics/regions');-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--                }-->
+<!--                return await response.json(); // Ensure body is read only once-->
+<!--            } catch (error) {-->
+<!--                console.error("Failed to fetch regions:", error);-->
+<!--                throw error; // Re-throw for the caller to handle-->
+<!--            }-->
+<!--        }-->
+
+<!--        async function fetchCountries(){-->
+<!--            try {-->
+<!--                const response = await fetch('/api/statistics/countries');-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--                }-->
+<!--                return await response.json(); // Ensure body is read only once-->
+<!--            } catch (error) {-->
+<!--                console.error("Failed to fetch regions:", error);-->
+<!--                throw error; // Re-throw for the caller to handle-->
+<!--            }-->
+<!--        }-->
+
+<!--        async function fetchCities(){-->
+<!--            try {-->
+<!--                const response = await fetch('/api/statistics/cities');-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--                }-->
+<!--                return await response.json(); // Ensure body is read only once-->
+<!--            } catch (error) {-->
+<!--                console.error("Failed to fetch regions:", error);-->
+<!--                throw error; // Re-throw for the caller to handle-->
+<!--            }-->
+<!--        }-->
+
+
+<!--        async function updateParameters() {-->
+<!--            const query = document.getElementById('query').value;-->
+<!--            const parameterInputs = document.getElementById('parameterInputs');-->
+<!--            parameterInputs.innerHTML = '';-->
+
+<!--            if (query === 'most_deadly_attack_types') {-->
+<!--                // Add input for limit-->
+<!--                const label = document.createElement('label');-->
+<!--                label.textContent = 'Enter Limit:';-->
+
+<!--                const input = document.createElement('input');-->
+<!--                input.type = 'number';-->
+<!--                input.name = 'limit';-->
+<!--                input.placeholder = 'Enter limit';-->
+
+<!--                parameterInputs.appendChild(label);-->
+<!--                parameterInputs.appendChild(input);-->
+<!--            }-->
+
+<!--            if (query === 'avg_injured_by_origen') {-->
+<!--                // Create a row for origin select and limit input-->
+<!--                const row = document.createElement('div');-->
+<!--                row.className = 'inline-input';-->
+
+<!--                // Add dropdown for regions-->
+<!--                const select = document.createElement('select');-->
+<!--                select.name = 'region_id';-->
+<!--                select.id = 'originSelect';-->
+<!--                select.innerHTML = '<option value="" selected>All Regions</option>';-->
+
+<!--                const selectLabel = document.createElement('label');-->
+<!--                selectLabel.textContent = 'Select Origin:';-->
+<!--                selectLabel.style.flex = '1 1 auto';-->
+
+<!--                // Add input for limit-->
+<!--                const limitInput = document.createElement('input');-->
+<!--                limitInput.type = 'number';-->
+<!--                limitInput.name = 'limit';-->
+<!--                limitInput.placeholder = 'Optional Limit';-->
+<!--                limitInput.style.flex = '1 1 auto';-->
+
+<!--                row.appendChild(select);-->
+<!--                row.appendChild(limitInput);-->
+
+<!--                parameterInputs.appendChild(selectLabel);-->
+<!--                parameterInputs.appendChild(row);-->
+
+<!--                try {-->
+<!--                    const regions = await fetchRegions();-->
+<!--                    regions['regions'].forEach(region => {-->
+<!--                        const option = document.createElement('option');-->
+<!--                        option.value = region.id;-->
+<!--                        option.textContent = region.name;-->
+<!--                        select.appendChild(option);-->
+<!--                    });-->
+<!--                } catch (error) {-->
+<!--                    console.error("Failed to fetch regions:", error);-->
+<!--                }-->
+<!--            }-->
+
+<!--            if (query === 'avg_injured_by_country') {-->
+<!--                // Create a row for country select and limit input-->
+<!--                const row = document.createElement('div');-->
+<!--                row.className = 'inline-input';-->
+
+<!--                // Add dropdown for country-->
+<!--                const select = document.createElement('select');-->
+<!--                select.name = 'country_id';-->
+<!--                select.id = 'countrySelect';-->
+<!--                select.innerHTML = '<option value="" selected>All Countries</option>';-->
+
+<!--                const selectLabel = document.createElement('label');-->
+<!--                selectLabel.textContent = 'Select Country:';-->
+<!--                selectLabel.style.flex = '1 1 auto';-->
+
+<!--                // Add input for limit-->
+<!--                const limitInput = document.createElement('input');-->
+<!--                limitInput.type = 'number';-->
+<!--                limitInput.name = 'limit';-->
+<!--                limitInput.placeholder = 'Optional Limit';-->
+<!--                limitInput.style.flex = '1 1 auto';-->
+
+<!--                row.appendChild(select);-->
+<!--                row.appendChild(limitInput);-->
+
+<!--                parameterInputs.appendChild(selectLabel);-->
+<!--                parameterInputs.appendChild(row);-->
+
+<!--                try {-->
+<!--                    const countries = await fetchCountries();-->
+<!--                    console.log(countries)-->
+<!--                    countries['countries'].forEach(region => {-->
+<!--                        const option = document.createElement('option');-->
+<!--                        option.value = region.id;-->
+<!--                        option.textContent = region.name;-->
+<!--                        select.appendChild(option);-->
+<!--                    });-->
+<!--                } catch (error) {-->
+<!--                    console.error("Failed to fetch regions:", error);-->
+<!--                }-->
+<!--            }-->
+
+<!--            if (query === 'avg_injured_by_city') {-->
+<!--                // Create a row for city select and limit input-->
+<!--                const row = document.createElement('div');-->
+<!--                row.className = 'inline-input';-->
+
+<!--                // Add dropdown for city-->
+<!--                const select = document.createElement('select');-->
+<!--                select.name = 'city_id';-->
+<!--                select.id = 'citySelect';-->
+<!--                select.innerHTML = '<option value="" selected>All Cities</option>';-->
+
+<!--                const selectLabel = document.createElement('label');-->
+<!--                selectLabel.textContent = 'Select city:';-->
+<!--                selectLabel.style.flex = '1 1 auto';-->
+
+<!--                // Add input for limit-->
+<!--                const limitInput = document.createElement('input');-->
+<!--                limitInput.type = 'number';-->
+<!--                limitInput.name = 'limit';-->
+<!--                limitInput.placeholder = 'Optional Limit';-->
+<!--                limitInput.style.flex = '1 1 auto';-->
+
+<!--                row.appendChild(select);-->
+<!--                row.appendChild(limitInput);-->
+
+<!--                parameterInputs.appendChild(selectLabel);-->
+<!--                parameterInputs.appendChild(row);-->
+
+<!--                try {-->
+<!--                    const cities = await fetchCities();-->
+<!--                    cities['cities'].forEach(region => {-->
+<!--                        const option = document.createElement('option');-->
+<!--                        option.value = region.id;-->
+<!--                        option.textContent = region.name;-->
+<!--                        select.appendChild(option);-->
+<!--                    });-->
+<!--                } catch (error) {-->
+<!--                    console.error("Failed to fetch regions:", error);-->
+<!--                }-->
+<!--            }-->
+
+<!--            if (query === 'top_5_group_most_casualties'){-->
+
+<!--            }-->
+<!--        }-->
+<!--        function displayJsonData(data) {-->
+<!--            const jsonDisplay = document.getElementById('jsonDisplay');-->
+<!--            jsonDisplay.innerHTML = '<h3>Result:</h3>';-->
+<!--            jsonDisplay.style.display = 'block';-->
+
+<!--            if (Array.isArray(data)) {-->
+<!--                const table = document.createElement('table');-->
+<!--                const thead = document.createElement('thead');-->
+<!--                const tbody = document.createElement('tbody');-->
+
+<!--                const headers = Object.keys(data[0]);-->
+<!--                const headerRow = document.createElement('tr');-->
+<!--                headers.forEach(header => {-->
+<!--                    const th = document.createElement('th');-->
+<!--                    th.textContent = header;-->
+<!--                    headerRow.appendChild(th);-->
+<!--                });-->
+<!--                thead.appendChild(headerRow);-->
+
+<!--                data.forEach(item => {-->
+<!--                    const row = document.createElement('tr');-->
+<!--                    headers.forEach(header => {-->
+<!--                        const td = document.createElement('td');-->
+<!--                        td.textContent = item[header];-->
+<!--                        row.appendChild(td);-->
+<!--                    });-->
+<!--                    tbody.appendChild(row);-->
+<!--                });-->
+
+<!--                table.appendChild(thead);-->
+<!--                table.appendChild(tbody);-->
+<!--                jsonDisplay.appendChild(table);-->
+<!--            } else {-->
+<!--                jsonDisplay.innerHTML += `<pre>${JSON.stringify(data, null, 2)}</pre>`;-->
+<!--            }-->
+<!--        }-->
+
+<!--async function fetchVisualization(event) {-->
+<!--    event.preventDefault();-->
+
+<!--    const form = document.getElementById('queryForm');-->
+<!--    const loading = document.getElementById('loading');-->
+<!--    submitButton.disabled = true;-->
+<!--    loading.style.display = 'block';-->
+
+<!--    const formData = new FormData(form);-->
+<!--    const query = formData.get('query');-->
+
+<!--    const params = new URLSearchParams();-->
+<!--    formData.forEach((value, key) => {-->
+<!--        if (key !== 'query' && value.trim() !== '') params.append(key, value);-->
+<!--    });-->
+
+<!--    const iframe = document.getElementById('visualizationFrame');-->
+<!--    const errorMessage = document.getElementById('errorMessage');-->
+
+<!--    iframe.style.display = 'none';-->
+<!--    errorMessage.style.display = 'none';-->
+
+<!--    try {-->
+<!--        const url = `/api/statistics/${query}?${params}`;-->
+<!--        const response = await fetch(url);-->
+<!--        if (!response.ok) {-->
+<!--            throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--        }-->
+
+<!--        const result = await response.json();-->
+
+<!--        // Check if the response contains a map file-->
+<!--        if (result.map_file) {-->
+<!--            iframe.src = `/${result.map_file}`; // Ensure the path is correct-->
+<!--            iframe.style.display = 'block';-->
+<!--        } else {-->
+<!--            errorMessage.textContent = 'No map file found in the response.';-->
+<!--            errorMessage.style.display = 'block';-->
+<!--        }-->
+<!--    } catch (error) {-->
+<!--        errorMessage.textContent = 'Failed to load visualization. Please try again.';-->
+<!--        errorMessage.style.display = 'block';-->
+<!--        console.error(error);-->
+<!--    } finally {-->
+<!--        submitButton.disabled = false;-->
+<!--        loading.style.display = 'none';-->
+<!--    }-->
+<!--}-->
+
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,12 +499,43 @@
             color: #dc3545;
             margin-top: 10px;
         }
+
         #loading {
             display: none;
             text-align: center;
             color: #007bff;
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        #jsonDisplay {
+            display: none;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f1f1;
+        }
+         img {
+            display: none;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -100,8 +549,12 @@
                     <option value="" disabled selected>-- Select --</option>
                     <option value="most_deadly_attack_types">1. Most Deadly Attack Types</option>
                     <option value="avg_injured_by_origen">2. Avg of Injured by Origin</option>
-                    <option value="avg_injured_by_country">3. Avg of Injured by country</option>
-                    <option value="avg_injured_by_city">4. Avg of Injured by city</option>
+                    <option value="avg_injured_by_country">3. Avg of Injured by Country</option>
+                    <option value="avg_injured_by_city">4. Avg of Injured by City</option>
+                    <option value="top_5_group_most_casualties">5. Get Top 5 Groups with Most Casualties</option>
+                    <option value="attack_target_correlation">6. Get correlation between attack type and target type</option>
+                    <option value="event_trends_for_all_years">6. Get all event trends for all years</option>
+                    <option value="event_trends_for_specific_year">7. Get all event trends for specific year</option>
                 </select>
             </div>
 
@@ -111,6 +564,9 @@
         </form>
         <div id="loading">Loading, please wait...</div>
         <iframe id="visualizationFrame" style="display: none;"></iframe>
+        <div id="jsonDisplay"></div>
+       <img id="plotImage" alt="Generated Plot" />
+
         <p id="errorMessage" class="error" style="display: none;"></p>
     </div>
 
@@ -131,199 +587,121 @@
             "avg_injured_by_city": {
                 description: "Displays the average of injured by city.",
                 params: ["city_id", "limit"]
+            },
+            "top_5_group_most_casualties": {
+                description: "Displays the top 5 groups with most casualties.",
+                params: []
+            },
+            'attack_target_correlation': {
+                description: "Displays the correlation between attack type and target type.",
+                params: []
+            },
+            'event_trends_for_all_years': {
+                description: "Displays graph of event trends for all years.",
+                params: []
+            },
+            'event_trends_for_specific_year': {
+                description: "Displays graph of event trends for specific year.",
+                params: ['year']
             }
         };
-
-        async function fetchRegions() {
-            try {
-                const response = await fetch('/api/statistics/regions');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return await response.json(); // Ensure body is read only once
-            } catch (error) {
-                console.error("Failed to fetch regions:", error);
-                throw error; // Re-throw for the caller to handle
-            }
-        }
-
-        async function fetchCountries(){
-            try {
-                const response = await fetch('/api/statistics/countries');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return await response.json(); // Ensure body is read only once
-            } catch (error) {
-                console.error("Failed to fetch regions:", error);
-                throw error; // Re-throw for the caller to handle
-            }
-        }
-
-        async function fetchCities(){
-            try {
-                const response = await fetch('/api/statistics/cities');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return await response.json(); // Ensure body is read only once
-            } catch (error) {
-                console.error("Failed to fetch regions:", error);
-                throw error; // Re-throw for the caller to handle
-            }
-        }
 
         async function updateParameters() {
             const query = document.getElementById('query').value;
             const parameterInputs = document.getElementById('parameterInputs');
             parameterInputs.innerHTML = '';
 
-            if (query === 'most_deadly_attack_types') {
-                // Add input for limit
-                const label = document.createElement('label');
-                label.textContent = 'Enter Limit:';
-
-                const input = document.createElement('input');
-                input.type = 'number';
-                input.name = 'limit';
-                input.placeholder = 'Enter limit';
-
-                parameterInputs.appendChild(label);
-                parameterInputs.appendChild(input);
+            if (queryConfig[query]?.params.includes('limit')) {
+                parameterInputs.appendChild(createLabel('Enter Limit:'));
+                parameterInputs.appendChild(createInput('number', 'limit', 'Optional Limit'));
             }
 
             if (query === 'avg_injured_by_origen') {
-                // Create a row for origin select and limit input
-                const row = document.createElement('div');
-                row.className = 'inline-input';
-
-                // Add dropdown for regions
-                const select = document.createElement('select');
-                select.name = 'region_id';
-                select.id = 'originSelect';
-                select.innerHTML = '<option value="" selected>All Regions</option>';
-
-                const selectLabel = document.createElement('label');
-                selectLabel.textContent = 'Select Origin:';
-                selectLabel.style.flex = '1 1 auto';
-
-                // Add input for limit
-                const limitInput = document.createElement('input');
-                limitInput.type = 'number';
-                limitInput.name = 'limit';
-                limitInput.placeholder = 'Optional Limit';
-                limitInput.style.flex = '1 1 auto';
-
-                row.appendChild(select);
-                row.appendChild(limitInput);
-
-                parameterInputs.appendChild(selectLabel);
-                parameterInputs.appendChild(row);
-
-                try {
-                    const regions = await fetchRegions();
-                    regions['regions'].forEach(region => {
-                        const option = document.createElement('option');
-                        option.value = region.id;
-                        option.textContent = region.name;
-                        select.appendChild(option);
-                    });
-                } catch (error) {
-                    console.error("Failed to fetch regions:", error);
-                }
+                parameterInputs.appendChild(createLabel('Select Region:'));
+                const regionSelect = createSelect('region_id', 'Select Region');
+                parameterInputs.appendChild(regionSelect);
+                await populateOptions(regionSelect, '/api/statistics/regions', 'regions');
             }
 
             if (query === 'avg_injured_by_country') {
-                // Create a row for country select and limit input
-                const row = document.createElement('div');
-                row.className = 'inline-input';
-
-                // Add dropdown for country
-                const select = document.createElement('select');
-                select.name = 'country_id';
-                select.id = 'countrySelect';
-                select.innerHTML = '<option value="" selected>All Countries</option>';
-
-                const selectLabel = document.createElement('label');
-                selectLabel.textContent = 'Select Country:';
-                selectLabel.style.flex = '1 1 auto';
-
-                // Add input for limit
-                const limitInput = document.createElement('input');
-                limitInput.type = 'number';
-                limitInput.name = 'limit';
-                limitInput.placeholder = 'Optional Limit';
-                limitInput.style.flex = '1 1 auto';
-
-                row.appendChild(select);
-                row.appendChild(limitInput);
-
-                parameterInputs.appendChild(selectLabel);
-                parameterInputs.appendChild(row);
-
-                try {
-                    const countries = await fetchCountries();
-                    console.log(countries)
-                    countries['countries'].forEach(region => {
-                        const option = document.createElement('option');
-                        option.value = region.id;
-                        option.textContent = region.name;
-                        select.appendChild(option);
-                    });
-                } catch (error) {
-                    console.error("Failed to fetch regions:", error);
-                }
+                parameterInputs.appendChild(createLabel('Select Country:'));
+                const countrySelect = createSelect('country_id', 'Select Country');
+                parameterInputs.appendChild(countrySelect);
+                await populateOptions(countrySelect, '/api/statistics/countries', 'countries');
             }
 
             if (query === 'avg_injured_by_city') {
-                // Create a row for city select and limit input
-                const row = document.createElement('div');
-                row.className = 'inline-input';
+                parameterInputs.appendChild(createLabel('Select City:'));
+                const citySelect = createSelect('city_id', 'Select City');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/cities', 'cities');
+            }
 
-                // Add dropdown for city
-                const select = document.createElement('select');
-                select.name = 'city_id';
-                select.id = 'citySelect';
-                select.innerHTML = '<option value="" selected>All Cities</option>';
+            if (query === 'event_trends_for_specific_year') {
+                parameterInputs.appendChild(createLabel('Select Year:'));
+                const citySelect = createSelect('year_id', 'Select Year');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/years', 'years');
+            }
 
-                const selectLabel = document.createElement('label');
-                selectLabel.textContent = 'Select city:';
-                selectLabel.style.flex = '1 1 auto';
+        }
 
-                // Add input for limit
-                const limitInput = document.createElement('input');
-                limitInput.type = 'number';
-                limitInput.name = 'limit';
-                limitInput.placeholder = 'Optional Limit';
-                limitInput.style.flex = '1 1 auto';
+        function createLabel(text) {
+            const label = document.createElement('label');
+            label.textContent = text;
+            return label;
+        }
 
-                row.appendChild(select);
-                row.appendChild(limitInput);
+        function createInput(type, name, placeholder) {
+            const input = document.createElement('input');
+            input.type = type;
+            input.name = name;
+            input.placeholder = placeholder;
+            return input;
+        }
 
-                parameterInputs.appendChild(selectLabel);
-                parameterInputs.appendChild(row);
+        function createSelect(name, placeholder) {
+            const select = document.createElement('select');
+            select.name = name;
+            select.innerHTML = `<option value="" disabled selected>${placeholder}</option>`;
+            return select;
+        }
 
-                try {
-                    const cities = await fetchCities();
-                    cities['cities'].forEach(region => {
-                        const option = document.createElement('option');
-                        option.value = region.id;
-                        option.textContent = region.name;
-                        select.appendChild(option);
-                    });
-                } catch (error) {
-                    console.error("Failed to fetch regions:", error);
+        async function populateOptions(selectElement, apiUrl, dataKey) {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch: ${response.statusText}`);
                 }
+                const data = await response.json();
+                data[dataKey].forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.id;
+                    option.textContent = item.name;
+                    selectElement.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error populating options:', error);
             }
         }
 
-async function fetchVisualization(event) {
+        async function fetchVisualization(event) {
     event.preventDefault();
 
     const form = document.getElementById('queryForm');
     const loading = document.getElementById('loading');
+    const submitButton = document.getElementById('submitButton');
+    const iframe = document.getElementById('visualizationFrame');
+    const errorMessage = document.getElementById('errorMessage');
+    const jsonDisplay = document.getElementById('jsonDisplay');
+    const plotImage = document.getElementById('plotImage');
+
     submitButton.disabled = true;
     loading.style.display = 'block';
+    iframe.style.display = 'none';
+    errorMessage.style.display = 'none';
+    jsonDisplay.style.display = 'none';
+    plotImage.style.display = 'none';
 
     const formData = new FormData(form);
     const query = formData.get('query');
@@ -332,12 +710,6 @@ async function fetchVisualization(event) {
     formData.forEach((value, key) => {
         if (key !== 'query' && value.trim() !== '') params.append(key, value);
     });
-
-    const iframe = document.getElementById('visualizationFrame');
-    const errorMessage = document.getElementById('errorMessage');
-
-    iframe.style.display = 'none';
-    errorMessage.style.display = 'none';
 
     try {
         const url = `/api/statistics/${query}?${params}`;
@@ -348,13 +720,19 @@ async function fetchVisualization(event) {
 
         const result = await response.json();
 
-        // Check if the response contains a map file
+        // Handle map file
         if (result.map_file) {
-            iframe.src = `/${result.map_file}`; // Ensure the path is correct
+            iframe.src = `/${result.map_file}`;
             iframe.style.display = 'block';
-        } else {
-            errorMessage.textContent = 'No map file found in the response.';
-            errorMessage.style.display = 'block';
+        }
+        // Handle plot file (image)
+        else if (result.plot_file) {
+            plotImage.src = `/${result.plot_file}`;
+            plotImage.style.display = 'block';
+        }
+        // Handle JSON data
+        else {
+            displayJsonData(result);
         }
     } catch (error) {
         errorMessage.textContent = 'Failed to load visualization. Please try again.';
@@ -366,6 +744,44 @@ async function fetchVisualization(event) {
     }
 }
 
+
+        function displayJsonData(data) {
+            const jsonDisplay = document.getElementById('jsonDisplay');
+            jsonDisplay.innerHTML = '<h3>Result:</h3>';
+            jsonDisplay.style.display = 'block';
+
+            if (Array.isArray(data)) {
+                const table = document.createElement('table');
+                const thead = document.createElement('thead');
+                const tbody = document.createElement('tbody');
+
+                const headers = Object.keys(data[0]);
+                const headerRow = document.createElement('tr');
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+                thead.appendChild(headerRow);
+
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    headers.forEach(header => {
+                        const td = document.createElement('td');
+                        td.textContent = item[header];
+                        row.appendChild(td);
+                    });
+                    tbody.appendChild(row);
+                });
+
+                table.appendChild(thead);
+                table.appendChild(tbody);
+                jsonDisplay.appendChild(table);
+            } else {
+                jsonDisplay.innerHTML += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            }
+        }
     </script>
 </body>
 </html>
+

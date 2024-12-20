@@ -6,11 +6,11 @@ from Statistics_Service.app.repository.city_repository import get_all_cities, ca
 from Statistics_Service.app.repository.country_repository import get_all_countries, \
     calculate_average_victims_by_country
 from Statistics_Service.app.repository.event_repository import get_event_trends_cleaned, get_monthly_trends, \
-    get_yearly_trends
+    get_yearly_trends, get_all_years_repo
 from Statistics_Service.app.repository.group_repository import get_most_deadly_repo, get_top_5_groups_by_casualties
 from Statistics_Service.app.repository.region_repository import get_all_regions, \
     calculate_average_victims_per_event_in_region
-from Statistics_Service.app.services.plot_service import plot_event_trends_cleaned, plot_monthly_trends, \
+from Statistics_Service.app.services.plot_service import plot_monthly_trends, \
     plot_yearly_trends
 from Statistics_Service.app.services.visualization_service import generate_map_file, generate_top_countries_map, \
     generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis
@@ -115,7 +115,67 @@ def get_avg_injured_by_city():
     except Exception as e:
         return jsonify({"error": "Failed to calculate average victims", "message": str(e)}), 500
 
+
+@statistics_bp.route("/top_5_group_most_casualties", methods=["GET"])
+def top_groups_by_casualties():
+    """
+    Returns the top 5 groups with the highest casualties.
+    """
+    try:
+        top_groups = get_top_5_groups_by_casualties()
+        return jsonify({"data": top_groups}), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to fetch top groups by casualties", "message": str(e)}), 500
+
+
+@statistics_bp.route("/attack_target_correlation", methods=["GET"])
+def get_attack_target_correlation():
+    try:
+        correlation_data = analyze_attack_target_correlation()
+
+        return jsonify({"correlation": correlation_data}), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to calculate correlation", "message": str(e)}), 500
+
+
+@statistics_bp.route('/years', methods=["GET"])
+def get_all_years():
+    try:
+        all_years = get_all_years_repo()
+        return jsonify(all_years), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to fetch all years", "message": str(e)}), 500
 ##############################################
+
+@statistics_bp.route('/event_trends_for_all_years', methods=["GET"])
+def get_event_trends_for_all_years():
+    try:
+
+        yearly_df = get_yearly_trends()
+        plot_file = plot_yearly_trends(yearly_df)
+        return jsonify({
+            "plot_file": plot_file
+        }), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to generate trends", "message": str(e)}), 500
+
+
+@statistics_bp.route('/event_trends_for_specific_year', methods=["GET"])
+def get_event_trends_for_specific_year():
+    try:
+        year_id = request.args.get("year_id", type=int)
+
+        monthly_df = get_monthly_trends(year_id)
+        plot_file = plot_monthly_trends(monthly_df, year_id)
+        return jsonify({
+            "plot_file": plot_file
+        }), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to generate trends", "message": str(e)}), 500
+
+
+
+
 
 @statistics_bp.route("/most_deadly/<int:limit>", methods=["GET"])
 def get_most_deadly(limit):
@@ -150,6 +210,7 @@ def get_most_deadly_map():
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
+
 @statistics_bp.route("/top_countries/map", methods=["GET"])
 def get_top_countries_map():
     """
@@ -164,6 +225,8 @@ def get_top_countries_map():
 
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
+
 
 @statistics_bp.route("/heatmap", methods=["GET"])
 def get_heatmap():
@@ -198,46 +261,7 @@ def get_top_groups_map():
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
-@statistics_bp.route("/attack_target_correlation", methods=["GET"])
-def get_attack_target_correlation():
-
-    try:
-
-        correlation_data = analyze_attack_target_correlation()
-
-        return jsonify({"correlation": correlation_data}), 200
-    except Exception as e:
-        return jsonify({"error": "Failed to calculate correlation", "message": str(e)}), 500
-
-@statistics_bp.route("/event_trends", methods=["GET"])
-def get_event_trends_endpoint():
-
-    try:
-        year = request.args.get("year", type=int, default=None)
-
-        if year:
-            monthly_df = get_monthly_trends(year)
-            plot_monthly_trends(monthly_df, year)
-            return jsonify({
-                "monthly_trends": monthly_df.to_dict(orient="records")
-            }), 200
-        else:
-            yearly_df = get_yearly_trends()
-            plot_yearly_trends(yearly_df)
-            return jsonify({
-                "yearly_trends": yearly_df.to_dict(orient="records")
-            }), 200
-    except Exception as e:
-        return jsonify({"error": "Failed to generate trends", "message": str(e)}), 500
 
 
-@statistics_bp.route("/top_groups_by_casualties", methods=["GET"])
-def top_groups_by_casualties():
-    """
-    Returns the top 5 groups with the highest casualties.
-    """
-    try:
-        top_groups = get_top_5_groups_by_casualties()
-        return jsonify({"data": top_groups}), 200
-    except Exception as e:
-        return jsonify({"error": "Failed to fetch top groups by casualties", "message": str(e)}), 500
+
+

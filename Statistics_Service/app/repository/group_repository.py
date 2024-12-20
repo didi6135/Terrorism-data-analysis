@@ -161,7 +161,7 @@ def get_top_groups_by_region():
         return top_groups_by_region
 
 # Test the function
-print(json.dumps(get_top_groups_by_region(), indent=4))
+# print(json.dumps(get_top_groups_by_region(), indent=4))
 
 
 def get_region_coordinates():
@@ -217,3 +217,4 @@ def get_top_5_groups_by_casualties():
         ]
 
 
+# print(get_top_5_groups_by_casualties())

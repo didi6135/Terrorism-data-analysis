@@ -65,3 +65,4 @@ def analyze_attack_target_correlation():
         correlation_table = pd.crosstab(data["attack_type"], data["target_type"])
 
         return correlation_table.to_dict()
+
