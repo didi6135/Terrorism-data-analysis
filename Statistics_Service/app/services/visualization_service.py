@@ -1,3 +1,5 @@
+import os
+
 import folium
 from folium.plugins import HeatMap
 
@@ -8,10 +10,7 @@ from Statistics_Service.app.repository.group_repository import get_top_events_wi
 
 
 def generate_map_file(limit=5, output_file="top_events_map.html"):
-    """
-    Generates a map with the top events based on casualties and saves it as an HTML file.
-    """
-    # Get top events with coordinates
+
     events = get_top_events_with_coordinates(limit=limit)
     # Handle case when no events are found
     if not events:
@@ -53,24 +52,11 @@ def generate_map_file(limit=5, output_file="top_events_map.html"):
     return output_file
 
 
-
-
-
-
-
-
 def generate_top_countries_map(output_file="top_countries_map.html"):
-    """
-    Generates a map with the top 5 countries by event count.
-    """
-    # Get top countries data
-    countries = get_top_5_countries_by_events()
 
+    countries = get_top_5_countries_by_events()
     # Create a base map
     base_map = folium.Map(location=[20, 0], zoom_start=2)
-
-    # Coordinates for demonstration purposes (replace with actual country center coordinates)
-
 
     # Add markers for each country
     for country in countries:
@@ -93,7 +79,6 @@ def generate_top_countries_map(output_file="top_countries_map.html"):
     base_map.save(output_file)
     print(f"Map generated and saved as '{output_file}'")
     return output_file
-
 
 
 def generate_heatmap(output_file="heatmap.html"):
@@ -127,12 +112,12 @@ def generate_heatmap(output_file="heatmap.html"):
 
 
 
-def generate_top_groups_map():
+def generate_top_groups_map(region_id=None):
     """
-    Generate a map showing the top 5 most active groups by region.
+    Generate a map showing the top 5 most active groups by region or for a specific region.
     """
     # Fetch data
-    top_groups_by_region = get_top_groups_by_region()
+    top_groups_by_region = get_top_groups_by_region(region_id)
     region_coordinates = get_region_coordinates()
 
     # Create base map
@@ -158,14 +143,12 @@ def generate_top_groups_map():
             tooltip=f"{region} (Click for details)"
         ).add_to(world_map)
 
-    # Save map as an HTML file
-    world_map.save("top_groups_by_region_map.html")
     return world_map
 
 
 
 
-import os
+
 
 def generate_map_for_victims_analysis(data, output_file="victims_analysis_map.html"):
     if not data:

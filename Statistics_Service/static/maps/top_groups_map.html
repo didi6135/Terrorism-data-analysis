@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_df7f33f92ef39d0ae5ed405042bc3f09 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_df7f33f92ef39d0ae5ed405042bc3f09" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_df7f33f92ef39d0ae5ed405042bc3f09 = L.map(
+                "map_df7f33f92ef39d0ae5ed405042bc3f09",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_62c0ea65ba3eeed954eb2f8ac6ed3bd8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_62c0ea65ba3eeed954eb2f8ac6ed3bd8.addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+            var marker_935396195b44ff8ab359c7cb69565a5a = L.marker(
+                [-19.848612376712328, 133.6732219315069],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_0518d2bcd5e888b1a47a3bec02cdf52f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_490de118032b6599e470ae09f9c8a2c3 = $(`<div id="html_490de118032b6599e470ae09f9c8a2c3" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Australasia & Oceania</strong><br><ol><li>Bougainville Revolutionary Army (BRA) (1 events)</li></ol></div>`)[0];
+                popup_0518d2bcd5e888b1a47a3bec02cdf52f.setContent(html_490de118032b6599e470ae09f9c8a2c3);
+            
+        
+
+        marker_935396195b44ff8ab359c7cb69565a5a.bindPopup(popup_0518d2bcd5e888b1a47a3bec02cdf52f)
+        ;
+
+        
+    
+    
+            marker_935396195b44ff8ab359c7cb69565a5a.bindTooltip(
+                `<div>
+                     Australasia & Oceania (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d7a5b326d9636a8c4493b85360d0e48c = L.marker(
+                [10.520275730704002, -36616.18017919836],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_6e63416a1921d7a9d79caa547683f259 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_841a0c1daa6552e00a38b5af0127258c = $(`<div id="html_841a0c1daa6552e00a38b5af0127258c" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Central America & Caribbean</strong><br><ol><li>Recompras (6 events)</li><li>Armed Forces of National Resistance (FARN) (2 events)</li><li>Democratic Revolutionary Front (FDR) (1 events)</li><li>People's Revolutionary Army (ERP) (El Salvador) (1 events)</li><li>Ex-Somoza National Guard (1 events)</li></ol></div>`)[0];
+                popup_6e63416a1921d7a9d79caa547683f259.setContent(html_841a0c1daa6552e00a38b5af0127258c);
+            
+        
+
+        marker_d7a5b326d9636a8c4493b85360d0e48c.bindPopup(popup_6e63416a1921d7a9d79caa547683f259)
+        ;
+
+        
+    
+    
+            marker_d7a5b326d9636a8c4493b85360d0e48c.bindTooltip(
+                `<div>
+                     Central America & Caribbean (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_92f922ca83443809df0b799f3e06c564 = L.marker(
+                [30.679211335820902, 39.24678926119399],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_3faf64db947b3e5c6da2bd12645144e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_65adf9e9fae2fdabb69eb60973c32092 = $(`<div id="html_65adf9e9fae2fdabb69eb60973c32092" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Central Asia</strong><br><ol><li>Islamic Movement of Uzbekistan (IMU) (3 events)</li><li>Forest Brothers (1 events)</li></ol></div>`)[0];
+                popup_3faf64db947b3e5c6da2bd12645144e8.setContent(html_65adf9e9fae2fdabb69eb60973c32092);
+            
+        
+
+        marker_92f922ca83443809df0b799f3e06c564.bindPopup(popup_3faf64db947b3e5c6da2bd12645144e8)
+        ;
+
+        
+    
+    
+            marker_92f922ca83443809df0b799f3e06c564.bindTooltip(
+                `<div>
+                     Central Asia (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_23780ee4744aee5b3fe3dc24b3890cce = L.marker(
+                [30.12787380612243, 103.99198279251704],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_05426eb4b1d717ccac2264cabe420242 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0f1b83327c55e01b4fd6033055665d27 = $(`<div id="html_0f1b83327c55e01b4fd6033055665d27" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in East Asia</strong><br><ol><li>National Democratic Alliance Army (NDAA-ESSA) (2 events)</li></ol></div>`)[0];
+                popup_05426eb4b1d717ccac2264cabe420242.setContent(html_0f1b83327c55e01b4fd6033055665d27);
+            
+        
+
+        marker_23780ee4744aee5b3fe3dc24b3890cce.bindPopup(popup_05426eb4b1d717ccac2264cabe420242)
+        ;
+
+        
+    
+    
+            marker_23780ee4744aee5b3fe3dc24b3890cce.bindTooltip(
+                `<div>
+                     East Asia (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d1f07eef2e8df0f58e623b846485e320 = L.marker(
+                [38.84357642655244, 30.541058014561063],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_7a562028453906d4c1a2742ff0f9834f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b77d51c65c3c59de6634b18471c3940e = $(`<div id="html_b77d51c65c3c59de6634b18471c3940e" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Eastern Europe</strong><br><ol><li>Khasavyurt Group (3 events)</li><li>Chechen Rebels (2 events)</li><li>Albanian Liberation Army (1 events)</li><li>Separatists (1 events)</li><li>Riyadus-Salikhin Reconnaissance and Sabotage Battalion of Chechen Martyrs (1 events)</li></ol></div>`)[0];
+                popup_7a562028453906d4c1a2742ff0f9834f.setContent(html_b77d51c65c3c59de6634b18471c3940e);
+            
+        
+
+        marker_d1f07eef2e8df0f58e623b846485e320.bindPopup(popup_7a562028453906d4c1a2742ff0f9834f)
+        ;
+
+        
+    
+    
+            marker_d1f07eef2e8df0f58e623b846485e320.bindTooltip(
+                `<div>
+                     Eastern Europe (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_22f059332691a0a47a3d5d255cc73e7e = L.marker(
+                [27.78290334225245, 30.5720145362406],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_4b3e1651c314b8b23d7c7535aef31560 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_972a3a18e40602457ece88d9b45047a3 = $(`<div id="html_972a3a18e40602457ece88d9b45047a3" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Middle East & North Africa</strong><br><ol><li>Al-Nusrah Front (56 events)</li><li>Badr Brigades (52 events)</li><li>Islamic State of Iraq and the Levant (ISIL) (45 events)</li><li>Palestinian Islamic Jihad (PIJ) (37 events)</li><li>Ahrar al-Sham (35 events)</li></ol></div>`)[0];
+                popup_4b3e1651c314b8b23d7c7535aef31560.setContent(html_972a3a18e40602457ece88d9b45047a3);
+            
+        
+
+        marker_22f059332691a0a47a3d5d255cc73e7e.bindPopup(popup_4b3e1651c314b8b23d7c7535aef31560)
+        ;
+
+        
+    
+    
+            marker_22f059332691a0a47a3d5d255cc73e7e.bindTooltip(
+                `<div>
+                     Middle East & North Africa (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_09aae085c395d5eacc85e69e21bce3f9 = L.marker(
+                [31.0191094957082, -84.65324867811154],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_e05ac2e0dc3929d46dde565e51525186 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a8fffdd8c40455aeb5e64af087c6cafa = $(`<div id="html_a8fffdd8c40455aeb5e64af087c6cafa" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in North America</strong><br><ol><li>Animal Liberation Front (ALF) (12 events)</li><li>Earth Liberation Front (ELF) (11 events)</li><li>Organization of Volunteers for the Puerto Rican Revolution (9 events)</li><li>Jewish Action Movement (5 events)</li><li>Palestine Liberation Organization (PLO) (4 events)</li></ol></div>`)[0];
+                popup_e05ac2e0dc3929d46dde565e51525186.setContent(html_a8fffdd8c40455aeb5e64af087c6cafa);
+            
+        
+
+        marker_09aae085c395d5eacc85e69e21bce3f9.bindPopup(popup_e05ac2e0dc3929d46dde565e51525186)
+        ;
+
+        
+    
+    
+            marker_09aae085c395d5eacc85e69e21bce3f9.bindTooltip(
+                `<div>
+                     North America (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2252fed09a8514ec75ea84d6a4d9aba3 = L.marker(
+                [-2.2149141358357496, -57.636631373289106],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_76fad145f29385c9dd9bf77b37fe506b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_158c62e4b1e414b5da83cbb5bac73a18 = $(`<div id="html_158c62e4b1e414b5da83cbb5bac73a18" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in South America</strong><br><ol><li>National Liberation Army of Colombia (ELN) (50 events)</li><li>Revolutionary Armed Forces of Colombia (FARC) (24 events)</li><li>Movement of the Revolutionary Left (MIR) (Peru) (18 events)</li><li>M-19 (Movement of April 19) (9 events)</li><li>Popular Liberation Army (EPL) (7 events)</li></ol></div>`)[0];
+                popup_76fad145f29385c9dd9bf77b37fe506b.setContent(html_158c62e4b1e414b5da83cbb5bac73a18);
+            
+        
+
+        marker_2252fed09a8514ec75ea84d6a4d9aba3.bindPopup(popup_76fad145f29385c9dd9bf77b37fe506b)
+        ;
+
+        
+    
+    
+            marker_2252fed09a8514ec75ea84d6a4d9aba3.bindTooltip(
+                `<div>
+                     South America (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4544b2fc96976e2cd296f28db5c436d1 = L.marker(
+                [26.304568219228887, 69.28871885408404],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_a142f1ef21256021ac4580f4af040f0b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9aaffd6e2d65edd84baa543df3800e56 = $(`<div id="html_9aaffd6e2d65edd84baa543df3800e56" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in South Asia</strong><br><ol><li>Khorasan Chapter of the Islamic State (53 events)</li><li>Tehrik-i-Taliban Pakistan (TTP) (44 events)</li><li>Taliban (42 events)</li><li>Lashkar-e-Taiba (LeT) (41 events)</li><li>Lashkar-e-Jhangvi (40 events)</li></ol></div>`)[0];
+                popup_a142f1ef21256021ac4580f4af040f0b.setContent(html_9aaffd6e2d65edd84baa543df3800e56);
+            
+        
+
+        marker_4544b2fc96976e2cd296f28db5c436d1.bindPopup(popup_a142f1ef21256021ac4580f4af040f0b)
+        ;
+
+        
+    
+    
+            marker_4544b2fc96976e2cd296f28db5c436d1.bindTooltip(
+                `<div>
+                     South Asia (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dc662f2895958b6875db37bd5170a27b = L.marker(
+                [8.24211686948855, 105.86578662176066],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_c563a81ab2cdf87c581fb28d2e3750a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd551950ba024448893e180712489f07 = $(`<div id="html_dd551950ba024448893e180712489f07" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Southeast Asia</strong><br><ol><li>Maute Group (18 events)</li><li>Abu Sayyaf Group (ASG) (18 events)</li><li>Runda Kumpulan Kecil (RKK) (17 events)</li><li>Barisan Revolusi Nasional (BRN) (17 events)</li><li>Arakan Army (AA) (15 events)</li></ol></div>`)[0];
+                popup_c563a81ab2cdf87c581fb28d2e3750a4.setContent(html_dd551950ba024448893e180712489f07);
+            
+        
+
+        marker_dc662f2895958b6875db37bd5170a27b.bindPopup(popup_c563a81ab2cdf87c581fb28d2e3750a4)
+        ;
+
+        
+    
+    
+            marker_dc662f2895958b6875db37bd5170a27b.bindTooltip(
+                `<div>
+                     Southeast Asia (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5a213b464dca31187d6215bfe6902ff6 = L.marker(
+                [2.711448027144135, 20.20711882095064],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_a82eca8ce352e4c34b4cbbb5fe8f88f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8dd81687598c0f26f5b50538e021fce = $(`<div id="html_f8dd81687598c0f26f5b50538e021fce" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Sub-Saharan Africa</strong><br><ol><li>Hizbul al Islam (Somalia) (19 events)</li><li>Movement for Oneness and Jihad in West Africa (MUJAO) (16 events)</li><li>Boko Haram (16 events)</li><li>Fulani extremists (14 events)</li><li>Al-Qaida in the Islamic Maghreb (AQIM) (14 events)</li></ol></div>`)[0];
+                popup_a82eca8ce352e4c34b4cbbb5fe8f88f1.setContent(html_f8dd81687598c0f26f5b50538e021fce);
+            
+        
+
+        marker_5a213b464dca31187d6215bfe6902ff6.bindPopup(popup_a82eca8ce352e4c34b4cbbb5fe8f88f1)
+        ;
+
+        
+    
+    
+            marker_5a213b464dca31187d6215bfe6902ff6.bindTooltip(
+                `<div>
+                     Sub-Saharan Africa (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_75cf66fc565187047b8b757bcb381bef = L.marker(
+                [37.03102821892037, 3.0170764975463404],
+                {
+}
+            ).addTo(map_df7f33f92ef39d0ae5ed405042bc3f09);
+        
+    
+        var popup_8409286a1d876bed6021f2b5ccb2614b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cd20036cdff32420bd3598081ca5396 = $(`<div id="html_8cd20036cdff32420bd3598081ca5396" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Western Europe</strong><br><ol><li>1 May (6 events)</li><li>Revolutionary Struggle (5 events)</li><li>Circle of Violators/Nucleus Lovers of Anomy (5 events)</li><li>International Revolutionary Front (4 events)</li><li>Informal Anarchist Federation (3 events)</li></ol></div>`)[0];
+                popup_8409286a1d876bed6021f2b5ccb2614b.setContent(html_8cd20036cdff32420bd3598081ca5396);
+            
+        
+
+        marker_75cf66fc565187047b8b757bcb381bef.bindPopup(popup_8409286a1d876bed6021f2b5ccb2614b)
+        ;
+
+        
+    
+    
+            marker_75cf66fc565187047b8b757bcb381bef.bindTooltip(
+                `<div>
+                     Western Europe (Click for details)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

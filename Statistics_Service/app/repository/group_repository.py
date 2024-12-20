@@ -77,57 +77,13 @@ def get_top_events_with_coordinates(limit=5):
 
 
 
+def get_top_groups_by_region(region_id=None):
 
-# print(json.dumps(get_top_events_with_coordinates(5), indent=4))
-
-
-
-# def get_top_active_groups(limit=5, region_id=None):
-#     """
-#     Retrieves the most active groups based on the number of events, filtered by region if provided.
-#     """
-#     with session_maker() as session:
-#         query = (
-#             session.query(
-#                 Group.name.label("group_name"),
-#                 func.count(Event.id).label("event_count"),
-#                 Region.name.label("region_name"),
-#                 func.array_agg(Event.id).label("event_ids")
-#             )
-#             .join(event_groups, Group.id == event_groups.c.group_id)
-#             .join(Event, Event.id == event_groups.c.event_id)
-#             .join(Location, Event.location_id == Location.id)
-#             .join(City, Location.city_id == City.id)
-#             .join(Region, City.country_id == Region.id)
-#         )
-#
-#         if region_id:
-#             query = query.filter(Region.id == region_id)
-#
-#         query = (
-#             query.group_by(Group.name, Region.name)
-#             .order_by(func.count(Event.id).desc())
-#             .limit(limit)
-#         )
-#
-#         results = query.all()
-#
-#         return [
-#             {
-#                 "group_name": row.group_name,
-#                 "event_count": row.event_count,
-#                 "region_name": row.region_name,
-#                 "event_ids": row.event_ids,
-#             }
-#             for row in results
-def get_top_groups_by_region():
-    """
-    Retrieves the top 5 most active groups for each region.
-    """
     with session_maker() as session:
-        # Query to count events per group per region
-        results = (
+        # Base query to fetch group activity by region
+        query = (
             session.query(
+                Region.id.label("region_id"),
                 Region.name.label("region_name"),
                 Group.name.label("group_name"),
                 func.count(Event.id).label("event_count")
@@ -138,10 +94,16 @@ def get_top_groups_by_region():
             .join(Region, Region.id == Country.region_id)
             .join(event_groups, event_groups.c.event_id == Event.id)
             .join(Group, Group.id == event_groups.c.group_id)
-            .group_by(Region.name, Group.name)
+            .group_by(Region.id, Region.name, Group.name)
             .order_by(Region.name, func.count(Event.id).desc())
-            .all()
         )
+
+        # Apply region filtering if region_id is provided
+        if region_id:
+            query = query.filter(Region.id == region_id)
+
+        # Execute the query and fetch results
+        results = query.all()
 
         # Organize results by region
         grouped_results = {}
@@ -153,15 +115,14 @@ def get_top_groups_by_region():
                 "event_count": row.event_count
             })
 
-        # For each region, keep only the top 5 groups
+        # Keep only the top 5 groups for each region
         top_groups_by_region = {
             region: groups[:5] for region, groups in grouped_results.items()
         }
 
         return top_groups_by_region
 
-# Test the function
-# print(json.dumps(get_top_groups_by_region(), indent=4))
+
 
 
 def get_region_coordinates():

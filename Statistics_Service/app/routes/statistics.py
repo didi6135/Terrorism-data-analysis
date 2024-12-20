@@ -145,7 +145,7 @@ def get_all_years():
         return jsonify(all_years), 200
     except Exception as e:
         return jsonify({"error": "Failed to fetch all years", "message": str(e)}), 500
-##############################################
+
 
 @statistics_bp.route('/event_trends_for_all_years', methods=["GET"])
 def get_event_trends_for_all_years():
@@ -159,7 +159,6 @@ def get_event_trends_for_all_years():
     except Exception as e:
         return jsonify({"error": "Failed to generate trends", "message": str(e)}), 500
 
-
 @statistics_bp.route('/event_trends_for_specific_year', methods=["GET"])
 def get_event_trends_for_specific_year():
     try:
@@ -172,6 +171,26 @@ def get_event_trends_for_specific_year():
         }), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate trends", "message": str(e)}), 500
+##############################################
+
+@statistics_bp.route("/most_active_group_by_some_region_or_all_region", methods=["GET"])
+def get_top_groups_map():
+    try:
+        region_id = request.args.get("region", type=int)
+
+        # Define the file path for saving the map
+        map_file_path = "static/maps/top_groups_map.html"
+
+        # Generate the map and save it to a file
+        map_object = generate_top_groups_map(region_id)
+        map_object.save(map_file_path)
+
+        # Return the file path to the client
+        return jsonify({
+            "map_file": map_file_path
+        }), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
 
 
@@ -245,21 +264,9 @@ def get_heatmap():
     except Exception as e:
         return jsonify({"error": "Failed to generate heatmap", "message": str(e)}), 500
 
-@statistics_bp.route("/top_groups_map", methods=["GET"])
-def get_top_groups_map():
 
-    try:
-        map_file_path = "top_groups_map.html"
-        map_object = generate_top_groups_map()
-        map_object.save(map_file_path)
 
-        return send_file(
-            map_file_path,
-            mimetype="text/html",
-            as_attachment=False
-        )
-    except Exception as e:
-        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
 
 
 
