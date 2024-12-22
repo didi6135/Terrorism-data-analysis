@@ -85,7 +85,6 @@ def get_unique_groups_by_region(region_id):
 
         results = query.all()
 
-        # עיבוד התוצאות לפורמט הרצוי
         return [
             {
                 "region_name": row.region_name,

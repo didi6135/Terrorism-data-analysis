@@ -278,7 +278,7 @@ def attack_strategy_map_by_country():
         }), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
-##############################################
+
 
 @statistics_bp.route('/unique_group_by_region', methods=["GET"])
 def intergroup_activity_map_by_region():
@@ -322,6 +322,9 @@ def intergroup_activity_map_by_country():
 
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+##############################################
+
+
 
 
 

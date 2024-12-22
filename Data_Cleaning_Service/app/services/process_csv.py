@@ -6,7 +6,7 @@ import pandas as pd
 from Data_Cleaning_Service.app.db.config import CLEANED_DATA_PATH
 from Data_Cleaning_Service.app.services.split_to_neo4j import main_process_neo4j
 from Data_Cleaning_Service.app.utils.logger import log
-from Data_Cleaning_Service.app.services.split_to_postgres import main_split
+# from Data_Cleaning_Service.app.services.split_to_postgres import main_split
 
 
 def process_csv(file_name):
@@ -26,7 +26,7 @@ def process_csv(file_name):
         for index, row in data.iterrows():
             try:
                 # main_split(row)
-                main_process_neo4j(row)
+                # main_process_neo4j(row)
                 log(f"Processed row {index + 1} successfully.")
                 # time.sleep(5)
             except Exception as e:
