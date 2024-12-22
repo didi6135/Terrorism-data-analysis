@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6b3b9f3ffbcc594b3ad33b33801925ef {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6b3b9f3ffbcc594b3ad33b33801925ef" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6b3b9f3ffbcc594b3ad33b33801925ef = L.map(
+                "map_6b3b9f3ffbcc594b3ad33b33801925ef",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7f05403d99aae1dbaf038872fbe5474b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7f05403d99aae1dbaf038872fbe5474b.addTo(map_6b3b9f3ffbcc594b3ad33b33801925ef);
+        
+    
+            var marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_1e1a4ce023ce7dd45c1774d467b587fa = L.marker(
+                [18.386932, -66.061127],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_da1d157cb72840d84e2092aed15315f2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a69871221df7812eca7dfa623aa674c = $(`<div id="html_3a69871221df7812eca7dfa623aa674c" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 112<br>         <strong>Description:</strong> 3/5/1970: Unknown Puerto Rican Nationalists assassinated two United States Navy personal stationed in San Juan, Puerto Rico.  The incident was in response to the death of Antonia Martinez Lagaras, who was shot and killed during a confrontation between students and police in front of the R.O.T.C. building at the University of Puerto Rico, Rio Piedras a day earlier.<br>         <strong>Location:</strong> San Juan, United States<br>         <strong>Groups:</strong>         <ul>         <li>Armed Commandos of Liberation</li><li>Armed Revolutionary Independence Movement (MIRA)</li>         </ul>         </div>`)[0];
+                popup_da1d157cb72840d84e2092aed15315f2.setContent(html_3a69871221df7812eca7dfa623aa674c);
+            
+        
+
+        marker_1e1a4ce023ce7dd45c1774d467b587fa.bindPopup(popup_da1d157cb72840d84e2092aed15315f2)
+        ;
+
+        
+    
+    
+            marker_1e1a4ce023ce7dd45c1774d467b587fa.bindTooltip(
+                `<div>
+                     Event ID: 112
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2d8afa1e0288e259bf92f5d3e7a2bbe8 = L.marker(
+                [1.27986, 103.848989],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_05066ff36ba31deec1c7f7738f2d930b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fe2051c91b643df6358f5b6a4bd534c = $(`<div id="html_5fe2051c91b643df6358f5b6a4bd534c" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 2210<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Unknown, Singapore<br>         <strong>Groups:</strong>         <ul>         <li>Japanese Red Army (JRA)</li><li>Popular Front for the Liberation of Palestine (PFLP)</li>         </ul>         </div>`)[0];
+                popup_05066ff36ba31deec1c7f7738f2d930b.setContent(html_5fe2051c91b643df6358f5b6a4bd534c);
+            
+        
+
+        marker_2d8afa1e0288e259bf92f5d3e7a2bbe8.bindPopup(popup_05066ff36ba31deec1c7f7738f2d930b)
+        ;
+
+        
+    
+    
+            marker_2d8afa1e0288e259bf92f5d3e7a2bbe8.bindTooltip(
+                `<div>
+                     Event ID: 2210
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_04615d5f00afdc845dda5d2b5363d9d2 = L.marker(
+                [48.856644, 2.34233],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_ef1afcca850fc2a3fa865a8201c32cf5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b68c40ceda2acaebbcd5ff1bdaacc00 = $(`<div id="html_0b68c40ceda2acaebbcd5ff1bdaacc00" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 2498<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Paris, France<br>         <strong>Groups:</strong>         <ul>         <li>Carlos the Jackal</li><li>Popular Front for the Liberation of Palestine (PFLP)</li>         </ul>         </div>`)[0];
+                popup_ef1afcca850fc2a3fa865a8201c32cf5.setContent(html_0b68c40ceda2acaebbcd5ff1bdaacc00);
+            
+        
+
+        marker_04615d5f00afdc845dda5d2b5363d9d2.bindPopup(popup_ef1afcca850fc2a3fa865a8201c32cf5)
+        ;
+
+        
+    
+    
+            marker_04615d5f00afdc845dda5d2b5363d9d2.bindTooltip(
+                `<div>
+                     Event ID: 2498
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f6ada04a2706810dbbe4a58119d7ec30 = L.marker(
+                [48.856644, 2.34233],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_4fe28e368edae0cfbc9ac6ef91d6c894 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e63fc79b475b4ec5ec896f195fadf207 = $(`<div id="html_e63fc79b475b4ec5ec896f195fadf207" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 2758<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Paris, France<br>         <strong>Groups:</strong>         <ul>         <li>Carlos the Jackal</li><li>Popular Front for the Liberation of Palestine (PFLP)</li>         </ul>         </div>`)[0];
+                popup_4fe28e368edae0cfbc9ac6ef91d6c894.setContent(html_e63fc79b475b4ec5ec896f195fadf207);
+            
+        
+
+        marker_f6ada04a2706810dbbe4a58119d7ec30.bindPopup(popup_4fe28e368edae0cfbc9ac6ef91d6c894)
+        ;
+
+        
+    
+    
+            marker_f6ada04a2706810dbbe4a58119d7ec30.bindTooltip(
+                `<div>
+                     Event ID: 2758
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3a8f9827cabd1c4641abfeef8b2fa351 = L.marker(
+                [40.697132, -73.931351],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_a9a7279c5218412fec97ca0afce8da47 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b13cefc28a0d4221bae9b9700422b761 = $(`<div id="html_b13cefc28a0d4221bae9b9700422b761" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 4351<br>         <strong>Description:</strong> 12/1/1976: In a series of four related attacks, unknown perpetrators sent out an incendiary device, placed in a nine-by-twelve inch manila envelope, addressed to the United States Department of Justice in New York City in the United States.  The firebomb was discovered by mailman Robert Panzone in a mailbox on the intersection of 42nd Street and Vanderbilt Avenue in Manhattan New York.  Panzone sustained minor burns on his hands.<br>         <strong>Location:</strong> New York City, United States<br>         <strong>Groups:</strong>         <ul>         <li>Independent Armed Revolutionary Commandos (CRIA)</li><li>Palestine Liberation Organization (PLO)</li>         </ul>         </div>`)[0];
+                popup_a9a7279c5218412fec97ca0afce8da47.setContent(html_b13cefc28a0d4221bae9b9700422b761);
+            
+        
+
+        marker_3a8f9827cabd1c4641abfeef8b2fa351.bindPopup(popup_a9a7279c5218412fec97ca0afce8da47)
+        ;
+
+        
+    
+    
+            marker_3a8f9827cabd1c4641abfeef8b2fa351.bindTooltip(
+                `<div>
+                     Event ID: 4351
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2f25c7b79d57c4a26df4394154643e30 = L.marker(
+                [40.697132, -73.931351],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_14514d79487a8d6b8807babcf543aaba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8587ab606d65adf07d8a103cfa108f23 = $(`<div id="html_8587ab606d65adf07d8a103cfa108f23" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 4352<br>         <strong>Description:</strong> 12/1/1976: In a series of four related attacks, unknown perpetrators sent out an incendiary device, placed in a nine-by-twelve inch manila envelope, addressed to the President-Elect Jimmy Carter.  The firebomb was discovered in a mailbox on Fifth Avenue and 43 Street in Manhattan, New York in the United States.  There were no casualties and it is unknown if the device caused any damage.<br>         <strong>Location:</strong> New York City, United States<br>         <strong>Groups:</strong>         <ul>         <li>Independent Armed Revolutionary Commandos (CRIA)</li><li>Palestine Liberation Organization (PLO)</li>         </ul>         </div>`)[0];
+                popup_14514d79487a8d6b8807babcf543aaba.setContent(html_8587ab606d65adf07d8a103cfa108f23);
+            
+        
+
+        marker_2f25c7b79d57c4a26df4394154643e30.bindPopup(popup_14514d79487a8d6b8807babcf543aaba)
+        ;
+
+        
+    
+    
+            marker_2f25c7b79d57c4a26df4394154643e30.bindTooltip(
+                `<div>
+                     Event ID: 4352
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_eb996651ff2801ffa87226a9755f25b1 = L.marker(
+                [40.697132, -73.931351],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_0746a332ed7a23344088a2c55bf5c75b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1024bad36dc6e65065d94fb1774ee1fe = $(`<div id="html_1024bad36dc6e65065d94fb1774ee1fe" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 4353<br>         <strong>Description:</strong> 12/1/1976: In a series of four related attacks, unknown perpetrators sent out an incendiary device, placed in a nine-by-twelve inch manila envelope, addressed to the Central Intelligence Agency.  The firebomb was discovered smoking in a mail-chute in the Leftcourt-Marlboro Building in Manhattan, New York in the United States.  There were no casualties, and it is unknown whether the device caused any damage.<br>         <strong>Location:</strong> New York City, United States<br>         <strong>Groups:</strong>         <ul>         <li>Independent Armed Revolutionary Commandos (CRIA)</li><li>Palestine Liberation Organization (PLO)</li>         </ul>         </div>`)[0];
+                popup_0746a332ed7a23344088a2c55bf5c75b.setContent(html_1024bad36dc6e65065d94fb1774ee1fe);
+            
+        
+
+        marker_eb996651ff2801ffa87226a9755f25b1.bindPopup(popup_0746a332ed7a23344088a2c55bf5c75b)
+        ;
+
+        
+    
+    
+            marker_eb996651ff2801ffa87226a9755f25b1.bindTooltip(
+                `<div>
+                     Event ID: 4353
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b2e6f141668e9e43998c3f1ca41ddfe6 = L.marker(
+                [40.697132, -73.931351],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_d516ac26fd92d2731c79f2bf73b4a136 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb8bc4e52bfc296c5e03ca1ebdb5a6ad = $(`<div id="html_fb8bc4e52bfc296c5e03ca1ebdb5a6ad" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 4354<br>         <strong>Description:</strong> 12/1/1976: In a series of four related attacks, unknown perpetrators sent out an incendiary device, placed in a nine-by-twelve inch manila envelope, addressed to the Federal Bureau of Investigation in New York City in the United States.  The firebomb was discovered at the General Post Office in Manhattan New York.  There were no casualties and it is unknown if the device caused any damage.<br>         <strong>Location:</strong> New York City, United States<br>         <strong>Groups:</strong>         <ul>         <li>Independent Armed Revolutionary Commandos (CRIA)</li><li>Palestine Liberation Organization (PLO)</li>         </ul>         </div>`)[0];
+                popup_d516ac26fd92d2731c79f2bf73b4a136.setContent(html_fb8bc4e52bfc296c5e03ca1ebdb5a6ad);
+            
+        
+
+        marker_b2e6f141668e9e43998c3f1ca41ddfe6.bindPopup(popup_d516ac26fd92d2731c79f2bf73b4a136)
+        ;
+
+        
+    
+    
+            marker_b2e6f141668e9e43998c3f1ca41ddfe6.bindTooltip(
+                `<div>
+                     Event ID: 4354
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1e10604698f45868ffc15f9f12640257 = L.marker(
+                [40.697132, -73.931351],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_b9e418f8c90749b0e6e7748fc330fd18 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_753264db8034204a6f299b5d09566399 = $(`<div id="html_753264db8034204a6f299b5d09566399" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 4373<br>         <strong>Description:</strong> 12/10/1976: Unknown perpetrators sent a letter bomb to the United States Immigration and Naturalization Service.  The bomb exploded on the conveyor belt of the General Post Office in Manhattan New York.  There were no casualties and it is unknown if the device caused any damages.  A second letter bomb was also found on the same conveyor belt but it was removed before detonating.<br>         <strong>Location:</strong> New York City, United States<br>         <strong>Groups:</strong>         <ul>         <li>Palestine Liberation Organization (PLO)</li><li>Puerto Rican Nationalists</li>         </ul>         </div>`)[0];
+                popup_b9e418f8c90749b0e6e7748fc330fd18.setContent(html_753264db8034204a6f299b5d09566399);
+            
+        
+
+        marker_1e10604698f45868ffc15f9f12640257.bindPopup(popup_b9e418f8c90749b0e6e7748fc330fd18)
+        ;
+
+        
+    
+    
+            marker_1e10604698f45868ffc15f9f12640257.bindTooltip(
+                `<div>
+                     Event ID: 4373
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_01535fd987f879dd4000000c76e6132c = L.marker(
+                [33.888523, 35.503513],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_b1d49278f89590ac0f506a9a2ef4d422 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da4cd8602f53ac37c5cbc414ed83e5fd = $(`<div id="html_da4cd8602f53ac37c5cbc414ed83e5fd" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 4823<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Beirut, Lebanon<br>         <strong>Groups:</strong>         <ul>         <li>Carlos the Jackal</li><li>Popular Front for the Liberation of Palestine (PFLP)</li>         </ul>         </div>`)[0];
+                popup_b1d49278f89590ac0f506a9a2ef4d422.setContent(html_da4cd8602f53ac37c5cbc414ed83e5fd);
+            
+        
+
+        marker_01535fd987f879dd4000000c76e6132c.bindPopup(popup_b1d49278f89590ac0f506a9a2ef4d422)
+        ;
+
+        
+    
+    
+            marker_01535fd987f879dd4000000c76e6132c.bindTooltip(
+                `<div>
+                     Event ID: 4823
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7f231e22c371363fac9d2c802b079f0f = L.marker(
+                [18.431705, -66.486377],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_13014fdb3a56709c1235d1239e50003d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a00984c6437709d0b5886e99a356331 = $(`<div id="html_0a00984c6437709d0b5886e99a356331" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 6819<br>         <strong>Description:</strong> 10/2/1978: In a joint operation, the Macheteros and the Organization of Volunteers for the Puerto Rican Revolution, stole explosives from the public works warehouse in Manati, Puerto Rico.<br>         <strong>Location:</strong> Manati, United States<br>         <strong>Groups:</strong>         <ul>         <li>Macheteros</li><li>Organization of Volunteers for the Puerto Rican Revolution</li>         </ul>         </div>`)[0];
+                popup_13014fdb3a56709c1235d1239e50003d.setContent(html_0a00984c6437709d0b5886e99a356331);
+            
+        
+
+        marker_7f231e22c371363fac9d2c802b079f0f.bindPopup(popup_13014fdb3a56709c1235d1239e50003d)
+        ;
+
+        
+    
+    
+            marker_7f231e22c371363fac9d2c802b079f0f.bindTooltip(
+                `<div>
+                     Event ID: 6819
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_56f414ca2f91d736442fff4995e5a61a = L.marker(
+                [13.69288, -89.199161],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_91d1de84acce2819d469ef9c27c185e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2380c518367dd7df537652ba444767b2 = $(`<div id="html_2380c518367dd7df537652ba444767b2" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8545<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> San Salvador, El Salvador<br>         <strong>Groups:</strong>         <ul>         <li>Revolutionary Student Movement (MER)</li><li>United Popular Action Front (FAPU)</li>         </ul>         </div>`)[0];
+                popup_91d1de84acce2819d469ef9c27c185e8.setContent(html_2380c518367dd7df537652ba444767b2);
+            
+        
+
+        marker_56f414ca2f91d736442fff4995e5a61a.bindPopup(popup_91d1de84acce2819d469ef9c27c185e8)
+        ;
+
+        
+    
+    
+            marker_56f414ca2f91d736442fff4995e5a61a.bindTooltip(
+                `<div>
+                     Event ID: 8545
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5342e4b5d21800f69db5cc8cbbd2a060 = L.marker(
+                [41.842602, -87.681229],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_8c6c41ceb47fa655bbfcfc8679208eb3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e3c739b559c688e15929452e9bb2bda = $(`<div id="html_8e3c739b559c688e15929452e9bb2bda" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8593<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Chicago, United States<br>         <strong>Groups:</strong>         <ul>         <li>International Committee Against Nazism</li><li>Jewish Action Movement</li>         </ul>         </div>`)[0];
+                popup_8c6c41ceb47fa655bbfcfc8679208eb3.setContent(html_8e3c739b559c688e15929452e9bb2bda);
+            
+        
+
+        marker_5342e4b5d21800f69db5cc8cbbd2a060.bindPopup(popup_8c6c41ceb47fa655bbfcfc8679208eb3)
+        ;
+
+        
+    
+    
+            marker_5342e4b5d21800f69db5cc8cbbd2a060.bindTooltip(
+                `<div>
+                     Event ID: 8593
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fd293e234e9682ca762aeaaa1bd7b502 = L.marker(
+                [41.84484, -87.746834],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_53f61f306d9891580910229087e773d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27ef17a9e3f469612518bdabe5313520 = $(`<div id="html_27ef17a9e3f469612518bdabe5313520" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8594<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Cicero, United States<br>         <strong>Groups:</strong>         <ul>         <li>International Committee Against Nazism</li><li>Jewish Action Movement</li>         </ul>         </div>`)[0];
+                popup_53f61f306d9891580910229087e773d4.setContent(html_27ef17a9e3f469612518bdabe5313520);
+            
+        
+
+        marker_fd293e234e9682ca762aeaaa1bd7b502.bindPopup(popup_53f61f306d9891580910229087e773d4)
+        ;
+
+        
+    
+    
+            marker_fd293e234e9682ca762aeaaa1bd7b502.bindTooltip(
+                `<div>
+                     Event ID: 8594
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_48530389c10906352756d4ab9055be4c = L.marker(
+                [40.916465, -74.171084],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_fde5307853b0b6f692f52d5d3e05e34b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90c80f80357097df31dd9dffbcd783dc = $(`<div id="html_90c80f80357097df31dd9dffbcd783dc" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8595<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Paterson, United States<br>         <strong>Groups:</strong>         <ul>         <li>International Committee Against Nazism</li><li>Jewish Action Movement</li>         </ul>         </div>`)[0];
+                popup_fde5307853b0b6f692f52d5d3e05e34b.setContent(html_90c80f80357097df31dd9dffbcd783dc);
+            
+        
+
+        marker_48530389c10906352756d4ab9055be4c.bindPopup(popup_fde5307853b0b6f692f52d5d3e05e34b)
+        ;
+
+        
+    
+    
+            marker_48530389c10906352756d4ab9055be4c.bindTooltip(
+                `<div>
+                     Event ID: 8595
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d2e190447bdee2577fbbbc4ae659600d = L.marker(
+                [40.81362, -96.707739],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_17e6f8c608ac978f1148aebc5458c229 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d976a892d74c018c020f9670a481785 = $(`<div id="html_3d976a892d74c018c020f9670a481785" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8607<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Lincoln, United States<br>         <strong>Groups:</strong>         <ul>         <li>International Committee Against Nazism</li><li>Jewish Action Movement</li>         </ul>         </div>`)[0];
+                popup_17e6f8c608ac978f1148aebc5458c229.setContent(html_3d976a892d74c018c020f9670a481785);
+            
+        
+
+        marker_d2e190447bdee2577fbbbc4ae659600d.bindPopup(popup_17e6f8c608ac978f1148aebc5458c229)
+        ;
+
+        
+    
+    
+            marker_d2e190447bdee2577fbbbc4ae659600d.bindTooltip(
+                `<div>
+                     Event ID: 8607
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1b830aa392c4edc81bf8bc95bf1c3659 = L.marker(
+                [38.878742, -77.100006],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_3a4d3252d764133cb1610d49d2a20b68 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_407eb81e0a96f989c1a86c9ce0122fcb = $(`<div id="html_407eb81e0a96f989c1a86c9ce0122fcb" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8611<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Arlington, United States<br>         <strong>Groups:</strong>         <ul>         <li>International Committee Against Nazism</li><li>Jewish Action Movement</li>         </ul>         </div>`)[0];
+                popup_3a4d3252d764133cb1610d49d2a20b68.setContent(html_407eb81e0a96f989c1a86c9ce0122fcb);
+            
+        
+
+        marker_1b830aa392c4edc81bf8bc95bf1c3659.bindPopup(popup_3a4d3252d764133cb1610d49d2a20b68)
+        ;
+
+        
+    
+    
+            marker_1b830aa392c4edc81bf8bc95bf1c3659.bindTooltip(
+                `<div>
+                     Event ID: 8611
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a38221864a6530e52b45b19c1e381758 = L.marker(
+                [32.98634, 35.754636],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_8de4d82ff6878c8e2b6cd88e62a0e171 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_68b330dd46918ce24e1cad4a166edd83 = $(`<div id="html_68b330dd46918ce24e1cad4a166edd83" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8877<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Golan Heights district, Israel<br>         <strong>Groups:</strong>         <ul>         <li>Abu Baker Martyr Group</li><li>Palestine Liberation Front (PLF)</li>         </ul>         </div>`)[0];
+                popup_8de4d82ff6878c8e2b6cd88e62a0e171.setContent(html_68b330dd46918ce24e1cad4a166edd83);
+            
+        
+
+        marker_a38221864a6530e52b45b19c1e381758.bindPopup(popup_8de4d82ff6878c8e2b6cd88e62a0e171)
+        ;
+
+        
+    
+    
+            marker_a38221864a6530e52b45b19c1e381758.bindTooltip(
+                `<div>
+                     Event ID: 8877
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_88b0e4506b8c47459871829281844119 = L.marker(
+                [4.667128, -74.106056],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_bd1c179bca74d9143585f656243c52b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa2a00fafa0c0571f0d02f31f73c5090 = $(`<div id="html_aa2a00fafa0c0571f0d02f31f73c5090" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 8940<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Bogota, Colombia<br>         <strong>Groups:</strong>         <ul>         <li>National Liberation Army of Colombia (ELN)</li><li>Workers' Self-Defense Movement (MAO)</li>         </ul>         </div>`)[0];
+                popup_bd1c179bca74d9143585f656243c52b2.setContent(html_aa2a00fafa0c0571f0d02f31f73c5090);
+            
+        
+
+        marker_88b0e4506b8c47459871829281844119.bindPopup(popup_bd1c179bca74d9143585f656243c52b2)
+        ;
+
+        
+    
+    
+            marker_88b0e4506b8c47459871829281844119.bindTooltip(
+                `<div>
+                     Event ID: 8940
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b7f11344e852a96d9fda9bcdca6d0034 = L.marker(
+                [13.79639, -89.11611],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_740b8ac8b43446c7a8982af909024bb5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7897f6a64bd3422cd7bdec1c376fd40f = $(`<div id="html_7897f6a64bd3422cd7bdec1c376fd40f" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 9311<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> El Transito, El Salvador<br>         <strong>Groups:</strong>         <ul>         <li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li>         </ul>         </div>`)[0];
+                popup_740b8ac8b43446c7a8982af909024bb5.setContent(html_7897f6a64bd3422cd7bdec1c376fd40f);
+            
+        
+
+        marker_b7f11344e852a96d9fda9bcdca6d0034.bindPopup(popup_740b8ac8b43446c7a8982af909024bb5)
+        ;
+
+        
+    
+    
+            marker_b7f11344e852a96d9fda9bcdca6d0034.bindTooltip(
+                `<div>
+                     Event ID: 9311
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4ac53ac1f481c6c25a0a3646a84cc6e6 = L.marker(
+                [13.69288, -89.199161],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_bc22690ee89fb3ad86dc4a8b78e1ab2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_72bf6aa1fcce65118d0a94bac654a2a0 = $(`<div id="html_72bf6aa1fcce65118d0a94bac654a2a0" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 9573<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> San Salvador, El Salvador<br>         <strong>Groups:</strong>         <ul>         <li>Armed Forces of National Resistance (FARN)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li>         </ul>         </div>`)[0];
+                popup_bc22690ee89fb3ad86dc4a8b78e1ab2e.setContent(html_72bf6aa1fcce65118d0a94bac654a2a0);
+            
+        
+
+        marker_4ac53ac1f481c6c25a0a3646a84cc6e6.bindPopup(popup_bc22690ee89fb3ad86dc4a8b78e1ab2e)
+        ;
+
+        
+    
+    
+            marker_4ac53ac1f481c6c25a0a3646a84cc6e6.bindTooltip(
+                `<div>
+                     Event ID: 9573
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a847c08578d373ba978fb2007b1064e4 = L.marker(
+                [13.69288, -89.199161],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_75265fd8c39cf89099c9dadd71b6e701 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b8fe3312c197b1d32f4a4553d11a754 = $(`<div id="html_9b8fe3312c197b1d32f4a4553d11a754" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 9577<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> San Salvador, El Salvador<br>         <strong>Groups:</strong>         <ul>         <li>Armed Forces of National Resistance (FARN)</li><li>People's Liberation Forces (FPL)</li>         </ul>         </div>`)[0];
+                popup_75265fd8c39cf89099c9dadd71b6e701.setContent(html_9b8fe3312c197b1d32f4a4553d11a754);
+            
+        
+
+        marker_a847c08578d373ba978fb2007b1064e4.bindPopup(popup_75265fd8c39cf89099c9dadd71b6e701)
+        ;
+
+        
+    
+    
+            marker_a847c08578d373ba978fb2007b1064e4.bindTooltip(
+                `<div>
+                     Event ID: 9577
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e854cda91a3e71921e8afde52ce33fc9 = L.marker(
+                [13.8, -86.53333],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_7c182df7561fb45b6a314aa75d4991b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_059d1b4d46cf3ff8ef7d4d74ad24ed2c = $(`<div id="html_059d1b4d46cf3ff8ef7d4d74ad24ed2c" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 11867<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Mata Platano, Nicaragua<br>         <strong>Groups:</strong>         <ul>         <li>Counter-revolutionaries</li><li>Ex-Somoza National Guard</li>         </ul>         </div>`)[0];
+                popup_7c182df7561fb45b6a314aa75d4991b1.setContent(html_059d1b4d46cf3ff8ef7d4d74ad24ed2c);
+            
+        
+
+        marker_e854cda91a3e71921e8afde52ce33fc9.bindPopup(popup_7c182df7561fb45b6a314aa75d4991b1)
+        ;
+
+        
+    
+    
+            marker_e854cda91a3e71921e8afde52ce33fc9.bindTooltip(
+                `<div>
+                     Event ID: 11867
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7627584cce836f1a501beb6c042be559 = L.marker(
+                [1.61456, -75.6053],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_37f11eb748a90114e2f4bc2fac9903c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_61b08f0caaf7a553b8e091e32d47e071 = $(`<div id="html_61b08f0caaf7a553b8e091e32d47e071" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 12620<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Florencia, Colombia<br>         <strong>Groups:</strong>         <ul>         <li>M-19 (Movement of April 19)</li><li>Revolutionary Armed Forces of Colombia (FARC)</li>         </ul>         </div>`)[0];
+                popup_37f11eb748a90114e2f4bc2fac9903c5.setContent(html_61b08f0caaf7a553b8e091e32d47e071);
+            
+        
+
+        marker_7627584cce836f1a501beb6c042be559.bindPopup(popup_37f11eb748a90114e2f4bc2fac9903c5)
+        ;
+
+        
+    
+    
+            marker_7627584cce836f1a501beb6c042be559.bindTooltip(
+                `<div>
+                     Event ID: 12620
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e872fb59606c5d2caf3fcdff6cf80ff0 = L.marker(
+                [18.386932, -66.061127],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_9669bca8815e4f106d0c10c6d22fb2cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_610dedcf511623d1106a420cb6705274 = $(`<div id="html_610dedcf511623d1106a420cb6705274" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13104<br>         <strong>Description:</strong> 03/15/1981: A high-powered bomb that was placed in the trunk of a stolen car in the basement of the Condado Convention Center in San Juan, Puerto Rico, in attempt to bomb the Center, failed to detonate, but did set fire to the vehicle.  Henry Kissinger, ex-Secretary of State, was scheduled to deliver a speech at the Center just one hour after the bomb exploded.  The Armed Forces of Popular Resistance (FARP) claimed responsibility for the incident in a communiquÃ© sent to the United Press International.<br>         <strong>Location:</strong> San Juan, United States<br>         <strong>Groups:</strong>         <ul>         <li>Armed Forces of Popular Resistance (FARP)</li><li>Puerto Rican Nationalists</li>         </ul>         </div>`)[0];
+                popup_9669bca8815e4f106d0c10c6d22fb2cc.setContent(html_610dedcf511623d1106a420cb6705274);
+            
+        
+
+        marker_e872fb59606c5d2caf3fcdff6cf80ff0.bindPopup(popup_9669bca8815e4f106d0c10c6d22fb2cc)
+        ;
+
+        
+    
+    
+            marker_e872fb59606c5d2caf3fcdff6cf80ff0.bindTooltip(
+                `<div>
+                     Event ID: 13104
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2a3421adf8ddfb4bb7122957513b13d5 = L.marker(
+                [55.676075, 12.568316],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_dce9fdd0351b3e9b59124d358bd1f63e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c24e1365c968661763b50d45f7df0790 = $(`<div id="html_c24e1365c968661763b50d45f7df0790" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13222<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Copenhagen, Denmark<br>         <strong>Groups:</strong>         <ul>         <li>Armenian Secret Army for the Liberation of Armenia</li><li>Justice Commandos for the Armenian Genocide</li>         </ul>         </div>`)[0];
+                popup_dce9fdd0351b3e9b59124d358bd1f63e.setContent(html_c24e1365c968661763b50d45f7df0790);
+            
+        
+
+        marker_2a3421adf8ddfb4bb7122957513b13d5.bindPopup(popup_dce9fdd0351b3e9b59124d358bd1f63e)
+        ;
+
+        
+    
+    
+            marker_2a3421adf8ddfb4bb7122957513b13d5.bindTooltip(
+                `<div>
+                     Event ID: 13222
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_36c63fd8796243e557f6d17e93d05bb8 = L.marker(
+                [22.341896, 91.815117],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_0195d52cbbaddf00b0b6ca9edbe076f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5656fc2c5d4fb9c05ad9a78c8f4bdffb = $(`<div id="html_5656fc2c5d4fb9c05ad9a78c8f4bdffb" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13634<br>         <strong>Description:</strong> 05/30/1981: President Ziaur Rahman of Bangledesh was attending a two hour political meeting to help resolve an intra-party dispute at a Circuit House in Chittagong. At 3:30AM the President was awoken by two rebel Army strike teams who freely entered the Chittagong Circuit House. The forty-four policemen on duty offered no resistence when the first team fired two shots, killing one constable and four of ZiarÂs defenders, and accidentally wounding two of their own men. When inside, Lt-Col Matiur Rahman [Mahbubur], a Freedom Fighter, shot and killed General Ziaur.<br>         <strong>Location:</strong> Chittagong, Bangladesh<br>         <strong>Groups:</strong>         <ul>         <li>Awami League</li><li>The Mukti Bahini</li>         </ul>         </div>`)[0];
+                popup_0195d52cbbaddf00b0b6ca9edbe076f9.setContent(html_5656fc2c5d4fb9c05ad9a78c8f4bdffb);
+            
+        
+
+        marker_36c63fd8796243e557f6d17e93d05bb8.bindPopup(popup_0195d52cbbaddf00b0b6ca9edbe076f9)
+        ;
+
+        
+    
+    
+            marker_36c63fd8796243e557f6d17e93d05bb8.bindTooltip(
+                `<div>
+                     Event ID: 13634
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_00ecd52991e0c1bdee347485fb7bf502 = L.marker(
+                [33.888523, 35.503513],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_829f80456e907844043290f5d665554d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6848cc23c7a30372b1b84bf527c72cd7 = $(`<div id="html_6848cc23c7a30372b1b84bf527c72cd7" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13638<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Beirut, Lebanon<br>         <strong>Groups:</strong>         <ul>         <li>Communists</li><li>Palestinians</li>         </ul>         </div>`)[0];
+                popup_829f80456e907844043290f5d665554d.setContent(html_6848cc23c7a30372b1b84bf527c72cd7);
+            
+        
+
+        marker_00ecd52991e0c1bdee347485fb7bf502.bindPopup(popup_829f80456e907844043290f5d665554d)
+        ;
+
+        
+    
+    
+            marker_00ecd52991e0c1bdee347485fb7bf502.bindTooltip(
+                `<div>
+                     Event ID: 13638
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_174dd89e930560857f03583270d6a303 = L.marker(
+                [0.0, 0.0],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_c4faaccb56b887c049a0a62889e8150f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd6c1a86584de18bd614a67fd9a69dee = $(`<div id="html_fd6c1a86584de18bd614a67fd9a69dee" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13725<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> West Kabayagan, Philippines<br>         <strong>Groups:</strong>         <ul>         <li>Moro National Liberation Front (MNLF)</li><li>New People's Army (NPA)</li>         </ul>         </div>`)[0];
+                popup_c4faaccb56b887c049a0a62889e8150f.setContent(html_fd6c1a86584de18bd614a67fd9a69dee);
+            
+        
+
+        marker_174dd89e930560857f03583270d6a303.bindPopup(popup_c4faaccb56b887c049a0a62889e8150f)
+        ;
+
+        
+    
+    
+            marker_174dd89e930560857f03583270d6a303.bindTooltip(
+                `<div>
+                     Event ID: 13725
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_394693a7f9cd83cbde87f95515118313 = L.marker(
+                [0.869892, -73.841906],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_c77a323924d251553d8587f5dd8fe16d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5039ec22632d84972da473a4671e54a1 = $(`<div id="html_5039ec22632d84972da473a4671e54a1" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13892<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Unknown, Colombia<br>         <strong>Groups:</strong>         <ul>         <li>M-19 (Movement of April 19)</li><li>Revolutionary Armed Forces of Colombia (FARC)</li>         </ul>         </div>`)[0];
+                popup_c77a323924d251553d8587f5dd8fe16d.setContent(html_5039ec22632d84972da473a4671e54a1);
+            
+        
+
+        marker_394693a7f9cd83cbde87f95515118313.bindPopup(popup_c77a323924d251553d8587f5dd8fe16d)
+        ;
+
+        
+    
+    
+            marker_394693a7f9cd83cbde87f95515118313.bindTooltip(
+                `<div>
+                     Event ID: 13892
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0ff3db9df94ce59d36cdc635c82b0c7e = L.marker(
+                [37.755363, -122.443352],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_a31b3c10ccea190390646bfcb4c1b99c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9714ae96a0c068ae0fbb01203a842bd2 = $(`<div id="html_9714ae96a0c068ae0fbb01203a842bd2" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 13932<br>         <strong>Description:</strong> 7/21/1981:  An unknown perpetrator shot and killed Lam Trong Duong in San Francisco, California, United States.  Duong was an outspoken supporter of Vietnam's communist government and the editor of Cai Dinh Lang, a Vietnamese language newspaper.  Two Vietnamese anti-communist groups admitted responsibility for carrying out the attack, however authorities could not confirm that whether these claims were valid.<br>         <strong>Location:</strong> San Francisco, United States<br>         <strong>Groups:</strong>         <ul>         <li>Anti-Communist Viets Organization</li><li>Vietnamese Organization to Exterminate Communists and Restore the Nation</li>         </ul>         </div>`)[0];
+                popup_a31b3c10ccea190390646bfcb4c1b99c.setContent(html_9714ae96a0c068ae0fbb01203a842bd2);
+            
+        
+
+        marker_0ff3db9df94ce59d36cdc635c82b0c7e.bindPopup(popup_a31b3c10ccea190390646bfcb4c1b99c)
+        ;
+
+        
+    
+    
+            marker_0ff3db9df94ce59d36cdc635c82b0c7e.bindTooltip(
+                `<div>
+                     Event ID: 13932
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7b8a30af50fc6aee2f0307a5ece3cdd8 = L.marker(
+                [4.667128, -74.106056],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_b60ef703e4acc98b89e9e36df5924c45 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_01a0a14b126667aee903f0dc2598699c = $(`<div id="html_01a0a14b126667aee903f0dc2598699c" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 14333<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Bogota, Colombia<br>         <strong>Groups:</strong>         <ul>         <li>M-19 (Movement of April 19)</li><li>Popular Liberation Army (EPL)</li>         </ul>         </div>`)[0];
+                popup_b60ef703e4acc98b89e9e36df5924c45.setContent(html_01a0a14b126667aee903f0dc2598699c);
+            
+        
+
+        marker_7b8a30af50fc6aee2f0307a5ece3cdd8.bindPopup(popup_b60ef703e4acc98b89e9e36df5924c45)
+        ;
+
+        
+    
+    
+            marker_7b8a30af50fc6aee2f0307a5ece3cdd8.bindTooltip(
+                `<div>
+                     Event ID: 14333
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2052037f57e655f7a74272bf5064ec21 = L.marker(
+                [30.084629, 31.334314],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_0e9fe14e1849988c601f6befdcab8490 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2de8e90724ec3aabbbd9ce4f81bc51b9 = $(`<div id="html_2de8e90724ec3aabbbd9ce4f81bc51b9" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 14494<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Cairo, Egypt<br>         <strong>Groups:</strong>         <ul>         <li>Al-Gama'at al-Islamiyya (IG)</li><li>Egyptian Islamic Jihad (Al-Jihad)</li>         </ul>         </div>`)[0];
+                popup_0e9fe14e1849988c601f6befdcab8490.setContent(html_2de8e90724ec3aabbbd9ce4f81bc51b9);
+            
+        
+
+        marker_2052037f57e655f7a74272bf5064ec21.bindPopup(popup_0e9fe14e1849988c601f6befdcab8490)
+        ;
+
+        
+    
+    
+            marker_2052037f57e655f7a74272bf5064ec21.bindTooltip(
+                `<div>
+                     Event ID: 14494
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2b4b42d0e8e0566825fba73221dbe8d7 = L.marker(
+                [33.888523, 35.503513],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_5ff8796c35aab025cbe2015e588e183c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9303cfd03a5f27cd51d08a39aca154ab = $(`<div id="html_9303cfd03a5f27cd51d08a39aca154ab" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 15031<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Beirut, Lebanon<br>         <strong>Groups:</strong>         <ul>         <li>Al-Da'wah Party</li><li>Iraqi Liberation Army</li>         </ul>         </div>`)[0];
+                popup_5ff8796c35aab025cbe2015e588e183c.setContent(html_9303cfd03a5f27cd51d08a39aca154ab);
+            
+        
+
+        marker_2b4b42d0e8e0566825fba73221dbe8d7.bindPopup(popup_5ff8796c35aab025cbe2015e588e183c)
+        ;
+
+        
+    
+    
+            marker_2b4b42d0e8e0566825fba73221dbe8d7.bindTooltip(
+                `<div>
+                     Event ID: 15031
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_257c03988e6b9a328a82db85323152f1 = L.marker(
+                [14.180378, -88.892274],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_d4a51b2008651077333d7024d1e67aee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e11500a944c968097914138cf59bb47 = $(`<div id="html_0e11500a944c968097914138cf59bb47" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 16487<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Ojos de Agua, El Salvador<br>         <strong>Groups:</strong>         <ul>         <li>Democratic Revolutionary Front (FDR)</li><li>Farabundo Marti National Liberation Front (FMLN)</li>         </ul>         </div>`)[0];
+                popup_d4a51b2008651077333d7024d1e67aee.setContent(html_0e11500a944c968097914138cf59bb47);
+            
+        
+
+        marker_257c03988e6b9a328a82db85323152f1.bindPopup(popup_d4a51b2008651077333d7024d1e67aee)
+        ;
+
+        
+    
+    
+            marker_257c03988e6b9a328a82db85323152f1.bindTooltip(
+                `<div>
+                     Event ID: 16487
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0a653cce47b6e49d17015fd98d387331 = L.marker(
+                [18.386932, -66.061127],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_0a724adc7968edb078a246669cc351e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4056d0f0d7e4054c62493c82f525678b = $(`<div id="html_4056d0f0d7e4054c62493c82f525678b" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 16872<br>         <strong>Description:</strong> 8/20/1982: In an attack claimed jointly by the  Fuerzas Armadas de Liberacion Nacional (FALN), the Boricuan Armed Anti-Imperialist Commandos, and the Guerrilla Column 29 September, a pipe bomb detonated adjacent to the Fortaleza (the Puerto Rican Governor's mansion) in San Juan, Puerto Rico.  There were no casualties or damages.<br>         <strong>Location:</strong> San Juan, United States<br>         <strong>Groups:</strong>         <ul>         <li>Boricuan Armed Anti-Imperialist Commandos</li><li>Fuerzas Armadas de Liberacion Nacional (FALN)</li>         </ul>         </div>`)[0];
+                popup_0a724adc7968edb078a246669cc351e3.setContent(html_4056d0f0d7e4054c62493c82f525678b);
+            
+        
+
+        marker_0a653cce47b6e49d17015fd98d387331.bindPopup(popup_0a724adc7968edb078a246669cc351e3)
+        ;
+
+        
+    
+    
+            marker_0a653cce47b6e49d17015fd98d387331.bindTooltip(
+                `<div>
+                     Event ID: 16872
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3fbe36189d92b40c544b0897ca1571ce = L.marker(
+                [0.869892, -73.841906],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_c555aaa43b9b8022568d1f863facfed8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8716388979ae8d81fb3b223400dccb3a = $(`<div id="html_8716388979ae8d81fb3b223400dccb3a" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 17381<br>         <strong>Description:</strong> Unknown<br>         <strong>Location:</strong> Unknown, Colombia<br>         <strong>Groups:</strong>         <ul>         <li>M-19 (Movement of April 19)</li><li>Revolutionary Armed Forces of Colombia (FARC)</li>         </ul>         </div>`)[0];
+                popup_c555aaa43b9b8022568d1f863facfed8.setContent(html_8716388979ae8d81fb3b223400dccb3a);
+            
+        
+
+        marker_3fbe36189d92b40c544b0897ca1571ce.bindPopup(popup_c555aaa43b9b8022568d1f863facfed8)
+        ;
+
+        
+    
+    
+            marker_3fbe36189d92b40c544b0897ca1571ce.bindTooltip(
+                `<div>
+                     Event ID: 17381
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_20e9881972f770e8d9135fd4fa7cbf1a = L.marker(
+                [33.287166, 35.236186],
+                {
+}
+            ).addTo(marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b);
+        
+    
+        var popup_2ff093fe72ea983d2b60904c572bbf77 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_398b3cf5286d8ea1951e017ab7f84ce8 = $(`<div id="html_398b3cf5286d8ea1951e017ab7f84ce8" style="width: 100.0%; height: 100.0%;">         <strong>Event ID:</strong> 17428<br>         <strong>Description:</strong> 11/11/1982: A suspected suicide car bomb detonated at an Israeli military headquarters on the outskirts of Tyre city, Tyre district, Lebanon.  The headquarters were demolished in the explosion.  Early counts indicated that only 15 people were killed; however, over several days, that number rose to 89 casualties.  Two groups, Armed Struggle Orgnanization and Military Command of the Lebanese Resistance, claimed responsibility for the incident but authorities suspect the involvement of Palestine Liberation Organization (PLO).<br>         <strong>Location:</strong> Tyre district, Lebanon<br>         <strong>Groups:</strong>         <ul>         <li>Armed Struggle Organization</li><li>Palestine Liberation Organization (PLO)</li>         </ul>         </div>`)[0];
+                popup_2ff093fe72ea983d2b60904c572bbf77.setContent(html_398b3cf5286d8ea1951e017ab7f84ce8);
+            
+        
+
+        marker_20e9881972f770e8d9135fd4fa7cbf1a.bindPopup(popup_2ff093fe72ea983d2b60904c572bbf77)
+        ;
+
+        
+    
+    
+            marker_20e9881972f770e8d9135fd4fa7cbf1a.bindTooltip(
+                `<div>
+                     Event ID: 17428
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_2dd7187fabe15c2d5b1e7bae683bc27b.addTo(map_6b3b9f3ffbcc594b3ad33b33801925ef);
+        
+</script>
+</html>

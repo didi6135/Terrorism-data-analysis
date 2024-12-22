@@ -275,3 +275,90 @@ def get_groups_with_shared_targets_by_country(country_id):
 
 
 
+
+
+def get_groups_with_shared_events():
+    """
+    Retrieves events where multiple groups participated in the same attack.
+    Returns a list of events with group names and locations.
+    """
+    with session_maker() as session:
+        # Query to get events with multiple groups
+        results = (
+            session.query(
+                Event.id.label("event_id"),
+                Event.description.label("event_description"),
+                func.array_agg(distinct(Group.name)).label("groups"),
+                func.avg(Coordinate.latitude).label("latitude"),
+                func.avg(Coordinate.longitude).label("longitude"),
+                City.name.label("city"),
+                Country.name.label("country")
+            )
+            .join(event_groups, Event.id == event_groups.c.event_id)
+            .join(Group, Group.id == event_groups.c.group_id)
+            .join(Location, Location.id == Event.location_id)
+            .join(City, City.id == Location.city_id)
+            .join(Country, Country.id == City.country_id)
+            .join(Coordinate, Location.coordinate_id == Coordinate.id)
+            .group_by(Event.id, Event.description, City.name, Country.name)
+            .having(func.count(distinct(Group.id)) > 1)  # Filter events with more than one group
+            .order_by(Event.id)
+            .all()
+        )
+
+        # Format results
+        data = [
+            {
+                "event_id": row.event_id,
+                "event_description": row.event_description,
+                "groups": row.groups,
+                "latitude": row.latitude,
+                "longitude": row.longitude,
+                "location": f"{row.city}, {row.country}"
+            }
+            for row in results
+        ]
+
+        return data
+
+
+def get_groups_by_target_type():
+    """
+    Retrieves groups that frequently attack the same target types.
+    """
+    with session_maker() as session:
+        results = (
+            session.query(
+                TargetType.name.label("target_type"),
+                Group.name.label("group_name"),
+                func.count(Event.id).label("event_count")
+            )
+            .join(event_targets_type, Event.id == event_targets_type.c.event_id)
+            .join(TargetType, TargetType.id == event_targets_type.c.target_type_id)
+            .join(event_groups, event_groups.c.event_id == Event.id)
+            .join(Group, Group.id == event_groups.c.group_id)
+            .group_by(TargetType.name, Group.name)
+            .order_by(TargetType.name, func.count(Event.id).desc())
+            .all()
+        )
+
+        # Organize results by target type
+        grouped_results = {}
+        for row in results:
+            if row.target_type not in grouped_results:
+                grouped_results[row.target_type] = []
+            grouped_results[row.target_type].append({
+                "group_name": row.group_name,
+                "event_count": row.event_count
+            })
+
+        return [
+            {
+                "target_type": target_type,
+                "groups": groups
+            }
+            for target_type, groups in grouped_results.items()
+        ]
+
+
+print(json.dumps(get_groups_by_target_type(), indent=2))

@@ -7,7 +7,8 @@ from Data_Cleaning_Service.app.db.config import RAW_DATA_PATH, CLEANED_DATA_PATH
 
 def merge_to_one_csv(global_file, rand_file, output_file):
     """
-    Merges two terrorism CSV files into one unified CSV file with additional fields and replaces missing/invalid eventid with UUIDs.
+    Merges two terrorism CSV files into one unified CSV file with additional fields and replaces all eventid with UUIDs.
+    Ensures that missing data is filled with appropriate default values.
     """
     print(f"Processing and Merging Files: {global_file}, {rand_file}")
 
@@ -27,13 +28,8 @@ def merge_to_one_csv(global_file, rand_file, output_file):
             axis=1
         )
 
-        # Replace missing/invalid `eventid` with UUID
-        def generate_valid_eventid(eventid):
-            if pd.isna(eventid) or not str(eventid).isdigit():
-                return str(uuid.uuid4())
-            return str(eventid)
-
-        global_data['eventid'] = global_data['eventid'].apply(generate_valid_eventid)
+        # Replace all `eventid` with new UUIDs
+        global_data['eventid'] = global_data.apply(lambda _: str(uuid.uuid4()), axis=1)
 
         # Drop the original date-related columns
         global_data.drop(columns=['iyear', 'imonth', 'iday'], inplace=True)
@@ -43,7 +39,7 @@ def merge_to_one_csv(global_file, rand_file, output_file):
 
         # Standardize RAND columns to match Global Terrorism Database
         additional_columns = {
-            'eventid': [str(uuid.uuid4()) for _ in range(len(rand_data))],  # Generate UUIDs for all RAND events
+            'eventid': None,  # Will be handled separately
             'region_txt': "Unknown",
             'latitude': pd.NA,
             'longitude': pd.NA,
@@ -80,18 +76,44 @@ def merge_to_one_csv(global_file, rand_file, output_file):
             if col not in rand_data.columns:
                 rand_data[col] = default_value
 
+        # Replace all `eventid` in RAND data with new UUIDs
+        rand_data['eventid'] = rand_data.apply(lambda _: str(uuid.uuid4()), axis=1)
+
         # Combine both datasets into one
         combined_data = pd.concat([global_data, rand_data], ignore_index=True)
 
+        # Fill missing values
+        combined_data.fillna({
+            'region_txt': "Unknown",
+            'city': "Unknown",
+            'country_txt': "Unknown",
+            'latitude': 0,
+            'longitude': 0,
+            'attacktype1_txt': "Unknown",
+            'attacktype2_txt': "Unknown",
+            'targtype1_txt': "Unknown",
+            'targtype2_txt': "Unknown",
+            'targtype3_txt': "Unknown",
+            'targsubtype1_txt': "Unknown",
+            'targsubtype2_txt': "Unknown",
+            'targsubtype3_txt': "Unknown",
+            'gname': "Unknown",
+            'gsubname': "Unknown",
+            'gname2': "Unknown",
+            'gsubname2': "Unknown",
+            'motive': "Unknown",
+            'target1': "Unknown",
+            'success': False,
+            'suicide': False,
+            'extended': False,
+            'nkill': 0,
+            'nwound': 0
+        }, inplace=True)
+
         # Clean combined data
         combined_data['date'] = pd.to_datetime(combined_data['date'], errors='coerce')
-        combined_data['latitude'] = combined_data['latitude'].fillna(pd.NA)
-        combined_data['longitude'] = combined_data['longitude'].fillna(pd.NA)
         combined_data['nkill'] = combined_data['nkill'].fillna(0).astype(int)
         combined_data['nwound'] = combined_data['nwound'].fillna(0).astype(int)
-        combined_data['success'] = combined_data['success'].fillna(False).astype(bool)
-        combined_data['suicide'] = combined_data['suicide'].fillna(False).astype(bool)
-        combined_data['extended'] = combined_data['extended'].fillna(False).astype(bool)
 
         # Select and order relevant columns
         final_data = combined_data[[  # Expanded to include all requested fields
@@ -113,7 +135,6 @@ def merge_to_one_csv(global_file, rand_file, output_file):
     except Exception as e:
         print(f"Error processing and merging files: {e}")
         return None
-
 
 if __name__ == "__main__":
     # Example usage

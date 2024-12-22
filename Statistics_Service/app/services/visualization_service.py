@@ -10,7 +10,7 @@ from Statistics_Service.app.repository.country_repository import get_top_5_count
 from Statistics_Service.app.repository.event_repository import get_events_with_coordinates_and_victims
 from Statistics_Service.app.repository.group_repository import get_top_events_with_coordinates, \
     get_top_groups_by_region, get_region_coordinates, get_groups_with_shared_targets_by_region, \
-    get_groups_with_shared_targets_by_country
+    get_groups_with_shared_targets_by_country, get_groups_with_shared_events
 from Statistics_Service.app.repository.region_repository import get_unique_groups_by_region
 
 
@@ -171,7 +171,7 @@ def generate_map_for_victims_analysis(data, output_file="victims_analysis_map.ht
         if event["latitude"] is not None and event["longitude"] is not None:
             folium.CircleMarker(
                 location=[event["latitude"], event["longitude"]],
-                radius=10 if event['score'] == 0 else event["score"] / 100,  # Scale radius based on casualties
+                radius= 3 if event['score'] == 0 else event["score"] / 50,  # Scale radius based on casualties
                 color=(
                     "green" if event["score"] == 0 else
                     "orange" if 0 < event["score"] <= 30 else
@@ -422,3 +422,39 @@ def create_intergroup_activity_map_by_region(region_id):
         ).add_to(base_map)
 
     return base_map
+
+
+
+def generate_shared_event_groups_map():
+
+    shared_events = get_groups_with_shared_events()
+
+    shared_events_map = folium.Map(location=[20, 0], zoom_start=2)
+
+    marker_cluster = folium.plugins.MarkerCluster().add_to(shared_events_map)
+
+    for event in shared_events:
+        event_id = event["event_id"]
+        description = event["event_description"]
+        latitude = event["latitude"]
+        longitude = event["longitude"]
+        location = event["location"]
+        groups = event["groups"]
+
+        popup_content = f"""
+        <strong>Event ID:</strong> {event_id}<br>
+        <strong>Description:</strong> {description}<br>
+        <strong>Location:</strong> {location}<br>
+        <strong>Groups:</strong>
+        <ul>
+        {''.join([f"<li>{group}</li>" for group in groups])}
+        </ul>
+        """
+
+        folium.Marker(
+            location=[latitude, longitude],
+            popup=folium.Popup(popup_content, max_width=300),
+            tooltip=f"Event ID: {event_id}"
+        ).add_to(marker_cluster)
+
+    return shared_events_map

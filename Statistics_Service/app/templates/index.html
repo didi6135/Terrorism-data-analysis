@@ -145,6 +145,7 @@
 
                     <option value="unique_group_by_region">12. Get all unique groups by region</option>
                     <option value="unique_group_by_country">13. Get all unique groups by country</option>
+                    <option value="shared_event_groups_map">14. Get event groups that shared attack event</option>
 
                 </select>
             </div>
@@ -222,6 +223,10 @@
             'unique_group_by_country': {
                 description: "Displays unique groups by country.",
                 params: ['country_id']
+            },
+            'shared_event_groups_map': {
+                description: "Displays all groups that shared attack event.",
+                params: []
             }
 
         };

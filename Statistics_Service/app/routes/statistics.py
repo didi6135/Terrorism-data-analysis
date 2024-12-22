@@ -15,7 +15,8 @@ from Statistics_Service.app.services.plot_service import plot_monthly_trends, \
 from Statistics_Service.app.services.visualization_service import generate_map_file, generate_top_countries_map, \
     generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis, create_shared_target_map_by_region, \
     create_shared_target_map_by_country, generate_attack_strategy_map, generate_attack_strategy_map_by_country, \
-    create_intergroup_activity_map_by_country, create_intergroup_activity_map_by_region
+    create_intergroup_activity_map_by_country, create_intergroup_activity_map_by_region, \
+    generate_shared_event_groups_map
 
 statistics_bp = Blueprint("statistics", __name__)
 
@@ -70,7 +71,6 @@ def get_avg_injured_by_origen():
     try:
         origen_id = request.args.get("region_id")
         limit = request.args.get("limit")
-        print(origen_id)
         data = calculate_average_victims_per_event_in_region(origen_id, limit)
         if not data:
             return jsonify({"error": "No data found"}), 404
@@ -324,6 +324,19 @@ def intergroup_activity_map_by_country():
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 ##############################################
 
+@statistics_bp.route('/shared_event_groups_map', methods=["GET"])
+def shared_event_groups_map():
+    try:
+        map_file_path = "static/maps/shared_events_map.html"
+
+        map_object = generate_shared_event_groups_map()
+        map_object.save(map_file_path)
+
+        return jsonify({
+            "map_file": map_file_path
+        }), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
 
 
