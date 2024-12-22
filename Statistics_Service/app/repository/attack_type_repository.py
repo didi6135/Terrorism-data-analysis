@@ -114,7 +114,6 @@ def get_attack_strategies_by_region(region_id=None):
         return data
 
 
-
 def get_attack_strategies_by_country(country_id=None):
     """
     Retrieves attack strategies with coordinates for a specific country or globally.
@@ -163,4 +162,3 @@ def get_attack_strategies_by_country(country_id=None):
         return data
 
 
-print(get_attack_strategies_by_country(10))

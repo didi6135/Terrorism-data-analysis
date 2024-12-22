@@ -238,15 +238,7 @@ def get_groups_with_shared_targets_by_region(region_id):
 
 
 def get_groups_with_shared_targets_by_country(country_id):
-    """
-    Retrieves groups with shared targets and their geographic locations in a specific country.
 
-    Args:
-        country_id (int): ID of the country.
-
-    Returns:
-        list: List of targets with shared groups, event counts, and geographic locations.
-    """
     with session_maker() as session:
         results = (
             session.query(
@@ -280,3 +272,6 @@ def get_groups_with_shared_targets_by_country(country_id):
             }
             for row in results
         ]
+
+
+

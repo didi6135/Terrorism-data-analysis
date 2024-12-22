@@ -3,7 +3,8 @@ import json
 from sqlalchemy import func
 
 from Data_Cleaning_Service.app.db.postgres_db.database import session_maker
-from Data_Cleaning_Service.app.db.postgres_db.models import Region, Casualty, Location, Event, Country, City, Coordinate
+from Data_Cleaning_Service.app.db.postgres_db.models import Region, Casualty, Location, Event, Country, City, \
+    Coordinate, event_groups, Group
 
 
 def get_all_regions():
@@ -57,4 +58,45 @@ def calculate_average_victims_per_event_in_region(region_id, limit=None):
 
 
 
-# print(calculate_average_victims_per_event_in_region(2))
+def get_unique_groups_by_region(region_id):
+    """
+    Retrieves unique groups operating in a specific region with their counts.
+    """
+    with session_maker() as session:
+        query = (
+            session.query(
+                Region.name.label("region_name"),
+                func.count(func.distinct(Group.id)).label("unique_group_count"),
+                func.array_agg(func.distinct(Group.name)).label("group_names"),
+                func.avg(Coordinate.latitude).label("latitude"),
+                func.avg(Coordinate.longitude).label("longitude")
+            )
+            .join(Country, Region.id == Country.region_id)
+            .join(City, Country.id == City.country_id)
+            .join(Location, City.id == Location.city_id)
+            .join(Coordinate, Location.coordinate_id == Coordinate.id)
+            .join(Event, Location.id == Event.location_id)
+            .join(event_groups, Event.id == event_groups.c.event_id)
+            .join(Group, Group.id == event_groups.c.group_id)
+            .filter(Region.id == region_id)  # סינון לפי region_id
+            .group_by(Region.name)
+            .order_by(func.count(func.distinct(Group.id)).desc())
+        )
+
+        results = query.all()
+
+        # עיבוד התוצאות לפורמט הרצוי
+        return [
+            {
+                "region_name": row.region_name,
+                "unique_group_count": row.unique_group_count,
+                "group_names": row.group_names,
+                "latitude": row.latitude,
+                "longitude": row.longitude
+            }
+            for row in results
+        ]
+
+
+
+print(json.dumps(get_unique_groups_by_region(1), indent=2))

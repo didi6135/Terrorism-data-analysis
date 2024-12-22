@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2b5ba723f0b4c4d060595f55d1b4f4cf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2b5ba723f0b4c4d060595f55d1b4f4cf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2b5ba723f0b4c4d060595f55d1b4f4cf = L.map(
+                "map_2b5ba723f0b4c4d060595f55d1b4f4cf",
+                {
+                    center: [9.145, 40.489673],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8c4a106786042119f679957e726bd4e8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8c4a106786042119f679957e726bd4e8.addTo(map_2b5ba723f0b4c4d060595f55d1b4f4cf);
+        
+    
+            var marker_89f0b3ecbc973a7ee5bb61fb0df88684 = L.marker(
+                [30.823702253012044, 34.00769753012049],
+                {
+}
+            ).addTo(map_2b5ba723f0b4c4d060595f55d1b4f4cf);
+        
+    
+        var popup_f1ad9cc5d4a7203defe0ba2a6839d640 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa7f62b7f17252f260a0d09f8545e294 = $(`<div id="html_fa7f62b7f17252f260a0d09f8545e294" style="width: 100.0%; height: 100.0%;">         <strong>Israel</strong><br>         <strong>Unique Group Count:</strong> 17<br>         <strong>Groups:</strong>         <ul>         <li>Abdullah Azzam Brigades</li><li>Abu Baker Martyr Group</li><li>Ahfad al-Sahaba-Aknaf Bayt al-Maqdis</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Fatah</li><li>Ansar Al Sunnah (Palestine)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Force 17</li><li>Hamas (Islamic Resistance Movement)</li><li>Hezbollah</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Palestinian Hezbollah</li><li>Palestinian Islamic Jihad (PIJ)</li><li>People's Army's Pioneers</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li>         </ul>         </div>`)[0];
+                popup_f1ad9cc5d4a7203defe0ba2a6839d640.setContent(html_fa7f62b7f17252f260a0d09f8545e294);
+            
+        
+
+        marker_89f0b3ecbc973a7ee5bb61fb0df88684.bindPopup(popup_f1ad9cc5d4a7203defe0ba2a6839d640)
+        ;
+
+        
+    
+    
+            marker_89f0b3ecbc973a7ee5bb61fb0df88684.bindTooltip(
+                `<div>
+                     Israel (17 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

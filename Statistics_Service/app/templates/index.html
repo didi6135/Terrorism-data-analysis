@@ -142,6 +142,10 @@
                     <option value="top_group_with_shared_target_by_country">9. Get top group that have shared target by country</option>
                     <option value="attack_strategy_map_region">10. Get attack strategy map by region</option>
                     <option value="attack_strategy_map_country">11. Get attack strategy map by country</option>
+
+                    <option value="unique_group_by_region">12. Get all unique groups by region</option>
+                    <option value="unique_group_by_country">13. Get all unique groups by country</option>
+
                 </select>
             </div>
 
@@ -210,6 +214,14 @@
             'attack_strategy_map_country': {
                 description: "Displays attack strategy map by country.",
                 params: ['country_id']
+            },
+            'unique_group_by_region': {
+                description: "Displays unique groups by region.",
+                params: ['region_id']
+            },
+            'unique_group_by_country': {
+                description: "Displays unique groups by country.",
+                params: ['country_id']
             }
 
         };
@@ -277,6 +289,18 @@
                 await populateOptions(citySelect, '/api/statistics/regions', 'regions');
             }
             if (query === 'attack_strategy_map_country') {
+                parameterInputs.appendChild(createLabel('Select country:'));
+                const citySelect = createSelect('country_id', 'Select Country');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/countries', 'countries');
+            }
+            if (query === 'unique_group_by_region') {
+                parameterInputs.appendChild(createLabel('Select region:'));
+                const citySelect = createSelect('region_id', 'Select Region');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/regions', 'regions');
+            }
+            if (query === 'unique_group_by_country') {
                 parameterInputs.appendChild(createLabel('Select country:'));
                 const citySelect = createSelect('country_id', 'Select Country');
                 parameterInputs.appendChild(citySelect);

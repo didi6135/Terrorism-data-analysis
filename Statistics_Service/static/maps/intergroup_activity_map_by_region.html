@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c5914d0afe6ccb56000c96f41c5911ed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c5914d0afe6ccb56000c96f41c5911ed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c5914d0afe6ccb56000c96f41c5911ed = L.map(
+                "map_c5914d0afe6ccb56000c96f41c5911ed",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0a4b35533766957f0e37f70722ea1a78 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0a4b35533766957f0e37f70722ea1a78.addTo(map_c5914d0afe6ccb56000c96f41c5911ed);
+        
+    
+            var marker_ecbcfedb43466099dfb16a018c613477 = L.marker(
+                [29.459862628865956, 68.77213061340206],
+                {
+}
+            ).addTo(map_c5914d0afe6ccb56000c96f41c5911ed);
+        
+    
+        var popup_33d11a68af0f88f7d0093e672fcf786b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1c30bf85af5cda97d50c14363795e41 = $(`<div id="html_b1c30bf85af5cda97d50c14363795e41" style="width: 100.0%; height: 100.0%;">         <strong>South Asia</strong><br>         <strong>Unique Group Count:</strong> 41<br>         <strong>Groups:</strong>         <ul>         <li>Abu Hafs Katibatul al-Ghurba al-Mujahideen</li><li>Ahle Sunnat Wal Jamaat (ASWJ-Pakistan)</li><li>Al-Qaida</li><li>Al-Qaida in the Indian Subcontinent</li><li>Amr Bil Maroof Wa Nahi Anil Munkir</li><li>Ansar Al-Mujahideen (Pakistan)</li><li>Ansar al-Sharia (Pakistan)</li><li>Balochistan Liberation United Front (BLUF)</li><li>Baloch Liberation Army (BLA)</li><li>Baloch Liberation Front (BLF)</li><li>Baloch Nationalists</li><li>Baloch Republican Army (BRA)</li><li>Baloch Waja Liberation Army (BWLA)</li><li>Hafiz Gul Bahadur Group</li><li>Halqa-e-Mehsud</li><li>Harakat ul-Mujahidin (HuM)</li><li>Islamic Movement of Uzbekistan (IMU)</li><li>Jaish-e-Islam</li><li>Jaish Usama</li><li>Jamaat-E-Islami (India/Pakistan)</li><li>Jamaat-ul-Ahrar</li><li>Jeay Sindh Qaumi Mahaz (JSQM)</li><li>Jundallah (Pakistan)</li><li>Khatm-e-Nabuwat (KeN)</li><li>Khorasan Chapter of the Islamic State</li><li>Lashkar-e-Islam (Pakistan)</li><li>Lashkar-e-Jarrar</li><li>Lashkar-e-Jhangvi</li><li>Lashkar-e-Taiba (LeT)</li><li>Majlis-e-Abrar</li><li>Majlis-e-Lashkari</li><li>Mujahideen Ansar</li><li>Shia Muslim extremists</li><li>Sindhu Desh Liberation Army (SDLA)</li><li>Sindhudesh Revolutionary Army (SRA)</li><li>Sipah-I-Mohammed</li><li>Taliban</li><li>Tehrik-e-Khilafat</li><li>Tehrik-i-Taliban Pakistan (TTP)</li><li>United Baloch Army (UBA)</li><li>Uzair Baloch Gang</li>         </ul>         </div>`)[0];
+                popup_33d11a68af0f88f7d0093e672fcf786b.setContent(html_b1c30bf85af5cda97d50c14363795e41);
+            
+        
+
+        marker_ecbcfedb43466099dfb16a018c613477.bindPopup(popup_33d11a68af0f88f7d0093e672fcf786b)
+        ;
+
+        
+    
+    
+            marker_ecbcfedb43466099dfb16a018c613477.bindTooltip(
+                `<div>
+                     South Asia (41 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

@@ -2,7 +2,8 @@ import json
 
 from sqlalchemy.sql import func
 from Statistics_Service.app.db.postgres_db.database import session_maker
-from Data_Cleaning_Service.app.db.postgres_db.models import Country, Event, Location, City, Casualty, Coordinate
+from Data_Cleaning_Service.app.db.postgres_db.models import Country, Event, Location, City, Casualty, Coordinate, \
+    Region, Group, event_groups
 
 
 def get_all_countries():
@@ -80,3 +81,43 @@ def get_top_5_countries_by_events():
 
 
 
+def get_unique_groups_by_country(country_id):
+    """
+    Retrieves unique groups operating in a specific country with their counts.
+    """
+    with session_maker() as session:
+        query = (
+            session.query(
+                Country.name.label("country_name"),
+                func.count(func.distinct(Group.id)).label("unique_group_count"),
+                func.array_agg(func.distinct(Group.name)).label("group_names"),
+                func.avg(Coordinate.latitude).label("latitude"),
+                func.avg(Coordinate.longitude).label("longitude")
+            )
+            .join(City, Country.id == City.country_id)
+            .join(Location, City.id == Location.city_id)
+            .join(Coordinate, Location.coordinate_id == Coordinate.id)
+            .join(Event, Location.id == Event.location_id)
+            .join(event_groups, Event.id == event_groups.c.event_id)
+            .join(Group, Group.id == event_groups.c.group_id)
+            .filter(Country.id == country_id)  # סינון לפי country_id
+            .group_by(Country.name)
+            .order_by(func.count(func.distinct(Group.id)).desc())
+        )
+
+        results = query.all()
+
+        return [
+            {
+                "country_name": row.country_name,
+                "unique_group_count": row.unique_group_count,
+                "group_names": row.group_names,
+                "latitude": row.latitude,
+                "longitude": row.longitude
+            }
+            for row in results
+        ]
+
+
+
+print(json.dumps(get_unique_groups_by_country(10),indent=4))

@@ -3,12 +3,15 @@ import os
 import folium
 from folium.plugins import HeatMap, MarkerCluster
 
-from Statistics_Service.app.repository.attack_type_repository import get_attack_strategies_by_region
-from Statistics_Service.app.repository.country_repository import get_top_5_countries_by_events
+from Statistics_Service.app.repository.attack_type_repository import get_attack_strategies_by_region, \
+    get_attack_strategies_by_country
+from Statistics_Service.app.repository.country_repository import get_top_5_countries_by_events, \
+    get_unique_groups_by_country
 from Statistics_Service.app.repository.event_repository import get_events_with_coordinates_and_victims
 from Statistics_Service.app.repository.group_repository import get_top_events_with_coordinates, \
     get_top_groups_by_region, get_region_coordinates, get_groups_with_shared_targets_by_region, \
     get_groups_with_shared_targets_by_country
+from Statistics_Service.app.repository.region_repository import get_unique_groups_by_region
 
 
 def generate_map_file(limit=5, output_file="top_events_map.html"):
@@ -268,6 +271,8 @@ def create_shared_target_map_by_country(country_id):
     return country_map
 
 
+
+
 def generate_attack_strategy_map(region_id=None):
     """
     Generates a map with markers for attack strategies by region or globally.
@@ -309,7 +314,7 @@ def generate_attack_strategy_map_by_country(country_id=None):
     """
     Generates a map with markers for attack strategies by country or globally.
     """
-    data = get_attack_strategies_by_region(country_id)
+    data = get_attack_strategies_by_country(country_id)
 
     # Create base map
     base_map = folium.Map(location=[20, 0], zoom_start=2)
@@ -341,3 +346,79 @@ def generate_attack_strategy_map_by_country(country_id=None):
 
     return base_map
 
+
+
+def create_intergroup_activity_map_by_country(country_id):
+    """
+    Create a map showing intergroup activity for a specific country.
+    """
+    # Retrieve data for the specific country
+    data = get_unique_groups_by_country(country_id)
+
+    # Create a base map
+    base_map = folium.Map(location=[9.145, 40.489673], zoom_start=5)  # Adjust coordinates to focus on Africa
+
+    # Add markers to the map
+    for item in data:
+        latitude = item["latitude"]
+        longitude = item["longitude"]
+        country_name = item["country_name"]
+        unique_group_count = item["unique_group_count"]
+        group_names = item["group_names"]
+
+        # Create popup content
+        popup_content = f"""
+        <strong>{country_name}</strong><br>
+        <strong>Unique Group Count:</strong> {unique_group_count}<br>
+        <strong>Groups:</strong>
+        <ul>
+        {''.join(f"<li>{group}</li>" for group in group_names)}
+        </ul>
+        """
+
+        # Add marker to the map
+        folium.Marker(
+            location=[latitude, longitude],
+            popup=folium.Popup(popup_content, max_width=300),
+            tooltip=f"{country_name} ({unique_group_count} groups)"
+        ).add_to(base_map)
+
+    return base_map
+
+
+def create_intergroup_activity_map_by_region(region_id):
+    """
+    Create a map showing intergroup activity for a specific region.
+    """
+    # Retrieve data for the specific region
+    data = get_unique_groups_by_region(region_id)
+
+    # Create a base map
+    base_map = folium.Map(location=[20, 0], zoom_start=3)  # Adjust coordinates to focus on regions globally
+
+    # Add markers to the map
+    for item in data:
+        latitude = item["latitude"]
+        longitude = item["longitude"]
+        region_name = item["region_name"]
+        unique_group_count = item["unique_group_count"]
+        group_names = item["group_names"]
+
+        # Create popup content
+        popup_content = f"""
+        <strong>{region_name}</strong><br>
+        <strong>Unique Group Count:</strong> {unique_group_count}<br>
+        <strong>Groups:</strong>
+        <ul>
+        {''.join(f"<li>{group}</li>" for group in group_names)}
+        </ul>
+        """
+
+        # Add marker to the map
+        folium.Marker(
+            location=[latitude, longitude],
+            popup=folium.Popup(popup_content, max_width=300),
+            tooltip=f"{region_name} ({unique_group_count} groups)"
+        ).add_to(base_map)
+
+    return base_map
