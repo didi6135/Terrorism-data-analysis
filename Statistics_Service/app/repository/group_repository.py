@@ -1,9 +1,9 @@
 import json
 
-from sqlalchemy import func
+from sqlalchemy import func, distinct
 
 from Data_Cleaning_Service.app.db.postgres_db.models import Event, Casualty, Coordinate, Location, Group, Region, City, \
-    event_groups, Country
+    event_groups, Country, TargetType, event_targets_type
 from Statistics_Service.app.db.postgres_db.database import session_maker
 
 def get_most_deadly_repo(limit=None):
@@ -76,9 +76,10 @@ def get_top_events_with_coordinates(limit=5):
         ]
 
 
-
 def get_top_groups_by_region(region_id=None):
-
+    """
+    Retrieves the top 5 most active groups for a specific region or all regions.
+    """
     with session_maker() as session:
         # Base query to fetch group activity by region
         query = (
@@ -116,11 +117,16 @@ def get_top_groups_by_region(region_id=None):
             })
 
         # Keep only the top 5 groups for each region
-        top_groups_by_region = {
-            region: groups[:5] for region, groups in grouped_results.items()
-        }
+        if region_id:
+            # If a specific region is queried, return only that region
+            return {
+                next(iter(grouped_results.keys())): grouped_results[next(iter(grouped_results.keys()))][:5]
+            }
+        else:
+            return {
+                region: groups[:5] for region, groups in grouped_results.items()
+            }
 
-        return top_groups_by_region
 
 
 
@@ -179,3 +185,98 @@ def get_top_5_groups_by_casualties():
 
 
 # print(get_top_5_groups_by_casualties())
+
+
+
+def get_groups_with_shared_targets_by_region(region_id):
+    """
+    Retrieves groups with shared targets and their geographic locations in a specific region.
+
+    Args:
+        region_id (int): ID of the region.
+
+    Returns:
+        list: List of targets with shared groups, event counts, and geographic locations.
+    """
+    with session_maker() as session:
+        results = (
+            session.query(
+                TargetType.name.label("target_name"),
+                func.array_agg(distinct(Group.name)).label("groups"),  # Unique groups
+                func.count(Event.id).label("event_count"),
+                func.avg(Coordinate.latitude).label("latitude"),
+                func.avg(Coordinate.longitude).label("longitude")
+            )
+            .join(event_targets_type, Event.id == event_targets_type.c.event_id)
+            .join(TargetType, TargetType.id == event_targets_type.c.target_type_id)
+            .join(event_groups, Event.id == event_groups.c.event_id)
+            .join(Group, Group.id == event_groups.c.group_id)
+            .join(Location, Location.id == Event.location_id)
+            .join(City, City.id == Location.city_id)
+            .join(Country, Country.id == City.country_id)
+            .join(Region, Region.id == Country.region_id)
+            .join(Coordinate, Location.coordinate_id == Coordinate.id)
+            .filter(Region.id == region_id)
+            .group_by(TargetType.name)
+            .order_by(func.count(Event.id).desc())
+            .all()
+        )
+
+        return [
+            {
+                "target_name": row.target_name,
+                "groups": row.groups,
+                "event_count": row.event_count,
+                "latitude": row.latitude,
+                "longitude": row.longitude
+            }
+            for row in results
+        ]
+
+
+
+
+
+def get_groups_with_shared_targets_by_country(country_id):
+    """
+    Retrieves groups with shared targets and their geographic locations in a specific country.
+
+    Args:
+        country_id (int): ID of the country.
+
+    Returns:
+        list: List of targets with shared groups, event counts, and geographic locations.
+    """
+    with session_maker() as session:
+        results = (
+            session.query(
+                TargetType.name.label("target_name"),
+                func.array_agg(distinct(Group.name)).label("groups"),  # Unique groups
+                func.count(Event.id).label("event_count"),
+                func.avg(Coordinate.latitude).label("latitude"),
+                func.avg(Coordinate.longitude).label("longitude")
+            )
+            .join(event_targets_type, Event.id == event_targets_type.c.event_id)
+            .join(TargetType, TargetType.id == event_targets_type.c.target_type_id)
+            .join(event_groups, Event.id == event_groups.c.event_id)
+            .join(Group, Group.id == event_groups.c.group_id)
+            .join(Location, Location.id == Event.location_id)
+            .join(City, City.id == Location.city_id)
+            .join(Country, Country.id == City.country_id)
+            .join(Coordinate, Location.coordinate_id == Coordinate.id)
+            .filter(Country.id == country_id)
+            .group_by(TargetType.name)
+            .order_by(func.count(Event.id).desc())
+            .all()
+        )
+
+        return [
+            {
+                "target_name": row.target_name,
+                "groups": row.groups,
+                "event_count": row.event_count,
+                "latitude": row.latitude,
+                "longitude": row.longitude
+            }
+            for row in results
+        ]

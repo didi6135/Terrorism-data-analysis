@@ -138,6 +138,10 @@
                     <option value="event_trends_for_all_years">6. Get all event trends for all years</option>
                     <option value="event_trends_for_specific_year">7. Get all event trends for specific year</option>
                     <option value="most_active_group_by_some_region_or_all_region">7. Get most active groups for specific region or all</option>
+                    <option value="top_group_with_shared_target_by_region">8. Get top group that have shared target by region</option>
+                    <option value="top_group_with_shared_target_by_country">9. Get top group that have shared target by country</option>
+                    <option value="attack_strategy_map_region">10. Get attack strategy map by region</option>
+                    <option value="attack_strategy_map_country">11. Get attack strategy map by country</option>
                 </select>
             </div>
 
@@ -189,8 +193,25 @@
             },
             'most_active_group_by_some_region_or_all_region': {
                 description: "Displays most active groups for specific region or all.",
-                params: ['region']
+                params: ['region_id']
             },
+            'top_group_with_shared_target_by_region': {
+                description: "Displays top group that have shared target by region.",
+                params: ['region_id']
+            },
+            'top_group_with_shared_target_by_country': {
+                description: "Displays top group that have shared target by country.",
+                params: ['country_id']
+            },
+            'attack_strategy_map_region': {
+                description: "Displays attack strategy map by region.",
+                params: ['region_id']
+            },
+            'attack_strategy_map_country': {
+                description: "Displays attack strategy map by country.",
+                params: ['country_id']
+            }
+
         };
 
         async function updateParameters() {
@@ -236,6 +257,30 @@
                 const citySelect = createSelect('region_id', 'Select Region');
                 parameterInputs.appendChild(citySelect);
                 await populateOptions(citySelect, '/api/statistics/regions', 'regions');
+            }
+            if (query === 'top_group_with_shared_target_by_region') {
+                parameterInputs.appendChild(createLabel('Select region:'));
+                const citySelect = createSelect('region_id', 'Select Region');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/regions', 'regions');
+            }
+            if (query === 'top_group_with_shared_target_by_country') {
+                parameterInputs.appendChild(createLabel('Select country:'));
+                const citySelect = createSelect('country_id', 'Select Country');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/countries', 'countries');
+            }
+            if (query === 'attack_strategy_map_region') {
+                parameterInputs.appendChild(createLabel('Select region:'));
+                const citySelect = createSelect('region_id', 'Select Region');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/regions', 'regions');
+            }
+            if (query === 'attack_strategy_map_country') {
+                parameterInputs.appendChild(createLabel('Select country:'));
+                const citySelect = createSelect('country_id', 'Select Country');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/countries', 'countries');
             }
 
 

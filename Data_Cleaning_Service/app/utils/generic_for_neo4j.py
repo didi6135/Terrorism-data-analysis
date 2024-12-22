@@ -7,11 +7,14 @@ class Neo4jCRUD:
 
     @staticmethod
     def query_single(query: str, params: dict):
-
         with driver.session() as session:
             try:
                 result = session.run(query, params).single()
-                return dict(result["l"]) if result and "l" in result else None
+                if result and "l" in result:
+                    # print(f"Query matched location: {result['l']}")
+                    return dict(result["l"])
+                # print("No matching location found.")
+                return None
             except Exception as e:
                 print(f"Error executing query_single: {e}")
                 return None
@@ -33,8 +36,7 @@ class Neo4jCRUD:
             end_node = Neo4jCRUD.get_one(end_entity, end_identifier_key, end_identifier_value)
 
             if not start_node or not end_node:
-                print(
-                    f"Missing nodes: {start_entity} ({start_identifier_value}) or {end_entity} ({end_identifier_value})")
+                # print(f"Missing nodes: {start_entity} ({start_identifier_value}) or {end_entity} ({end_identifier_value})")
                 return None
 
             # Create or merge the relationship
@@ -54,7 +56,7 @@ class Neo4jCRUD:
 
             try:
                 res = session.run(query, params).single()
-                print(f"Relationship created/updated: {res}")
+                # print(f"Relationship created/updated: {res}")
                 return {
                     'relationship': res['relationship'],
                     'rel_properties': res['rel_properties']
@@ -62,6 +64,7 @@ class Neo4jCRUD:
             except Exception as e:
                 print(f"Error creating relationship: {e}")
                 return {"error": "Database Error", "details": str(e)}
+
 
     @staticmethod
     def get_all(entity: str):
@@ -72,6 +75,7 @@ class Neo4jCRUD:
                 return [dict(record['e']) for record in res] if res else []
             except Exception as e:
                 return {"error": "Database Error", "details": str(e)}
+
 
 
     @staticmethod
@@ -89,17 +93,25 @@ class Neo4jCRUD:
     def create(entity: str, data: dict, model: type):
         with driver.session() as session:
             try:
+                # Validate data using the provided model
                 validated_data = model(**data)
             except TypeError as e:
+                print(f"Validation error: {e}")
                 return {"error": "Validation Error", "details": str(e)}
 
             node_data = validated_data.__dict__
             query = f"CREATE (e:{entity} $data) RETURN e"
             params = {'data': node_data}
+
             try:
                 res = session.run(query, params).single()
-                return dict(res['e']) if res else None
+                if res:
+                    # print(f"Created new {entity}: {res['e']}")
+                    return dict(res['e'])
+                print(f"Failed to create {entity}.")
+                return None
             except Exception as e:
+                print(f"Error executing create: {e}")
                 return {"error": "Database Error", "details": str(e)}
 
     @staticmethod

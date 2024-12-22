@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_553122ddba0f88554e4bc663f99934c2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_553122ddba0f88554e4bc663f99934c2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_553122ddba0f88554e4bc663f99934c2 = L.map(
+                "map_553122ddba0f88554e4bc663f99934c2",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e8f0fc2bfdad7d05410cbef78cf0f388 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e8f0fc2bfdad7d05410cbef78cf0f388.addTo(map_553122ddba0f88554e4bc663f99934c2);
+        
+    
+            var marker_cluster_054c29535c9cb6c51013400d485c47b3 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_99cfe15610faf3a7d15a39107cca45d8 = L.marker(
+                [32.657950500000005, -82.213032],
+                {
+}
+            ).addTo(marker_cluster_054c29535c9cb6c51013400d485c47b3);
+        
+    
+        var popup_413d1d5158e324f07ef7948f68abea00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb88201ac45b571ceae0ee376aa51870 = $(`<div id="html_fb88201ac45b571ceae0ee376aa51870" style="width: 100.0%; height: 100.0%;">         <strong>North America</strong><br>         <strong>Attack Type:</strong> Assassination<br>         <strong>Unique Groups:</strong> 4<br>         <strong>Groups:</strong> Armed Revolutionary Independence Movement (MIRA), Cali Narcotics Cartel, Jewish Action Movement, Vietnamese Organization to Exterminate Communists and Restore the Nation         </div>`)[0];
+                popup_413d1d5158e324f07ef7948f68abea00.setContent(html_fb88201ac45b571ceae0ee376aa51870);
+            
+        
+
+        marker_99cfe15610faf3a7d15a39107cca45d8.bindPopup(popup_413d1d5158e324f07ef7948f68abea00)
+        ;
+
+        
+    
+    
+            marker_99cfe15610faf3a7d15a39107cca45d8.bindTooltip(
+                `<div>
+                     Assassination (4 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c2547444e47af25d62bae71cf0a756a7 = L.marker(
+                [24.831942285714288, -71.08220735714285],
+                {
+}
+            ).addTo(marker_cluster_054c29535c9cb6c51013400d485c47b3);
+        
+    
+        var popup_7d1f9ccf20c85f578d21ebdfb0ef0fe4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1447aebd47e206c17200d862cf89261 = $(`<div id="html_b1447aebd47e206c17200d862cf89261" style="width: 100.0%; height: 100.0%;">         <strong>North America</strong><br>         <strong>Attack Type:</strong> Bombing/Explosion<br>         <strong>Unique Groups:</strong> 4<br>         <strong>Groups:</strong> Boricuan Armed Anti-Imperialist Commandos, Jewish Action Movement, Organization of Volunteers for the Puerto Rican Revolution, Puerto Rican Nationalists         </div>`)[0];
+                popup_7d1f9ccf20c85f578d21ebdfb0ef0fe4.setContent(html_b1447aebd47e206c17200d862cf89261);
+            
+        
+
+        marker_c2547444e47af25d62bae71cf0a756a7.bindPopup(popup_7d1f9ccf20c85f578d21ebdfb0ef0fe4)
+        ;
+
+        
+    
+    
+            marker_c2547444e47af25d62bae71cf0a756a7.bindTooltip(
+                `<div>
+                     Bombing/Explosion (4 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_af598e37d599607967edcd613606692a = L.marker(
+                [42.17323996428572, -112.10312639285716],
+                {
+}
+            ).addTo(marker_cluster_054c29535c9cb6c51013400d485c47b3);
+        
+    
+        var popup_be51ce34bd9d334c41bc5d9c413c6638 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cba8a6173a282d383e9b6b0d9c2c1db = $(`<div id="html_8cba8a6173a282d383e9b6b0d9c2c1db" style="width: 100.0%; height: 100.0%;">         <strong>North America</strong><br>         <strong>Attack Type:</strong> Facility/Infrastructure Attack<br>         <strong>Unique Groups:</strong> 4<br>         <strong>Groups:</strong> Animal Liberation Front (ALF), Earth Liberation Front (ELF), Organization of Volunteers for the Puerto Rican Revolution, Palestine Liberation Organization (PLO)         </div>`)[0];
+                popup_be51ce34bd9d334c41bc5d9c413c6638.setContent(html_8cba8a6173a282d383e9b6b0d9c2c1db);
+            
+        
+
+        marker_af598e37d599607967edcd613606692a.bindPopup(popup_be51ce34bd9d334c41bc5d9c413c6638)
+        ;
+
+        
+    
+    
+            marker_af598e37d599607967edcd613606692a.bindTooltip(
+                `<div>
+                     Facility/Infrastructure Attack (4 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5e6db0c2687b5fe3e0d7a228f76d7bec = L.marker(
+                [44.964985, -93.260193],
+                {
+}
+            ).addTo(marker_cluster_054c29535c9cb6c51013400d485c47b3);
+        
+    
+        var popup_8625bf5fe5aea92e96ce3fcea957cda8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_571951e9d6d81a6833068d2dbbd78fdb = $(`<div id="html_571951e9d6d81a6833068d2dbbd78fdb" style="width: 100.0%; height: 100.0%;">         <strong>North America</strong><br>         <strong>Attack Type:</strong> Armed Assault<br>         <strong>Unique Groups:</strong> 1<br>         <strong>Groups:</strong> White extremists         </div>`)[0];
+                popup_8625bf5fe5aea92e96ce3fcea957cda8.setContent(html_571951e9d6d81a6833068d2dbbd78fdb);
+            
+        
+
+        marker_5e6db0c2687b5fe3e0d7a228f76d7bec.bindPopup(popup_8625bf5fe5aea92e96ce3fcea957cda8)
+        ;
+
+        
+    
+    
+            marker_5e6db0c2687b5fe3e0d7a228f76d7bec.bindTooltip(
+                `<div>
+                     Armed Assault (1 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_054c29535c9cb6c51013400d485c47b3.addTo(map_553122ddba0f88554e4bc663f99934c2);
+        
+</script>
+</html>

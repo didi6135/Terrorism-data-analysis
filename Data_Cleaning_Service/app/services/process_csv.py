@@ -25,13 +25,13 @@ def process_csv(file_name):
         # Process each row
         for index, row in data.iterrows():
             try:
-                main_split(row)
-                # main_process_neo4j(row)
+                # main_split(row)
+                main_process_neo4j(row)
                 log(f"Processed row {index + 1} successfully.")
-                # time.sleep(1)
+                # time.sleep(5)
             except Exception as e:
                 log(f"222Error processing row {index + 1}: {e}", level="error")
-                # time.sleep(1)
+                # time.sleep(5)
                 continue  # Skip to the next row if there's an error
         log(f"Finished processing CSV: {file_path}")
 

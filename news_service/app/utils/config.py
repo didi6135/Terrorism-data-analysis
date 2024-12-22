@@ -1,0 +1,13 @@
+ELASTIC_HOST = "http://localhost:9200"
+ELASTIC_USER = "elastic"
+ELASTIC_PASSWORD = "3uDiv6AS"
+ELASTIC_INDEX = "news_articles"
+
+NEWS_API_KEY = "5a8e538e-9d6e-4730-81ee-abf12bf73c90"
+NEWS_API_URL = "https://eventregistry.org/api/v1/article/getArticles"
+
+GROQ_API_URL = "https://api.groq.com/v1/completions"
+GROQ_API_KEY = "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"
+
+GEOCODING_URL = "https://api.opencagedata.com/geocode/v1/json"
+GEO_API_KEY = "69e8be391f184cbab96af1700e56786f"

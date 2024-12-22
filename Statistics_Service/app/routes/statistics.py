@@ -13,7 +13,8 @@ from Statistics_Service.app.repository.region_repository import get_all_regions,
 from Statistics_Service.app.services.plot_service import plot_monthly_trends, \
     plot_yearly_trends
 from Statistics_Service.app.services.visualization_service import generate_map_file, generate_top_countries_map, \
-    generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis
+    generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis, create_shared_target_map_by_region, \
+    create_shared_target_map_by_country, generate_attack_strategy_map, generate_attack_strategy_map_by_country
 
 statistics_bp = Blueprint("statistics", __name__)
 
@@ -171,29 +172,115 @@ def get_event_trends_for_specific_year():
         }), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate trends", "message": str(e)}), 500
-##############################################
+
 
 @statistics_bp.route("/most_active_group_by_some_region_or_all_region", methods=["GET"])
 def get_top_groups_map():
     try:
-        region_id = request.args.get("region", type=int)
+        region_id = request.args.get("region_id", type=int)
 
         # Define the file path for saving the map
         map_file_path = "static/maps/top_groups_map.html"
 
-        # Generate the map and save it to a file
         map_object = generate_top_groups_map(region_id)
         map_object.save(map_file_path)
 
-        # Return the file path to the client
+
         return jsonify({
             "map_file": map_file_path
         }), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
+@statistics_bp.route('/top_group_with_shared_target_by_region', methods=["GET"])
+def top_group_with_shared_target_by_region():
+    try:
+        # Extract region_id or country_id from the request
+        region_id = request.args.get("region_id", type=int)
+
+        # Define the file path for saving the map
+        map_file_path = "static/maps/top_groups_shared_target_map.html"
+
+        # Generate the map based on the region or country
+        if region_id:
+            map_object = create_shared_target_map_by_region(region_id)
+        else:
+            return jsonify({"error": "Either region_id or country_id must be provided"}), 400
+
+        # Save the map as an HTML file
+        map_object.save(map_file_path)
+
+        # Return the map file path to the client
+        return jsonify({
+            "map_file": map_file_path
+        }), 200
+
+    except Exception as e:
+        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
+@statistics_bp.route('/top_group_with_shared_target_by_country', methods=["GET"])
+def top_group_with_shared_target_by_country():
+    try:
+        # Extract country_id
+        country_id = request.args.get("country_id", type=int)
+
+        # Define the file path for saving the map
+        map_file_path = "static/maps/top_groups_shared_target_map.html"
+
+        # Generate the map based on the region or country
+        if country_id:
+            map_object = create_shared_target_map_by_country(country_id)
+        else:
+            return jsonify({"error": "country_id must be provided"}), 400
+
+        # Save the map as an HTML file
+        map_object.save(map_file_path)
+
+        # Return the map file path to the client
+        return jsonify({
+            "map_file": map_file_path
+        }), 200
+
+    except Exception as e:
+        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+##############################################
 
 
+
+
+@statistics_bp.route('/attack_strategy_map_region', methods=["GET"])
+def attack_strategy_map():
+    try:
+        region_id = request.args.get("region_id", type=int)
+
+        # יצירת מפה ושמירה בקובץ
+        map_file_path = "static/maps/attack_strategy_map.html"
+        map_object = generate_attack_strategy_map(region_id)
+        map_object.save(map_file_path)
+
+        # החזרת נתיב המפה ללקוח
+        return jsonify({
+            "map_file": map_file_path
+        }), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
+@statistics_bp.route('/attack_strategy_map_country', methods=["GET"])
+def attack_strategy_map_by_country():
+    try:
+        country_id = request.args.get("country_id", type=int)
+
+        # יצירת מפה ושמירה בקובץ
+        map_file_path = "static/maps/attack_strategy_map_by_country.html"
+        map_object = generate_attack_strategy_map_by_country(country_id)
+        map_object.save(map_file_path)
+
+        # החזרת נתיב המפה ללקוח
+        return jsonify({
+            "map_file": map_file_path
+        }), 200
+    except Exception as e:
+        return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
 
 @statistics_bp.route("/most_deadly/<int:limit>", methods=["GET"])
