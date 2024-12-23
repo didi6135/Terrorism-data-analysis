@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Search Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .form-container {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container h2 {
+            margin: 0 0 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Event Search Dashboard</h1>
+</header>
+<main>
+    <!-- Search Form -->
+    <div class="form-container">
+        <h2>Search Events</h2>
+        <div class="form-group">
+            <label for="request-type">Select Request Type:</label>
+            <select id="request-type" onchange="toggleInputs()">
+                <option value="" selected disabled>Choose an option</option>
+                <option value="keywords">Search All Sources</option>
+                <option value="news">Search Real-time News</option>
+                <option value="historic">Search Historical Data</option>
+                <option value="combined">Search with Date Filter</option>
+            </select>
+        </div>
+
+        <!-- Keyword Search -->
+        <div id="keywords-inputs" class="hidden">
+            <div class="form-group">
+                <label for="keywords">Keywords:</label>
+                <input type="text" id="keywords" placeholder="Enter keywords">
+            </div>
+            <div class="form-group">
+                <label for="limit">Limit:</label>
+                <input type="number" id="limit" placeholder="Enter limit (default: 10)">
+            </div>
+        </div>
+
+        <!-- Date Filter Search -->
+        <div id="date-filter-inputs" class="hidden">
+            <div class="form-group">
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date">
+            </div>
+            <div class="form-group">
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date">
+            </div>
+        </div>
+
+        <button class="btn" onclick="performSearch()">Search</button>
+    </div>
+
+    <!-- Map -->
+    <iframe id="map-frame" src=""></iframe>
+</main>
+
+<script>
+    function toggleInputs() {
+        // Hide all input sections
+        document.getElementById("keywords-inputs").classList.add("hidden");
+        document.getElementById("date-filter-inputs").classList.add("hidden");
+
+        // Show relevant inputs based on selection
+        const requestType = document.getElementById("request-type").value;
+        if (requestType === "keywords" || requestType === "news" || requestType === "historic") {
+            document.getElementById("keywords-inputs").classList.remove("hidden");
+        } else if (requestType === "combined") {
+            document.getElementById("date-filter-inputs").classList.remove("hidden");
+        }
+    }
+
+function performSearch() {
+    const requestType = document.getElementById("request-type").value;
+    const mapFrame = document.getElementById("map-frame");
+
+    if (!requestType) {
+        alert("Please select a request type.");
+        return;
+    }
+
+    let url = "";
+
+    if (requestType === "keywords" || requestType === "news" || requestType === "historic") {
+        const keywords = document.getElementById("keywords").value;
+        const limit = document.getElementById("limit").value || 10;
+
+        if (!keywords) {
+            alert("Please enter keywords.");
+            return;
+        }
+
+        url = `/news/${requestType}/search?keywords=${encodeURIComponent(keywords)}&limit=${limit}`;
+    } else if (requestType === "combined") {
+        const startDate = document.getElementById("start_date").value;
+        const endDate = document.getElementById("end_date").value;
+
+        if (!startDate || !endDate) {
+            alert("Please select both start and end dates.");
+            return;
+        }
+
+        url = `/news/combined/search?start_date=${encodeURIComponent(startDate)}&end_date=${encodeURIComponent(endDate)}`;
+    }
+
+    // Fetch the response from the backend
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.map_url) {
+                // Load the map into the iframe
+                mapFrame.src = data.map_url;
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            alert("An error occurred while fetching the map.");
+            console.error(error);
+        });
+}
+</script>
+</body>
+</html>

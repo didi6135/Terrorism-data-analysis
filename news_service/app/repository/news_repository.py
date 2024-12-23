@@ -15,8 +15,10 @@ def process_and_store_article(article):
         # Step 1: Classify the article
         category = classify_article(title, body)
 
+
         # Step 2: Extract location and coordinates for relevant categories
         if category in ["Historical Terror Event", "Current Terror Event"]:
+            print('this article is historical or currently')
             location = extract_location(title, body)
             print(f'location: {location}')
             if location:
@@ -40,9 +42,6 @@ def process_and_store_article(article):
             "url": url,
             "source": source
         }
-
-
-        print(f"Processed article data: {processed_article}")  # Debugging
 
         # Step 4: Save to ElasticSearch
         save_article_to_elastic(processed_article)

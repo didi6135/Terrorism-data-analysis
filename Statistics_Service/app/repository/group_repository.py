@@ -361,4 +361,4 @@ def get_groups_by_target_type():
         ]
 
 
-print(json.dumps(get_groups_by_target_type(), indent=2))
+# print(json.dumps(get_groups_by_target_type(), indent=2))
