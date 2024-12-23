@@ -16,7 +16,7 @@ def create_producer():
     return producer
 
 
-def producer_send_message(topic, value, key):
+def producer_send_message(topic, value, key=None):
     try:
         producer = create_producer()
         future = producer.send(

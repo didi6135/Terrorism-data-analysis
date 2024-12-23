@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_13fbc9fbde556630198ad387e9525e28 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_13fbc9fbde556630198ad387e9525e28" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_13fbc9fbde556630198ad387e9525e28 = L.map(
+                "map_13fbc9fbde556630198ad387e9525e28",
+                {
+                    center: [33.888523, 35.503513],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4f7435b98a30ee885048ac9f9062c508 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4f7435b98a30ee885048ac9f9062c508.addTo(map_13fbc9fbde556630198ad387e9525e28);
+        
+    
+            var circle_marker_70b57e6298a23c15ec23f420c4299578 = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_13fbc9fbde556630198ad387e9525e28);
+        
+    
+        var popup_77d37a1b8fec96d71f10b9a3134109b4 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 200,
+  "maxHeight": 400,
+});
+
+        
+            
+                var html_98f4c986d3fa6c0e5525ea148b5f5e26 = $(`<div id="html_98f4c986d3fa6c0e5525ea148b5f5e26" style="width: 100.0%; height: 100.0%;"><b>Event title:</b> Hijacking, Airports & Aircraft, Unknown<br><b>Event body:</b> None<br><b>Location:</b> <br><b>Date:</b> 11/25/1973<br><b>Source:</b> <br></div>`)[0];
+                popup_77d37a1b8fec96d71f10b9a3134109b4.setContent(html_98f4c986d3fa6c0e5525ea148b5f5e26);
+            
+        
+
+        circle_marker_70b57e6298a23c15ec23f420c4299578.bindPopup(popup_77d37a1b8fec96d71f10b9a3134109b4)
+        ;
+
+        
+    
+    
+            var circle_marker_c5147aea24dfe4befe1541c16f3d00b5 = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_13fbc9fbde556630198ad387e9525e28);
+        
+    
+        var popup_ae23bde24609fe24804dc9bbe67cb654 = L.popup({
+  "maxWidth": 300,
+  "minWidth": 200,
+  "maxHeight": 400,
+});
+
+        
+            
+                var html_4d96adfd1fcd6349ca9c2467915fc5d9 = $(`<div id="html_4d96adfd1fcd6349ca9c2467915fc5d9" style="width: 100.0%; height: 100.0%;"><b>Event title:</b> Hijacking, Airports & Aircraft, Unknown<br><b>Event body:</b> None<br><b>Location:</b> <br><b>Date:</b> 11/25/1973<br><b>Source:</b> <br></div>`)[0];
+                popup_ae23bde24609fe24804dc9bbe67cb654.setContent(html_4d96adfd1fcd6349ca9c2467915fc5d9);
+            
+        
+
+        circle_marker_c5147aea24dfe4befe1541c16f3d00b5.bindPopup(popup_ae23bde24609fe24804dc9bbe67cb654)
+        ;
+
+        
+    
+</script>
+</html>

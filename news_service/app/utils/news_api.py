@@ -1,6 +1,6 @@
 import requests
 
-from news_service.app.db.elastic_search_db import get_elastic_client, index_name
+from news_service.app.db.elastic_search_db import get_elastic_client
 
 API_KEY = "5a8e538e-9d6e-4730-81ee-abf12bf73c90"
 BASE_URL = "https://eventregistry.org/api/v1/article/getArticles"
@@ -10,7 +10,7 @@ def fetch_articles_from_newsapi(keyword, page):
         "action": "getArticles",
         "keyword": keyword,
         "articlesPage": page,
-        "articlesCount": 100,
+        "articlesCount": 10,
         "articlesSortBy": "socialScore",
         "articlesSortByAsc": False,
         "dataType": ["news", "pr"],
