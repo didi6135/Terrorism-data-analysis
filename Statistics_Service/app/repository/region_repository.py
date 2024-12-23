@@ -58,16 +58,21 @@ def calculate_average_victims_by_region(region_id, limit=None):
 
 ######################################################
 
+
 def get_unique_groups_by_region(region_id):
-    """
-    Retrieves unique groups operating in a specific region with their counts.
-    """
     with session_maker() as session:
-        query = (
-            session.query(
+        return [
+            {
+                "region_name": row.region_name,
+                "unique_group_count": row.unique_group_count,
+                "group_names": row.group_names,
+                "latitude": row.latitude,
+                "longitude": row.longitude
+            }
+            for row in session.query(
                 Region.name.label("region_name"),
-                func.count(func.distinct(Group.id)).label("unique_group_count"),
-                func.array_agg(func.distinct(Group.name)).label("group_names"),
+                func.count(Group.id.distinct()).label("unique_group_count"),
+                func.array_agg(Group.name.distinct()).label("group_names"),
                 func.avg(Coordinate.latitude).label("latitude"),
                 func.avg(Coordinate.longitude).label("longitude")
             )
@@ -78,23 +83,11 @@ def get_unique_groups_by_region(region_id):
             .join(Event, Location.id == Event.location_id)
             .join(event_groups, Event.id == event_groups.c.event_id)
             .join(Group, Group.id == event_groups.c.group_id)
-            .filter(Region.id == region_id)  # סינון לפי region_id
+            .filter(Region.id == region_id)
             .group_by(Region.name)
-            .order_by(func.count(func.distinct(Group.id)).desc())
-        )
-
-        results = query.all()
-
-        return [
-            {
-                "region_name": row.region_name,
-                "unique_group_count": row.unique_group_count,
-                "group_names": row.group_names,
-                "latitude": row.latitude,
-                "longitude": row.longitude
-            }
-            for row in results
         ]
+
+
 
 
 

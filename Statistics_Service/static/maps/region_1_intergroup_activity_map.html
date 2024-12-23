@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_83d4c45bcb1243a6db03537109e44c31 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_83d4c45bcb1243a6db03537109e44c31" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_83d4c45bcb1243a6db03537109e44c31 = L.map(
+                "map_83d4c45bcb1243a6db03537109e44c31",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ed18e445ee026fc9d43d408b15ee33ff = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ed18e445ee026fc9d43d408b15ee33ff.addTo(map_83d4c45bcb1243a6db03537109e44c31);
+        
+    
+            var marker_cluster_0e8ecba5bccafe7a0c7b72ec1a6da27a = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_079812dee541d0197189d0ecab2936f7 = L.marker(
+                [11.923203756286815, -13455.610728157248],
+                {
+}
+            ).addTo(marker_cluster_0e8ecba5bccafe7a0c7b72ec1a6da27a);
+        
+    
+        var popup_a3bdc96cfa1d6f2477dc9439fa0ba3f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_46091668811d02c81238cb39dc300a7b = $(`<div id="html_46091668811d02c81238cb39dc300a7b" style="width: 100.0%; height: 100.0%;"><strong>Central America & Caribbean</strong><br><strong>Unique Group Count:</strong> 161<br><strong>Groups:</strong><ul><li>15th of September Liberation Legion</li><li>19th of July Christian Resistance Brigade</li><li>20 December Movement (M-20)</li><li>22-May-48</li><li>31 January People's Front (FP-31)</li><li>9 May People's Liberation Force</li><li>Anti-Castro Command</li><li>Anti-Communist Action Alliance</li><li>Anti-Communist Commando of the South</li><li>Anti-Communist Patriotic Front</li><li>Anti-Government Demonstrators</li><li>Anti-Government Group</li><li>Anti-Imperialist Patriotic Union</li><li>Anti Somoza Gp, name unk</li><li>Armed Action Force (FADA)</li><li>Armed Forces of National Resistance (FARN)</li><li>Armed Group for the Liberation of Guadeloupe (GLAG)</li><li>Armed People</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Bloque Anti-Guerrillero de Oriente (BAGO)</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Carlos Echeverria commando group</li><li>Central American Revolutionary Workers Party (PRTC)</li><li>Christian Group for the Respect for Life</li><li>Cinchoneros Popular Liberation Movement</li><li>Coalition of National Brigades</li><li>Commander Gonzalo Southern Group</li><li>Commandos</li><li>Communists</li><li>Contras</li><li>Coordination of the United Revolutionary Organization (CORU)</li><li>Costa Rican Peoples' Army (EPC)</li><li>Counter-revolutionaries</li><li>Counterrevolutionary Solidarity (SC)</li><li>Cubans seeking escape from Cuba</li><li>Death Squad</li><li>Death Squad of Organization Zero (Organizacion Cero)</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Democratic Revolutionary Front (FDR)</li><li>Dominican Popular Movement (MPD)</li><li>Drug-Related Terrorists</li><li>Elements Police Cobra Squadron</li><li>Ex-Somoza National Guard</li><li>Extreme Right Commando Brigade</li><li>Extremists</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Feliciano Argueta Front</li><li>Former Govt. Troops</li><li>Guadeloupe Liberation Army</li><li>Guatemalan Communist Party</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrilla Commando of the people</li><li>Guerrillas</li><li>Gunmen</li><li>Gutierrez Gomez Resistance Group</li><li>Hector Rio De Brigade</li><li>Homeland and Freedom Group</li><li>International Mercenary Brigade</li><li>Islamic Brotherhood</li><li>Jamaica Labor Party</li><li>Jorge Martinez Association of Combatants</li><li>Juan Rayo Guerilla Group</li><li>Kisan Indian Organization</li><li>Kuna Indians</li><li>Left wing activists</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>M12J</li><li>M-19 (Movement of April 19)</li><li>Mano Blanca</li><li>MANO-D</li><li>Manuel Jose Arce Commando</li><li>Martyrs of La Talanguera</li><li>Marxists</li><li>Maximiliano Gomez Revolutionary Brigade</li><li>Maximiliano Hernandez Martinez Brigade</li><li>Miguel Angel Cabrera Command</li><li>Miguel d'Escoto Brockman Community Movement</li><li>MILPAS Contras</li><li>Miskito Indian Organization</li><li>Misurasata Indian Organization</li><li>Morazanist Front for the Liberation of Honduras (FMLH)</li><li>Narco-Terrorists</li><li>National Anti Communist Commando</li><li>National Front for the Liberation of Cuba (FLNC)</li><li>National Liberation Army (El Salvador)</li><li>National Liberation Movement Party</li><li>National Republican Alliance Party</li><li>Nicaraguan Counter Revolutionaries (group unk)</li><li>Nicaraguan Democratic Anti-Communist Movement</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Nicaraguan  Revolutionary Armed Force</li><li>Nicaraguans protesting their government</li><li>Opposition movement of Colon Province Unemployed</li><li>Organizacion Democratica Nacionalista (ORDEN)</li><li>Party of National Conciliation</li><li>Patriotic Morazanista Front (FPM)</li><li>Patriotic Resistance Army (ERP)</li><li>Peasant Militants</li><li>People's Army (Nicaragua)</li><li>People's Information Group</li><li>People's Liberation Forces (FPL)</li><li>People's Military Organization (OMP)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>People's Revolutionary Union</li><li>Pirates</li><li>Popular Anti-Communist Militias</li><li>Popular Liberation Resistance Force</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Rebel Military Unit</li><li>Recompras</li><li>Recontras</li><li>Red June of 14 June</li><li>Revolutionary Armed Forces (FAR)</li><li>Revolutionary Armed Forces of Nicaragua (FARN)</li><li>Revolutionary Armed Organization</li><li>Revolutionary Commandos of Solidarity</li><li>Revolutionary Coordination of the Masses</li><li>Revolutionary Front for National Liberation</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Revolutionary Student Brigade</li><li>Revolutionary Student Movement (MER)</li><li>Revolutionary United Front Movement</li><li>Revolutionary Workers Party</li><li>Right-Wing Death Squad</li><li>Right-wing extremists</li><li>Right-Wing Group</li><li>Right Wing Vigilantes</li><li>Roberto Santucho Revolutionary Group</li><li>Robin Garcia Student Front</li><li>Roque Dalton Commando</li><li>Salvadoran Guerrillas</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Sandinist People's Army (EPS)</li><li>Secret Anti-Communist Army (ESA)</li><li>Separatists</li><li>Somoza Sympathizers</li><li>Somozists</li><li>Sovereign Panama Patriotic Front</li><li>Student Front of the People</li><li>Student Revolutionary Front (FER)</li><li>Subversives</li><li>Terrorists</li><li>Tony El Pelou Band</li><li>Trinitarians</li><li>Unemployed Persons</li><li>Union Guerrera Blanca (UGB)</li><li>United Nicaraguan Opposition</li><li>United Popular Action Front (FAPU)</li><li>United Revolutionary Front</li><li>Vigilante Group</li><li>Vincente Mecha Revolutionary Christians</li><li>Yatama</li><li>Yich Telga</li></ul></div>`)[0];
+                popup_a3bdc96cfa1d6f2477dc9439fa0ba3f6.setContent(html_46091668811d02c81238cb39dc300a7b);
+            
+        
+
+        marker_079812dee541d0197189d0ecab2936f7.bindPopup(popup_a3bdc96cfa1d6f2477dc9439fa0ba3f6)
+        ;
+
+        
+    
+    
+            marker_079812dee541d0197189d0ecab2936f7.bindTooltip(
+                `<div>
+                     Central America & Caribbean (161 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_0e8ecba5bccafe7a0c7b72ec1a6da27a.addTo(map_83d4c45bcb1243a6db03537109e44c31);
+        
+</script>
+</html>

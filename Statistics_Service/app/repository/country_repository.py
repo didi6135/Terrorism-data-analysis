@@ -82,15 +82,19 @@ def get_top_5_countries_by_events():
 
 
 def get_unique_groups_by_country(country_id):
-    """
-    Retrieves unique groups operating in a specific country with their counts.
-    """
     with session_maker() as session:
-        query = (
-            session.query(
+        return [
+            {
+                "country_name": row.country_name,
+                "unique_group_count": row.unique_group_count,
+                "group_names": row.group_names,
+                "latitude": row.latitude,
+                "longitude": row.longitude
+            }
+            for row in session.query(
                 Country.name.label("country_name"),
-                func.count(func.distinct(Group.id)).label("unique_group_count"),
-                func.array_agg(func.distinct(Group.name)).label("group_names"),
+                func.count(Group.id.distinct()).label("unique_group_count"),
+                func.array_agg(Group.name.distinct()).label("group_names"),
                 func.avg(Coordinate.latitude).label("latitude"),
                 func.avg(Coordinate.longitude).label("longitude")
             )
@@ -100,23 +104,8 @@ def get_unique_groups_by_country(country_id):
             .join(Event, Location.id == Event.location_id)
             .join(event_groups, Event.id == event_groups.c.event_id)
             .join(Group, Group.id == event_groups.c.group_id)
-            .filter(Country.id == country_id)  # סינון לפי country_id
+            .filter(Country.id == country_id)
             .group_by(Country.name)
-            .order_by(func.count(func.distinct(Group.id)).desc())
-        )
-
-        results = query.all()
-
-        return [
-            {
-                "country_name": row.country_name,
-                "unique_group_count": row.unique_group_count,
-                "group_names": row.group_names,
-                "latitude": row.latitude,
-                "longitude": row.longitude
-            }
-            for row in results
         ]
-
 
 

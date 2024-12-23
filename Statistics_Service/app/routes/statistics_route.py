@@ -17,9 +17,8 @@ from Statistics_Service.app.services.plot_service import plot_monthly_trends, \
     plot_yearly_trends, plot_groups_by_target_type
 from Statistics_Service.app.services.visualization_service import \
     generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis \
-    , generate_attack_strategy_map, generate_attack_strategy_map_by_country, \
-    create_intergroup_activity_map_by_country, create_intergroup_activity_map_by_region, \
-    generate_shared_event_groups_map, create_shared_target_map
+    , generate_attack_strategy_map, \
+    generate_shared_event_groups_map, create_shared_target_map, create_intergroup_activity_map
 
 statistics_bp = Blueprint("statistics", __name__)
 
@@ -208,7 +207,6 @@ def top_group_with_shared_target_by_region():
         return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
-####################################################################
 
 
 @statistics_bp.route('/top_group_with_shared_target_by_country', methods=["GET"])
@@ -227,6 +225,10 @@ def top_group_with_shared_target_by_country():
         return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+####################################################################
+
+
+
 
 
 
@@ -234,18 +236,17 @@ def top_group_with_shared_target_by_country():
 def attack_strategy_map():
     try:
         region_id = request.args.get("region_id", type=int)
+        cache_key = f"attack_strategy_map:region{region_id or 'all'}"
 
-        # יצירת מפה ושמירה בקובץ
-        map_file_path = "static/maps/attack_strategy_map.html"
-        map_object = generate_attack_strategy_map(region_id)
-        map_object.save(map_file_path)
+        if cached := redis_client.get(cache_key):
+            return jsonify({"map_file": json.loads(cached)}), 200
 
-        # החזרת נתיב המפה ללקוח
-        return jsonify({
-            "map_file": map_file_path
-        }), 200
+        map_file_path = generate_attack_strategy_map(entity_id=region_id, entity_type="region")
+        redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
+        return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
 
 
 
@@ -253,36 +254,38 @@ def attack_strategy_map():
 def attack_strategy_map_by_country():
     try:
         country_id = request.args.get("country_id", type=int)
-        print(country_id)
-        map_file_path = "static/maps/attack_strategy_map_by_country.html"
-        map_object = generate_attack_strategy_map_by_country(country_id)
-        map_object.save(map_file_path)
+        if not country_id:
+            return jsonify({"error": "country_id must be provided"}), 400
 
-        return jsonify({
-            "map_file": map_file_path
-        }), 200
+        cache_key = f"attack_strategy_map:country:{country_id}"
+        if cached := redis_client.get(cache_key):
+            return jsonify({"map_file": json.loads(cached)}), 200
+
+        # Generate and save map
+        map_file_path = generate_attack_strategy_map(entity_id=country_id, entity_type="country")
+        redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
+
+        return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
 
 
 @statistics_bp.route('/unique_group_by_region', methods=["GET"])
 def intergroup_activity_map_by_region():
     try:
-        # Get the region ID from the request
         region_id = request.args.get("region_id", type=int)
         if not region_id:
             return jsonify({"error": "region_id is required"}), 400
 
-        # Generate the map
-        map_file_path = "static/maps/intergroup_activity_map_by_region.html"
-        map_object = create_intergroup_activity_map_by_region(region_id)
-        map_object.save(map_file_path)
+        cache_key = f"intergroup_activity_map:region:{region_id}"
+        if cached := redis_client.get(cache_key):
+            return jsonify({"map_file": json.loads(cached)}), 200
 
-        # Return the map file path to the client
-        return jsonify({
-            "map_file": map_file_path
-        }), 200
+        map_file_path = create_intergroup_activity_map(region_id, "region")
+        redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
 
+        return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
 
@@ -290,23 +293,21 @@ def intergroup_activity_map_by_region():
 @statistics_bp.route('/unique_group_by_country', methods=["GET"])
 def intergroup_activity_map_by_country():
     try:
-        # Get the country ID from the request
         country_id = request.args.get("country_id", type=int)
         if not country_id:
             return jsonify({"error": "country_id is required"}), 400
 
-        # Generate the map
-        map_file_path = "static/maps/intergroup_activity_map_by_country.html"
-        map_object = create_intergroup_activity_map_by_country(country_id)
-        map_object.save(map_file_path)
+        cache_key = f"intergroup_activity_map:country:{country_id}"
+        if cached := redis_client.get(cache_key):
+            return jsonify({"map_file": json.loads(cached)}), 200
 
-        # Return the map file path to the client
-        return jsonify({
-            "map_file": map_file_path
-        }), 200
+        map_file_path = create_intergroup_activity_map(country_id, "country")
+        redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
 
+        return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
 
 
 
