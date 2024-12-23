@@ -214,12 +214,18 @@ def get_groups_with_shared_targets_by_country(country_id):
 def get_groups_with_shared_events():
     """
     Retrieves events where multiple groups participated in the same attack.
-    Returns a list of events with group names and locations.
     """
     with session_maker() as session:
-        # Query to get events with multiple groups
-        results = (
-            session.query(
+        return [
+            {
+                "event_id": row.event_id,
+                "event_description": row.event_description,
+                "groups": row.groups,
+                "latitude": row.latitude,
+                "longitude": row.longitude,
+                "location": f"{row.city}, {row.country}"
+            }
+            for row in session.query(
                 Event.id.label("event_id"),
                 Event.description.label("event_description"),
                 func.array_agg(distinct(Group.name)).label("groups"),
@@ -237,30 +243,12 @@ def get_groups_with_shared_events():
             .group_by(Event.id, Event.description, City.name, Country.name)
             .having(func.count(distinct(Group.id)) > 1)  # Filter events with more than one group
             .order_by(Event.id)
-            .all()
-        )
-
-        # Format results
-        data = [
-            {
-                "event_id": row.event_id,
-                "event_description": row.event_description,
-                "groups": row.groups,
-                "latitude": row.latitude,
-                "longitude": row.longitude,
-                "location": f"{row.city}, {row.country}"
-            }
-            for row in results
         ]
 
-        return data
 
-
-
-def get_groups_by_target_type(target_type=None):
+def get_groups_by_target_type(target_type_id=None):
     """
-    Retrieves groups that frequently attack the same target types.
-    Filters by specific target type if provided.
+    Retrieve groups attacking specific target types.
     """
     with session_maker() as session:
         query = (
@@ -274,30 +262,15 @@ def get_groups_by_target_type(target_type=None):
             .join(event_groups, event_groups.c.event_id == Event.id)
             .join(Group, Group.id == event_groups.c.group_id)
             .group_by(TargetType.name, Group.name)
-            .order_by(TargetType.name, func.count(Event.id).desc())
+            .order_by(func.count(Event.id).desc())
         )
 
-        # Apply filter if target_type is provided
-        if target_type:
-            query = query.filter(TargetType.id == target_type)
+        if target_type_id:
+            query = query.filter(TargetType.id == target_type_id)
 
         results = query.all()
 
-        # Organize results by target type
-        grouped_results = {}
-        for row in results:
-            if row.target_type not in grouped_results:
-                grouped_results[row.target_type] = []
-            grouped_results[row.target_type].append({
-                "group_name": row.group_name,
-                "event_count": row.event_count
-            })
-
-        return [
-            {
-                "target_type": target_type,
-                "groups": groups
-            }
-            for target_type, groups in grouped_results.items()
-        ]
-# print(json.dumps(get_groups_by_target_type(18), indent=2))
+        return [{
+            "target_type": row.target_type,
+            "groups": [{"group_name": row.group_name, "event_count": row.event_count} for row in results]
+        } for row in results]

@@ -314,29 +314,36 @@ def intergroup_activity_map_by_country():
 @statistics_bp.route('/shared_event_groups_map', methods=["GET"])
 def shared_event_groups_map():
     try:
-        map_file_path = "static/maps/shared_events_map.html"
+        cache_key = "shared_event_groups_map"
+        if cached := redis_client.get(cache_key):
+            return jsonify({"map_file": json.loads(cached)}), 200
 
-        map_object = generate_shared_event_groups_map()
-        map_object.save(map_file_path)
+        map_file_path = generate_shared_event_groups_map()
+        redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
 
-        return jsonify({
-            "map_file": map_file_path
-        }), 200
+        return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
 
 @statistics_bp.route('/groups_with_prefer_target_type', methods=["GET"])
 def groups_by_target_type_plot():
     try:
         target_type_id = request.args.get("target_type_id", type=int)
+        if not target_type_id:
+            return jsonify({"error": "target_type_id is required"}), 400
+
+        cache_key = f"groups_by_target_type_plot:{target_type_id}"
+        if cached := redis_client.get(cache_key):
+            return jsonify({"plot_file": json.loads(cached)}), 200
 
         plot_file = plot_groups_by_target_type(target_type_id)
+        redis_client.setex(cache_key, 3600, json.dumps(plot_file))  # Cache for 1 hour
 
-        return jsonify({
-            "plot_file": plot_file
-        }), 200
+        return jsonify({"plot_file": plot_file}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate plots", "message": str(e)}), 500
+
 ##############################################
 
 

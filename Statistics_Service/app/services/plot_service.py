@@ -48,41 +48,33 @@ def plot_monthly_trends(year_id):
 
 
 
-def plot_groups_by_target_type(target_type_id=None, output_folder="static/plots"):
+def plot_groups_by_target_type(target_type_id, output_folder="static/plots"):
+    """
+    Generate a plot of groups attacking a specific target type.
+    """
     data = get_groups_by_target_type(target_type_id)
+    if not data:
+        raise ValueError("No data found for the specified target_type_id")
 
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+    os.makedirs(output_folder, exist_ok=True)
 
-    for target in data:
-        target_type = target["target_type"]
-        groups = target["groups"]
+    # Extract data for plotting
+    target_type = data[0]["target_type"]
+    groups = sorted(data[0]["groups"], key=lambda g: g["event_count"], reverse=True)
+    group_names = [g["group_name"] for g in groups[:10]] + (["Others"] if len(groups) > 10 else [])
+    event_counts = [g["event_count"] for g in groups[:10]] + ([sum(g["event_count"] for g in groups[10:])] if len(groups) > 10 else [])
 
-        # Extract group names and event counts
-        group_names = [group["group_name"] for group in groups]
-        event_counts = [group["event_count"] for group in groups]
+    # Create and save the plot
+    plt.figure(figsize=(12, 8))
+    plt.barh(group_names, event_counts, color="skyblue")
+    plt.title(f"Top Groups by Attack Counts for Target Type: {target_type}")
+    plt.xlabel("Number of Attacks")
+    plt.ylabel("Groups")
+    plt.gca().invert_yaxis()
+    plt.tight_layout()
 
-        # Limit to top 10 groups and group others
-        top_n = 10
-        if len(groups) > top_n:
-            group_names = group_names[:top_n] + ["Others"]
-            event_counts = event_counts[:top_n] + [sum(event_counts[top_n:])]
-
-        # Create horizontal bar chart
-        plt.figure(figsize=(12, 8))
-        plt.barh(group_names, event_counts, color="skyblue")
-        plt.title(f"Top {top_n} Groups by Attack Counts for Target Type: {target_type}")
-        plt.xlabel("Number of Attacks")
-        plt.ylabel("Groups")
-        plt.gca().invert_yaxis()  # Invert y-axis for better readability
-        plt.tight_layout()
-
-        # Save the plot as an image
-        output_file = os.path.join(output_folder, f"{target_type_id}_groups_plot.png")
-
-        plt.savefig(output_file)
-        plt.close()  # Close the figure to free memory
-
-        # Normalize path for cross-platform compatibility
-        return os.path.normpath(output_file)
+    output_file = os.path.join(output_folder, f"{target_type_id}_groups_plot.png")
+    plt.savefig(output_file)
+    plt.close()
+    return os.path.normpath(output_file)
 
