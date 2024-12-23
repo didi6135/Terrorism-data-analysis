@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_fc4974df5a517b9a5065ff39ce7388a6 {
+                #map_e3c1feb2c96440201f71e00fdac517a5 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,19 +39,19 @@
 <body>
     
     
-            <div class="folium-map" id="map_fc4974df5a517b9a5065ff39ce7388a6" ></div>
+            <div class="folium-map" id="map_e3c1feb2c96440201f71e00fdac517a5" ></div>
         
 </body>
 <script>
     
     
-            var map_fc4974df5a517b9a5065ff39ce7388a6 = L.map(
-                "map_fc4974df5a517b9a5065ff39ce7388a6",
+            var map_e3c1feb2c96440201f71e00fdac517a5 = L.map(
+                "map_e3c1feb2c96440201f71e00fdac517a5",
                 {
-                    center: [9.145, 40.489673],
+                    center: [20.0, 0.0],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 5,
+  "zoom": 2,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -63,7 +63,7 @@
 
         
     
-            var tile_layer_8721010cdf70e9f35c008b180b56ee68 = L.tileLayer(
+            var tile_layer_ca684fa173ec459d01466c1db5d6268b = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -80,36 +80,36 @@
             );
         
     
-            tile_layer_8721010cdf70e9f35c008b180b56ee68.addTo(map_fc4974df5a517b9a5065ff39ce7388a6);
+            tile_layer_ca684fa173ec459d01466c1db5d6268b.addTo(map_e3c1feb2c96440201f71e00fdac517a5);
         
     
-            var marker_542faa84c5dd72ed7e4d749a9c0d01c5 = L.marker(
-                [32.11116485185186, 35.22443470370369],
+            var marker_b43098f2d215aac04aba4ea1214aac46 = L.marker(
+                [15.0, -90.0],
                 {
 }
-            ).addTo(map_fc4974df5a517b9a5065ff39ce7388a6);
+            ).addTo(map_e3c1feb2c96440201f71e00fdac517a5);
         
     
-        var popup_eeb05a3134613e742e003beae1ca30b3 = L.popup({
+        var popup_695754e7fe13809c13e9a20ec055c59a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_5281b73656626512596bc5734ba5bbf2 = $(`<div id="html_5281b73656626512596bc5734ba5bbf2" style="width: 100.0%; height: 100.0%;">         <strong>Israel</strong><br>         <strong>Unique Group Count:</strong> 7<br>         <strong>Groups:</strong>         <ul>         <li>Black September</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Japanese Red Army (JRA)</li><li>Jewish Defense League (JDL)</li><li>Palestinians</li><li>Popular Front for the Liberation of Palestine, Gen Cmd (PFLP-GC)</li><li>Popular Front for the Liberation of Palestine (PFLP)</li>         </ul>         </div>`)[0];
-                popup_eeb05a3134613e742e003beae1ca30b3.setContent(html_5281b73656626512596bc5734ba5bbf2);
+                var html_49048b4b270ddd6111fbef4649d085a6 = $(`<div id="html_49048b4b270ddd6111fbef4649d085a6" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Central America & Caribbean</strong><br><ol><li>Farabundo Marti National Liberation Front (FMLN) (3375 events)</li><li>Nicaraguan Democratic Force (FDN) (894 events)</li><li>Nicaraguan Resistance (231 events)</li><li>Sandinista National Liberation Front (FSLN) (209 events)</li><li>People's Liberation Forces (FPL) (183 events)</li></ol></div>`)[0];
+                popup_695754e7fe13809c13e9a20ec055c59a.setContent(html_49048b4b270ddd6111fbef4649d085a6);
             
         
 
-        marker_542faa84c5dd72ed7e4d749a9c0d01c5.bindPopup(popup_eeb05a3134613e742e003beae1ca30b3)
+        marker_b43098f2d215aac04aba4ea1214aac46.bindPopup(popup_695754e7fe13809c13e9a20ec055c59a)
         ;
 
         
     
     
-            marker_542faa84c5dd72ed7e4d749a9c0d01c5.bindTooltip(
+            marker_b43098f2d215aac04aba4ea1214aac46.bindTooltip(
                 `<div>
-                     Israel (7 groups)
+                     Central America & Caribbean (Click for details)
                  </div>`,
                 {
   "sticky": true,

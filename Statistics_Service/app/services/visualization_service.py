@@ -5,13 +5,152 @@ from folium.plugins import HeatMap, MarkerCluster
 
 from Statistics_Service.app.repository.attack_type_repository import get_attack_strategies_by_region, \
     get_attack_strategies_by_country
+from Statistics_Service.app.repository.city_repository import calculate_average_victims_by_city
 from Statistics_Service.app.repository.country_repository import get_top_5_countries_by_events, \
-    get_unique_groups_by_country
+    get_unique_groups_by_country, calculate_average_victims_by_country
 from Statistics_Service.app.repository.event_repository import get_events_with_coordinates_and_victims
 from Statistics_Service.app.repository.group_repository import get_top_events_with_coordinates, \
-    get_top_groups_by_region, get_region_coordinates, get_groups_with_shared_targets_by_region, \
+    get_top_groups_by_region, get_groups_with_shared_targets_by_region, \
     get_groups_with_shared_targets_by_country, get_groups_with_shared_events
-from Statistics_Service.app.repository.region_repository import get_unique_groups_by_region
+from Statistics_Service.app.repository.region_repository import get_unique_groups_by_region, \
+    calculate_average_victims_by_region
+
+
+###################################################
+def generate_map_for_victims_analysis(type_of, id_value, limit, output_file="victims_analysis_map.html"):
+    # Map type to corresponding calculation function
+    calculation_functions = {
+        "region": calculate_average_victims_by_region,
+        "country": calculate_average_victims_by_country,
+        "city": calculate_average_victims_by_city
+    }
+
+    # Validate type and get the corresponding function
+    if type_of not in calculation_functions:
+        raise ValueError(f"Invalid type '{type_of}'. Must be 'region', 'country', or 'city'.")
+
+    # Call the corresponding calculation function
+    data = calculation_functions[type_of](id_value, limit)
+    if not data:
+        return None
+
+    # Define save directory and ensure it exists
+    save_dir = os.path.join("static", "maps")
+    os.makedirs(save_dir, exist_ok=True)
+
+    # Create the map
+    base_map = folium.Map(location=[data[0]["latitude"], data[0]["longitude"]], zoom_start=5)
+    for event in data:
+        folium.CircleMarker(
+            location=[event["latitude"], event["longitude"]],
+            radius=max(3, event["score"] / 50),
+            color=("green" if event["score"] == 0 else "orange" if event["score"] <= 30 else "red"),
+            fill=True, fill_opacity=0.7,
+            popup=folium.Popup(
+                f"<b>Event:</b> {event['event_description']}<br>"
+                f"<b>Location Name:</b> {event.get('region_name') or event.get('country_name') or event.get('city_name', 'N/A')}<br>"
+                f"<b>Average Injured:</b> {event['average_injured']}<br>"
+                f"<b>Average Killed:</b> {event['average_killed']}<br>"
+                f"<b>Score:</b> {event['score']}",
+                max_width=300
+            ),
+        ).add_to(base_map)
+
+    # Save the map with a dynamic filename
+    path = os.path.join(save_dir, f'{type_of}_{id_value}_limit_{limit}_{output_file}')
+    base_map.save(path)
+    return path
+
+
+def generate_top_groups_map(region_id=None, output_file="top_groups_map.html"):
+    # Fetch top groups and use the predefined coordinates
+    top_groups = get_top_groups_by_region(region_id)
+
+    # Use predefined coordinates
+    region_coordinates = {
+        "Central America & Caribbean": {"latitude": 15.0, "longitude": -90.0},
+        "North America": {"latitude": 54.5260, "longitude": -105.2551},
+        "Southeast Asia": {"latitude": 13.4125, "longitude": 103.8667},
+        "Western Europe": {"latitude": 48.8566, "longitude": 2.3522},
+        "East Asia": {"latitude": 35.8617, "longitude": 104.1954},
+        "South America": {"latitude": -14.2350, "longitude": -51.9253},
+        "Eastern Europe": {"latitude": 55.3781, "longitude": 37.6173},
+        "Sub-Saharan Africa": {"latitude": -1.9403, "longitude": 29.8739},
+        "Middle East & North Africa": {"latitude": 24.2155, "longitude": 45.0792},
+        "Australasia & Oceania": {"latitude": -25.2744, "longitude": 133.7751},
+        "South Asia": {"latitude": 20.5937, "longitude": 78.9629},
+        "Central Asia": {"latitude": 48.0196, "longitude": 66.9237},
+        "Unknown": {"latitude": 0.0, "longitude": 0.0}
+    }
+
+    # Initialize a world map
+    world_map = folium.Map(location=[20, 0], zoom_start=2)
+
+    # Add markers for each region
+    for region, groups in top_groups.items():
+        if coord := region_coordinates.get(region):
+            popup_content = f"<strong>Top Groups in {region}</strong><br><ol>"
+            popup_content += "".join(f"<li>{g['group_name']} ({g['event_count']} events)</li>" for g in groups)
+            popup_content += "</ol>"
+
+            # Add the marker to the map
+            folium.Marker(
+                location=[coord["latitude"], coord["longitude"]],
+                popup=folium.Popup(popup_content, max_width=300),
+                tooltip=f"{region} (Click for details)"
+            ).add_to(world_map)
+
+    # Define the save path
+    save_dir = os.path.join("static", "maps")
+    path = os.path.join(save_dir, f'{region_id}_{output_file}')
+
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+    # Save the map
+    world_map.save(path)
+    return path
+
+
+
+def create_shared_target_map_by_region(region_id, output_file="top_groups_shared_target_map.html"):
+    shared_targets = get_groups_with_shared_targets_by_region(region_id)
+
+    # Create base map and cluster
+    region_map = folium.Map(location=[20, 0], zoom_start=2)
+    marker_cluster = MarkerCluster().add_to(region_map)
+    save_dir = os.path.join("static", "maps")
+
+    # Add markers
+    for target in shared_targets:
+        popup_content = (
+            f"<strong>{target['target_name']}</strong><br>"
+            f"<b>Event Count:</b> {target['event_count']}<br>"
+            f"<b>Groups:</b><ul>{''.join(f'<li>{group}</li>' for group in target['groups'])}</ul>"
+        )
+        folium.Marker(
+            location=[target["latitude"], target["longitude"]],
+            popup=folium.Popup(popup_content, max_width=300),
+            tooltip=f"{target['target_name']} ({target['event_count']} events)"
+        ).add_to(marker_cluster)
+
+    # Save map
+    # os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    # region_map.save(output_file)
+    # return output_file
+
+    path = os.path.join(save_dir, f'{region_id}_{output_file}')
+
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+    # Save the map
+    region_map.save(path)
+    return path
+
+
+####################################################
+
 
 
 def generate_map_file(limit=5, output_file="top_events_map.html"):
@@ -115,124 +254,14 @@ def generate_heatmap(output_file="heatmap.html"):
     return output_file
 
 
-def generate_top_groups_map(region_id=None):
-    """
-    Generate a map showing the top 5 most active groups by region or for a specific region.
-    """
-    # Fetch data
-    top_groups_by_region = get_top_groups_by_region(region_id)
-    region_coordinates = get_region_coordinates()
-
-    # Create base map
-    world_map = folium.Map(location=[20, 0], zoom_start=2)
-
-    for region, groups in top_groups_by_region.items():
-        # Get region coordinates
-        coordinates = region_coordinates.get(region, None)
-        if not coordinates:
-            continue
-
-        # Prepare popup content
-        popup_content = f"<strong>Top Groups in {region}</strong><br>"
-        popup_content += "<ol>"
-        for group in groups:
-            popup_content += f"<li>{group['group_name']} ({group['event_count']} events)</li>"
-        popup_content += "</ol>"
-
-        # Add marker to map
-        folium.Marker(
-            location=[coordinates["latitude"], coordinates["longitude"]],
-            popup=folium.Popup(popup_content, max_width=300),
-            tooltip=f"{region} (Click for details)"
-        ).add_to(world_map)
-
-    return world_map
 
 
 
-def generate_map_for_victims_analysis(data, output_file="victims_analysis_map.html"):
-    if not data:
-        print("No data provided to generate the map.")
-        return None
 
-    # Ensure the directory exists
-    save_dir = "static/maps/"
-    os.makedirs(save_dir, exist_ok=True)
-
-    # Full path to save the file
-    full_output_path = os.path.join(save_dir, output_file)
-
-    # Create a base map (centered at the first event)
-    first_event = data[0]
-    base_map = folium.Map(location=[first_event["latitude"], first_event["longitude"]], zoom_start=5)
-
-    # Add markers for each event
-    for event in data:
-        if event["latitude"] is not None and event["longitude"] is not None:
-            folium.CircleMarker(
-                location=[event["latitude"], event["longitude"]],
-                radius= 3 if event['score'] == 0 else event["score"] / 50,  # Scale radius based on casualties
-                color=(
-                    "green" if event["score"] == 0 else
-                    "orange" if 0 < event["score"] <= 30 else
-                    "red"
-                ),
-                fill=True,
-                fill_opacity=0.7,
-                popup=folium.Popup(
-                    f"<b>Event:</b> {event['event_description']}<br>"
-                    f"<b>Region:</b> {event.get('region_name', 'N/A')}<br>"
-                    f"<b>Country:</b> {event.get('country_name', 'N/A')}<br>"
-                    f"<b>City:</b> {event.get('city_name', 'N/A')}<br>"
-                    f"<b>Average Injured:</b> {event['average_injured']}<br>"
-                    f"<b>Average Killed:</b> {event['average_killed']}<br>"
-                    f"<b>Score:</b> {event['score']}",
-                    max_width=300
-                ),
-            ).add_to(base_map)
-
-    # Save the map as an HTML file in the specified directory
-    base_map.save(full_output_path)
-    print(f"Map generated and saved as '{full_output_path}'")
-    return full_output_path
 
 #####################################################
-def create_shared_target_map_by_region(region_id):
 
 
-    # Get data from the database
-    shared_targets = get_groups_with_shared_targets_by_region(region_id)
-
-    # Create the base map
-    region_map = folium.Map(location=[20, 0], zoom_start=2)
-
-    # Add MarkerCluster for better visualization
-    marker_cluster = MarkerCluster().add_to(region_map)
-
-    for target in shared_targets:
-        # Get target data
-        target_name = target["target_name"]
-        latitude = target["latitude"]
-        longitude = target["longitude"]
-        event_count = target["event_count"]
-        groups = target["groups"]
-
-        # Prepare popup content
-        popup_content = f"<strong>{target_name}</strong><br>"
-        popup_content += f"<b>Event Count:</b> {event_count}<br>"
-        popup_content += "<b>Groups:</b><ul>"
-        for group in groups:
-            popup_content += f"<li>{group}</li>"
-        popup_content += "</ul>"
-
-        # Add a marker for the target
-        folium.Marker(
-            location=[latitude, longitude],
-            popup=folium.Popup(popup_content, max_width=300),
-            tooltip=f"{target_name} ({event_count} events)"
-        ).add_to(marker_cluster)
-
-    return region_map
 
 def create_shared_target_map_by_country(country_id):
 

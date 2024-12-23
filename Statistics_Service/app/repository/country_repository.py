@@ -120,4 +120,3 @@ def get_unique_groups_by_country(country_id):
 
 
 
-print(json.dumps(get_unique_groups_by_country(10),indent=4))

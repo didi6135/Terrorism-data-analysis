@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9552d5159baa5ffd774ca1a18a4d2ca7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9552d5159baa5ffd774ca1a18a4d2ca7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9552d5159baa5ffd774ca1a18a4d2ca7 = L.map(
+                "map_9552d5159baa5ffd774ca1a18a4d2ca7",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1709688c4b983039a5ac30ead748542d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1709688c4b983039a5ac30ead748542d.addTo(map_9552d5159baa5ffd774ca1a18a4d2ca7);
+        
+    
+            var marker_cluster_16072dec85b7f48f4cb1b789f6483321 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_906e2ebf81c600373216dd581934469e = L.marker(
+                [31.741085816414376, 36.167298929265485],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_23bc2f8508fa693f87006ba9a0bfefe8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c61d28063cade97bd992c8b749cbe53 = $(`<div id="html_7c61d28063cade97bd992c8b749cbe53" style="width: 100.0%; height: 100.0%;"><strong>Private Citizens & Property</strong><br><b>Event Count:</b> 7408<br><b>Groups:</b><ul><li>313 Brigade (Syria)</li><li>9-Feb</li><li>Abdul Ghani Kikli Militia</li><li>Abdullah Azzam Brigades</li><li>Abdul Qader Husseini Battalions of the Free Palestine movement</li><li>Abida Tribe</li><li>Abu Amarah Battalion</li><li>Abu Nidal Organization (ANO)</li><li>Abu Obaida bin Jarrah Brigade</li><li>Abu Salim Martyr's Brigade</li><li>Adan Abyan Islamic Army (AAIA)</li><li>Adan-Abyan Province of the Islamic State</li><li>Agudat Israel Party</li><li>Ahfad al-Sahaba-Aknaf Bayt al-Maqdis</li><li>Ahneish Militia</li><li>Ahrar Al-Jalil (Free People of the Galilee)</li><li>Ahrar al-Sham</li><li>Aisha Umm-al Mouemeneen (Brigades of Aisha)</li><li>Ajnad al-Sham</li><li>Ajnad Misr</li><li>Al-Ahwaz Arab People's Democratic Front</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Ashtar Brigades</li><li>Al-Bakazim</li><li>Al Bayda Province of the Islamic State</li><li>Aleppo Fatah Operations Room</li><li>Al-Faruq Militia</li><li>Al-Fatah</li><li>Al-Furqan Brigades</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Algerian Moslem Fundamentalists</li><li>Al-Islah Party</li><li>Al-Jub Tribe</li><li>Al-Mus'abi Tribe</li><li>Al-Naqshabandiya Army</li><li>Al-Nasir Army (Syria)</li><li>Al-Nusrah Front</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in Saudi Arabia</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Qaqa Brigade</li><li>Al-Sawaiq Brigade</li><li>Al-Shabaab al-Mu'minin</li><li>Al-Sham Legion</li><li>Al-Zintan Revolutionaries' Military Council</li><li>Amal</li><li>Ansar al-Din</li><li>Ansar al-Din Front</li><li>Ansar al-Islam</li><li>Ansar al-Jihad</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sharia Operations Room (Syria)</li><li>Ansar al-Sharia (Tunisia)</li><li>Ansar al-Sunna</li><li>Ansar Al Sunnah (Palestine)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Arab Commando Cells</li><li>Arab-Israeli extremists</li><li>Arab Liberation Front (ALF)</li><li>Arab Revolution/Liberation Vanguard Organization</li><li>Arabs</li><li>Arab Separatists</li><li>Arab Steadfastness Front</li><li>Arbav Martyrs of Khuzestan</li><li>Armed Islamic Group (GIA)</li><li>Armed People</li><li>Armed Struggle Cells</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Army of Islam</li><li>Army of the Tribes</li><li>Asa'ib Ahl al-Haqq</li><li>Asbat al-Ansar</li><li>Avenge the Arab Nation</li><li>Ba'adi (on my own behalf)</li><li>Baathist extremists</li><li>Badr Brigades</li><li>Bahir Eldeen Brigade</li><li>Bani Jaber tribe</li><li>Barqa Province of the Islamic State</li><li>Bedouin tribesmen</li><li>Beirut Martyrs Forces Organization</li><li>Benghazi Defense Brigades (BDB)</li><li>Bilal Badr Group</li><li>Black Bloc</li><li>Black Panther Group (Palestinian)</li><li>Black September</li><li>Black Tigers</li><li>Brigade of al-Mukhtar al-Thaqafi</li><li>Brigades of Iman Hassan-al-Basri</li><li>Chechen Rebels</li><li>Civilians Seeking Revenge</li><li>Committee of Coordination</li><li>Conqueror Army</li><li>Counter-revolutionaries</li><li>Dawn Forces</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Dev Genc</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Dev Sol</li><li>Dev Yol</li><li>Druzes</li><li>Eagles of the Palestinian Revolution</li><li>East Turkistan Liberation Organization</li><li>Ed'daoua Es'salafia Lilqadha</li><li>Egyptian Tawhid and Jihad</li><li>Extremists</li><li>Fatah Hawks</li><li>February 14th Movement</li><li>February 17 Martyrs Brigade</li><li>Fedayeen</li><li>Fetullah Terrorist Organization</li><li>Fezzan Province of the Islamic State</li><li>Force 17</li><li>Forqan Group</li><li>Free Libya Martyrs Brigade</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Future movement (Lebanon)</li><li>Gilad Shalhevet Brigades</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Greater Damascus Operations Room</li><li>Gunmen</li><li>Habi's Er'roub seriat</li><li>Hadramawt Province of the Islamic State</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Hasam Movement</li><li>Hay Andalus Defense Operations Room</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Hizballah-Iraq</li><li>Holders of the Black Banners</li><li>Houthi extremists (Ansar Allah)</li><li>Hubay Qah Group</li><li>Idealist Association</li><li>Iranian extremists</li><li>Iraqi Communists</li><li>Iraqi extremists</li><li>Iraqi Islamic Vanguards for National Salvation (IIVNS)</li><li>Iraqi Mujahideen</li><li>Iraq's Jihadist Leagues</li><li>Islamic Army in Iraq (al-Jaish al-Islami fi al-Iraq)</li><li>Islamic Cause Organization</li><li>Islamic Front (Syria)</li><li>Islamic Jihad Brigades</li><li>Islamic Movement Organization</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamic Struggle Front</li><li>Islamic Unification Movement</li><li>Islamic Youth Shura Council</li><li>Islamist extremists</li><li>Island Brigade (Libya)</li><li>Israeli extremists</li><li>Israeli settlers</li><li>Israel Militant</li><li>Jaish al-Fatah (Syria)</li><li>Jaish al-Muhajireen wal-Ansar (Muhajireen Army)</li><li>Jaish al-Mujahideen (Syria)</li><li>Jaish al-Ta'ifa al-Mansura</li><li>Jaish Al-Umma (Army of the Nation)</li><li>Jaysh al-Islam (Syria)</li><li>Jerusalem Groups Hebrew (Qvutzot Yerushalayim)</li><li>Jewish Extremists</li><li>Jewish Terror</li><li>Jihadist Soldiers</li><li>Junaid Jihadist Battalion</li><li>Jund al-Aqsa</li><li>Jund al-Islam</li><li>Jund al-Khilafah (Tunisia)</li><li>Jundallah (Iran)</li><li>Jund al-Sham for Tawhid and Jihad</li><li>Justice and Equality Movement (JEM)</li><li>Kach</li><li>Kaka-Tribesmen</li><li>Kamal Boulander Group</li><li>Kani Brigade</li><li>Kata'ib al-Imam Ali</li><li>Kata'ib Hezbollah</li><li>Keshet</li><li>Khaled Ibn al-Walid Army</li><li>Khalid ibn Walid Brigade</li><li>Kouweikhat Group</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish guerrillas</li><li>Kurdish Militants</li><li>Kurdish Oppositionists</li><li>Kurdish Peshmerga Guerrillas</li><li>Kurdish Rebels</li><li>Kurdish Separatists</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Free Life Party</li><li>Kurdistan Workers' Party (PKK)</li><li>Kurds</li><li>Lahij Province of the Islamic State</li><li>League of Damascus for Special Tasks</li><li>Lebanese Liberation Front</li><li>Lebanese National Resistance Front</li><li>Left-Wing Demonstrators</li><li>Left-Wing Terrorists</li><li>Liberals of Galilee</li><li>Libyan Militia</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Libya Shield Force</li><li>Likud Political Party</li><li>Liwa Ahrar al-Sunna</li><li>Liwa al-Haqq</li><li>Mahdi Army</li><li>Maoist Communist Party (MKP)</li><li>Martyr Sami al-Ghul Brigades</li><li>Marxist-Leninist Armed Propaganda Unit</li><li>Ma'sadat al-Mujahideen</li><li>Mesopotamian Army (MEZOR)</li><li>Militants</li><li>Military Council of the Tribal Revolutionaries (MCTR)</li><li>Misrata Brigades</li><li>Moslem Activists</li><li>Mouhajiroune Brigade</li><li>Movement for Oneness and Jihad in West Africa (MUJAO)</li><li>Muhammed Shuqayr Group</li><li>Mujahedeen Army</li><li>Mujahedeen Brigades</li><li>Mujahedeen Group</li><li>Mujahedeen Shura Council</li><li>Mujahedeen Shura Council in the Environs of Jerusalem</li><li>Mujahedin-e Khalq (MEK)</li><li>Mukhtar Army</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Guerrillas</li><li>Muslim Militants</li><li>Muslim Rebels</li><li>Muslims</li><li>Mustafa al-Hujairi Group</li><li>Mutassim Billah Gaddafi Battalion</li><li>Najd Province of the Islamic State</li><li>Nur-al-Din al-Zinki Movement</li><li>Okba Ibn Nafaa Brigade</li><li>Orfei Harsha'am</li><li>Organization for Zionist Retribution</li><li>Organization of Soldiers of the Levant</li><li>Palestine Liberation Front (PLF)</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Activists</li><li>Palestinian Extremists</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinian-nationalist Lebanese joint movement</li><li>Palestinians</li><li>Patriotic Union of Kurdistan (PUK)</li><li>Peace at Home Council</li><li>People's Protection Units (YPG)</li><li>Peoples' United Revolutionary Movement (HBDH)</li><li>Polisario Front</li><li>Popular Army Vanguards- Battalions of Return</li><li>Popular Front for the Liberation of Palestine, Gen Cmd (PFLP-GC)</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Mobilization Forces (Iraq)</li><li>Popular Resistance Committees</li><li>Popular Resistance Committees (Yemen)</li><li>Popular Resistance Movement (Egypt)</li><li>Pro-Government extremists</li><li>Qaddafi loyalists</li><li>Rafallah al-Sahati Brigade</li><li>Rebels</li><li>Resistance Movement of the Union of Revolt Workers</li><li>Revenge Brigade</li><li>Revolutionaries Army (Jaysh al-Thowwar)</li><li>Revolutionary Christians of the Cedars</li><li>Revolutionary Labor Organization</li><li>Revolutionary Punishment Movement</li><li>Revolutionary Security Apparatus</li><li>Revolution's Brigade</li><li>Right-Wing Militants</li><li>Salafi Abu-Bakr al-Siddiq Army</li><li>Salafia Jihadia</li><li>Salafi Daawa Group</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Sanaa Province of the Islamic State</li><li>Saraya Waad Allah</li><li>Separatist Arab Guerrillas</li><li>Separatists</li><li>Settlers at Kfar Darom</li><li>Shamiya Front</li><li>Sheikh Omar Hadid Brigade</li><li>Shia Muslim extremists</li><li>Shura Council of Benghazi Revolutionaries</li><li>Shura Council of Mujahideen in Derna</li><li>Sicarii</li><li>Sikh Extremists</li><li>Sinai Province of the Islamic State</li><li>Soskan tribe</li><li>Southern Front</li><li>Southern Mobility Movement (Yemen)</li><li>South Lebanon Army</li><li>Squadrons of Terror (Katibat El Ahoual)</li><li>Sunni Muslim extremists</li><li>Sunni Supporters</li><li>Supporters of Abd Rabbuh Mansur Hadi</li><li>Supporters of Ali Abdullah Saleh</li><li>Supporters of the Islamic State in Jerusalem</li><li>Supporters of the Islamic State in the Land of the Two Holy Mosques</li><li>Supreme Council for Islamic Revolution in Iraq (SCIRI)</li><li>Sympathizers of Al-Qaida Organization</li><li>Syrian Democratic Forces (SDF)</li><li>Syrian Mujahideen</li><li>Syrian Resistance</li><li>Syrian Social Nationalist Party</li><li>Syrian Turkmen Brigades</li><li>SYS</li><li>Tanzim</li><li>Tawhid and Jihad</li><li>Tawhid and Jihad (Palestine)</li><li>Tehama Movement</li><li>Terror Against Terror</li><li>Terrorists</li><li>The Aref Boluki Dynamite group</li><li>The Eradication of Evil</li><li>The Husayn Ubayyat Martyrs' Brigades</li><li>The Independent Military Wing of the Syrian Revolution Abroad</li><li>The Mujahadeen Room in Latakia Countryside</li><li>The Owners of the White Flags</li><li>The Revolt</li><li>Tribesmen</li><li>Tribesmen, al-Itada</li><li>Tribesmen Murad Tribe</li><li>Tripoli Province of the Islamic State</li><li>Turkestan Islamic Party</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Communist Workers Party</li><li>Turkish Hezbollah</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li><li>U/I Snipers</li><li>Umar al-Mukhtar Martyr Forces</li><li>Unified Kurdish Socialist Party</li><li>Yazbik Revolutionary Organization</li><li>Youths of Ali Movement</li></ul></div>`)[0];
+                popup_23bc2f8508fa693f87006ba9a0bfefe8.setContent(html_7c61d28063cade97bd992c8b749cbe53);
+            
+        
+
+        marker_906e2ebf81c600373216dd581934469e.bindPopup(popup_23bc2f8508fa693f87006ba9a0bfefe8)
+        ;
+
+        
+    
+    
+            marker_906e2ebf81c600373216dd581934469e.bindTooltip(
+                `<div>
+                     Private Citizens & Property (7408 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_23173ff977ae18ae99681573052198e4 = L.marker(
+                [30.604447537724585, 36.63270277432353],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_a85ad808b2311d64ea1a4d827c1333ff = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f21a75638c22ed556964c91f9d01c98 = $(`<div id="html_3f21a75638c22ed556964c91f9d01c98" style="width: 100.0%; height: 100.0%;"><strong>Military</strong><br><b>Event Count:</b> 5951<br><b>Groups:</b><ul><li>16 January Organization for the Liberation of Tripoli</li><li>9-Feb</li><li>Abdullah Azzam Brigades</li><li>Abu Baker Martyr Group</li><li>Abu Jaafar al-Mansur Brigades</li><li>Abu Musa Group</li><li>Abu Nidal Organization (ANO)</li><li>Abu Salim Martyr's Brigade</li><li>Adan Abyan Islamic Army (AAIA)</li><li>Adan-Abyan Province of the Islamic State</li><li>Ahrar Al-Jalil (Free People of the Galilee)</li><li>Ahrar al-Sham</li><li>Aibed Er-Rahman katibet</li><li>Ajnad al-Sham</li><li>Al-Aqsa Martyrs Brigade</li><li>Aleppo Fatah Operations Room</li><li>Al-Faruo Battalion</li><li>Al-Fatah</li><li>Al-Fatihin Army (AFA)</li><li>Al-Furqan Brigades</li><li>Algerian Islamic Extremists</li><li>Algeria Province of the Islamic State</li><li>Al-Herak Al-Tihami Movement</li><li>Al-Islah Party</li><li>Al-Naqshabandiya Army</li><li>Al-Nasir Army (Syria)</li><li>Al-Nusrah Front</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in Lebanon</li><li>Al-Qaida in Saudi Arabia</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Qaqa Brigade</li><li>Al-Sa'iqa</li><li>Al-Shabaab al-Mu'minin</li><li>Al-Sham Legion</li><li>Amal</li><li>Anas al-Dabbashi Brigade</li><li>Ansar al-Din Front</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sharia (Tunisia)</li><li>Ansar al-Sunna</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Aqmur</li><li>Arab Democratic Party</li><li>Arab Liberation Front (ALF)</li><li>Arabs</li><li>Arab Separatists</li><li>Arab Socialist Baath Party</li><li>Armed Islamic Group (GIA)</li><li>Armed Struggle Organization</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Asa'ib Ahl al-Haqq</li><li>Authenticity and Development Front</li><li>Ayesha bint al-Sadiq Brigade</li><li>Baathist extremists</li><li>Badr Brigades</li><li>Baloch Nationalists</li><li>Barqa Province of the Islamic State</li><li>Bedouin Israeli extremists</li><li>Bedouin tribesmen</li><li>Begumcans Cell</li><li>Beirut Martyrs Battalion</li><li>Benghazi Defense Brigades (BDB)</li><li>Bilal Badr Group</li><li>Black Hand</li><li>Black Panther Group (Palestinian)</li><li>Civil Protection Units (YPS)</li><li>Committee of Solidarity with Arab and Middle East Political Prisoners (CSPPA)</li><li>Cyrenaica Self-Defense Force</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Dev Sol</li><li>Draa El Mizan Seriat</li><li>Egyptians</li><li>Egyptian Tawhid and Jihad</li><li>El-Feth katibat</li><li>Fajr al-Umma Brigade</li><li>Fatah al-Islam</li><li>Fatah Uprising</li><li>Fetullah Terrorist Organization</li><li>Fezzan Province of the Islamic State</li><li>Force 17</li><li>Forces of the Free Arab</li><li>Free and Democratic Society of Eastern Kurdistan (KODAR)</li><li>Free Idlib Army</li><li>Free Libya Martyrs Brigade</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Gathering to Aid the Oppressed</li><li>Greater Damascus Operations Room</li><li>Groups of Martyr Baha Eleyan</li><li>Guerrillas</li><li>Gunmen</li><li>Hadramawt Province of the Islamic State</li><li>Hadramawt Tribes Alliance</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Hezbollah Palestine</li><li>Hijaz Province of the Islamic State</li><li>Houthi extremists (Ansar Allah)</li><li>Iraqi extremists</li><li>Iraqi Revolutionary Forces</li><li>Iraq's Jihadist Leagues</li><li>Islamic Army in Iraq (al-Jaish al-Islami fi al-Iraq)</li><li>Islamic Front (Syria)</li><li>Islamic Mujahidin</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Jaish al-Adl</li><li>Jaish al-Fatah (Syria)</li><li>Jaish al-Muhajireen wal-Ansar (Muhajireen Army)</li><li>Jaish al-Mujahideen (Syria)</li><li>Jaish al-Sunnah</li><li>Jaish-e-Mohammad (Iraq)</li><li>Jaish Tahkim al-Din</li><li>Jaljala Army</li><li>Jaysh al-Islam (Syria)</li><li>Jihadi-inspired extremists</li><li>Joint Meeting Parties (JMP)</li><li>Jund al-Aqsa</li><li>Jund al-Islam</li><li>Jund al-Khilafah (Tunisia)</li><li>Jundallah (Iran)</li><li>Jund al-Sham for Tawhid and Jihad</li><li>Kamal Udwan Unit of Palestinians</li><li>Kata'ib Hezbollah</li><li>Khaled Ibn al-Walid Army</li><li>Khalid ibn Walid</li><li>Komala</li><li>Kurdish Democratic Party-Iran (KDP)</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish Rebels</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Free Life Party</li><li>Kurdistan Workers' Party (PKK)</li><li>Lahij Province of the Islamic State</li><li>Laqmush</li><li>Lebanese Arab Army</li><li>Lebanese Liberation Front</li><li>Lebanese National Resistance Front</li><li>Lebanese Resistance Group</li><li>Left-Wing Terrorists</li><li>Liberation Battalion</li><li>Liberation Hawks</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Libya Shield Force</li><li>Liwa Ahrar al-Sunna</li><li>Liwa al-Haqq</li><li>Liwa al-Islam</li><li>Liwa al-Sham</li><li>Local Residents</li><li>Mahdi Army</li><li>Major Muhammad Zuhnyn Group</li><li>Martyr Ahmad Alishuay B Group</li><li>Martyr Riyad Taha Group</li><li>Marwan Al-Qawasimi and Amir Abu-Ayshah Group</li><li>Marxist-Leninist Armed Propaganda Unit</li><li>Mawlawi and Mansour Group</li><li>Militants</li><li>Military Council of the Tribal Revolutionaries (MCTR)</li><li>Misrata Brigades</li><li>Moslem Activists</li><li>Mujahedeen Army</li><li>Mujahedin-e Khalq (MEK)</li><li>Mukhtar Army</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Muslim Rebels</li><li>National Front for the Salvation of Libya</li><li>National Movement of Iranian Resistance</li><li>Nawasi Brigade</li><li>Nur-al-Din al-Zinki Movement</li><li>Okba Ibn Nafaa Brigade</li><li>Omar Mukhtar Militia</li><li>Palestine Liberation Front (PLF)</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Forces</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinian Islamic Revolutionary Army</li><li>Palestinian/Lebanese nationalists</li><li>Palestinian Revolution Forces</li><li>Palestinians</li><li>Peace at Home Council</li><li>People's Protection Units (YPG)</li><li>Peoples' United Revolutionary Movement (HBDH)</li><li>Polisario Front</li><li>Popular Front for the Liberation of Palestine, Gen Cmd (PFLP-GC)</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li><li>Popular Resistance Committees (Yemen)</li><li>Rafallah al-Sahati Brigade</li><li>Ramzi Nahra Martyr Organization</li><li>Rebels</li><li>Revolutionary Punishment Movement</li><li>Revolution's Brigade</li><li>Right Wing Christian extremists</li><li>RYF</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Saudi Hezbollah</li><li>Secessionists</li><li>Separatists</li><li>Shabwah Province of the Islamic State</li><li>Shamiya Front</li><li>Shaykh Hassan Khalid Forces</li><li>Shaykh Subhi Al-Salih Forces</li><li>Shia Muslim extremists</li><li>Shura Council of Ajdabiya Revolutionaries</li><li>Shura Council of Benghazi Revolutionaries</li><li>Shura Council of Mujahideen in Derna</li><li>Sinai Province of the Islamic State</li><li>Southern Front</li><li>Southern Mobility Movement (Yemen)</li><li>Southern Yemen Separatists</li><li>Sunni Muslim extremists</li><li>Supporters of Abd Rabbuh Mansur Hadi</li><li>Supreme Council for Islamic Revolution in Iraq (SCIRI)</li><li>Syrian Army deserters</li><li>Syrian Social Nationalist Party</li><li>Syrian Turkmen Brigades</li><li>Tajamo Ansar al-Islam</li><li>Takfir wal-Hijra (Excommunication and Exodus)</li><li>Tanyus Shanin Armed Unit</li><li>Tawhid and Jihad</li><li>Tayeb Al-Afghani's Islamist Group</li><li>Terrorists</li><li>Tribesmen</li><li>Tripoli Martyrs Battalion</li><li>Tripoli Province of the Islamic State</li><li>Turkestan Islamic Party</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Islamic Jihad</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li><li>U/I Snipers</li><li>Umar al-Mukhtar Martyr Forces</li><li>Youth of the Land of Egypt</li><li>Zagros Eagles</li><li>Zintani Militia</li></ul></div>`)[0];
+                popup_a85ad808b2311d64ea1a4d827c1333ff.setContent(html_3f21a75638c22ed556964c91f9d01c98);
+            
+        
+
+        marker_23173ff977ae18ae99681573052198e4.bindPopup(popup_a85ad808b2311d64ea1a4d827c1333ff)
+        ;
+
+        
+    
+    
+            marker_23173ff977ae18ae99681573052198e4.bindTooltip(
+                `<div>
+                     Military (5951 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f1fae75bf00d6564acae423b4e95f245 = L.marker(
+                [32.37033565489711, 33.35795881279149],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_a20b2ce7dd6ffa8f9565dae99b36b42d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_202d2f0ac36665d3e8dcb5aac6e24888 = $(`<div id="html_202d2f0ac36665d3e8dcb5aac6e24888" style="width: 100.0%; height: 100.0%;"><strong>Police</strong><br><b>Event Count:</b> 3002<br><b>Groups:</b><ul><li>Abu Salim Martyr's Brigade</li><li>Adan-Abyan Province of the Islamic State</li><li>Ajnad Misr</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Ashtar Brigades</li><li>Al-Fatah</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Algeria Province of the Islamic State</li><li>Al-Haramayn Brigades</li><li>Al-Haydariyah Battalion</li><li>Al-Islah Party</li><li>Al-Mujahedin Brigades (Palestine)</li><li>Al-Naqshabandiya Army</li><li>Al-Nusrah Front</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Shabaab al-Mu'minin</li><li>Ansar al-Islam</li><li>Ansar al-Islam (Egypt)</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sharia (Tunisia)</li><li>Ansar al-Sunna</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Anti-Government Group</li><li>Arab-Israeli extremists</li><li>Arab People's Group</li><li>Arabs</li><li>Arab Separatists</li><li>Arab Socialist Union Members</li><li>Armed Islamic Group (GIA)</li><li>Armed Islamic Movement</li><li>Baathist extremists</li><li>Bahrain Province of the Islamic State</li><li>Baloch Nationalists</li><li>Barqa Province of the Islamic State</li><li>Bedouin tribesmen</li><li>Black Bloc</li><li>Committee of Coordination</li><li>Communist Warrior's Union</li><li>Counter-revolutionaries</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Dev Sol</li><li>Dev Yol</li><li>Draa El Mizan Seriat</li><li>Egyptian Islamic Jihad (Al-Jihad)</li><li>Egyptian Tawhid and Jihad</li><li>Extremists</li><li>Faqra Tribal Group</li><li>Fatah Hawks</li><li>Fetullah Terrorist Organization</li><li>Fezzan Province of the Islamic State</li><li>Fighters for the Liberation of the Turkish People</li><li>Force 17</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Gunmen</li><li>Hadramawt Province of the Islamic State</li><li>Hamas (Islamic Resistance Movement)</li><li>Hasam Movement</li><li>Hezbollah</li><li>Hijaz Province of the Islamic State</li><li>Houthi extremists (Ansar Allah)</li><li>Iraqi National Congress (INC)</li><li>Iraqi Sunni Extremists</li><li>Islamic Army in Iraq (al-Jaish al-Islami fi al-Iraq)</li><li>Islamic Companies</li><li>Islamic Front (Syria)</li><li>Islamic Holy Star</li><li>Islamic Jihad Organization (Yemen)</li><li>Islamic Movement (Israel)</li><li>Islamic Movement of Martyrs</li><li>Islamic Mujahidin</li><li>Islamic Salvation Front (FIS)</li><li>Islamic Salvation Front (Palestine)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Islam Liberation Front</li><li>Israeli settlers</li><li>Jaish al-Adl</li><li>Jaish al-Mukhtar</li><li>Jaysh al-Islam (Syria)</li><li>Jenin Martyrs Brigades</li><li>Jordanian extremists</li><li>Jund al-Khilafah (Tunisia)</li><li>Jundallah (Iran)</li><li>Jund al-Sham for Tawhid and Jihad</li><li>Jund Al-Tawid</li><li>Justice Party</li><li>Just Punishment Brigades</li><li>Kani Brigade</li><li>Kurdish Rebels</li><li>Kurdish Separatists</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Free Life Party</li><li>Kurdistan Workers' Party (PKK)</li><li>Kurds</li><li>Lahij Province of the Islamic State</li><li>Lebanese National Resistance Front</li><li>Libya Shield Force</li><li>Liwa Ahrar al-Sunna</li><li>Mahdi Army</li><li>Martyr al-Nimr Battalion</li><li>Militant Islamic Group, name not stated</li><li>Militants</li><li>Military Council of the Tribal Revolutionaries (MCTR)</li><li>Misrata Brigades</li><li>Moslem Activists</li><li>Movement for Oneness and Jihad in West Africa (MUJAO)</li><li>Mujahedeen Shura Council</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim Demonstrators</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Muslim Rebels</li><li>Najd Province of the Islamic State</li><li>Okba Ibn Nafaa Brigade</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Peace at Home Council</li><li>People's Army's Pioneers</li><li>People's Defense Unit (Turkey)</li><li>Popular Army Vanguards- Battalions of Return</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Brigade</li><li>Popular Resistance Committees</li><li>Popular Resistance Committees (Yemen)</li><li>Popular Resistance Movement (Egypt)</li><li>Qaddafi loyalists</li><li>Revolutionary Headquarters (Turkey)</li><li>Revolutionary Punishment Movement</li><li>Revolution's Brigade</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Sanaa Province of the Islamic State</li><li>Saraya al-Mukhtar</li><li>Saraya Waad Allah</li><li>Secessionists</li><li>Separatist Clandestine Organization</li><li>Separatists</li><li>Shura Council of Ajdabiya Revolutionaries</li><li>Sinai Province of the Islamic State</li><li>Southern Mobility Movement (Yemen)</li><li>Squadrons of Terror (Katibat El Ahoual)</li><li>Sunni Muslim extremists</li><li>Syrian Social Nationalist Party</li><li>Tabu Tribe</li><li>Takfir wal-Hijra (Excommunication and Exodus)</li><li>Tawhid and Jihad</li><li>Terrorists</li><li>Tribesmen</li><li>Tripoli Province of the Islamic State</li><li>Tunisian Armed Resistance</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Hezbollah</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li><li>Urban Guerrillas</li></ul></div>`)[0];
+                popup_a20b2ce7dd6ffa8f9565dae99b36b42d.setContent(html_202d2f0ac36665d3e8dcb5aac6e24888);
+            
+        
+
+        marker_f1fae75bf00d6564acae423b4e95f245.bindPopup(popup_a20b2ce7dd6ffa8f9565dae99b36b42d)
+        ;
+
+        
+    
+    
+            marker_f1fae75bf00d6564acae423b4e95f245.bindTooltip(
+                `<div>
+                     Police (3002 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e544f5ee1166f00efb0906857a7ff264 = L.marker(
+                [32.653207753886, 34.04630635103617],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_90c53ba2bd85df27870acebedcbb626e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c2ff17c2ba7b7aa831ca8774358bea7 = $(`<div id="html_3c2ff17c2ba7b7aa831ca8774358bea7" style="width: 100.0%; height: 100.0%;"><strong>Business</strong><br><b>Event Count:</b> 1544<br><b>Groups:</b><ul><li>Abdullah Azzam Brigades</li><li>Abu Nidal Organization (ANO)</li><li>Ahneish Militia</li><li>Ahrar al-Sham</li><li>Ajnad Misr</li><li>Al-Ahwaz Arab People's Democratic Front</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Bakazim</li><li>Al-Faruo Battalion</li><li>Al-Fatah</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Al-Islah Party</li><li>Al-Mua'qi'oon Biddam Brigade (Those who Sign with Blood)</li><li>Al-Naqshabandiya Army</li><li>Al-Nusrah Front</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in Saudi Arabia</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Sham Legion</li><li>Al-Zaidi Tribe - Mareb</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sharia (Tunisia)</li><li>Ansar al-Sunna</li><li>Ansar al-Tahwid wal Sunna</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Anti-Revolutionary Agents</li><li>Aqmur</li><li>Arab Communist Organization</li><li>Arabs</li><li>Armed Islamic Group (GIA)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Army of the Tribes</li><li>Arya</li><li>Asa'ib Ahl al-Haqq</li><li>Badr Brigades</li><li>Barqa Province of the Islamic State</li><li>Bedouin tribesmen</li><li>Beirut Martyrs Forces Organization</li><li>Benghazi Defense Brigades (BDB)</li><li>Black Banner Brigade</li><li>Black Brigade</li><li>Black Hand</li><li>Black Panther Group (Palestinian)</li><li>Black September</li><li>Chechen Rebels</li><li>Communists</li><li>Counter-revolutionaries</li><li>Death Squad (Iraq)</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Dev Sol</li><li>Dev Yol</li><li>Draa El Mizan Seriat</li><li>Druzes</li><li>Egyptian Islamic Jihad (Al-Jihad)</li><li>Egyptian Tawhid and Jihad</li><li>Extremists</li><li>Fatah Hawks</li><li>February 14th Movement</li><li>Fetullah Terrorist Organization</li><li>Fezzan Province of the Islamic State</li><li>Forbid the Evil Group (Muslim Extremists)</li><li>Force 17</li><li>Forqan Group</li><li>Free Revolutionaries Movement-The Giants</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Gathering to Aid the Oppressed</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Gunmen</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Hezbollah Palestine</li><li>Hijaz Province of the Islamic State</li><li>Holders of the Black Banners</li><li>Houthi extremists (Ansar Allah)</li><li>Independent Nasserite Movement</li><li>Insurgents</li><li>Iranian extremists</li><li>Iranians</li><li>Iraqi Communists</li><li>Iraqi extremists</li><li>Iraqi National Congress (INC)</li><li>Islamic Army in Iraq (al-Jaish al-Islami fi al-Iraq)</li><li>Islamic Companies</li><li>Islamic Front for the Liberation of Bahrain</li><li>Islamic Jihad Brigades</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State in Egypt</li><li>Islamic State in the Greater Sahara (ISGS)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamic Swords of Justice in the Land of Ribat</li><li>Islamist extremists</li><li>Israeli extremists</li><li>Israeli settlers</li><li>Jaish al-Ta'ifa al-Mansura</li><li>Jewish Defense League (JDL)</li><li>Jewish Extremists</li><li>Jihad Islamic League Front</li><li>Jordanian Revolutionary and Military Committee (MOUAB)</li><li>Junaid Jihadist Battalion</li><li>Jund al-Khilafah (Tunisia)</li><li>Jund al-Sahabah Group</li><li>Kach</li><li>Kata'ib Hezbollah</li><li>Keshet</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish Militants</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Free Life Party</li><li>Kurdistan National Union</li><li>Kurdistan Workers' Party (PKK)</li><li>Kurds</li><li>Laqmush</li><li>Lashkar-e-Taiba (LeT)</li><li>Lebanese National Resistance Front</li><li>Lebanese Socialist Revolutionary Organization</li><li>Left-wing extremists</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Left-Wing Workers</li><li>Libyan Militia</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Liwa Ahrar al-Sunna</li><li>Mahdi Army</li><li>Marxist-Leninist Armed Propaganda Unit</li><li>Militants</li><li>Misrata Brigades</li><li>Moslem Activists</li><li>Mujahedeen Army</li><li>Mujahedeen Corps in Iraq</li><li>Mujahedeen Group</li><li>Mujahedeen Shura Council in the Environs of Jerusalem</li><li>Mujahedin-e Khalq (MEK)</li><li>Munadil al-Jumalyi Brigade</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Muslim Rebels</li><li>Nalut Group</li><li>National Revolutionary Command (Umar al-Mukhtar)</li><li>Nobles of Jordan</li><li>Organization of Soldiers of the Levant</li><li>Orly Organization</li><li>Palestine Liberation Front (PLF)</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Hezbollah</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinian Revolution Forces</li><li>Palestinians</li><li>Patriotic Moroccan Front</li><li>Patriotic Union of Kurdistan (PUK)</li><li>Peace at Home Council</li><li>People's Liberation Force</li><li>Polisario Front</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li><li>Popular Resistance Movement (Egypt)</li><li>Poverty Brigade</li><li>Pro-Government extremists</li><li>Qaddafi loyalists</li><li>Resistance Movement</li><li>RYF</li><li>Salafia Jihadia</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Saraya al-Salam</li><li>Separatists</li><li>Shaykh Subhi Al-Salih Forces</li><li>Shield of Islam Brigade</li><li>Siah KAL</li><li>Sinai Province of the Islamic State</li><li>Southern Front</li><li>Sunni Muslim extremists</li><li>Supporters of Abd Rabbuh Mansur Hadi</li><li>Supreme Council for Islamic Revolution in Iraq (SCIRI)</li><li>Suqour al-Ahvaz</li><li>Sympathizers of Al-Qaida Organization</li><li>Syrians</li><li>Tawhid and Jihad</li><li>Terror Against Terror</li><li>Terrorists</li><li>The Unit of the Chemical Weapons Martyrs</li><li>Tribal Group</li><li>Tribesmen</li><li>Tribesmen Murad Tribe</li><li>Tripoli Province of the Islamic State</li><li>Tuareg extremists</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Communist Workers Party</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li><li>Village League</li><li>Villagers</li><li>Yemenis</li><li>Zwai Tribe</li></ul></div>`)[0];
+                popup_90c53ba2bd85df27870acebedcbb626e.setContent(html_3c2ff17c2ba7b7aa831ca8774358bea7);
+            
+        
+
+        marker_e544f5ee1166f00efb0906857a7ff264.bindPopup(popup_90c53ba2bd85df27870acebedcbb626e)
+        ;
+
+        
+    
+    
+            marker_e544f5ee1166f00efb0906857a7ff264.bindTooltip(
+                `<div>
+                     Business (1544 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e888319652de42696d3efb0e9051578e = L.marker(
+                [30.03672395168708, 36.05908517177905],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_aa2567a1f885817de0705452aa44f4a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1a9a8389a9a8172791c2efc78e7d4031 = $(`<div id="html_1a9a8389a9a8172791c2efc78e7d4031" style="width: 100.0%; height: 100.0%;"><strong>Government (General)</strong><br><b>Event Count:</b> 1304<br><b>Groups:</b><ul><li>9-Feb</li><li>Abu Abbas Brigade</li><li>Abu Baker al-Siddiq Brigade</li><li>Abu Bakr Unis Jabr Brigade</li><li>Abu Hassan</li><li>Abu Nidal Organization (ANO)</li><li>Abu Obaida bin Jarrah Brigade</li><li>Adan-Abyan Province of the Islamic State</li><li>Ahrar al-Sham</li><li>Ajnad Misr</li><li>Al-Adl Wal Ihsane</li><li>Al-Ahwaz Arab People's Democratic Front</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Da'wah Party</li><li>Al-Fatah</li><li>Al-Furqan (Tunisia)</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Algerian Mujahideen for Muslims</li><li>Al-Madani Brigade</li><li>Al-Marabitun Revolutionary Committee</li><li>Al-Naqshabandiya Army</li><li>Al-Nusrah Front</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in Saudi Arabia</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida Kurdish Battalions (AQKB)</li><li>Al-Saadawi Militia</li><li>Al-Sham Legion</li><li>Amal</li><li>Ansar al-Din Front</li><li>Ansar al-Imam Musa al-Sadr</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sunna</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Ansar Sarallah</li><li>Anti-Government Group</li><li>Anti Kurdish Workers Party Iraq nationals</li><li>Arab Revolution/Liberation Vanguard Organization</li><li>Arab Socialist Baath Party of Iraq</li><li>Arab Struggle</li><li>Arbav Martyrs of Khuzestan</li><li>Armed Islamic Group (GIA)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Asa'ib Ahl al-Haqq</li><li>Baathist extremists</li><li>Bab Tajura Brigade</li><li>Barq al-Nasser Brigade</li><li>Barqa Province of the Islamic State</li><li>Barzani Guerrillas</li><li>Benghazi Defense Brigades (BDB)</li><li>Black Bloc</li><li>Black September</li><li>Black September II</li><li>Committee of Coordination</li><li>Communists</li><li>Counter-revolutionaries</li><li>David's Sword</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Dev Sol</li><li>Dissident Republican Guard</li><li>Druzes</li><li>Eagles of the Palestinian Revolution</li><li>Egyptian Islamic Jihad (Al-Jihad)</li><li>Egyptian Revolutionary Organization</li><li>Extremists</li><li>Father of the Poor</li><li>Fetullah Terrorist Organization</li><li>Forqan Group</li><li>Four Martyrs Brigade</li><li>Free Syrian Army</li><li>Ghniwah Militia</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Grey Wolves</li><li>Guerrillas</li><li>Gunmen</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Hasam Movement</li><li>Hasmoneans (Jewish Settler Group)</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Idealist Association</li><li>Imam Hussein Brigade</li><li>Independent Nasserite Movement</li><li>Iranians</li><li>Iraqi Mujahideen</li><li>Iraqi Revolutionary Forces</li><li>Islamic Front (Syria)</li><li>Islamic Revenge Organization</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Islam Liberation Front</li><li>Israeli settlers</li><li>Jaish al-Adl</li><li>Jewish Extremists</li><li>Jewish Fighting Organization (Eyal)</li><li>Jordanian Revolutionary and Military Committee (MOUAB)</li><li>Jundallah (Iran)</li><li>Justice Commandos for the Armenian Genocide</li><li>Kach</li><li>Kani Brigade</li><li>Kata'ib al-Imam Ali</li><li>Khomeini loyalists</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish Marxist Separatists</li><li>Kurdish Rebels</li><li>Kurdish Separatists</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Free Life Party</li><li>Kurdistan Workers' Party (PKK)</li><li>Lahij Province of the Islamic State</li><li>Lebanese Armed Revolutionary Faction (LARF)</li><li>Lebanese Liberation Front</li><li>Lebanese Secret Army</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Likud Political Party</li><li>Liwa al-Islam</li><li>Mahdaviyat</li><li>Mahdi Army</li><li>Maoist Communist Party (MKP)</li><li>Militia Members</li><li>Misrata Brigades</li><li>Misurata Rebels</li><li>Moslem Activists</li><li>Moslem opponents of Gemayel</li><li>Motherland Party</li><li>Movement of the Islamic State (MEI)</li><li>Mujahedeen Shura Council</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Najd Province of the Islamic State</li><li>National Accord Movement</li><li>National Front for the Salvation of Libya</li><li>National Salvation Forces Organization</li><li>Nur-al-Din al-Zinki Movement</li><li>Okba Ibn Nafaa Brigade</li><li>Opponents of Regime</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Peace at Home Council</li><li>Phalange</li><li>Popular Front for the Liberation of Palestine, Gen Cmd (PFLP-GC)</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li><li>Popular Resistance Movement (Egypt)</li><li>Pro-State Militiamen</li><li>Qaddafi loyalists</li><li>Red June</li><li>Revolutionary Punishment Movement</li><li>Revolutionary Road</li><li>Right-Wing Group</li><li>RYF</li><li>Salafi Abu-Bakr al-Siddiq Army</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Separatists</li><li>Shaykh Subhi Al-Salih Forces</li><li>Shura Council of Ajdabiya Revolutionaries</li><li>Shura Council of Mujahideen in Derna</li><li>Sicarii</li><li>Sinai Province of the Islamic State</li><li>Sipah-e-Sahaba/Pakistan (SSP)</li><li>Socialist Labor Party of Lebanon</li><li>Southern Front</li><li>Southern Mobility Movement (Yemen)</li><li>Southern Yemen Separatists</li><li>Sunni Muslim extremists</li><li>Supporters of Abd Rabbuh Mansur Hadi</li><li>Supreme Command for Jihad and Liberation</li><li>Supreme Council for Islamic Revolution in Iraq (SCIRI)</li><li>Sympathizers of Al-Qaida Organization</li><li>Syrian Resistance</li><li>Syrian Terror</li><li>Takfir wal-Hijra (Excommunication and Exodus)</li><li>Tawhid and Jihad</li><li>Temple Mount Faithful Movement</li><li>The 78 Unemployed</li><li>The Great Serpent</li><li>The Islamic Movement</li><li>The Organization for the Return of Legality</li><li>Tribesmen</li><li>Tripoli Province of the Islamic State</li><li>Tripoli Revolutionaries Battalion</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Hezbollah</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li><li>Ultra Conservative Clerical Group</li><li>Union of Revolutionary Communists in Turkey (TIKB)</li><li>Unk Iranian Guerrillas</li><li>Zawiya Martyrs Brigade</li></ul></div>`)[0];
+                popup_aa2567a1f885817de0705452aa44f4a6.setContent(html_1a9a8389a9a8172791c2efc78e7d4031);
+            
+        
+
+        marker_e888319652de42696d3efb0e9051578e.bindPopup(popup_aa2567a1f885817de0705452aa44f4a6)
+        ;
+
+        
+    
+    
+            marker_e888319652de42696d3efb0e9051578e.bindTooltip(
+                `<div>
+                     Government (General) (1304 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_627f0b1e4fd2ec96c26dfba75bf7ca39 = L.marker(
+                [30.440888160036145, 38.06534693309226],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_4fc6979c130e275592a9732da119243c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1b11ace2e9ac07b58cef9cf9663b7e3 = $(`<div id="html_b1b11ace2e9ac07b58cef9cf9663b7e3" style="width: 100.0%; height: 100.0%;"><strong>Terrorists/Non-State Militia</strong><br><b>Event Count:</b> 1106<br><b>Groups:</b><ul><li>14 March Coalition</li><li>313 Brigade (Syria)</li><li>8 March Coalition</li><li>Abdullah Azzam Brigades</li><li>Abu Nidal Organization (ANO)</li><li>Adan-Abyan Province of the Islamic State</li><li>Ahrar al-Sham</li><li>Aisha Umm-al Mouemeneen (Brigades of Aisha)</li><li>Al Bayda Province of the Islamic State</li><li>Aleppo Fatah Operations Room</li><li>Al-Fatah</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Al-Islah Party</li><li>Al-Naqshabandiya Army</li><li>Al-Nusrah Front</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Zintan Revolutionaries' Military Council</li><li>Amal</li><li>Anas al-Dabbashi Brigade</li><li>Anbar Salvation Council</li><li>Ansar al-Din Front</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Armata di Liberazione Naziunale (ALN)</li><li>Armed Islamic Group (GIA)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Army of the Tribes</li><li>Barqa Province of the Islamic State</li><li>Bilal Badr Group</li><li>Black September II</li><li>Concerned citizens</li><li>Diyala Salvation Council</li><li>Faithful Resistance</li><li>Fatah al-Islam</li><li>February 17 Martyrs Brigade</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Islamic Front (Syria)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Israeli settlers</li><li>Jaish al-Fatah (Syria)</li><li>Jaysh al-Islam (Syria)</li><li>Jewish Extremists</li><li>Justice Commandos for the Armenian Genocide</li><li>Kach</li><li>Khaled Ibn al-Walid Army</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdistan Workers' Party (PKK)</li><li>Lebanese and Palestinian Resistance Fighters</li><li>Lebanese National Resistance Front</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Libya Shield Force</li><li>Mahdi Army</li><li>Military Council of the Tribal Revolutionaries (MCTR)</li><li>Mukhtar Army</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Nur-al-Din al-Zinki Movement</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinians</li><li>Phalange</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees (Yemen)</li><li>Progressive Socialist Party (PSP)</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Sanaa Province of the Islamic State</li><li>Shamiya Front</li><li>Shura Council of Ajdabiya Revolutionaries</li><li>Shura Council of Benghazi Revolutionaries</li><li>Sinai Province of the Islamic State</li><li>Southern Front</li><li>Supporters of the Islamic State in Jerusalem</li><li>Takfir wal-Hijra (Excommunication and Exodus)</li><li>The United Southern Front</li><li>Tripoli Province of the Islamic State</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Unification Army Sons Brigade</li></ul></div>`)[0];
+                popup_4fc6979c130e275592a9732da119243c.setContent(html_b1b11ace2e9ac07b58cef9cf9663b7e3);
+            
+        
+
+        marker_627f0b1e4fd2ec96c26dfba75bf7ca39.bindPopup(popup_4fc6979c130e275592a9732da119243c)
+        ;
+
+        
+    
+    
+            marker_627f0b1e4fd2ec96c26dfba75bf7ca39.bindTooltip(
+                `<div>
+                     Terrorists/Non-State Militia (1106 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0b365f7baa33962c0338d04fe20ea777 = L.marker(
+                [32.95547457287444, 33.44580599392712],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_4b53d57bc85fa870540cb1148038b060 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ef71ba46f48f5fcb28009d7732923c06 = $(`<div id="html_ef71ba46f48f5fcb28009d7732923c06" style="width: 100.0%; height: 100.0%;"><strong>Transportation</strong><br><b>Event Count:</b> 494<br><b>Groups:</b><ul><li>28 May Armenian Organization</li><li>Abu Nidal Organization (ANO)</li><li>Ajnad Misr</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Fatah</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Al-Nasir Army (Syria)</li><li>Al-Nusrah Front</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Anti-Revolutionary Agents</li><li>Arab Revolution/Liberation Vanguard Organization</li><li>Arabs</li><li>Arab Separatists</li><li>Armed Islamic Group (GIA)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Barqa Province of the Islamic State</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Dev Sol</li><li>Fatah Uprising</li><li>Fedayeen</li><li>Fetullah Terrorist Organization</li><li>Force 17</li><li>Free Syrian Army</li><li>Gunmen</li><li>Hamas (Islamic Resistance Movement)</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Hezbollah Palestine</li><li>Houthi extremists (Ansar Allah)</li><li>Islamic Movement for Change</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Jaysh al-Islam (Syria)</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish Separatists</li><li>Kurdistan Workers' Party (PKK)</li><li>Lebanese Free Will Movement</li><li>Lebanese Liberation Front</li><li>Left-Wing Militants</li><li>Left-Wing Terrorists</li><li>Martyrs Halim Group</li><li>Moslem Activists</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Rebels</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Hezbollah</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Peace at Home Council</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li><li>Right-Wing Group</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Shura Council of Benghazi Revolutionaries</li><li>Sinai Province of the Islamic State</li><li>Sunni Muslim extremists</li><li>Terror Against Terror</li><li>The Islamic Revolution to Liberate Palestine</li><li>Turkish Communist Party/Marxist (TKP-ML)</li></ul></div>`)[0];
+                popup_4b53d57bc85fa870540cb1148038b060.setContent(html_ef71ba46f48f5fcb28009d7732923c06);
+            
+        
+
+        marker_0b365f7baa33962c0338d04fe20ea777.bindPopup(popup_4b53d57bc85fa870540cb1148038b060)
+        ;
+
+        
+    
+    
+            marker_0b365f7baa33962c0338d04fe20ea777.bindTooltip(
+                `<div>
+                     Transportation (494 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_85d7aa56c8a22ef333082c9919d32cf3 = L.marker(
+                [30.59324231901839, 37.02004720858899],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_cc2ce136ce222e6f39bd51928578d7f4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e065f4a2d22e33c04b1b2a25e5955f1 = $(`<div id="html_7e065f4a2d22e33c04b1b2a25e5955f1" style="width: 100.0%; height: 100.0%;"><strong>Religious Figures/Institutions</strong><br><b>Event Count:</b> 489<br><b>Groups:</b><ul><li>Abu Nidal Organization (ANO)</li><li>Adan-Abyan Province of the Islamic State</li><li>Ahrar Al-Jalil (Free People of the Galilee)</li><li>Al-Ahwaz Arab People's Democratic Front</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Ashtar Brigades</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Al-Islah Party</li><li>Al-Nusrah Front</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sharia (Tunisia)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Anti-Christian extremists</li><li>Armed Islamic Group (GIA)</li><li>Armed People</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Army of the Tribes</li><li>Asa'ib Ahl al-Haqq</li><li>Asbat al-Ansar</li><li>Autonomy-Seeking Arabs</li><li>Badr Brigades</li><li>Bahrain Province of the Islamic State</li><li>Barqa Province of the Islamic State</li><li>Black Brigade</li><li>Counter-revolutionaries</li><li>Democratic Party</li><li>Dev Sol</li><li>Druzes</li><li>Fetullah Terrorist Organization</li><li>Forqan Group</li><li>Free Syrian Army</li><li>Generation of Arab Fury</li><li>GP II</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Guerrillas</li><li>Hadramawt Province of the Islamic State</li><li>Hamas (Islamic Resistance Movement)</li><li>Harakat Ansar Iran (HAI)</li><li>Hasam Movement</li><li>Hezbollah</li><li>Hijaz Province of the Islamic State</li><li>Houthi extremists (Ansar Allah)</li><li>Intifada Martyrs</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamic Unification Movement</li><li>Islamist extremists</li><li>Israeli extremists</li><li>Israeli settlers</li><li>Israeli Terrorist Group</li><li>Jaish al-Ta'ifa al-Mansura</li><li>Jaysh al-Islam (Syria)</li><li>Jewish Defense League (JDL)</li><li>Jewish Extremists</li><li>Jewish Terror</li><li>Jihadi Movement of the Sunna People of Iran</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Workers' Party (PKK)</li><li>Lebanese National Resistance Front</li><li>Mitiga Militia</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Najd Province of the Islamic State</li><li>Okba Ibn Nafaa Brigade</li><li>Organization for Purging the Majlis (Parliament)</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Peace at Home Council</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Mobilization Forces (Iraq)</li><li>Popular Resistance Committees</li><li>Rabbi Rahane Group</li><li>Revolution's Brigade</li><li>Sanaa Province of the Islamic State</li><li>Shia Muslim extremists</li><li>Shura Council of Mujahideen in Derna</li><li>Sinai Province of the Islamic State</li><li>Sipah-e-Sahaba/Pakistan (SSP)</li><li>Sons of Jesus Movement</li><li>Sons of the South</li><li>Sunni Muslim extremists</li><li>Supreme Islamic Council</li><li>SYS</li><li>Tawheed Militia</li><li>Tawhid and Jihad</li><li>Terror Against Terror</li><li>The Revolt</li><li>Tripoli Province of the Islamic State</li><li>Union of the Peoples of the Arabian Peninsula</li><li>Vanguards of the Caliphate</li><li>Vengence Party</li></ul></div>`)[0];
+                popup_cc2ce136ce222e6f39bd51928578d7f4.setContent(html_7e065f4a2d22e33c04b1b2a25e5955f1);
+            
+        
+
+        marker_85d7aa56c8a22ef333082c9919d32cf3.bindPopup(popup_cc2ce136ce222e6f39bd51928578d7f4)
+        ;
+
+        
+    
+    
+            marker_85d7aa56c8a22ef333082c9919d32cf3.bindTooltip(
+                `<div>
+                     Religious Figures/Institutions (489 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e17c4bad89d6539e9e4888e7f8188350 = L.marker(
+                [32.103079097142775, 35.247153499999925],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_81a9f44b107f2bc0fff51264e90e1ae7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c87e61058bc21e7aabb1de43141d912 = $(`<div id="html_9c87e61058bc21e7aabb1de43141d912" style="width: 100.0%; height: 100.0%;"><strong>Government (Diplomatic)</strong><br><b>Event Count:</b> 350<br><b>Groups:</b><ul><li>9-Feb</li><li>Abdullah Azzam Brigades</li><li>Abida Tribe</li><li>Abu Nidal Organization (ANO)</li><li>Afghan Rebels</li><li>Ajnad Misr</li><li>Al-Aqsa-Group</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Da'wah Party</li><li>Algerian Islamic Extremists</li><li>Al-Nusrah Front</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Sadr Brigades</li><li>Al-Toaiman Tribesmen</li><li>Amal</li><li>Amazigh Islamic Front</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Ansar al-Sharia (Tunisia)</li><li>Arab Communist Organization</li><li>Arab Revenge Organization</li><li>Armed Islamic Group (GIA)</li><li>Armed People</li><li>Armed People's Units</li><li>Armed Vanguards of a Second Mohammed Army</li><li>Armenians</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Asa'ib Ahl al-Haqq</li><li>Asbat al-Ansar</li><li>Banner of Islam</li><li>Basic People's Congresses</li><li>Black Friday</li><li>Black September</li><li>Brigades of Imprisoned Sheikh Omar Abdel-Rahman</li><li>Carlos the Jackal</li><li>Committee of Solidarity with Arab and Middle East Political Prisoners (CSPPA)</li><li>Communists</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Dev Sol</li><li>Druzes</li><li>Eagles of the Palestinian Revolution</li><li>Egyptians</li><li>Egypt's Revolution</li><li>Fatah al-Islam</li><li>Fedayeen Khalq (People's Commandos)</li><li>Forces of the Struggling Ranks</li><li>Forqan Group</li><li>Free Lebanon</li><li>Free Nasserite Revolutionaries</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Gunmen</li><li>Hamas (Islamic Resistance Movement)</li><li>Harakat al-Nujaba</li><li>Hasam Movement</li><li>Hezbollah</li><li>Hijaz Province of the Islamic State</li><li>Houthi extremists (Ansar Allah)</li><li>Hushaysh Tribal Members</li><li>Imam Hussein Brigade</li><li>International Revolutionary Action Group (GARI)</li><li>Iranian Revolution Organization</li><li>Iranians</li><li>Iraqi extremists</li><li>Iraqi Liberation Army</li><li>Islamic Army in Iraq (al-Jaish al-Islami fi al-Iraq)</li><li>Islamic Cause Organization</li><li>Islamic Front for the Liberation of Palestine (IFLP)</li><li>Islamic Front (Syria)</li><li>Islamic Movement Organization</li><li>Islamic Renewal Movement</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Jaish al-Fatah (Syria)</li><li>Jaysh al-Islam (Syria)</li><li>Jewish Terror</li><li>Jordanian Islamic Resistance</li><li>July 14 Movement</li><li>Jundallah (Iran)</li><li>Jund Ansar Allah</li><li>June 16 Organization</li><li>Kach</li><li>Kurdistan Workers' Party (PKK)</li><li>Lashkar-e-Taiba (LeT)</li><li>Lebanese Armed Revolutionary Faction (LARF)</li><li>Lebanese National Resistance Front</li><li>Lebanese Socialist Revolutionary Organization</li><li>Left-Wing Terrorists</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Libya Shield Force</li><li>M-19 (Movement of April 19)</li><li>Mahdi Army</li><li>Mahir Cayan Suicide Group</li><li>Martyr Abu Ja'far Group</li><li>Martyr Ali Nasir group</li><li>Martyrs revenge organization</li><li>Marxist Peoples Fedayeen of Iran</li><li>May 15 Organization for the Liberation of Palestine</li><li>Medfaiyah Wal-Sewarigh Brigade</li><li>Misrata Brigades</li><li>Mujahedeen Corps in Iraq</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>National Revolutionary Command (Umar al-Mukhtar)</li><li>Omar Bin Khattab Group</li><li>Organization for the Defense of Detainees Rights</li><li>Orly Organization</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinians</li><li>People's Path</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li><li>Pro-Iraqi Terrorists</li><li>Relatives of terrorist</li><li>Revolutionary Action Organization of the Arab Resistance Front</li><li>Revolutionary Arab Youth Organization</li><li>Salafia Jihadia</li><li>September 17 Organization</li><li>Settlers at Kfar Darom</li><li>Shahin (Falcon)</li><li>Sharivad 17 Tal-Al-Za'atar(Sept 17 Tal-Al-Za'atar)</li><li>Sharp Sword Organization</li><li>Shaykh Subhi Al-Salih Forces</li><li>Shia Muslim extremists</li><li>Sinai Province of the Islamic State</li><li>Socialist Labor Party of Lebanon</li><li>South Moluccans</li><li>Students</li><li>Supporters of Saddam Hussein</li><li>Sympathizers of Al-Qaida Organization</li><li>Syrian Social Nationalist Party</li><li>Tawhid and Jihad</li><li>The Independent Military Wing of the Syrian Revolution Abroad</li><li>The Nation's Army</li><li>Tribal Group</li><li>Tribesmen</li><li>Tripoli Province of the Islamic State</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Islamic Jihad</li><li>Turkish People's Liberation Army</li><li>Turkish Revolutionaries</li><li>Villagers</li><li>Yarmouk Martyrs Brigade</li></ul></div>`)[0];
+                popup_81a9f44b107f2bc0fff51264e90e1ae7.setContent(html_9c87e61058bc21e7aabb1de43141d912);
+            
+        
+
+        marker_e17c4bad89d6539e9e4888e7f8188350.bindPopup(popup_81a9f44b107f2bc0fff51264e90e1ae7)
+        ;
+
+        
+    
+    
+            marker_e17c4bad89d6539e9e4888e7f8188350.bindTooltip(
+                `<div>
+                     Government (Diplomatic) (350 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7da86cfa4c92b05d13ca4f278712eec9 = L.marker(
+                [33.00885666862168, 32.68967258651025],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_337feac78dbca23c06ecc7b8eb5a6d3d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4a8ca9772fb3065178b8eb1efe944a8b = $(`<div id="html_4a8ca9772fb3065178b8eb1efe944a8b" style="width: 100.0%; height: 100.0%;"><strong>Educational Institution</strong><br><b>Event Count:</b> 341<br><b>Groups:</b><ul><li>Adan-Abyan Province of the Islamic State</li><li>Ahfad al-Sahaba-Aknaf Bayt al-Maqdis</li><li>Ajnad Misr</li><li>Al-Adl Wal Ihsane</li><li>Al-Aqsa Martyrs Brigade</li><li>Algerian Islamic Extremists</li><li>Al-Nusrah Front</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Amal</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Tunisia)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Arab Commando Cells</li><li>Arab Revolutionary Cells</li><li>Armed Islamic Group (GIA)</li><li>Army of State Liberators</li><li>Avengers of the Infants</li><li>Baathist extremists</li><li>Baloch Nationalists</li><li>Barqa Province of the Islamic State</li><li>Counter-revolutionaries</li><li>Democratic Front for the Liberation of Palestine (DFLP)</li><li>Dev Sol</li><li>Extremists</li><li>Fatah Hawks</li><li>February 14th Movement</li><li>Forqan Group</li><li>Free Syrian Army</li><li>Front for the Liberation of Lebanon from Foreigners</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Gunmen</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Islamic Liberation Organization</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Israeli extremists</li><li>Israeli settlers</li><li>Jaish al-Fatah (Syria)</li><li>Jaish al-Islam (Libya)</li><li>Jewish Extremists</li><li>Jewish Terror</li><li>Joint Palestinian leftist organization</li><li>Jundallah (Iran)</li><li>Kurdish guerrillas</li><li>Kurdistan Workers' Party (PKK)</li><li>Left-Wing Workers</li><li>Lehava</li><li>Military Council of the Tribal Revolutionaries (MCTR)</li><li>Moslem Activists</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinian Hezbollah</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Popular Resistance Committees</li><li>Rebels</li><li>Revolutionary Liberation Cells</li><li>Sicarii</li><li>Sinai Province of the Islamic State</li><li>Soldiers of Truth</li><li>Terrorists</li><li>Tribesmen</li><li>Tripoli Province of the Islamic State</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li><li>Youth of Islamic Awakening</li></ul></div>`)[0];
+                popup_337feac78dbca23c06ecc7b8eb5a6d3d.setContent(html_4a8ca9772fb3065178b8eb1efe944a8b);
+            
+        
+
+        marker_7da86cfa4c92b05d13ca4f278712eec9.bindPopup(popup_337feac78dbca23c06ecc7b8eb5a6d3d)
+        ;
+
+        
+    
+    
+            marker_7da86cfa4c92b05d13ca4f278712eec9.bindTooltip(
+                `<div>
+                     Educational Institution (341 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3f878cc61209132bef033951960b16ef = L.marker(
+                [28.806852067073205, 38.04337247560976],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_bdf4609eacb14b4b6d7a8e5849a2658d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fdbc4c3cc96acddff6066fe25f0ad281 = $(`<div id="html_fdbc4c3cc96acddff6066fe25f0ad281" style="width: 100.0%; height: 100.0%;"><strong>Utilities</strong><br><b>Event Count:</b> 328<br><b>Groups:</b><ul><li>Abida Tribe</li><li>Adan-Abyan Province of the Islamic State</li><li>Ajnad Misr</li><li>Algerian Islamic Extremists</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Shabaab al-Mu'minin</li><li>Al-Toaiman Tribesmen</li><li>Al-Zawiya Syndicates Council</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Arab Separatists</li><li>Arab Youth Group (Militant)</li><li>Armed Islamic Group (GIA)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Barqa Province of the Islamic State</li><li>Bedouin tribesmen</li><li>Benghazi Defense Brigades (BDB)</li><li>Black September</li><li>Black Wednesday</li><li>Counter-revolutionaries</li><li>February 14th Movement</li><li>Fundamentalists</li><li>Gunmen</li><li>Hadramawt Tribes Alliance</li><li>Hamas (Islamic Resistance Movement)</li><li>Hassan Mabkhut Group</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Iraqi extremists</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Jewish Terror</li><li>Kurdish Democratic Party-Iran (KDP)</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Workers' Party (PKK)</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Commando (Iraqi revolutionary brothers)</li><li>Muslim extremists</li><li>Palestine Liberation Front (PLF)</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Committees</li><li>Revolutionary Forces for the Liberation of Iraq</li><li>Revolutionary Punishment Movement</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Sinai Province of the Islamic State</li><li>Southern Mobility Movement (Yemen)</li><li>Suqour al-Ahvaz</li><li>Tawhid and Jihad</li><li>Tribesmen</li><li>Tripoli Province of the Islamic State</li><li>United Arab Revolution</li></ul></div>`)[0];
+                popup_bdf4609eacb14b4b6d7a8e5849a2658d.setContent(html_fdbc4c3cc96acddff6066fe25f0ad281);
+            
+        
+
+        marker_3f878cc61209132bef033951960b16ef.bindPopup(popup_bdf4609eacb14b4b6d7a8e5849a2658d)
+        ;
+
+        
+    
+    
+            marker_3f878cc61209132bef033951960b16ef.bindTooltip(
+                `<div>
+                     Utilities (328 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dbd2fde8036edae31a3472b695967680 = L.marker(
+                [28.27522280000001, 29.443197653333332],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_4a817cf526b9c3ef70860fcf43d5880f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c5abb18f4aa75cf1018b42c1fb66feeb = $(`<div id="html_c5abb18f4aa75cf1018b42c1fb66feeb" style="width: 100.0%; height: 100.0%;"><strong>Journalists & Media</strong><br><b>Event Count:</b> 300<br><b>Groups:</b><ul><li>1920 Revolution Brigades</li><li>Abdul Ghani Kikli Militia</li><li>Abu Amarah Battalion</li><li>Ahrar al-Sham</li><li>Ajnad Misr</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Nusrah Front</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Amal</li><li>Ansar al-Islam</li><li>Ansar al-Sharia (Libya)</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Armed Islamic Group (GIA)</li><li>Army of Islam</li><li>Barqa Province of the Islamic State</li><li>Boz-Ok (Grey Arrow)</li><li>Brigades of Iman Hassan-al-Basri</li><li>Committee of Coordination</li><li>Committee of Solidarity with Arab and Middle East Political Prisoners (CSPPA)</li><li>Diraa al-Shahbaa Rebel Brigade</li><li>Egyptian Islamic Jihad (Al-Jihad)</li><li>Extremists</li><li>Fatah Hawks</li><li>Fedayeen</li><li>Fetullah Terrorist Organization</li><li>Fighters of the People</li><li>Forqan Group</li><li>Free Syrian Army</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Gunmen</li><li>Hamas (Islamic Resistance Movement)</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Iranians</li><li>Iraqi Islamic Vanguards for National Salvation (IIVNS)</li><li>Islamic Army in Iraq (al-Jaish al-Islami fi al-Iraq)</li><li>Islamic Front (Syria)</li><li>Islamic Revenge Organization</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic State of Iraq (ISI)</li><li>Islamist extremists</li><li>Israeli settlers</li><li>Jihad Martyr's Companies in Iraq</li><li>Kahane Chai</li><li>Keshet</li><li>Knights of Janzour</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish Islamic Group (KIG)</li><li>Kurdistan Workers' Party (PKK)</li><li>Lebanese National Resistance Front</li><li>Liwa al-Tawhid</li><li>Martyr Abu Ja'far Group</li><li>Martyrs of Saad Sayel</li><li>Moslem Activists</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>National Front for the Salvation of Libya</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinians</li><li>Peace at Home Council</li><li>People's Defense Unit (Turkey)</li><li>People's Protection Units (YPG)</li><li>Protectors of Islam Brigade</li><li>Revenge Brigade</li><li>Revolutionary Organization of Socialist Muslims</li><li>Salah al-Din Squad</li><li>Sanaa Province of the Islamic State</li><li>Shia Muslim extremists</li><li>Shura Council of Mujahideen in Derna</li><li>Syrian Social Nationalist Party</li><li>Tribal guerrillas</li><li>Tribesmen</li><li>Tripoli Province of the Islamic State</li><li>Tripoli Revolutionaries Battalion</li><li>Turkish Communist Party/Marxist (TKP-ML)</li><li>Turkish Communist Workers Party</li><li>Turkish Islamic Commandos</li><li>Turkish People's Liberation Army</li><li>United Freedom Forces (BOG)</li><li>Youths of Ali Movement</li></ul></div>`)[0];
+                popup_4a817cf526b9c3ef70860fcf43d5880f.setContent(html_c5abb18f4aa75cf1018b42c1fb66feeb);
+            
+        
+
+        marker_dbd2fde8036edae31a3472b695967680.bindPopup(popup_4a817cf526b9c3ef70860fcf43d5880f)
+        ;
+
+        
+    
+    
+            marker_dbd2fde8036edae31a3472b695967680.bindTooltip(
+                `<div>
+                     Journalists & Media (300 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a91bc5978c74753e7fc12f2b731c319a = L.marker(
+                [24.3989007015707, 39.766091209424125],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_93d546e9fbb2fce444961fcfb5f16f66 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ce0f31303a5d524170f194c7feba77b = $(`<div id="html_1ce0f31303a5d524170f194c7feba77b" style="width: 100.0%; height: 100.0%;"><strong>Violent Political Party</strong><br><b>Event Count:</b> 191<br><b>Groups:</b><ul><li>Abu Amarah Battalion</li><li>Abu Nidal Organization (ANO)</li><li>Adan-Abyan Province of the Islamic State</li><li>Ahmad Jibril</li><li>Al-Fatah</li><li>Al-Nusrah Front</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Amal</li><li>Ansar al-Islam</li><li>Black Panther Group (Palestinian)</li><li>Dev Sol</li><li>Hamas (Islamic Resistance Movement)</li><li>Hamawand Tribe</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Jund al-Sham for Tawhid and Jihad</li><li>Kurdish Democratic Party-Iraq (KDP)</li><li>Kurdish Militants</li><li>Kurdistan Workers' Party (PKK)</li><li>Lebanese Liberation Front</li><li>Liwa Ahrar al-Sunna</li><li>Mukhtar Army</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinians</li><li>Patriotic Union of Kurdistan (PUK)</li><li>Phalange</li><li>Popular Resistance Committees (Yemen)</li><li>Republican People's Party</li><li>Sanaa Province of the Islamic State</li><li>Sham 'unite</li><li>Shaykh Subhi Al-Salih Forces</li><li>Southern Mobility Movement (Yemen)</li><li>Sunni Resistance Committees in Lebanon (SRCL)</li><li>Supporters of Abd Rabbuh Mansur Hadi</li><li>Supporters of the Islamic State in Jerusalem</li><li>Tawhid and Jihad</li><li>Tribesmen</li><li>Zionist Resistance Fighters</li></ul></div>`)[0];
+                popup_93d546e9fbb2fce444961fcfb5f16f66.setContent(html_1ce0f31303a5d524170f194c7feba77b);
+            
+        
+
+        marker_a91bc5978c74753e7fc12f2b731c319a.bindPopup(popup_93d546e9fbb2fce444961fcfb5f16f66)
+        ;
+
+        
+    
+    
+            marker_a91bc5978c74753e7fc12f2b731c319a.bindTooltip(
+                `<div>
+                     Violent Political Party (191 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_81b79e37b8df47a3333101f1c2f6e4c0 = L.marker(
+                [31.391923464052276, 32.27965563398692],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_9e42f5cfc20abf6e1907383a71a9a5d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f79384ed9c7e9f8ac7fcdced2a51e683 = $(`<div id="html_f79384ed9c7e9f8ac7fcdced2a51e683" style="width: 100.0%; height: 100.0%;"><strong>Airports & Aircraft</strong><br><b>Event Count:</b> 153<br><b>Groups:</b><ul><li>28 May Armenian Organization</li><li>Abu Nidal Organization (ANO)</li><li>Adan-Abyan Province of the Islamic State</li><li>Ahmad Alawi al Muqbili</li><li>Al-Fatah</li><li>Al-Fateh Al-Jadid</li><li>Al-Nusrah Front</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Sham Legion</li><li>Amal</li><li>Ansar al-Sharia (Libya)</li><li>Arabs</li><li>Armed Islamic Group (GIA)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Bani Hilal Tribe</li><li>Barqa Province of the Islamic State</li><li>Black Brigade</li><li>Black September</li><li>Chechen Rebels</li><li>Dev Sol</li><li>Free Syrian Army</li><li>Hamas (Islamic Resistance Movement)</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Iranian Militants</li><li>Iranian Monarchists</li><li>Iranians</li><li>Iraqi extremists</li><li>Iraqi Mujahideen</li><li>Iraqi Strugglers' Movement</li><li>Islamic Salvation Front (FIS)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Japanese Red Army (JRA)</li><li>Jordanian National Liberation Movement</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Workers' Party (PKK)</li><li>Libyan</li><li>Libya Revolutionaries Operations Room (LROR)</li><li>Libya Shield Force</li><li>Marxist-Leninist Armed Propaganda Unit</li><li>May 15 Organization for the Liberation of Palestine</li><li>Military Council of the Tribal Revolutionaries (MCTR)</li><li>Misrata Brigades</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim Brotherhood</li><li>Muslim extremists</li><li>Muslim Militants</li><li>National Revolutionary Command (Umar al-Mukhtar)</li><li>Ninth of June Organization</li><li>Organization of Avenging Palestinian Youth</li><li>Organization of the Sons of Occupied Territories</li><li>Orly Organization</li><li>Palestinians</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Popular Resistance Movement (Egypt)</li><li>Shia Muslim extremists</li><li>Shura Council of Benghazi Revolutionaries</li><li>Sinai Province of the Islamic State</li><li>Sons of the South (Shiite Muslim Group)</li><li>Sudan Liberation Movement</li><li>Supporters of Ali Abdullah Saleh</li><li>Supporters of Saddam Hussein</li><li>Tripoli Province of the Islamic State</li><li>Turkish Leftists</li><li>Turkish People's Liberation Army</li><li>Unarmed Algerian</li><li>Union of Galilee Christians</li><li>Union of Peaceful Citizens of Algeria</li><li>Yemenis</li><li>Zuwar al-Imam Rida</li></ul></div>`)[0];
+                popup_9e42f5cfc20abf6e1907383a71a9a5d8.setContent(html_f79384ed9c7e9f8ac7fcdced2a51e683);
+            
+        
+
+        marker_81b79e37b8df47a3333101f1c2f6e4c0.bindPopup(popup_9e42f5cfc20abf6e1907383a71a9a5d8)
+        ;
+
+        
+    
+    
+            marker_81b79e37b8df47a3333101f1c2f6e4c0.bindTooltip(
+                `<div>
+                     Airports & Aircraft (153 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_65d87307ad07627e6e3c894683653cb4 = L.marker(
+                [27.301812477477508, 28.020874036036023],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_0bb01a46ffb3edbe83e878eed0b2ce55 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6432b49358bd6e570b5333cd68af7da7 = $(`<div id="html_6432b49358bd6e570b5333cd68af7da7" style="width: 100.0%; height: 100.0%;"><strong>Tourists</strong><br><b>Event Count:</b> 111<br><b>Groups:</b><ul><li>Abdullah Azzam Brigades</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Algerian Islamic Extremists</li><li>Al-Masni Tribe</li><li>Al-Qaida</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Al-Qaida in Yemen</li><li>Al-Yemenia al-Ulia Tribesmen</li><li>Ansar Bayt al-Maqdis (Ansar Jerusalem)</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Bani Nawaf tribe</li><li>Bedouin tribesmen</li><li>Devrimici Halk Kurtulus Cephesi (DHKP/C)</li><li>Egyptian Islamic Jihad (Al-Jihad)</li><li>Egyptian Tawhid and Jihad</li><li>Hamas (Islamic Resistance Movement)</li><li>Hezbollah</li><li>Islamic Jihad Beit-al Maqdis Group</li><li>Islamic Jihad Organization (Yemen)</li><li>Islamic State in Egypt</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamist extremists</li><li>Jund al-Khilafa</li><li>Jund al-Khilafah (Tunisia)</li><li>Kurdish Islamic Unity Party</li><li>Kurdistan Freedom Hawks (TAK)</li><li>Kurdistan Workers' Party (PKK)</li><li>Left-Wing Demonstrators</li><li>Local Extremist</li><li>Muslim Militants</li><li>Muslims</li><li>Okba Ibn Nafaa Brigade</li><li>Organization for the oppresed in Egypt's Prisons</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinian Extremists</li><li>Palestinians</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Prisoner  Gourgen Yanikian Group</li><li>Salafist Group for Preaching and Fighting (GSPC)</li><li>Sunni Muslim extremists</li><li>Tanzim</li><li>Tribal Group</li><li>Tribesmen</li><li>Tribesmen Murad Tribe</li><li>Tuareg extremists</li><li>Yemenis</li></ul></div>`)[0];
+                popup_0bb01a46ffb3edbe83e878eed0b2ce55.setContent(html_6432b49358bd6e570b5333cd68af7da7);
+            
+        
+
+        marker_65d87307ad07627e6e3c894683653cb4.bindPopup(popup_0bb01a46ffb3edbe83e878eed0b2ce55)
+        ;
+
+        
+    
+    
+            marker_65d87307ad07627e6e3c894683653cb4.bindTooltip(
+                `<div>
+                     Tourists (111 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_eb90610cd3c3fbb4f33cab3f0929308a = L.marker(
+                [28.35194604999999, 36.35886245],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_1b18a58bcc9a2100ec8d33826bf45d42 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14e15a5934e76ba0b247b0ddfbb25dd8 = $(`<div id="html_14e15a5934e76ba0b247b0ddfbb25dd8" style="width: 100.0%; height: 100.0%;"><strong>NGO</strong><br><b>Event Count:</b> 60<br><b>Groups:</b><ul><li>Abu Nidal Organization (ANO)</li><li>Al-Fatah</li><li>Al-Nusrah Front</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al Zawahiri Loyalists</li><li>Bin Zabyan Tribesmen</li><li>Black September</li><li>Brigades of Imprisoned Sheikh Omar Abdel-Rahman</li><li>Dev Sol</li><li>Fatah al-Islam</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Gunmen</li><li>Hay'at Tahrir al-Sham</li><li>Hezbollah</li><li>Houthi extremists (Ansar Allah)</li><li>Islamic Movement of Iraqi Mujahidin</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Islamic Struggle Front</li><li>Israeli Terrorist Group</li><li>Jaysh al-Islam (Syria)</li><li>Kurdistan Workers' Party (PKK)</li><li>Mahdi Army</li><li>Movement for Oneness and Jihad in West Africa (MUJAO)</li><li>Mujahedin-e Khalq (MEK)</li><li>Muslim extremists</li><li>Shia Muslim extremists</li><li>Soldiers of Truth</li></ul></div>`)[0];
+                popup_1b18a58bcc9a2100ec8d33826bf45d42.setContent(html_14e15a5934e76ba0b247b0ddfbb25dd8);
+            
+        
+
+        marker_eb90610cd3c3fbb4f33cab3f0929308a.bindPopup(popup_1b18a58bcc9a2100ec8d33826bf45d42)
+        ;
+
+        
+    
+    
+            marker_eb90610cd3c3fbb4f33cab3f0929308a.bindTooltip(
+                `<div>
+                     NGO (60 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d0f493f75c958eea9c26aa84db3e97ae = L.marker(
+                [32.82685038095237, 38.87441807142856],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_063d1e8425f14c5d040cfe1e41e176e0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac3692ed6ebcd671238f51a21fbba56a = $(`<div id="html_ac3692ed6ebcd671238f51a21fbba56a" style="width: 100.0%; height: 100.0%;"><strong>Other</strong><br><b>Event Count:</b> 42<br><b>Groups:</b><ul><li>Al-Gama'at al-Islamiyya (IG)</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Al-Qaida in the Islamic Maghreb (AQIM)</li><li>Ansar al-Sharia (Libya)</li><li>Asa'ib Ahl al-Haqq</li><li>Fezzan Province of the Islamic State</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Kata'ib Hezbollah</li><li>Kurdistan Workers' Party (PKK)</li><li>Muslim Fundamentalists</li><li>Palestinian Extremists</li><li>Sanaa Province of the Islamic State</li><li>Shia Muslim extremists</li><li>Sinai Province of the Islamic State</li><li>Tawhid and Jihad</li></ul></div>`)[0];
+                popup_063d1e8425f14c5d040cfe1e41e176e0.setContent(html_ac3692ed6ebcd671238f51a21fbba56a);
+            
+        
+
+        marker_d0f493f75c958eea9c26aa84db3e97ae.bindPopup(popup_063d1e8425f14c5d040cfe1e41e176e0)
+        ;
+
+        
+    
+    
+            marker_d0f493f75c958eea9c26aa84db3e97ae.bindTooltip(
+                `<div>
+                     Other (42 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_82edfb60eca60c568eadd27877600db4 = L.marker(
+                [23.701699309523807, 31.054725142857144],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_049036306a707ae01fab27c735243fb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bec2e0faa36a6c7b87b2ea0d10c8162d = $(`<div id="html_bec2e0faa36a6c7b87b2ea0d10c8162d" style="width: 100.0%; height: 100.0%;"><strong>Maritime</strong><br><b>Event Count:</b> 42<br><b>Groups:</b><ul><li>Abdullah Azzam Brigades</li><li>Abu Nidal Organization (ANO)</li><li>Adan Abyan Islamic Army (AAIA)</li><li>Al-Aqsa Martyrs Brigade</li><li>Al-Furqan Brigades</li><li>Al-Gama'at al-Islamiyya (IG)</li><li>Al-Qaida</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Ansar al-Sharia (Libya)</li><li>Armed Islamic Group (GIA)</li><li>Autonomy-Seeking Arabs</li><li>Black September</li><li>Black Wednesday</li><li>Christian extremists</li><li>Cyrenaica Self-Defense Force</li><li>Haftar Militia</li><li>Hamas (Islamic Resistance Movement)</li><li>Houthi extremists (Ansar Allah)</li><li>Kurdistan Workers' Party (PKK)</li><li>Muslim Fundamentalists</li><li>Muslim Militants</li><li>Palestine Liberation Front (PLF)</li><li>Palestinians</li><li>Polisario Front</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Tawhid and Jihad</li></ul></div>`)[0];
+                popup_049036306a707ae01fab27c735243fb0.setContent(html_bec2e0faa36a6c7b87b2ea0d10c8162d);
+            
+        
+
+        marker_82edfb60eca60c568eadd27877600db4.bindPopup(popup_049036306a707ae01fab27c735243fb0)
+        ;
+
+        
+    
+    
+            marker_82edfb60eca60c568eadd27877600db4.bindTooltip(
+                `<div>
+                     Maritime (42 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6f5fe091ca019f7010881cdc3633c9db = L.marker(
+                [34.15670145714285, 20.339595285714285],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_3fce35711efd8409f55ea5e5f6285179 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8c73f48c489774b7296c9779484e508 = $(`<div id="html_f8c73f48c489774b7296c9779484e508" style="width: 100.0%; height: 100.0%;"><strong>Telecommunication</strong><br><b>Event Count:</b> 35<br><b>Groups:</b><ul><li>1920 Revolution Brigades</li><li>Al-Furqan Brigades</li><li>Algerian Islamic Extremists</li><li>Al-Qaida in Iraq</li><li>Al-Qaida in the Arabian Peninsula (AQAP)</li><li>Ansar al-Islam</li><li>Arab Separatists</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Gunmen</li><li>Islamic Salvation Front (FIS)</li><li>Kurdistan Workers' Party (PKK)</li><li>Liwa Ahrar al-Sunna</li><li>Muslim Militants</li><li>Palestinians</li><li>Shamiya Front</li></ul></div>`)[0];
+                popup_3fce35711efd8409f55ea5e5f6285179.setContent(html_f8c73f48c489774b7296c9779484e508);
+            
+        
+
+        marker_6f5fe091ca019f7010881cdc3633c9db.bindPopup(popup_3fce35711efd8409f55ea5e5f6285179)
+        ;
+
+        
+    
+    
+            marker_6f5fe091ca019f7010881cdc3633c9db.bindTooltip(
+                `<div>
+                     Telecommunication (35 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7be40766dbc61ce1fbf4048c3ae566af = L.marker(
+                [33.4184783, 35.6108691],
+                {
+}
+            ).addTo(marker_cluster_16072dec85b7f48f4cb1b789f6483321);
+        
+    
+        var popup_9834ae12a55cd82bfdeeadb76cdda0f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_959cb187473b4df7910152996551e6f7 = $(`<div id="html_959cb187473b4df7910152996551e6f7" style="width: 100.0%; height: 100.0%;"><strong>Food or Water Supply</strong><br><b>Event Count:</b> 20<br><b>Groups:</b><ul><li>Ahneish Militia</li><li>Algerian Islamic Extremists</li><li>Al-Qaida in Iraq</li><li>Arabs</li><li>Great Eastern Islamic Raiders Front (IBDA-C)</li><li>Houthi extremists (Ansar Allah)</li><li>Islamic State of Iraq and the Levant (ISIL)</li><li>Kurdistan Workers' Party (PKK)</li><li>Muslim extremists</li><li>Palestinian Islamic Jihad (PIJ)</li><li>Palestinians</li><li>Sinai Province of the Islamic State</li></ul></div>`)[0];
+                popup_9834ae12a55cd82bfdeeadb76cdda0f3.setContent(html_959cb187473b4df7910152996551e6f7);
+            
+        
+
+        marker_7be40766dbc61ce1fbf4048c3ae566af.bindPopup(popup_9834ae12a55cd82bfdeeadb76cdda0f3)
+        ;
+
+        
+    
+    
+            marker_7be40766dbc61ce1fbf4048c3ae566af.bindTooltip(
+                `<div>
+                     Food or Water Supply (20 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_16072dec85b7f48f4cb1b789f6483321.addTo(map_9552d5159baa5ffd774ca1a18a4d2ca7);
+        
+</script>
+</html>

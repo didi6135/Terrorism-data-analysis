@@ -146,6 +146,7 @@
                     <option value="unique_group_by_region">12. Get all unique groups by region</option>
                     <option value="unique_group_by_country">13. Get all unique groups by country</option>
                     <option value="shared_event_groups_map">14. Get event groups that shared attack event</option>
+                    <option value="groups_with_prefer_target_type">15. Get groups with prefer target type</option>
 
                 </select>
             </div>
@@ -227,6 +228,10 @@
             'shared_event_groups_map': {
                 description: "Displays all groups that shared attack event.",
                 params: []
+            },
+            'groups_with_prefer_target_type': {
+                description: "Displays groups with prefer target type.",
+                params: ['target_type_id']
             }
 
         };
@@ -310,6 +315,12 @@
                 const citySelect = createSelect('country_id', 'Select Country');
                 parameterInputs.appendChild(citySelect);
                 await populateOptions(citySelect, '/api/statistics/countries', 'countries');
+            }
+            if (query === 'groups_with_prefer_target_type') {
+                parameterInputs.appendChild(createLabel('Select Target typ:'));
+                const citySelect = createSelect('target_type_id', 'Select Target type');
+                parameterInputs.appendChild(citySelect);
+                await populateOptions(citySelect, '/api/statistics/target_type', 'target_types');
             }
 
 

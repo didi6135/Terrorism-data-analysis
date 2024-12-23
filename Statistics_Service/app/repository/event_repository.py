@@ -7,21 +7,36 @@ from Data_Cleaning_Service.app.db.postgres_db.models import Event, Location, Coo
 
 
 def clean_and_extract_dates():
-
     with session_maker() as session:
-        results = session.query(Event.event_date).all()
-
-        df = pd.DataFrame(results, columns=["event_date"])
-
+        df = pd.DataFrame(session.query(Event.event_date).all(), columns=["event_date"])
         df["event_date"] = pd.to_datetime(df["event_date"], errors="coerce")
+        return df.dropna(subset=["event_date"]).assign(
+            year=lambda x: x["event_date"].dt.year,
+            month=lambda x: x["event_date"].dt.month,
+        )
 
-        df = df.dropna(subset=["event_date"])
 
-        df["year"] = df["event_date"].dt.year
-        df["month"] = df["event_date"].dt.month
+def get_yearly_trends():
+    df = clean_and_extract_dates()
+    return (
+        df.groupby("year").size()
+        .reset_index(name="event_count")
+        .sort_values(by="year")
+    )
 
-        return df
 
+
+
+def get_monthly_trends(year):
+    df = clean_and_extract_dates()
+    return (
+        df[df["year"] == year]
+        .groupby("month")
+        .size()
+        .reset_index(name="event_count")
+        .sort_values(by="month")
+    )
+########################################################
 
 def get_events_with_coordinates_and_victims():
     """
@@ -68,30 +83,9 @@ def get_all_years_repo():
 
 
 
-def get_yearly_trends():
-
-    df = clean_and_extract_dates()
-    yearly_df = (
-        df.groupby("year")
-        .size()
-        .reset_index(name="event_count")
-        .sort_values(by="year")
-    )
-    return yearly_df
 
 
 
-def get_monthly_trends(year):
-
-    df = clean_and_extract_dates()
-    monthly_df = (
-        df[df["year"] == year]
-        .groupby("month")
-        .size()
-        .reset_index(name="event_count")
-        .sort_values(by="month")
-    )
-    return monthly_df
 
 
 def get_event_trends_cleaned(year=None):

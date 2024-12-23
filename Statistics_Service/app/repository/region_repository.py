@@ -13,7 +13,7 @@ def get_all_regions():
         return [{"id": r.id, "name": r.name} for r in regions]
 
 
-def calculate_average_victims_per_event_in_region(region_id, limit=None):
+def calculate_average_victims_by_region(region_id, limit=None):
     with session_maker() as session:
         query = (
             session.query(
@@ -56,7 +56,7 @@ def calculate_average_victims_per_event_in_region(region_id, limit=None):
             for row in results
         ]
 
-
+######################################################
 
 def get_unique_groups_by_region(region_id):
     """
@@ -98,4 +98,3 @@ def get_unique_groups_by_region(region_id):
 
 
 
-print(json.dumps(get_unique_groups_by_region(1), indent=2))
