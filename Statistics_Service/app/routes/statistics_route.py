@@ -190,10 +190,6 @@ def get_top_groups_map():
         return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
-####################################################################
-
-
-
 
 
 @statistics_bp.route('/top_group_with_shared_target_by_region', methods=["GET"])
@@ -212,6 +208,13 @@ def top_group_with_shared_target_by_region():
         return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+####################################################################
+
+
+
+
+
+
 
 
 @statistics_bp.route('/top_group_with_shared_target_by_country', methods=["GET"])

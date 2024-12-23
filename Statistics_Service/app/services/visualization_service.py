@@ -134,17 +134,9 @@ def create_shared_target_map_by_region(region_id, output_file="top_groups_shared
             tooltip=f"{target['target_name']} ({target['event_count']} events)"
         ).add_to(marker_cluster)
 
-    # Save map
-    # os.makedirs(os.path.dirname(output_file), exist_ok=True)
-    # region_map.save(output_file)
-    # return output_file
 
     path = os.path.join(save_dir, f'{region_id}_{output_file}')
-
-    # Ensure the directory exists
     os.makedirs(os.path.dirname(path), exist_ok=True)
-
-    # Save the map
     region_map.save(path)
     return path
 
