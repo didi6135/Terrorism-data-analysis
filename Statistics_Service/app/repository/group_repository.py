@@ -174,37 +174,26 @@ def get_top_events_with_coordinates(limit=5):
 
 
 
-
-
-
-
-
-
-
 def get_groups_with_shared_targets_by_country(country_id):
-
     with session_maker() as session:
-        results = (
-            session.query(
-                TargetType.name.label("target_name"),
-                func.array_agg(distinct(Group.name)).label("groups"),  # Unique groups
-                func.count(Event.id).label("event_count"),
-                func.avg(Coordinate.latitude).label("latitude"),
-                func.avg(Coordinate.longitude).label("longitude")
-            )
-            .join(event_targets_type, Event.id == event_targets_type.c.event_id)
-            .join(TargetType, TargetType.id == event_targets_type.c.target_type_id)
-            .join(event_groups, Event.id == event_groups.c.event_id)
-            .join(Group, Group.id == event_groups.c.group_id)
-            .join(Location, Location.id == Event.location_id)
-            .join(City, City.id == Location.city_id)
-            .join(Country, Country.id == City.country_id)
-            .join(Coordinate, Location.coordinate_id == Coordinate.id)
-            .filter(Country.id == country_id)
-            .group_by(TargetType.name)
-            .order_by(func.count(Event.id).desc())
-            .all()
-        )
+        results = session.query(
+            TargetType.name.label("target_name"),
+            func.array_agg(distinct(Group.name)).label("groups"),
+            func.count(Event.id).label("event_count"),
+            func.avg(Coordinate.latitude).label("latitude"),
+            func.avg(Coordinate.longitude).label("longitude")
+        ).join(event_targets_type, Event.id == event_targets_type.c.event_id
+        ).join(TargetType, TargetType.id == event_targets_type.c.target_type_id
+        ).join(event_groups, Event.id == event_groups.c.event_id
+        ).join(Group, Group.id == event_groups.c.group_id
+        ).join(Location, Location.id == Event.location_id
+        ).join(City, City.id == Location.city_id
+        ).join(Country, Country.id == City.country_id
+        ).join(Coordinate, Location.coordinate_id == Coordinate.id
+        ).filter(Country.id == country_id
+        ).group_by(TargetType.name
+        ).order_by(func.count(Event.id).desc()
+        ).all()
 
         return [
             {
@@ -216,6 +205,7 @@ def get_groups_with_shared_targets_by_country(country_id):
             }
             for row in results
         ]
+
 
 
 

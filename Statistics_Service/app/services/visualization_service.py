@@ -112,14 +112,19 @@ def generate_top_groups_map(region_id=None, output_file="top_groups_map.html"):
     return path
 
 
+def create_shared_target_map(entity_id, entity_type="region", output_file="top_groups_shared_target_map.html"):
 
-def create_shared_target_map_by_region(region_id, output_file="top_groups_shared_target_map.html"):
-    shared_targets = get_groups_with_shared_targets_by_region(region_id)
+    # Fetch shared targets based on entity type
+    if entity_type == "region":
+        shared_targets = get_groups_with_shared_targets_by_region(entity_id)
+    elif entity_type == "country":
+        shared_targets = get_groups_with_shared_targets_by_country(entity_id)
+    else:
+        raise ValueError("Invalid entity_type. Must be 'region' or 'country'.")
 
     # Create base map and cluster
-    region_map = folium.Map(location=[20, 0], zoom_start=2)
-    marker_cluster = MarkerCluster().add_to(region_map)
-    save_dir = os.path.join("static", "maps")
+    shared_map = folium.Map(location=[20, 0], zoom_start=2)
+    marker_cluster = MarkerCluster().add_to(shared_map)
 
     # Add markers
     for target in shared_targets:
@@ -134,10 +139,13 @@ def create_shared_target_map_by_region(region_id, output_file="top_groups_shared
             tooltip=f"{target['target_name']} ({target['event_count']} events)"
         ).add_to(marker_cluster)
 
+    # Handle save directory
+    save_dir = os.path.join("static", "maps")
+    path = os.path.join(save_dir, f"{entity_type}_{entity_id}_{output_file}")
+    os.makedirs(save_dir, exist_ok=True)
 
-    path = os.path.join(save_dir, f'{region_id}_{output_file}')
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    region_map.save(path)
+    # Save map
+    shared_map.save(path)
     return path
 
 
@@ -255,41 +263,6 @@ def generate_heatmap(output_file="heatmap.html"):
 
 
 
-def create_shared_target_map_by_country(country_id):
-
-    # Get data from the database
-    shared_targets = get_groups_with_shared_targets_by_country(country_id)
-
-    # Create the base map
-    country_map = folium.Map(location=[20, 0], zoom_start=2)
-
-    # Add MarkerCluster for better visualization
-    marker_cluster = MarkerCluster().add_to(country_map)
-
-    for target in shared_targets:
-        # Get target data
-        target_name = target["target_name"]
-        latitude = target["latitude"]
-        longitude = target["longitude"]
-        event_count = target["event_count"]
-        groups = target["groups"]
-
-        # Prepare popup content
-        popup_content = f"<strong>{target_name}</strong><br>"
-        popup_content += f"<b>Event Count:</b> {event_count}<br>"
-        popup_content += "<b>Groups:</b><ul>"
-        for group in groups:
-            popup_content += f"<li>{group}</li>"
-        popup_content += "</ul>"
-
-        # Add a marker for the target
-        folium.Marker(
-            location=[latitude, longitude],
-            popup=folium.Popup(popup_content, max_width=300),
-            tooltip=f"{target_name} ({event_count} events)"
-        ).add_to(marker_cluster)
-
-    return country_map
 
 
 

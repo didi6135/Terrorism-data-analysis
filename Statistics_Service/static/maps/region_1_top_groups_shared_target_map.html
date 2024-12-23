@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4b6325448d96648b3fbef352bee66f24 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4b6325448d96648b3fbef352bee66f24" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4b6325448d96648b3fbef352bee66f24 = L.map(
+                "map_4b6325448d96648b3fbef352bee66f24",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b995540863d3ece28ea795b2c9b751df = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b995540863d3ece28ea795b2c9b751df.addTo(map_4b6325448d96648b3fbef352bee66f24);
+        
+    
+            var marker_cluster_07dc298e5f03f282bcad8729ea3e1663 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_4ab338283acf39aa36439423a81e5a9f = L.marker(
+                [11.396220515241298, -73.93949086917861],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_9330d7c5a8f31c2a52e63f1c9d4c366e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7d765a60523e2e3109492a12448146d2 = $(`<div id="html_7d765a60523e2e3109492a12448146d2" style="width: 100.0%; height: 100.0%;"><strong>Military</strong><br><b>Event Count:</b> 2362<br><b>Groups:</b><ul><li>19th of July Christian Resistance Brigade</li><li>20 December Movement (M-20)</li><li>Anti-Communist Patriotic Front</li><li>Anti Somoza Gp, name unk</li><li>Armed Forces of National Resistance (FARN)</li><li>Carlos Echeverria commando group</li><li>Cinchoneros Popular Liberation Movement</li><li>Contras</li><li>Counter-revolutionaries</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Democratic Revolutionary Front (FDR)</li><li>Dominican Popular Movement (MPD)</li><li>Ex-Somoza National Guard</li><li>Extremists</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrillas</li><li>Kisan Indian Organization</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>M-19 (Movement of April 19)</li><li>Manuel Jose Arce Commando</li><li>Miskito Indian Organization</li><li>Misurasata Indian Organization</li><li>Morazanist Front for the Liberation of Honduras (FMLH)</li><li>Nicaraguan Counter Revolutionaries (group unk)</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Nicaraguan  Revolutionary Armed Force</li><li>Patriotic Morazanista Front (FPM)</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Anti-Communist Militias</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Recontras</li><li>Revolutionary Armed Forces (FAR)</li><li>Revolutionary Armed Forces of Nicaragua (FARN)</li><li>Revolutionary Commandos of Solidarity</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Revolutionary United Front Movement</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Somozists</li><li>United Nicaraguan Opposition</li></ul></div>`)[0];
+                popup_9330d7c5a8f31c2a52e63f1c9d4c366e.setContent(html_7d765a60523e2e3109492a12448146d2);
+            
+        
+
+        marker_4ab338283acf39aa36439423a81e5a9f.bindPopup(popup_9330d7c5a8f31c2a52e63f1c9d4c366e)
+        ;
+
+        
+    
+    
+            marker_4ab338283acf39aa36439423a81e5a9f.bindTooltip(
+                `<div>
+                     Military (2362 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e80647c6218898c250d06cb3c04b999a = L.marker(
+                [10.83391223398061, -70.38921093495136],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_e616892855cb2afcc2fdaaec1c86cac4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26465b3eddf35b5a4b83e3845cfe619c = $(`<div id="html_26465b3eddf35b5a4b83e3845cfe619c" style="width: 100.0%; height: 100.0%;"><strong>Utilities</strong><br><b>Event Count:</b> 1030<br><b>Groups:</b><ul><li>20 December Movement (M-20)</li><li>Cinchoneros Popular Liberation Movement</li><li>Contras</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Extremists</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Former Govt. Troops</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrillas</li><li>Homeland and Freedom Group</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Marxists</li><li>Misurasata Indian Organization</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Patriotic Morazanista Front (FPM)</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Revolutionary Bloc (BPR)</li><li>Recontras</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Salvadoran Guerrillas</li></ul></div>`)[0];
+                popup_e616892855cb2afcc2fdaaec1c86cac4.setContent(html_26465b3eddf35b5a4b83e3845cfe619c);
+            
+        
+
+        marker_e80647c6218898c250d06cb3c04b999a.bindPopup(popup_e616892855cb2afcc2fdaaec1c86cac4)
+        ;
+
+        
+    
+    
+            marker_e80647c6218898c250d06cb3c04b999a.bindTooltip(
+                `<div>
+                     Utilities (1030 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_aa8517d00416d40d2110b583f2ca387a = L.marker(
+                [12.631203533980587, -80.1145496796116],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_763b9e556b3941d7b30414688e8000ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_64ba4aea76901596edd12d11064e596b = $(`<div id="html_64ba4aea76901596edd12d11064e596b" style="width: 100.0%; height: 100.0%;"><strong>Private Citizens & Property</strong><br><b>Event Count:</b> 824<br><b>Groups:</b><ul><li>20 December Movement (M-20)</li><li>31 January People's Front (FP-31)</li><li>9 May People's Liberation Force</li><li>Anti-Imperialist Patriotic Union</li><li>Armed Forces of National Resistance (FARN)</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Cinchoneros Popular Liberation Movement</li><li>Contras</li><li>Death Squad</li><li>Death Squad of Organization Zero (Organizacion Cero)</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Democratic Revolutionary Front (FDR)</li><li>Ex-Somoza National Guard</li><li>Extremists</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Guatemalan Communist Party</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrillas</li><li>Gunmen</li><li>Jamaica Labor Party</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>MANO-D</li><li>Manuel Jose Arce Commando</li><li>Maximiliano Gomez Revolutionary Brigade</li><li>Miskito Indian Organization</li><li>Misurasata Indian Organization</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Nicaraguan  Revolutionary Armed Force</li><li>Organizacion Democratica Nacionalista (ORDEN)</li><li>Patriotic Morazanista Front (FPM)</li><li>Patriotic Resistance Army (ERP)</li><li>People's Army (Nicaragua)</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Liberation Resistance Force</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Recompras</li><li>Recontras</li><li>Red June of 14 June</li><li>Revolutionary Armed Forces (FAR)</li><li>Revolutionary Armed Organization</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Right-Wing Death Squad</li><li>Right-wing extremists</li><li>Right-Wing Group</li><li>Right Wing Vigilantes</li><li>Salvadoran Guerrillas</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Sandinist People's Army (EPS)</li><li>Secret Anti-Communist Army (ESA)</li><li>Separatists</li><li>Somozists</li><li>Subversives</li><li>Terrorists</li><li>Trinitarians</li><li>Unemployed Persons</li><li>Union Guerrera Blanca (UGB)</li><li>United Popular Action Front (FAPU)</li><li>Yatama</li></ul></div>`)[0];
+                popup_763b9e556b3941d7b30414688e8000ae.setContent(html_64ba4aea76901596edd12d11064e596b);
+            
+        
+
+        marker_aa8517d00416d40d2110b583f2ca387a.bindPopup(popup_763b9e556b3941d7b30414688e8000ae)
+        ;
+
+        
+    
+    
+            marker_aa8517d00416d40d2110b583f2ca387a.bindTooltip(
+                `<div>
+                     Private Citizens & Property (824 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_80355f5605f49befc858ab10e184483d = L.marker(
+                [12.671021388973935, -82.06667538591086],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_15dde970fa43b3e3fa2937b0d0814bdf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d014d4138b9d0c55de732d5dcd5779b = $(`<div id="html_6d014d4138b9d0c55de732d5dcd5779b" style="width: 100.0%; height: 100.0%;"><strong>Business</strong><br><b>Event Count:</b> 653<br><b>Groups:</b><ul><li>20 December Movement (M-20)</li><li>31 January People's Front (FP-31)</li><li>Anti-Communist Action Alliance</li><li>Armed Forces of National Resistance (FARN)</li><li>Armed Group for the Liberation of Guadeloupe (GLAG)</li><li>Armed People</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Central American Revolutionary Workers Party (PRTC)</li><li>Cinchoneros Popular Liberation Movement</li><li>Contras</li><li>Coordination of the United Revolutionary Organization (CORU)</li><li>Death Squad</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Elements Police Cobra Squadron</li><li>Extremists</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Former Govt. Troops</li><li>Guadeloupe Liberation Army</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrilla Commando of the people</li><li>Guerrillas</li><li>Juan Rayo Guerilla Group</li><li>Kuna Indians</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Manuel Jose Arce Commando</li><li>Martyrs of La Talanguera</li><li>Maximiliano Gomez Revolutionary Brigade</li><li>Morazanist Front for the Liberation of Honduras (FMLH)</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Patriotic Morazanista Front (FPM)</li><li>People's Liberation Forces (FPL)</li><li>People's Military Organization (OMP)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Recompras</li><li>Recontras</li><li>Revolutionary Armed Forces of Nicaragua (FARN)</li><li>Revolutionary Front for National Liberation</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Revolutionary Workers Party</li><li>Robin Garcia Student Front</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Sandinist People's Army (EPS)</li><li>Secret Anti-Communist Army (ESA)</li><li>Subversives</li><li>Union Guerrera Blanca (UGB)</li><li>United Popular Action Front (FAPU)</li></ul></div>`)[0];
+                popup_15dde970fa43b3e3fa2937b0d0814bdf.setContent(html_6d014d4138b9d0c55de732d5dcd5779b);
+            
+        
+
+        marker_80355f5605f49befc858ab10e184483d.bindPopup(popup_15dde970fa43b3e3fa2937b0d0814bdf)
+        ;
+
+        
+    
+    
+            marker_80355f5605f49befc858ab10e184483d.bindTooltip(
+                `<div>
+                     Business (653 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_049a1ac51a55f8fc0e07a43f1c37d288 = L.marker(
+                [12.568063236947763, -80.92945958433725],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_e160cf8dfb462b84f41c7c3e6709e233 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8b406fffd9a3058507c9e12797883cc1 = $(`<div id="html_8b406fffd9a3058507c9e12797883cc1" style="width: 100.0%; height: 100.0%;"><strong>Government (General)</strong><br><b>Event Count:</b> 498<br><b>Groups:</b><ul><li>20 December Movement (M-20)</li><li>31 January People's Front (FP-31)</li><li>Anti-Communist Commando of the South</li><li>Anti-Communist Patriotic Front</li><li>Anti-Government Demonstrators</li><li>Armed Action Force (FADA)</li><li>Armed Forces of National Resistance (FARN)</li><li>Armed Group for the Liberation of Guadeloupe (GLAG)</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Christian Group for the Respect for Life</li><li>Cinchoneros Popular Liberation Movement</li><li>Communists</li><li>Contras</li><li>Costa Rican Peoples' Army (EPC)</li><li>Death Squad</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Extreme Right Commando Brigade</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Feliciano Argueta Front</li><li>Guadeloupe Liberation Army</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrillas</li><li>Gunmen</li><li>Gutierrez Gomez Resistance Group</li><li>Hector Rio De Brigade</li><li>Jorge Martinez Association of Combatants</li><li>Kisan Indian Organization</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Mano Blanca</li><li>Marxists</li><li>Maximiliano Gomez Revolutionary Brigade</li><li>Miguel Angel Cabrera Command</li><li>Miguel d'Escoto Brockman Community Movement</li><li>Misurasata Indian Organization</li><li>National Anti Communist Commando</li><li>National Liberation Army (El Salvador)</li><li>National Republican Alliance Party</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Party of National Conciliation</li><li>Patriotic Morazanista Front (FPM)</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Anti-Communist Militias</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Rebel Military Unit</li><li>Recompras</li><li>Recontras</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Right-wing extremists</li><li>Right-Wing Group</li><li>Right Wing Vigilantes</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Secret Anti-Communist Army (ESA)</li><li>Sovereign Panama Patriotic Front</li><li>Union Guerrera Blanca (UGB)</li><li>United Revolutionary Front</li><li>Vigilante Group</li></ul></div>`)[0];
+                popup_e160cf8dfb462b84f41c7c3e6709e233.setContent(html_8b406fffd9a3058507c9e12797883cc1);
+            
+        
+
+        marker_049a1ac51a55f8fc0e07a43f1c37d288.bindPopup(popup_e160cf8dfb462b84f41c7c3e6709e233)
+        ;
+
+        
+    
+    
+            marker_049a1ac51a55f8fc0e07a43f1c37d288.bindTooltip(
+                `<div>
+                     Government (General) (498 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_747bd2f27b9fb73f498b3d0d4465dc57 = L.marker(
+                [12.772201858657228, -81.07176416607787],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_de67fc5a942216056d83f2a0ac6ea7d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a3eb60ec9db05929eb9047e17738d797 = $(`<div id="html_a3eb60ec9db05929eb9047e17738d797" style="width: 100.0%; height: 100.0%;"><strong>Police</strong><br><b>Event Count:</b> 283<br><b>Groups:</b><ul><li>Anti-Government Demonstrators</li><li>Anti-Government Group</li><li>Armed Forces of National Resistance (FARN)</li><li>Armed Group for the Liberation of Guadeloupe (GLAG)</li><li>Armed People</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Cinchoneros Popular Liberation Movement</li><li>Contras</li><li>Counter-revolutionaries</li><li>Death Squad</li><li>Ex-Somoza National Guard</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Guadeloupe Liberation Army</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrillas</li><li>Gunmen</li><li>International Mercenary Brigade</li><li>Kisan Indian Organization</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>MILPAS Contras</li><li>Narco-Terrorists</li><li>Nicaraguan Democratic Force (FDN)</li><li>Opposition movement of Colon Province Unemployed</li><li>Patriotic Morazanista Front (FPM)</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Recompras</li><li>Recontras</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Somozists</li><li>Student Front of the People</li><li>Terrorists</li><li>United Popular Action Front (FAPU)</li></ul></div>`)[0];
+                popup_de67fc5a942216056d83f2a0ac6ea7d4.setContent(html_a3eb60ec9db05929eb9047e17738d797);
+            
+        
+
+        marker_747bd2f27b9fb73f498b3d0d4465dc57.bindPopup(popup_de67fc5a942216056d83f2a0ac6ea7d4)
+        ;
+
+        
+    
+    
+            marker_747bd2f27b9fb73f498b3d0d4465dc57.bindTooltip(
+                `<div>
+                     Police (283 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bdff32d84d9992ebaf133b4a1296246d = L.marker(
+                [11.845217662037035, -76.73277253703708],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_1042d4d92a0f2c5c45005e7f560d4847 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2f5fade3b2cbe3efbb96ec8a1beb8a86 = $(`<div id="html_2f5fade3b2cbe3efbb96ec8a1beb8a86" style="width: 100.0%; height: 100.0%;"><strong>Transportation</strong><br><b>Event Count:</b> 216<br><b>Groups:</b><ul><li>31 January People's Front (FP-31)</li><li>Commander Gonzalo Southern Group</li><li>Contras</li><li>Death Squad</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Guerrillas</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Misurasata Indian Organization</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Recompras</li><li>Recontras</li><li>Revolutionary Organization of People in Arms (ORPA)</li><li>Sandinista National Liberation Front (FSLN)</li><li>Subversives</li><li>United Popular Action Front (FAPU)</li><li>Vincente Mecha Revolutionary Christians</li></ul></div>`)[0];
+                popup_1042d4d92a0f2c5c45005e7f560d4847.setContent(html_2f5fade3b2cbe3efbb96ec8a1beb8a86);
+            
+        
+
+        marker_bdff32d84d9992ebaf133b4a1296246d.bindPopup(popup_1042d4d92a0f2c5c45005e7f560d4847)
+        ;
+
+        
+    
+    
+            marker_bdff32d84d9992ebaf133b4a1296246d.bindTooltip(
+                `<div>
+                     Transportation (216 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_387faf8f51d10852918e6df81ce4bcd2 = L.marker(
+                [13.607952021276601, -87.44083189361703],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_51bdb7a5a9d9e10053e4ee6e6370d2e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae5e55e103fbf152d7d17d3a4d373b94 = $(`<div id="html_ae5e55e103fbf152d7d17d3a4d373b94" style="width: 100.0%; height: 100.0%;"><strong>Journalists & Media</strong><br><b>Event Count:</b> 141<br><b>Groups:</b><ul><li>15th of September Liberation Legion</li><li>20 December Movement (M-20)</li><li>Armed Forces of National Resistance (FARN)</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Commandos</li><li>Coordination of the United Revolutionary Organization (CORU)</li><li>Death Squad</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Maximiliano Hernandez Martinez Brigade</li><li>Misurasata Indian Organization</li><li>Morazanist Front for the Liberation of Honduras (FMLH)</li><li>People's Information Group</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Revolutionary Coordination of the Masses</li><li>Revolutionary Workers Party</li><li>Right-Wing Group</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Secret Anti-Communist Army (ESA)</li><li>Tony El Pelou Band</li><li>United Popular Action Front (FAPU)</li><li>Yich Telga</li></ul></div>`)[0];
+                popup_51bdb7a5a9d9e10053e4ee6e6370d2e4.setContent(html_ae5e55e103fbf152d7d17d3a4d373b94);
+            
+        
+
+        marker_387faf8f51d10852918e6df81ce4bcd2.bindPopup(popup_51bdb7a5a9d9e10053e4ee6e6370d2e4)
+        ;
+
+        
+    
+    
+            marker_387faf8f51d10852918e6df81ce4bcd2.bindTooltip(
+                `<div>
+                     Journalists & Media (141 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_33479f3a7651c45da0731c7a207fd4f9 = L.marker(
+                [13.326990697916656, -85.8791536458334],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_7546b08dc96b90445ebc3af3a95f954a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ade44596642a37941deeb536f96e3ec0 = $(`<div id="html_ade44596642a37941deeb536f96e3ec0" style="width: 100.0%; height: 100.0%;"><strong>Telecommunication</strong><br><b>Event Count:</b> 96<br><b>Groups:</b><ul><li>22-May-48</li><li>Armed Forces of National Resistance (FARN)</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Left-Wing Terrorists</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li></ul></div>`)[0];
+                popup_7546b08dc96b90445ebc3af3a95f954a.setContent(html_ade44596642a37941deeb536f96e3ec0);
+            
+        
+
+        marker_33479f3a7651c45da0731c7a207fd4f9.bindPopup(popup_7546b08dc96b90445ebc3af3a95f954a)
+        ;
+
+        
+    
+    
+            marker_33479f3a7651c45da0731c7a207fd4f9.bindTooltip(
+                `<div>
+                     Telecommunication (96 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1104d05326fe482fbdd2d5979eaec8b0 = L.marker(
+                [13.568381717647055, -86.02808776470589],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_dd61b9f03a9374882c658c67c3a5cc37 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c631e88bc84725e9f1a18b1f13c5d600 = $(`<div id="html_c631e88bc84725e9f1a18b1f13c5d600" style="width: 100.0%; height: 100.0%;"><strong>Government (Diplomatic)</strong><br><b>Event Count:</b> 85<br><b>Groups:</b><ul><li>20 December Movement (M-20)</li><li>31 January People's Front (FP-31)</li><li>Armed Forces of National Resistance (FARN)</li><li>Carlos Echeverria commando group</li><li>Coalition of National Brigades</li><li>Coordination of the United Revolutionary Organization (CORU)</li><li>Counterrevolutionary Solidarity (SC)</li><li>Democratic Revolutionary Front (FDR)</li><li>Dominican Popular Movement (MPD)</li><li>Ex-Somoza National Guard</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>February 28 Popular League (El Salvador)</li><li>Guatemalan Labor Party (PGT)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Islamic Brotherhood</li><li>Left-Wing Guerrillas</li><li>Left-Wing Terrorists</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>M12J</li><li>National Front for the Liberation of Cuba (FLNC)</li><li>Patriotic Morazanista Front (FPM)</li><li>Peasant Militants</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>People's Revolutionary Union</li><li>Popular Revolutionary Bloc (BPR)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Recontras</li><li>Roberto Santucho Revolutionary Group</li><li>Roque Dalton Commando</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li><li>Somoza Sympathizers</li><li>Student Revolutionary Front (FER)</li><li>United Popular Action Front (FAPU)</li></ul></div>`)[0];
+                popup_dd61b9f03a9374882c658c67c3a5cc37.setContent(html_c631e88bc84725e9f1a18b1f13c5d600);
+            
+        
+
+        marker_1104d05326fe482fbdd2d5979eaec8b0.bindPopup(popup_dd61b9f03a9374882c658c67c3a5cc37)
+        ;
+
+        
+    
+    
+            marker_1104d05326fe482fbdd2d5979eaec8b0.bindTooltip(
+                `<div>
+                     Government (Diplomatic) (85 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dc521dfb8746667cfb1d03f45367bf82 = L.marker(
+                [12.486068405797097, -79.6586013623188],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_6c49a9689060d4f0c8acab2e429e74b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00c68f6128ad038688a7fad284c3e1e0 = $(`<div id="html_00c68f6128ad038688a7fad284c3e1e0" style="width: 100.0%; height: 100.0%;"><strong>Educational Institution</strong><br><b>Event Count:</b> 69<br><b>Groups:</b><ul><li>9 May People's Liberation Force</li><li>Anti-Communist Commando of the South</li><li>Armenian Secret Army for the Liberation of Armenia</li><li>Contras</li><li>Coordination of the United Revolutionary Organization (CORU)</li><li>Counter-revolutionaries</li><li>Death Squad</li><li>Ex-Somoza National Guard</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Guatemalan Labor Party (PGT)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Mano Blanca</li><li>Nicaraguan Democratic Force (FDN)</li><li>People's Liberation Forces (FPL)</li><li>People's Revolutionary Army (ERP) (El Salvador)</li><li>Popular Revolutionary Bloc (BPR)</li><li>Revolutionary Front for National Liberation</li><li>Revolutionary Student Brigade</li><li>Right-Wing Death Squad</li><li>Right-Wing Group</li><li>Secret Anti-Communist Army (ESA)</li><li>Student Front of the People</li><li>Tony El Pelou Band</li><li>Union Guerrera Blanca (UGB)</li></ul></div>`)[0];
+                popup_6c49a9689060d4f0c8acab2e429e74b7.setContent(html_00c68f6128ad038688a7fad284c3e1e0);
+            
+        
+
+        marker_dc521dfb8746667cfb1d03f45367bf82.bindPopup(popup_6c49a9689060d4f0c8acab2e429e74b7)
+        ;
+
+        
+    
+    
+            marker_dc521dfb8746667cfb1d03f45367bf82.bindTooltip(
+                `<div>
+                     Educational Institution (69 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f2168c7d6662efe8bb99de519bc2e0b6 = L.marker(
+                [12.188748933333333, -73.88776655555556],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_01fd499b2a9377473bbf201ee9753014 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1a070551e2c326192b896e24d02717a5 = $(`<div id="html_1a070551e2c326192b896e24d02717a5" style="width: 100.0%; height: 100.0%;"><strong>Airports & Aircraft</strong><br><b>Event Count:</b> 45<br><b>Groups:</b><ul><li>31 January People's Front (FP-31)</li><li>Anti-Castro Command</li><li>Armed Group for the Liberation of Guadeloupe (GLAG)</li><li>Caribbean Revolutionary Alliance (ARC)</li><li>Cinchoneros Popular Liberation Movement</li><li>Coordination of the United Revolutionary Organization (CORU)</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Guadeloupe Liberation Army</li><li>Guatemalan Labor Party (PGT)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Kisan Indian Organization</li><li>Left-Wing Guerrillas</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Mano Blanca</li><li>Narco-Terrorists</li><li>National Front for the Liberation of Cuba (FLNC)</li><li>Nicaraguan Democratic Anti-Communist Movement</li><li>Nicaraguans protesting their government</li><li>People's Liberation Forces (FPL)</li><li>Rebel Armed Forces of Guatemala (FAR)</li><li>Revolutionary Commandos of Solidarity</li><li>Sandinista National Liberation Front (FSLN)</li></ul></div>`)[0];
+                popup_01fd499b2a9377473bbf201ee9753014.setContent(html_1a070551e2c326192b896e24d02717a5);
+            
+        
+
+        marker_f2168c7d6662efe8bb99de519bc2e0b6.bindPopup(popup_01fd499b2a9377473bbf201ee9753014)
+        ;
+
+        
+    
+    
+            marker_f2168c7d6662efe8bb99de519bc2e0b6.bindTooltip(
+                `<div>
+                     Airports & Aircraft (45 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1e0579273fe76f873fad308f15ec2326 = L.marker(
+                [13.886358655172414, -88.69357113793103],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_7acf220b7a062b137e177ad6c165eb96 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_334a158d12b36f61305f754840cb50e0 = $(`<div id="html_334a158d12b36f61305f754840cb50e0" style="width: 100.0%; height: 100.0%;"><strong>Religious Figures/Institutions</strong><br><b>Event Count:</b> 29<br><b>Groups:</b><ul><li>Armed People</li><li>Cinchoneros Popular Liberation Movement</li><li>Communists</li><li>Death Squad</li><li>Democratic Revolutionary Front (FDR)</li><li>February 28 Popular League (El Salvador)</li><li>Guatemalan National Revolutionary Unity (URNG)</li><li>Lorenzo Zelaya Revolutionary Front (LZRF)</li><li>Maximiliano Hernandez Martinez Brigade</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Patriotic Morazanista Front (FPM)</li><li>Popular Revolutionary Bloc (BPR)</li><li>Revolutionary Student Movement (MER)</li><li>Sandinista National Liberation Front (FSLN)</li><li>Secret Anti-Communist Army (ESA)</li><li>Union Guerrera Blanca (UGB)</li><li>United Popular Action Front (FAPU)</li></ul></div>`)[0];
+                popup_7acf220b7a062b137e177ad6c165eb96.setContent(html_334a158d12b36f61305f754840cb50e0);
+            
+        
+
+        marker_1e0579273fe76f873fad308f15ec2326.bindPopup(popup_7acf220b7a062b137e177ad6c165eb96)
+        ;
+
+        
+    
+    
+            marker_1e0579273fe76f873fad308f15ec2326.bindTooltip(
+                `<div>
+                     Religious Figures/Institutions (29 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_876d249d4e7b2dc88995ea8170938568 = L.marker(
+                [12.205293499999998, -79.03261407142858],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_d167706bbd56fe959c047efd56cbe45e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0e8019f72d297c707ee27dfa780573b = $(`<div id="html_b0e8019f72d297c707ee27dfa780573b" style="width: 100.0%; height: 100.0%;"><strong>Maritime</strong><br><b>Event Count:</b> 28<br><b>Groups:</b><ul><li>Cubans seeking escape from Cuba</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Drug-Related Terrorists</li><li>Misurasata Indian Organization</li><li>Nicaraguan Democratic Force (FDN)</li><li>Nicaraguan Resistance</li><li>Pirates</li></ul></div>`)[0];
+                popup_d167706bbd56fe959c047efd56cbe45e.setContent(html_b0e8019f72d297c707ee27dfa780573b);
+            
+        
+
+        marker_876d249d4e7b2dc88995ea8170938568.bindPopup(popup_d167706bbd56fe959c047efd56cbe45e)
+        ;
+
+        
+    
+    
+            marker_876d249d4e7b2dc88995ea8170938568.bindTooltip(
+                `<div>
+                     Maritime (28 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_facd374cdbb7883880b12cdc479c2bc9 = L.marker(
+                [13.101395466666668, -87.16876626666667],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_7feb7a706d157c3d559ed4743051179a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c352b6f6d081b13f2bee595e5dc8819c = $(`<div id="html_c352b6f6d081b13f2bee595e5dc8819c" style="width: 100.0%; height: 100.0%;"><strong>Terrorists/Non-State Militia</strong><br><b>Event Count:</b> 15<br><b>Groups:</b><ul><li>Cinchoneros Popular Liberation Movement</li><li>Ex-Somoza National Guard</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Nicaraguan Democratic Force (FDN)</li><li>Recompras</li><li>Sandinista National Liberation Front (FSLN)</li><li>Sandinistas</li></ul></div>`)[0];
+                popup_7feb7a706d157c3d559ed4743051179a.setContent(html_c352b6f6d081b13f2bee595e5dc8819c);
+            
+        
+
+        marker_facd374cdbb7883880b12cdc479c2bc9.bindPopup(popup_7feb7a706d157c3d559ed4743051179a)
+        ;
+
+        
+    
+    
+            marker_facd374cdbb7883880b12cdc479c2bc9.bindTooltip(
+                `<div>
+                     Terrorists/Non-State Militia (15 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_018ce43cb8f8c73236bbef12d806682f = L.marker(
+                [13.802919416666668, -88.04468666666668],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_02178cb49ed02be38296792edfa9cc8c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91db6073f714d41dc183ac3c7fad92c0 = $(`<div id="html_91db6073f714d41dc183ac3c7fad92c0" style="width: 100.0%; height: 100.0%;"><strong>Violent Political Party</strong><br><b>Event Count:</b> 12<br><b>Groups:</b><ul><li>Death Squad</li><li>Democratic Revolutionary Alliance (ARDE)</li><li>Extreme Right Commando Brigade</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Maximiliano Hernandez Martinez Brigade</li><li>National Liberation Movement Party</li><li>Recontras</li><li>Right-Wing Death Squad</li><li>Somozists</li></ul></div>`)[0];
+                popup_02178cb49ed02be38296792edfa9cc8c.setContent(html_91db6073f714d41dc183ac3c7fad92c0);
+            
+        
+
+        marker_018ce43cb8f8c73236bbef12d806682f.bindPopup(popup_02178cb49ed02be38296792edfa9cc8c)
+        ;
+
+        
+    
+    
+            marker_018ce43cb8f8c73236bbef12d806682f.bindTooltip(
+                `<div>
+                     Violent Political Party (12 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2079ea8d8b233934e2462a5c0f9562d4 = L.marker(
+                [12.568214833333334, -81.05183441666667],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_86ebeb573cd88a8f27f16707bb06f616 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b336f51c5d8e034c5525de9b68a36a24 = $(`<div id="html_b336f51c5d8e034c5525de9b68a36a24" style="width: 100.0%; height: 100.0%;"><strong>NGO</strong><br><b>Event Count:</b> 12<br><b>Groups:</b><ul><li>Death Squad</li><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Maximiliano Hernandez Martinez Brigade</li><li>Nicaraguan Counter Revolutionaries (group unk)</li><li>Nicaraguan Resistance</li><li>Secret Anti-Communist Army (ESA)</li></ul></div>`)[0];
+                popup_86ebeb573cd88a8f27f16707bb06f616.setContent(html_b336f51c5d8e034c5525de9b68a36a24);
+            
+        
+
+        marker_2079ea8d8b233934e2462a5c0f9562d4.bindPopup(popup_86ebeb573cd88a8f27f16707bb06f616)
+        ;
+
+        
+    
+    
+            marker_2079ea8d8b233934e2462a5c0f9562d4.bindTooltip(
+                `<div>
+                     NGO (12 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_463ff8b48fdcf47cea59f17115e942a6 = L.marker(
+                [13.732296222222223, -87.60372277777779],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_aaa1e135d0e9bb9952212af2963a9f60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_13d27be00230b2b1ffc2feeabcd5f4a0 = $(`<div id="html_13d27be00230b2b1ffc2feeabcd5f4a0" style="width: 100.0%; height: 100.0%;"><strong>Food or Water Supply</strong><br><b>Event Count:</b> 9<br><b>Groups:</b><ul><li>Farabundo Marti National Liberation Front (FMLN)</li><li>Guerrilla Army of the Poor (EGP)</li><li>Left wing activists</li><li>Miskito Indian Organization</li><li>Nicaraguan Democratic Force (FDN)</li></ul></div>`)[0];
+                popup_aaa1e135d0e9bb9952212af2963a9f60.setContent(html_13d27be00230b2b1ffc2feeabcd5f4a0);
+            
+        
+
+        marker_463ff8b48fdcf47cea59f17115e942a6.bindPopup(popup_aaa1e135d0e9bb9952212af2963a9f60)
+        ;
+
+        
+    
+    
+            marker_463ff8b48fdcf47cea59f17115e942a6.bindTooltip(
+                `<div>
+                     Food or Water Supply (9 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cee7ea4d689289e7ad6b5bdfbddaa2e9 = L.marker(
+                [14.203321666666668, -28728692.494381335],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_b102bdf1ddbccf06a8f13faa0c8b6b86 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e55455ed01a18310148651a0c8c2df2 = $(`<div id="html_8e55455ed01a18310148651a0c8c2df2" style="width: 100.0%; height: 100.0%;"><strong>Tourists</strong><br><b>Event Count:</b> 3<br><b>Groups:</b><ul><li>Contras</li><li>Guerrilla Army of the Poor (EGP)</li><li>Revolutionary Organization of People in Arms (ORPA)</li></ul></div>`)[0];
+                popup_b102bdf1ddbccf06a8f13faa0c8b6b86.setContent(html_8e55455ed01a18310148651a0c8c2df2);
+            
+        
+
+        marker_cee7ea4d689289e7ad6b5bdfbddaa2e9.bindPopup(popup_b102bdf1ddbccf06a8f13faa0c8b6b86)
+        ;
+
+        
+    
+    
+            marker_cee7ea4d689289e7ad6b5bdfbddaa2e9.bindTooltip(
+                `<div>
+                     Tourists (3 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2cdabdd8d0e80755623137cd5e7fa053 = L.marker(
+                [13.081376500000001, -86.073534],
+                {
+}
+            ).addTo(marker_cluster_07dc298e5f03f282bcad8729ea3e1663);
+        
+    
+        var popup_38bfb3f6eb7c2e0b50f52480180ffd5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52b8987141958998cd824fb24234f945 = $(`<div id="html_52b8987141958998cd824fb24234f945" style="width: 100.0%; height: 100.0%;"><strong>Other</strong><br><b>Event Count:</b> 2<br><b>Groups:</b><ul><li>Nicaraguan Resistance</li></ul></div>`)[0];
+                popup_38bfb3f6eb7c2e0b50f52480180ffd5d.setContent(html_52b8987141958998cd824fb24234f945);
+            
+        
+
+        marker_2cdabdd8d0e80755623137cd5e7fa053.bindPopup(popup_38bfb3f6eb7c2e0b50f52480180ffd5d)
+        ;
+
+        
+    
+    
+            marker_2cdabdd8d0e80755623137cd5e7fa053.bindTooltip(
+                `<div>
+                     Other (2 events)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_07dc298e5f03f282bcad8729ea3e1663.addTo(map_4b6325448d96648b3fbef352bee66f24);
+        
+</script>
+</html>

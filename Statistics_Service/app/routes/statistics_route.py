@@ -15,11 +15,11 @@ from Statistics_Service.app.repository.region_repository import get_all_regions
 from Statistics_Service.app.repository.target_type_repoisotory import get_all_target_types
 from Statistics_Service.app.services.plot_service import plot_monthly_trends, \
     plot_yearly_trends, plot_groups_by_target_type
-from Statistics_Service.app.services.visualization_service import  \
-    generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis, create_shared_target_map_by_region, \
-    create_shared_target_map_by_country, generate_attack_strategy_map, generate_attack_strategy_map_by_country, \
+from Statistics_Service.app.services.visualization_service import \
+    generate_heatmap, generate_top_groups_map, generate_map_for_victims_analysis \
+    , generate_attack_strategy_map, generate_attack_strategy_map_by_country, \
     create_intergroup_activity_map_by_country, create_intergroup_activity_map_by_region, \
-    generate_shared_event_groups_map
+    generate_shared_event_groups_map, create_shared_target_map
 
 statistics_bp = Blueprint("statistics", __name__)
 
@@ -203,7 +203,7 @@ def top_group_with_shared_target_by_region():
         if cached := redis_client.get(cache_key):
             return jsonify({"map_file": json.loads(cached)}), 200
 
-        map_file_path = create_shared_target_map_by_region(region_id)
+        map_file_path = create_shared_target_map(region_id, 'region')
         redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
         return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
@@ -211,36 +211,23 @@ def top_group_with_shared_target_by_region():
 ####################################################################
 
 
-
-
-
-
-
-
 @statistics_bp.route('/top_group_with_shared_target_by_country', methods=["GET"])
 def top_group_with_shared_target_by_country():
     try:
-        # Extract country_id
         country_id = request.args.get("country_id", type=int)
-        # Define the file path for saving the map
-        map_file_path = "static/maps/top_groups_shared_target_map.html"
-
-        # Generate the map based on the region or country
-        if country_id:
-            map_object = create_shared_target_map_by_country(country_id)
-        else:
+        if not country_id:
             return jsonify({"error": "country_id must be provided"}), 400
 
-        # Save the map as an HTML file
-        map_object.save(map_file_path)
+        cache_key = f"shared_target_map:country:{country_id}"
+        if cached := redis_client.get(cache_key):
+            return jsonify({"map_file": json.loads(cached)}), 200
 
-        # Return the map file path to the client
-        return jsonify({
-            "map_file": map_file_path
-        }), 200
-
+        map_file_path = create_shared_target_map(country_id, 'country')
+        redis_client.setex(cache_key, 3600, json.dumps(map_file_path))  # Cache for 1 hour
+        return jsonify({"map_file": map_file_path}), 200
     except Exception as e:
         return jsonify({"error": "Failed to generate map", "message": str(e)}), 500
+
 
 
 @statistics_bp.route('/attack_strategy_map_region', methods=["GET"])
