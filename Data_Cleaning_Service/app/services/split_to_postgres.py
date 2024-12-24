@@ -14,7 +14,6 @@ from Data_Cleaning_Service.app.repository.postgres_repo.many_to_many_repo import
 from Data_Cleaning_Service.app.repository.postgres_repo.region_repo import insert_or_get_region
 from Data_Cleaning_Service.app.repository.postgres_repo.target_type_repo import insert_or_get_target_type
 from Data_Cleaning_Service.app.repository.postgres_repo.weapon_type_repo import insert_or_get_weapon_type
-from Data_Cleaning_Service.app.services.split_to_neo4j import process_region_and_country
 from Data_Cleaning_Service.app.utils.logger import log
 import pandas as pd
 

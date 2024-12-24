@@ -11,13 +11,5 @@ if __name__ == '__main__':
     # process_csv("test.csv")
     process_csv("merged_terrorism_big_data.csv")
 
-    # res = count_unique_values_from_csv('data/cleaned/merged_terrorism_big_data.csv', 'gname')
-    # print(res)
-    # data = pd.read_csv('data/cleaned/test.csv').to_dict(orient="records")
-    # print(data)
-    # main_split(data)
-    # with session_maker() as session:
-    #     bulk_insert_all(data, session)
 
-    # process_csv_batch("merged_terrorism_big_data.csv")
 
