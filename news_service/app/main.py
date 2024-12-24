@@ -1,9 +1,8 @@
-import threading
 import time
 from threading import Thread
 
 import schedule
-from flask import Flask, current_app
+from flask import Flask
 from flask_cors import CORS
 
 from news_service.app.db.elastic_search_db import create_index, news_mapping
@@ -18,7 +17,7 @@ def run_scheduler():
     Run the scheduler in a separate thread.
     """
     print("Starting scheduler...")
-    fetch_and_process_news()  # Run once immediately on start
+    fetch_and_process_news()
     while True:
         schedule.run_pending()
         time.sleep(1)

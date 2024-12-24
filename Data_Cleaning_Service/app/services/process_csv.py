@@ -26,7 +26,7 @@ def process_csv(file_name):
                 # main_split(row)
                 elasticsearch_producer(dict(row))
                 # log(f"Processed row {index + 1} successfully.")
-                # time.sleep(5)
+                time.sleep(1)
             except Exception as e:
                 log(f"222Error processing row {index + 1}: {e}", level="error")
                 # time.sleep(5)

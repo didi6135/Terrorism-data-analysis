@@ -1,6 +1,7 @@
 import requests
 
 from news_service.app.db.elastic_search_db import get_elastic_client
+from news_service.app.utils.config import ELASTIC_INDEX
 
 API_KEY = "5a8e538e-9d6e-4730-81ee-abf12bf73c90"
 BASE_URL = "https://eventregistry.org/api/v1/article/getArticles"
@@ -41,4 +42,4 @@ def save_articles_to_elasticsearch(articles):
             "url": article.get("url"),
             "source": article.get("source", {}).get("title", "Unknown"),
         }
-        client.index(index=index_name, document=doc)
+        client.index(index=ELASTIC_INDEX, document=doc)

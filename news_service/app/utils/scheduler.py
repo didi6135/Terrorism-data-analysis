@@ -39,10 +39,12 @@ def fetch_and_process_news():
 
 if __name__ == '__main__':
     # Schedule the task every 2 minutes
-    schedule.every(2).minutes.do(fetch_and_process_news)
+    # schedule.every(2).minutes.do(fetch_and_process_news)
+    print("Starting the news fetching scheduler...")
+    fetch_and_process_news()
+    time.sleep(50)
 
     # Keep the script running
-    print("Starting the news fetching scheduler...")
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
