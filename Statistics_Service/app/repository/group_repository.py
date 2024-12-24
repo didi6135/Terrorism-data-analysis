@@ -1,5 +1,3 @@
-import json
-
 from sqlalchemy import func, distinct, desc
 
 from Data_Cleaning_Service.app.db.postgres_db.models import Event, Casualty, Coordinate, Location, Group, Region, City, \
@@ -58,9 +56,6 @@ def get_top_groups_by_region(region_id=None):
 
 
 
-
-
-
 def get_groups_with_shared_targets_by_region(region_id):
     with session_maker() as session:
         results = session.query(
@@ -93,84 +88,6 @@ def get_groups_with_shared_targets_by_region(region_id):
             }
             for row in results
         ]
-
-#################################################################
-
-
-
-def get_most_deadly_repo(limit=None):
-
-    with session_maker() as session:
-        query = (
-            session.query(
-                Event.id.label("event_id"),
-                Event.description.label("event_description"),
-                Casualty.total_victims.label("total_victims")
-            )
-            .join(Casualty, Event.casualty_id == Casualty.id)
-            .order_by(Casualty.total_victims.desc())
-        )
-
-        if limit:
-            query = query.limit(limit)
-
-        results = query.all()
-
-        return [
-            {
-                "event_id": row.event_id,
-                "event_description": row.event_description,
-                "total_victims": row.total_victims,
-            }
-            for row in results
-        ]
-
-
-
-# print(json.dumps(get_most_deadly_repo(5), indent=4))
-
-
-def get_top_events_with_coordinates(limit=5):
-    """
-    Retrieves the top events with the highest casualties and their geographic coordinates.
-    """
-    with session_maker() as session:
-        results = (
-            session.query(
-                Event.id.label("event_id"),
-                Event.description.label("event_description"),
-                Casualty.total_victims.label("total_victims"),
-                Casualty.total_killed.label("total_killed"),  # Added total_killed
-                Casualty.total_injured.label("total_injured"),  # Added total_injured
-                Coordinate.latitude.label("latitude"),
-                Coordinate.longitude.label("longitude")
-            )
-            .join(Casualty, Event.casualty_id == Casualty.id)
-            .join(Location, Event.location_id == Location.id)
-            .join(Coordinate, Location.coordinate_id == Coordinate.id)
-            .filter(Coordinate.latitude != 0.0, Coordinate.longitude != 0.0)
-            .order_by(Casualty.total_victims.desc())
-            .limit(limit)
-            .all()
-        )
-
-        return [
-            {
-                "event_id": row.event_id,
-                "event_description": row.event_description,
-                "score": row.total_victims,
-                "total_killed": row.total_killed,  # No error here anymore
-                "total_injured": row.total_injured,  # Added to results
-                "latitude": row.latitude,
-                "longitude": row.longitude,
-            }
-            for row in results
-        ]
-
-
-
-
-
 
 
 

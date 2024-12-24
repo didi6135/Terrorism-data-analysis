@@ -1,5 +1,4 @@
 import json
-
 import pandas as pd
 from sqlalchemy import func, desc
 from sqlalchemy.orm import sessionmaker
@@ -31,7 +30,6 @@ def get_most_deadly_attack_types(limit=None):
         ]
 
 
-
 def analyze_attack_target_correlation():
     with session_maker() as session:
         results = (
@@ -44,11 +42,6 @@ def analyze_attack_target_correlation():
         )
         data = pd.DataFrame(results, columns=["attack_type", "target_type"])
         return pd.crosstab(data["attack_type"], data["target_type"]).to_dict()
-######################################################
-
-
-
-
 
 
 def get_attack_strategies_by_region(region_id=None):

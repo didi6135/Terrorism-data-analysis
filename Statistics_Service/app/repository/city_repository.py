@@ -10,7 +10,6 @@ def get_all_cities():
         return [{"id": c.id, "name": c.name} for c in cities]
 
 
-
 def calculate_average_victims_by_city(city_id, limit=None):
     with session_maker() as session:
         query = (

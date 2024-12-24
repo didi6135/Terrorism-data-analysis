@@ -1,3 +1,13 @@
+import json
+import os
 import redis
 
-redis_client = redis.StrictRedis(host='172.25.182.255', port=6379, db=0)
+redis_client = redis.StrictRedis(
+    host=os.environ['REDIS_HOST'],
+    port=6379,
+    db=0
+)
+
+
+
+

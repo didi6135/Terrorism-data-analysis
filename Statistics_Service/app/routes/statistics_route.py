@@ -5,14 +5,9 @@ from flask import Blueprint, jsonify, request, send_file
 from Statistics_Service.app.db.redis_db import redis_client
 from Statistics_Service.app.repository.attack_type_repository import analyze_attack_target_correlation, \
     get_most_deadly_attack_types
-from Statistics_Service.app.repository.city_repository import get_all_cities, calculate_average_victims_by_city
-from Statistics_Service.app.repository.country_repository import get_all_countries, \
-    calculate_average_victims_by_country
-from Statistics_Service.app.repository.event_repository import  get_monthly_trends, \
-    get_yearly_trends, get_all_years_repo
+
 from Statistics_Service.app.repository.group_repository import  get_top_5_groups_by_casualties
-from Statistics_Service.app.repository.region_repository import get_all_regions
-from Statistics_Service.app.repository.target_type_repoisotory import get_all_target_types
+
 from Statistics_Service.app.services.plot_service import plot_monthly_trends, \
     plot_yearly_trends, plot_groups_by_target_type
 from Statistics_Service.app.services.visualization_service import \
@@ -23,6 +18,14 @@ from Statistics_Service.app.services.visualization_service import \
 statistics_bp = Blueprint("statistics", __name__)
 
 
+def get_cached_data(cache_key):
+    """Retrieve cached data from Redis."""
+    cached_data = redis_client.get(cache_key)
+    return json.loads(cached_data) if cached_data else None
+
+def set_cache_data(cache_key, data, expiration=3600):
+    """Set data in Redis with an expiration time."""
+    redis_client.setex(cache_key, expiration, json.dumps(data))
 
 
 @statistics_bp.route("/most_deadly_attack_types", methods=["GET"])
@@ -31,15 +34,16 @@ def most_deadly_attack_types():
         limit = request.args.get("limit", type=int, default=10)
 
         cache_key = f"most_deadly_attack_types:{limit}"
-        cached_data = redis_client.get(cache_key)
+        # cached_data = redis_client.get(cache_key)
+        cached_data = get_cached_data(cache_key)
 
         if cached_data:
             return jsonify({"data": json.loads(cached_data)}), 200
 
         attack_types = get_most_deadly_attack_types(limit)
+        set_cache_data(cache_key, attack_types)
 
-        redis_client.setex(cache_key, 3600, json.dumps(attack_types))
-
+        # redis_client.setex(cache_key, 3600, json.dumps(attack_types))
         return jsonify({"data": attack_types}), 200
 
     except Exception as e:

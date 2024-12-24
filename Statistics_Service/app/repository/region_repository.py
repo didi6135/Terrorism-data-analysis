@@ -1,5 +1,3 @@
-import json
-
 from sqlalchemy import func
 
 from Data_Cleaning_Service.app.db.postgres_db.database import session_maker
@@ -55,8 +53,6 @@ def calculate_average_victims_by_region(region_id, limit=None):
             }
             for row in results
         ]
-
-######################################################
 
 
 def get_unique_groups_by_region(region_id):
