@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0f5c20dd88bc3afda954faa73428317a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0f5c20dd88bc3afda954faa73428317a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0f5c20dd88bc3afda954faa73428317a = L.map(
+                "map_0f5c20dd88bc3afda954faa73428317a",
+                {
+                    center: [31.950001, 35.933331],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_56ac5613b79423f4d53627bf346787b8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_56ac5613b79423f4d53627bf346787b8.addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+            var circle_marker_4562d0aad4b5eba6341eb321d28f0c1c = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_af95748443be6a0cb27a54f6f2606182 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_f9411377267cad883a03e2cde2123f27 = $(`<div id="html_f9411377267cad883a03e2cde2123f27" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 1<br><b>Score:</b> 2</div>`)[0];
+                popup_af95748443be6a0cb27a54f6f2606182.setContent(html_f9411377267cad883a03e2cde2123f27);
+            
+        
+
+        circle_marker_4562d0aad4b5eba6341eb321d28f0c1c.bindPopup(popup_af95748443be6a0cb27a54f6f2606182)
+        ;
+
+        
+    
+    
+            var circle_marker_3f5a658f468cfdb1950b2e8928db7f33 = L.circleMarker(
+                [31.198056, 29.919167],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_b47273248c1495839a7dd4c5e3dd87e5 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_cb0a7e687379d1f78e2a6412a0b0d251 = $(`<div id="html_cb0a7e687379d1f78e2a6412a0b0d251" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 2<br><b>Average Killed:</b> 0<br><b>Score:</b> 2</div>`)[0];
+                popup_b47273248c1495839a7dd4c5e3dd87e5.setContent(html_cb0a7e687379d1f78e2a6412a0b0d251);
+            
+        
+
+        circle_marker_3f5a658f468cfdb1950b2e8928db7f33.bindPopup(popup_b47273248c1495839a7dd4c5e3dd87e5)
+        ;
+
+        
+    
+    
+            var circle_marker_adadbca6f188e2a11f166b4b7e061e61 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_39931312f83859cd03847541879d85fc = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_0d1f9dc96f00af07bdad6463bba1bcc1 = $(`<div id="html_0d1f9dc96f00af07bdad6463bba1bcc1" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 1<br><b>Average Killed:</b> 0<br><b>Score:</b> 1</div>`)[0];
+                popup_39931312f83859cd03847541879d85fc.setContent(html_0d1f9dc96f00af07bdad6463bba1bcc1);
+            
+        
+
+        circle_marker_adadbca6f188e2a11f166b4b7e061e61.bindPopup(popup_39931312f83859cd03847541879d85fc)
+        ;
+
+        
+    
+    
+            var circle_marker_b55c2ec50f76d48278e1316164c5ef71 = L.circleMarker(
+                [35.724533, 51.40519],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_049f1b455eb4c308cabd94094b89d87c = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_60aee989f09bc2b899d6dbcff9509370 = $(`<div id="html_60aee989f09bc2b899d6dbcff9509370" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 1<br><b>Average Killed:</b> 0<br><b>Score:</b> 1</div>`)[0];
+                popup_049f1b455eb4c308cabd94094b89d87c.setContent(html_60aee989f09bc2b899d6dbcff9509370);
+            
+        
+
+        circle_marker_b55c2ec50f76d48278e1316164c5ef71.bindPopup(popup_049f1b455eb4c308cabd94094b89d87c)
+        ;
+
+        
+    
+    
+            var circle_marker_55c3cb72ea42c877e65196052570a3eb = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_3cf585896e060be2bc220f24557ed1ed = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_a7c9f71e82259b64593c5dc06f627c54 = $(`<div id="html_a7c9f71e82259b64593c5dc06f627c54" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 1<br><b>Average Killed:</b> 0<br><b>Score:</b> 1</div>`)[0];
+                popup_3cf585896e060be2bc220f24557ed1ed.setContent(html_a7c9f71e82259b64593c5dc06f627c54);
+            
+        
+
+        circle_marker_55c3cb72ea42c877e65196052570a3eb.bindPopup(popup_3cf585896e060be2bc220f24557ed1ed)
+        ;
+
+        
+    
+    
+            var circle_marker_d84287b386ecb7d2ea85240472b3ff44 = L.circleMarker(
+                [35.724533, 51.40519],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_f5f4cd6f1a01e437e27eec03694020e9 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_b4efc29f825562c3bd99d9a9efa5c929 = $(`<div id="html_b4efc29f825562c3bd99d9a9efa5c929" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_f5f4cd6f1a01e437e27eec03694020e9.setContent(html_b4efc29f825562c3bd99d9a9efa5c929);
+            
+        
+
+        circle_marker_d84287b386ecb7d2ea85240472b3ff44.bindPopup(popup_f5f4cd6f1a01e437e27eec03694020e9)
+        ;
+
+        
+    
+    
+            var circle_marker_09352367d136bd1146af9fa3f05afb57 = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_7f19cbc9878d949d0b7ee9b371ef9ded = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_5031b392dd7d185ca19d41e4f57a1e25 = $(`<div id="html_5031b392dd7d185ca19d41e4f57a1e25" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_7f19cbc9878d949d0b7ee9b371ef9ded.setContent(html_5031b392dd7d185ca19d41e4f57a1e25);
+            
+        
+
+        circle_marker_09352367d136bd1146af9fa3f05afb57.bindPopup(popup_7f19cbc9878d949d0b7ee9b371ef9ded)
+        ;
+
+        
+    
+    
+            var circle_marker_c9b1a653db67448de829dd51354d85ae = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_e88f4184738252b83b6dae4d7b0af62c = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_e6e3d6dfd13bce27f02adf51aa244a98 = $(`<div id="html_e6e3d6dfd13bce27f02adf51aa244a98" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_e88f4184738252b83b6dae4d7b0af62c.setContent(html_e6e3d6dfd13bce27f02adf51aa244a98);
+            
+        
+
+        circle_marker_c9b1a653db67448de829dd51354d85ae.bindPopup(popup_e88f4184738252b83b6dae4d7b0af62c)
+        ;
+
+        
+    
+    
+            var circle_marker_761585f2b6ded7b5364cc8bee71754a1 = L.circleMarker(
+                [35.724533, 51.40519],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_0dc7dd65380b5e19a2d9af0589b847c1 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_a1ff5d40854482523b6a36ae42bf660b = $(`<div id="html_a1ff5d40854482523b6a36ae42bf660b" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_0dc7dd65380b5e19a2d9af0589b847c1.setContent(html_a1ff5d40854482523b6a36ae42bf660b);
+            
+        
+
+        circle_marker_761585f2b6ded7b5364cc8bee71754a1.bindPopup(popup_0dc7dd65380b5e19a2d9af0589b847c1)
+        ;
+
+        
+    
+    
+            var circle_marker_c7862986531e5ae685659ba7fb174346 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_11739f1dd00ba234440e280ff471a3d3 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_eb2ab3b431e46483f7732014b4415f94 = $(`<div id="html_eb2ab3b431e46483f7732014b4415f94" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_11739f1dd00ba234440e280ff471a3d3.setContent(html_eb2ab3b431e46483f7732014b4415f94);
+            
+        
+
+        circle_marker_c7862986531e5ae685659ba7fb174346.bindPopup(popup_11739f1dd00ba234440e280ff471a3d3)
+        ;
+
+        
+    
+    
+            var circle_marker_fbf4896039a8df58a7c8056e0c954433 = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_a498c8d844645fe43c8bb56261780fbf = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_207176b658b8a405dafed7d5a466b203 = $(`<div id="html_207176b658b8a405dafed7d5a466b203" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_a498c8d844645fe43c8bb56261780fbf.setContent(html_207176b658b8a405dafed7d5a466b203);
+            
+        
+
+        circle_marker_fbf4896039a8df58a7c8056e0c954433.bindPopup(popup_a498c8d844645fe43c8bb56261780fbf)
+        ;
+
+        
+    
+    
+            var circle_marker_03d6e5158fe7bd7d65ed8afcbdc6a5d9 = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_62b6dbed7dbc452e3ced90af0028a318 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_3338ac8f0706167d878a1fea93b8b973 = $(`<div id="html_3338ac8f0706167d878a1fea93b8b973" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_62b6dbed7dbc452e3ced90af0028a318.setContent(html_3338ac8f0706167d878a1fea93b8b973);
+            
+        
+
+        circle_marker_03d6e5158fe7bd7d65ed8afcbdc6a5d9.bindPopup(popup_62b6dbed7dbc452e3ced90af0028a318)
+        ;
+
+        
+    
+    
+            var circle_marker_f6d7e8c4faefb7ed3a5613e20ea8144f = L.circleMarker(
+                [35.724533, 51.40519],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_c6b3ac50e8b863ca9293fbe4ce2ea504 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_3d2b59e127d74661bdf7eaba6a8300e2 = $(`<div id="html_3d2b59e127d74661bdf7eaba6a8300e2" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_c6b3ac50e8b863ca9293fbe4ce2ea504.setContent(html_3d2b59e127d74661bdf7eaba6a8300e2);
+            
+        
+
+        circle_marker_f6d7e8c4faefb7ed3a5613e20ea8144f.bindPopup(popup_c6b3ac50e8b863ca9293fbe4ce2ea504)
+        ;
+
+        
+    
+    
+            var circle_marker_a06d4b7c6612bb411e06fb43849201c6 = L.circleMarker(
+                [38.395649, 27.135641],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_be2346010318c7097ca648091b27cf84 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_4e015c2031f12b56e886fd7e7f19e7ae = $(`<div id="html_4e015c2031f12b56e886fd7e7f19e7ae" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_be2346010318c7097ca648091b27cf84.setContent(html_4e015c2031f12b56e886fd7e7f19e7ae);
+            
+        
+
+        circle_marker_a06d4b7c6612bb411e06fb43849201c6.bindPopup(popup_be2346010318c7097ca648091b27cf84)
+        ;
+
+        
+    
+    
+            var circle_marker_f0bfac06f3a475073a538f1d167731bf = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_d0cc2887c3578b8fb63088de47accdfe = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_0fa85bb342f09ecb7fc33a8448797a78 = $(`<div id="html_0fa85bb342f09ecb7fc33a8448797a78" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_d0cc2887c3578b8fb63088de47accdfe.setContent(html_0fa85bb342f09ecb7fc33a8448797a78);
+            
+        
+
+        circle_marker_f0bfac06f3a475073a538f1d167731bf.bindPopup(popup_d0cc2887c3578b8fb63088de47accdfe)
+        ;
+
+        
+    
+    
+            var circle_marker_02f7526ef4f709d7bb9c14ecfa1465ed = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_4fbd3d1465aebecd906451e38f674e1b = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_9bbbef8b598dfec065afd9b8f8f6ebca = $(`<div id="html_9bbbef8b598dfec065afd9b8f8f6ebca" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_4fbd3d1465aebecd906451e38f674e1b.setContent(html_9bbbef8b598dfec065afd9b8f8f6ebca);
+            
+        
+
+        circle_marker_02f7526ef4f709d7bb9c14ecfa1465ed.bindPopup(popup_4fbd3d1465aebecd906451e38f674e1b)
+        ;
+
+        
+    
+    
+            var circle_marker_44cdbbcaaffd587ae7e37bbff4470bd8 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_4d7f1d2edbc6446b2f22519f591cd081 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_25adec355d82c155e4e8035c52716846 = $(`<div id="html_25adec355d82c155e4e8035c52716846" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_4d7f1d2edbc6446b2f22519f591cd081.setContent(html_25adec355d82c155e4e8035c52716846);
+            
+        
+
+        circle_marker_44cdbbcaaffd587ae7e37bbff4470bd8.bindPopup(popup_4d7f1d2edbc6446b2f22519f591cd081)
+        ;
+
+        
+    
+    
+            var circle_marker_76f6a68b0306d4b34eeed208af9e69a5 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_860c74c883a54531164170067b531d99 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_522812f7bdc90f79a0f01c431bece31a = $(`<div id="html_522812f7bdc90f79a0f01c431bece31a" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_860c74c883a54531164170067b531d99.setContent(html_522812f7bdc90f79a0f01c431bece31a);
+            
+        
+
+        circle_marker_76f6a68b0306d4b34eeed208af9e69a5.bindPopup(popup_860c74c883a54531164170067b531d99)
+        ;
+
+        
+    
+    
+            var circle_marker_0b57743410c04deb4ce9d586e095b6f2 = L.circleMarker(
+                [35.724533, 51.40519],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_947c83903e076d55c396bc4bf5c584b1 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_ae978bbdbd23790d6d265b3ccc2bbc93 = $(`<div id="html_ae978bbdbd23790d6d265b3ccc2bbc93" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_947c83903e076d55c396bc4bf5c584b1.setContent(html_ae978bbdbd23790d6d265b3ccc2bbc93);
+            
+        
+
+        circle_marker_0b57743410c04deb4ce9d586e095b6f2.bindPopup(popup_947c83903e076d55c396bc4bf5c584b1)
+        ;
+
+        
+    
+    
+            var circle_marker_bd4d559b947ab068db6b434d12c4471c = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_c0f8142b03440735e32330d1630c201f = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_a2aad98241e424972aab78d6c240e555 = $(`<div id="html_a2aad98241e424972aab78d6c240e555" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_c0f8142b03440735e32330d1630c201f.setContent(html_a2aad98241e424972aab78d6c240e555);
+            
+        
+
+        circle_marker_bd4d559b947ab068db6b434d12c4471c.bindPopup(popup_c0f8142b03440735e32330d1630c201f)
+        ;
+
+        
+    
+    
+            var circle_marker_e55dfef1c272a502dee03fcc9cc4be74 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_486fec81a5d04e98bb41d73b7210b705 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_00990b937e72278cdff80ea510153033 = $(`<div id="html_00990b937e72278cdff80ea510153033" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_486fec81a5d04e98bb41d73b7210b705.setContent(html_00990b937e72278cdff80ea510153033);
+            
+        
+
+        circle_marker_e55dfef1c272a502dee03fcc9cc4be74.bindPopup(popup_486fec81a5d04e98bb41d73b7210b705)
+        ;
+
+        
+    
+    
+            var circle_marker_7441fd7c62e487dbec250ddb464cb1b2 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_867c2f2724386778521a93ab09604b8c = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_c2ffef0b595a5a1ee30e80c1b3ebecf1 = $(`<div id="html_c2ffef0b595a5a1ee30e80c1b3ebecf1" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_867c2f2724386778521a93ab09604b8c.setContent(html_c2ffef0b595a5a1ee30e80c1b3ebecf1);
+            
+        
+
+        circle_marker_7441fd7c62e487dbec250ddb464cb1b2.bindPopup(popup_867c2f2724386778521a93ab09604b8c)
+        ;
+
+        
+    
+    
+            var circle_marker_d16b153ecff80c7424f3c6cad5c744ec = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_527f1296eed7494990e18bc67f252e95 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_2dd18e36850dc0ac8e3e13c0d11e4176 = $(`<div id="html_2dd18e36850dc0ac8e3e13c0d11e4176" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_527f1296eed7494990e18bc67f252e95.setContent(html_2dd18e36850dc0ac8e3e13c0d11e4176);
+            
+        
+
+        circle_marker_d16b153ecff80c7424f3c6cad5c744ec.bindPopup(popup_527f1296eed7494990e18bc67f252e95)
+        ;
+
+        
+    
+    
+            var circle_marker_f7f9f128327349326229bf275fbd7711 = L.circleMarker(
+                [38.355879, 38.296474],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_1c66a85634bb78deb2bc77188c5c2ef6 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_b850fc78a9172e431255b14437747c33 = $(`<div id="html_b850fc78a9172e431255b14437747c33" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_1c66a85634bb78deb2bc77188c5c2ef6.setContent(html_b850fc78a9172e431255b14437747c33);
+            
+        
+
+        circle_marker_f7f9f128327349326229bf275fbd7711.bindPopup(popup_1c66a85634bb78deb2bc77188c5c2ef6)
+        ;
+
+        
+    
+    
+            var circle_marker_845459e91b34fdc361153934b5d1b05b = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_89f9b56f09e05d6d8fec9842feaa5358 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_268e5a55e051f1411f74debd248b06ef = $(`<div id="html_268e5a55e051f1411f74debd248b06ef" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_89f9b56f09e05d6d8fec9842feaa5358.setContent(html_268e5a55e051f1411f74debd248b06ef);
+            
+        
+
+        circle_marker_845459e91b34fdc361153934b5d1b05b.bindPopup(popup_89f9b56f09e05d6d8fec9842feaa5358)
+        ;
+
+        
+    
+    
+            var circle_marker_1c7aaf9ee2b0d5f53395ea1ad2fcba35 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_9e5172ee9c08f3fc947602283654c7eb = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_e33c20188d34ac579dde78343b1886c3 = $(`<div id="html_e33c20188d34ac579dde78343b1886c3" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_9e5172ee9c08f3fc947602283654c7eb.setContent(html_e33c20188d34ac579dde78343b1886c3);
+            
+        
+
+        circle_marker_1c7aaf9ee2b0d5f53395ea1ad2fcba35.bindPopup(popup_9e5172ee9c08f3fc947602283654c7eb)
+        ;
+
+        
+    
+    
+            var circle_marker_4d5ce608d68c41fd9fdb4e7192f521b9 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_ef27f34368a0cecfa434f4ef93b4b5ee = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_065b95a75ff5754ec6676a3ce0be7238 = $(`<div id="html_065b95a75ff5754ec6676a3ce0be7238" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_ef27f34368a0cecfa434f4ef93b4b5ee.setContent(html_065b95a75ff5754ec6676a3ce0be7238);
+            
+        
+
+        circle_marker_4d5ce608d68c41fd9fdb4e7192f521b9.bindPopup(popup_ef27f34368a0cecfa434f4ef93b4b5ee)
+        ;
+
+        
+    
+    
+            var circle_marker_ca5492c2259118c1b3a724ce5db1c729 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_80c145515aa3a62e427832ddf90ed7fe = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_b125fbfe283173bb3a47797ed9173ad5 = $(`<div id="html_b125fbfe283173bb3a47797ed9173ad5" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_80c145515aa3a62e427832ddf90ed7fe.setContent(html_b125fbfe283173bb3a47797ed9173ad5);
+            
+        
+
+        circle_marker_ca5492c2259118c1b3a724ce5db1c729.bindPopup(popup_80c145515aa3a62e427832ddf90ed7fe)
+        ;
+
+        
+    
+    
+            var circle_marker_f622b6cf8da0284c32d04d9e059e597a = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_329c92853bbc231f174e93108fecb68b = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_3a72c81c23000e40b4b23cc3fea240e6 = $(`<div id="html_3a72c81c23000e40b4b23cc3fea240e6" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_329c92853bbc231f174e93108fecb68b.setContent(html_3a72c81c23000e40b4b23cc3fea240e6);
+            
+        
+
+        circle_marker_f622b6cf8da0284c32d04d9e059e597a.bindPopup(popup_329c92853bbc231f174e93108fecb68b)
+        ;
+
+        
+    
+    
+            var circle_marker_a8593ef115d780e2c68b9bc5c8290ef8 = L.circleMarker(
+                [39.930771, 32.76754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_e5df12358f0ab6e12c5fe428924faaf6 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_ba644eb8389c76f3c71488f5ed3a6186 = $(`<div id="html_ba644eb8389c76f3c71488f5ed3a6186" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_e5df12358f0ab6e12c5fe428924faaf6.setContent(html_ba644eb8389c76f3c71488f5ed3a6186);
+            
+        
+
+        circle_marker_a8593ef115d780e2c68b9bc5c8290ef8.bindPopup(popup_e5df12358f0ab6e12c5fe428924faaf6)
+        ;
+
+        
+    
+    
+            var circle_marker_23811d35b5e03a454bf5bc13c1ff3027 = L.circleMarker(
+                [38.395649, 27.135641],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_1f5f1b5941bf02eab61cd53495d66c0c = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_d7941927e28aea915240106636b0120d = $(`<div id="html_d7941927e28aea915240106636b0120d" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_1f5f1b5941bf02eab61cd53495d66c0c.setContent(html_d7941927e28aea915240106636b0120d);
+            
+        
+
+        circle_marker_23811d35b5e03a454bf5bc13c1ff3027.bindPopup(popup_1f5f1b5941bf02eab61cd53495d66c0c)
+        ;
+
+        
+    
+    
+            var circle_marker_f1911c671172553ab84131c1ada61156 = L.circleMarker(
+                [31.530243, 35.094162],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_d41533f7a6a68f8112d5a35383b424b2 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_3dabd096e23d92a21cf99473612b21fc = $(`<div id="html_3dabd096e23d92a21cf99473612b21fc" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_d41533f7a6a68f8112d5a35383b424b2.setContent(html_3dabd096e23d92a21cf99473612b21fc);
+            
+        
+
+        circle_marker_f1911c671172553ab84131c1ada61156.bindPopup(popup_d41533f7a6a68f8112d5a35383b424b2)
+        ;
+
+        
+    
+    
+            var circle_marker_932da5d621d46d9ef01adfd725f8048f = L.circleMarker(
+                [38.395649, 27.135641],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_bc4e55f12efc064a9feb981e546ff19e = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_291133ffbdcd4fc83ad0f8544f5076da = $(`<div id="html_291133ffbdcd4fc83ad0f8544f5076da" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_bc4e55f12efc064a9feb981e546ff19e.setContent(html_291133ffbdcd4fc83ad0f8544f5076da);
+            
+        
+
+        circle_marker_932da5d621d46d9ef01adfd725f8048f.bindPopup(popup_bc4e55f12efc064a9feb981e546ff19e)
+        ;
+
+        
+    
+    
+            var circle_marker_f49de3cae1d0865f9d531c57b43bb243 = L.circleMarker(
+                [33.888523, 35.503513],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_3523274daac80a472231cd88555bc87f = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_66f362202e0193b4c78fa2e00b97d11f = $(`<div id="html_66f362202e0193b4c78fa2e00b97d11f" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_3523274daac80a472231cd88555bc87f.setContent(html_66f362202e0193b4c78fa2e00b97d11f);
+            
+        
+
+        circle_marker_f49de3cae1d0865f9d531c57b43bb243.bindPopup(popup_3523274daac80a472231cd88555bc87f)
+        ;
+
+        
+    
+    
+            var circle_marker_05c40ff19505341e2bb73a53d58b8406 = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_23722bf8dd721953f68c7024dd369a08 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_52c178cbd2e9c0298561a077b52105f7 = $(`<div id="html_52c178cbd2e9c0298561a077b52105f7" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_23722bf8dd721953f68c7024dd369a08.setContent(html_52c178cbd2e9c0298561a077b52105f7);
+            
+        
+
+        circle_marker_05c40ff19505341e2bb73a53d58b8406.bindPopup(popup_23722bf8dd721953f68c7024dd369a08)
+        ;
+
+        
+    
+    
+            var circle_marker_1f881b0b740acb965ec1dd3e00f54019 = L.circleMarker(
+                [41.106178, 28.689863],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_afc9aa22ace07a5b1fd4492a2d0eb027 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_784754c33ae0ac527e625d3e1186cb5e = $(`<div id="html_784754c33ae0ac527e625d3e1186cb5e" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_afc9aa22ace07a5b1fd4492a2d0eb027.setContent(html_784754c33ae0ac527e625d3e1186cb5e);
+            
+        
+
+        circle_marker_1f881b0b740acb965ec1dd3e00f54019.bindPopup(popup_afc9aa22ace07a5b1fd4492a2d0eb027)
+        ;
+
+        
+    
+    
+            var circle_marker_ca0af9374f48a357149fc8805a9f576c = L.circleMarker(
+                [31.950001, 35.933331],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_0f5c20dd88bc3afda954faa73428317a);
+        
+    
+        var popup_3c081378d970914e152378ac48d4866e = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_ad13014bfb1b764ee000278f32dc68b9 = $(`<div id="html_ad13014bfb1b764ee000278f32dc68b9" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Middle East & North Africa<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_3c081378d970914e152378ac48d4866e.setContent(html_ad13014bfb1b764ee000278f32dc68b9);
+            
+        
+
+        circle_marker_ca0af9374f48a357149fc8805a9f576c.bindPopup(popup_3c081378d970914e152378ac48d4866e)
+        ;
+
+        
+    
+</script>
+</html>

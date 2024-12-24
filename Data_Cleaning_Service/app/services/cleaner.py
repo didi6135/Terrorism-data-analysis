@@ -6,10 +6,7 @@ from Data_Cleaning_Service.app.db.config import RAW_DATA_PATH, CLEANED_DATA_PATH
 
 
 def merge_to_one_csv(global_file, rand_file, output_file):
-    """
-    Merges two terrorism CSV files into one unified CSV file with additional fields and replaces all eventid with UUIDs.
-    Ensures that missing data is filled with appropriate default values.
-    """
+
     print(f"Processing and Merging Files: {global_file}, {rand_file}")
 
     # File paths
@@ -137,7 +134,6 @@ def merge_to_one_csv(global_file, rand_file, output_file):
         return None
 
 if __name__ == "__main__":
-    # Example usage
     # merge_to_one_csv(
     #     "globalterrorismdb_0718dist-1000 rows.csv",
     #     "RAND_Database_of_Worldwide_Terrorism_Incidents - 5000 rows.csv",

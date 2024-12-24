@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_2115644e062cbd4958dce7aa1c83f51c {
+                #map_6042e1fe145c3c580c14d45772478682 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -42,14 +42,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_2115644e062cbd4958dce7aa1c83f51c" ></div>
+            <div class="folium-map" id="map_6042e1fe145c3c580c14d45772478682" ></div>
         
 </body>
 <script>
     
     
-            var map_2115644e062cbd4958dce7aa1c83f51c = L.map(
-                "map_2115644e062cbd4958dce7aa1c83f51c",
+            var map_6042e1fe145c3c580c14d45772478682 = L.map(
+                "map_6042e1fe145c3c580c14d45772478682",
                 {
                     center: [20.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -66,7 +66,7 @@
 
         
     
-            var tile_layer_e2dec0f819b8182d3e8d4728c3ccc116 = L.tileLayer(
+            var tile_layer_6e77f6fcdbbf2109b0e9a3b0b8faf7dd = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -83,74 +83,40 @@
             );
         
     
-            tile_layer_e2dec0f819b8182d3e8d4728c3ccc116.addTo(map_2115644e062cbd4958dce7aa1c83f51c);
+            tile_layer_6e77f6fcdbbf2109b0e9a3b0b8faf7dd.addTo(map_6042e1fe145c3c580c14d45772478682);
         
     
-            var marker_cluster_c70b5d6b2af8ac27a6593e11daa78a18 = L.markerClusterGroup(
+            var marker_cluster_63561ff9d95b8e93e1d7947c56b845ab = L.markerClusterGroup(
                 {
 }
             );
         
     
-            var marker_e55b3b6328f5e062d8dcafadd48f6554 = L.marker(
-                [40.617222, 43.975833],
+            var marker_9999b339e87812c85675342e54b730f7 = L.marker(
+                [33.580412, 130.396361],
                 {
 }
-            ).addTo(marker_cluster_c70b5d6b2af8ac27a6593e11daa78a18);
+            ).addTo(marker_cluster_63561ff9d95b8e93e1d7947c56b845ab);
         
     
-        var popup_014a8bc4af750fe6efcd27027f11dcec = L.popup({
+        var popup_77f5f2839944315ec8a15cbd35b607bf = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_7e33ca8aedf87d76355f32eb560ee2da = $(`<div id="html_7e33ca8aedf87d76355f32eb560ee2da" style="width: 100.0%; height: 100.0%;"><strong>Armenia</strong><br><strong>Attack Type:</strong> Armed Assault<br><strong>Unique Groups:</strong> 1<br><strong>Groups:</strong> Armenian militants</div>`)[0];
-                popup_014a8bc4af750fe6efcd27027f11dcec.setContent(html_7e33ca8aedf87d76355f32eb560ee2da);
+                var html_9d6d2c7598e7bfe4f345961b702f41c5 = $(`<div id="html_9d6d2c7598e7bfe4f345961b702f41c5" style="width: 100.0%; height: 100.0%;"><strong>East Asia</strong><br><strong>Attack Type:</strong> Hijacking<br><strong>Unique Groups:</strong> 1<br><strong>Groups:</strong> Japanese Red Army (JRA)</div>`)[0];
+                popup_77f5f2839944315ec8a15cbd35b607bf.setContent(html_9d6d2c7598e7bfe4f345961b702f41c5);
             
         
 
-        marker_e55b3b6328f5e062d8dcafadd48f6554.bindPopup(popup_014a8bc4af750fe6efcd27027f11dcec)
+        marker_9999b339e87812c85675342e54b730f7.bindPopup(popup_77f5f2839944315ec8a15cbd35b607bf)
         ;
 
         
     
     
-            marker_e55b3b6328f5e062d8dcafadd48f6554.bindTooltip(
-                `<div>
-                     Armed Assault (1 groups)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_103c3b37374c6255d55b24048e9a51ba = L.marker(
-                [38.902222, 46.238333],
-                {
-}
-            ).addTo(marker_cluster_c70b5d6b2af8ac27a6593e11daa78a18);
-        
-    
-        var popup_f6c78e8631b4ab0bb31df94796c8a062 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_d7f0fa8e03c8df09b10c1e07993942e8 = $(`<div id="html_d7f0fa8e03c8df09b10c1e07993942e8" style="width: 100.0%; height: 100.0%;"><strong>Armenia</strong><br><strong>Attack Type:</strong> Hijacking<br><strong>Unique Groups:</strong> 1<br><strong>Groups:</strong> Armenian Guerrillas</div>`)[0];
-                popup_f6c78e8631b4ab0bb31df94796c8a062.setContent(html_d7f0fa8e03c8df09b10c1e07993942e8);
-            
-        
-
-        marker_103c3b37374c6255d55b24048e9a51ba.bindPopup(popup_f6c78e8631b4ab0bb31df94796c8a062)
-        ;
-
-        
-    
-    
-            marker_103c3b37374c6255d55b24048e9a51ba.bindTooltip(
+            marker_9999b339e87812c85675342e54b730f7.bindTooltip(
                 `<div>
                      Hijacking (1 groups)
                  </div>`,
@@ -160,7 +126,7 @@
             );
         
     
-            marker_cluster_c70b5d6b2af8ac27a6593e11daa78a18.addTo(map_2115644e062cbd4958dce7aa1c83f51c);
+            marker_cluster_63561ff9d95b8e93e1d7947c56b845ab.addTo(map_6042e1fe145c3c580c14d45772478682);
         
 </script>
 </html>

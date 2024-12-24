@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import os
 
-from Statistics_Service.app.repository.event_repository import get_yearly_trends, get_monthly_trends
 from Statistics_Service.app.repository.group_repository import get_groups_by_target_type
+from Statistics_Service.app.utils.data_cleaning import get_yearly_trends, get_monthly_trends
 
 
 def plot_yearly_trends(output_file="static/plot/yearly_trends.png"):

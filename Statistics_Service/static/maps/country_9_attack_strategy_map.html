@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c727ec18fb911e24718949729e3ed0fb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c727ec18fb911e24718949729e3ed0fb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c727ec18fb911e24718949729e3ed0fb = L.map(
+                "map_c727ec18fb911e24718949729e3ed0fb",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_70c2a7cce0b7a33b6d0e58abe9c057ea = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_70c2a7cce0b7a33b6d0e58abe9c057ea.addTo(map_c727ec18fb911e24718949729e3ed0fb);
+        
+    
+            var marker_cluster_bf9c4753131dfaf5e6284948a9463a11 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_058227ee0a2e283b32551919577ac190 = L.marker(
+                [52.50153, 13.401851],
+                {
+}
+            ).addTo(marker_cluster_bf9c4753131dfaf5e6284948a9463a11);
+        
+    
+        var popup_6a37b5a3d364cdaa7bc6c43f71329e59 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e70839b29a24dabd8e5a11802ee31e8 = $(`<div id="html_0e70839b29a24dabd8e5a11802ee31e8" style="width: 100.0%; height: 100.0%;"><strong>East Germany (GDR)</strong><br><strong>Attack Type:</strong> Bombing/Explosion<br><strong>Unique Groups:</strong> 3<br><strong>Groups:</strong> Commune 1, Extraparliamentary Opposition (APO), SFT</div>`)[0];
+                popup_6a37b5a3d364cdaa7bc6c43f71329e59.setContent(html_0e70839b29a24dabd8e5a11802ee31e8);
+            
+        
+
+        marker_058227ee0a2e283b32551919577ac190.bindPopup(popup_6a37b5a3d364cdaa7bc6c43f71329e59)
+        ;
+
+        
+    
+    
+            marker_058227ee0a2e283b32551919577ac190.bindTooltip(
+                `<div>
+                     Bombing/Explosion (3 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_522115235382fe31554b0d030c99f28f = L.marker(
+                [52.50153, 13.401851],
+                {
+}
+            ).addTo(marker_cluster_bf9c4753131dfaf5e6284948a9463a11);
+        
+    
+        var popup_5863b4c25893ab585245d4d54a81d7a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_609519246a054edf44c41c6c9a8035c0 = $(`<div id="html_609519246a054edf44c41c6c9a8035c0" style="width: 100.0%; height: 100.0%;"><strong>East Germany (GDR)</strong><br><strong>Attack Type:</strong> Facility/Infrastructure Attack<br><strong>Unique Groups:</strong> 1<br><strong>Groups:</strong> Extraparliamentary Opposition (APO)</div>`)[0];
+                popup_5863b4c25893ab585245d4d54a81d7a8.setContent(html_609519246a054edf44c41c6c9a8035c0);
+            
+        
+
+        marker_522115235382fe31554b0d030c99f28f.bindPopup(popup_5863b4c25893ab585245d4d54a81d7a8)
+        ;
+
+        
+    
+    
+            marker_522115235382fe31554b0d030c99f28f.bindTooltip(
+                `<div>
+                     Facility/Infrastructure Attack (1 groups)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_bf9c4753131dfaf5e6284948a9463a11.addTo(map_c727ec18fb911e24718949729e3ed0fb);
+        
+</script>
+</html>

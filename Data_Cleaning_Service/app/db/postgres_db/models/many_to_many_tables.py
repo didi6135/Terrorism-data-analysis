@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Table, Boolean, Text, Date
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, ForeignKey, Table
 
 from Data_Cleaning_Service.app.db.postgres_db.models import Base
 
@@ -9,12 +8,7 @@ event_targets_type = Table(
     Column('target_type_id', Integer, ForeignKey('target_types.id'), primary_key=True)
 )
 
-event_events_type = Table(
-    "event_event_type",
-    Base.metadata,
-    Column("event_id", Integer, ForeignKey("events.id"), primary_key=True),
-    Column("event_type_id", Integer, ForeignKey("event_types.id"), primary_key=True),
-)
+
 
 event_weapons_type = Table(
     "event_weapon_type",
@@ -24,7 +18,7 @@ event_weapons_type = Table(
 )
 
 event_groups = Table(
-    "event_group",
+    "event_group_type",
     Base.metadata,
     Column("event_id", Integer, ForeignKey("events.id"), primary_key=True),
     Column("group_id", Integer, ForeignKey("groups.id"), primary_key=True),

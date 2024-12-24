@@ -52,7 +52,8 @@ def generate_map_for_victims_analysis(type_of, id_value, limit, output_file="vic
                 f"<b>Average Injured:</b> {event['average_injured']}<br>"
                 f"<b>Average Killed:</b> {event['average_killed']}<br>"
                 f"<b>Score:</b> {event['score']}",
-                max_width=300
+                max_width=300,
+                max_height=300,
             ),
         ).add_to(base_map)
 
@@ -96,7 +97,7 @@ def generate_top_groups_map(region_id=None, output_file="top_groups_map.html"):
             # Add the marker to the map
             folium.Marker(
                 location=[coord["latitude"], coord["longitude"]],
-                popup=folium.Popup(popup_content, max_width=300),
+                popup=folium.Popup(popup_content, max_width=300, max_height=300),
                 tooltip=f"{region} (Click for details)"
             ).add_to(world_map)
 

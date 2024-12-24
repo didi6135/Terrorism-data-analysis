@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_575075fc6025dfc4c33843696e741715 {
+                #map_65333d2772eb3bd1f22a329722fd30b5 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,23 +35,26 @@
                 .leaflet-container { font-size: 1rem; }
             </style>
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_575075fc6025dfc4c33843696e741715" ></div>
+            <div class="folium-map" id="map_65333d2772eb3bd1f22a329722fd30b5" ></div>
         
 </body>
 <script>
     
     
-            var map_575075fc6025dfc4c33843696e741715 = L.map(
-                "map_575075fc6025dfc4c33843696e741715",
+            var map_65333d2772eb3bd1f22a329722fd30b5 = L.map(
+                "map_65333d2772eb3bd1f22a329722fd30b5",
                 {
                     center: [20.0, 0.0],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 2,
+  "zoom": 5,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -63,7 +66,7 @@
 
         
     
-            var tile_layer_26aa958638e8081aa6c4e0ed47c32d54 = L.tileLayer(
+            var tile_layer_3fe6a75481be9a1cd81dff04ee9b156f = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -80,41 +83,50 @@
             );
         
     
-            tile_layer_26aa958638e8081aa6c4e0ed47c32d54.addTo(map_575075fc6025dfc4c33843696e741715);
+            tile_layer_3fe6a75481be9a1cd81dff04ee9b156f.addTo(map_65333d2772eb3bd1f22a329722fd30b5);
         
     
-            var marker_4b12c032a950c18f8fb0cd5a590d8b9e = L.marker(
-                [54.526, -105.2551],
+            var marker_cluster_1918c0ed4691adc7230ace8c0e7df89e = L.markerClusterGroup(
                 {
 }
-            ).addTo(map_575075fc6025dfc4c33843696e741715);
+            );
         
     
-        var popup_b85bed6433b50069b16f9cde1e402d06 = L.popup({
+            var marker_8a4381bbcb58776b0436f7a3168cff9d = L.marker(
+                [37.09037089285716, 35.10200500000001],
+                {
+}
+            ).addTo(marker_cluster_1918c0ed4691adc7230ace8c0e7df89e);
+        
+    
+        var popup_875f05d0f3b8f659462e88b4546c13f0 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_f84b7d05e2d8bf555cfacd2088157892 = $(`<div id="html_f84b7d05e2d8bf555cfacd2088157892" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in North America</strong><br><ol><li>Anti-Abortion extremists (196 events)</li><li>Left-Wing Militants (169 events)</li><li>Anti-Castro Cubans (151 events)</li><li>Earth Liberation Front (ELF) (143 events)</li><li>Jewish Defense League (JDL) (136 events)</li></ol></div>`)[0];
-                popup_b85bed6433b50069b16f9cde1e402d06.setContent(html_f84b7d05e2d8bf555cfacd2088157892);
+                var html_adf3a161978fab632091dbd151fa3ea3 = $(`<div id="html_adf3a161978fab632091dbd151fa3ea3" style="width: 100.0%; height: 100.0%;"><strong>Middle East & North Africa</strong><br><strong>Unique Group Count:</strong> 7<br><strong>Groups:</strong><ul><li>Iranians</li><li>Palestine Liberation Organization (PLO)</li><li>Palestinians</li><li>Popular Front for the Liberation of Palestine (PFLP)</li><li>Siah KAL</li><li>Turkish People's Liberation Army</li><li>Turkish People's Liberation Front (TPLF)(THKP-C)</li></ul></div>`)[0];
+                popup_875f05d0f3b8f659462e88b4546c13f0.setContent(html_adf3a161978fab632091dbd151fa3ea3);
             
         
 
-        marker_4b12c032a950c18f8fb0cd5a590d8b9e.bindPopup(popup_b85bed6433b50069b16f9cde1e402d06)
+        marker_8a4381bbcb58776b0436f7a3168cff9d.bindPopup(popup_875f05d0f3b8f659462e88b4546c13f0)
         ;
 
         
     
     
-            marker_4b12c032a950c18f8fb0cd5a590d8b9e.bindTooltip(
+            marker_8a4381bbcb58776b0436f7a3168cff9d.bindTooltip(
                 `<div>
-                     North America (Click for details)
+                     Middle East & North Africa (7 groups)
                  </div>`,
                 {
   "sticky": true,
 }
             );
+        
+    
+            marker_cluster_1918c0ed4691adc7230ace8c0e7df89e.addTo(map_65333d2772eb3bd1f22a329722fd30b5);
         
 </script>
 </html>

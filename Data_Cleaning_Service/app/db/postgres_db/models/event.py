@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 
 from Data_Cleaning_Service.app.db.postgres_db.models import Base
 from Data_Cleaning_Service.app.db.postgres_db.models.many_to_many_tables import (
-    event_targets_type, event_events_type, event_weapons_type, event_groups, event_attacks_type
+    event_targets_type, event_groups, event_attacks_type
 )
 
 
@@ -28,7 +28,6 @@ class Event(Base):
 
     # Many-to-many relationships (use string references to avoid circular imports)
     target_types = relationship("TargetType", secondary=event_targets_type, back_populates="events")
-    event_types = relationship("EventType", secondary=event_events_type, back_populates="events")
     weapon_types = relationship("WeaponType", secondary="event_weapon_type", back_populates="events")
     groups = relationship("Group", secondary=event_groups, back_populates="events")
     attack_types = relationship("AttackType", secondary=event_attacks_type, back_populates="events")

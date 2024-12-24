@@ -1,5 +1,6 @@
 from Data_Cleaning_Service.app.db.postgres_db.models import (
-    Casualty, WeaponType, TargetType, Event, Country, City
+    Casualty, WeaponType, TargetType, Event, Country, City, event_attacks_type, event_targets_type, event_groups,
+    event_weapons_type
 )
 from Data_Cleaning_Service.app.repository.postgres_repo.attack_type_repo import insert_or_get_attack_type
 from Data_Cleaning_Service.app.repository.postgres_repo.casualty_repo import insert_new_casualty
@@ -9,8 +10,7 @@ from Data_Cleaning_Service.app.repository.postgres_repo.country_repo import inse
 from Data_Cleaning_Service.app.repository.postgres_repo.event_repo import insert_new_event
 from Data_Cleaning_Service.app.repository.postgres_repo.group_repo import insert_or_get_group
 from Data_Cleaning_Service.app.repository.postgres_repo.location_repo import insert_or_get_location
-from Data_Cleaning_Service.app.repository.postgres_repo.many_to_many_repo import link_weapon_type_to_event, link_group_to_event, \
-    link_target_type_to_event, link_attack_type_to_event
+from Data_Cleaning_Service.app.repository.postgres_repo.many_to_many_repo import link_entity_to_event
 from Data_Cleaning_Service.app.repository.postgres_repo.region_repo import insert_or_get_region
 from Data_Cleaning_Service.app.repository.postgres_repo.target_type_repo import insert_or_get_target_type
 from Data_Cleaning_Service.app.repository.postgres_repo.weapon_type_repo import insert_or_get_weapon_type
@@ -55,11 +55,9 @@ def process_attack_types(row, event_id):
     for attack_type_name in attack_types:
         if attack_type_name and attack_type_name != "Unknown":
             attack_type = insert_or_get_attack_type(attack_type_name)
-            link_attack_type_to_event(event_id, attack_type.id)
-            log(f"Linked attack type '{attack_type_name}' (ID: {attack_type.id}) to event ID: {event_id}")
+            link_entity_to_event(event_id, attack_type.id, event_attacks_type, "event_id", "attack_type_id")
         else:
             log(f"Invalid or missing attack type '{attack_type_name}'. Skipping...", level="warning")
-
 
 
 def process_target_types(row, event_id):
@@ -69,8 +67,7 @@ def process_target_types(row, event_id):
         target_subtype_name = row.get(f'targsubtype{i}_txt', "Unknown")
         if target_type_name != "Unknown":
             target_type = insert_or_get_target_type(TargetType(name=target_type_name, details=target_subtype_name))
-            link_target_type_to_event(event_id, target_type.id)
-
+            link_entity_to_event(event_id, target_type.id, event_targets_type, "event_id", "target_type_id")
 
 
 def process_groups(row, event_id):
@@ -80,8 +77,7 @@ def process_groups(row, event_id):
         subgroup_name = row.get(f'gsubname{i}', None)
         if group_name != "Unknown":
             group = insert_or_get_group(group_name, subgroup_name)
-            link_group_to_event(event_id, group.id)
-
+            link_entity_to_event(event_id, group.id, event_groups, "event_id", "group_id")
 
 
 def process_weapon_types(row, event_id):
@@ -90,7 +86,7 @@ def process_weapon_types(row, event_id):
         weapon_type_name = row.get(f'weaptype{i}_txt', "Unknown")
         if weapon_type_name != "Unknown":
             weapon_type = insert_or_get_weapon_type(WeaponType(name=weapon_type_name))
-            link_weapon_type_to_event(event_id, weapon_type.id)
+            link_entity_to_event(event_id, weapon_type.id, event_weapons_type, "event_id", "weapon_type_id")
 
 
 
@@ -150,6 +146,7 @@ def main_split(row):
         process_target_types(row, event_id)
         process_groups(row, event_id)
         process_weapon_types(row, event_id)
+        print(f'create new event {event_id}')
 
         return event_id
     except Exception as e:

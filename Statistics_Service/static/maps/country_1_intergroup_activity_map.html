@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e3c1feb2c96440201f71e00fdac517a5 {
+                #map_62dc21aa1ff4517aee874bb5428ca767 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,23 +35,26 @@
                 .leaflet-container { font-size: 1rem; }
             </style>
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_e3c1feb2c96440201f71e00fdac517a5" ></div>
+            <div class="folium-map" id="map_62dc21aa1ff4517aee874bb5428ca767" ></div>
         
 </body>
 <script>
     
     
-            var map_e3c1feb2c96440201f71e00fdac517a5 = L.map(
-                "map_e3c1feb2c96440201f71e00fdac517a5",
+            var map_62dc21aa1ff4517aee874bb5428ca767 = L.map(
+                "map_62dc21aa1ff4517aee874bb5428ca767",
                 {
-                    center: [20.0, 0.0],
+                    center: [9.145, 40.489673],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 2,
+  "zoom": 5,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -63,7 +66,7 @@
 
         
     
-            var tile_layer_ca684fa173ec459d01466c1db5d6268b = L.tileLayer(
+            var tile_layer_3e3bfc2650cda815e45e609106e16741 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -80,41 +83,50 @@
             );
         
     
-            tile_layer_ca684fa173ec459d01466c1db5d6268b.addTo(map_e3c1feb2c96440201f71e00fdac517a5);
+            tile_layer_3e3bfc2650cda815e45e609106e16741.addTo(map_62dc21aa1ff4517aee874bb5428ca767);
         
     
-            var marker_b43098f2d215aac04aba4ea1214aac46 = L.marker(
-                [15.0, -90.0],
+            var marker_cluster_02c59ed672c39189ba839ea44b19b94b = L.markerClusterGroup(
                 {
 }
-            ).addTo(map_e3c1feb2c96440201f71e00fdac517a5);
+            );
         
     
-        var popup_695754e7fe13809c13e9a20ec055c59a = L.popup({
+            var marker_dc1c35170b4ac6966873f0f931ed41a3 = L.marker(
+                [18.456792, -69.951164],
+                {
+}
+            ).addTo(marker_cluster_02c59ed672c39189ba839ea44b19b94b);
+        
+    
+        var popup_57a3af499cdab36a155ba793b0c6ac58 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_49048b4b270ddd6111fbef4649d085a6 = $(`<div id="html_49048b4b270ddd6111fbef4649d085a6" style="width: 100.0%; height: 100.0%;"><strong>Top Groups in Central America & Caribbean</strong><br><ol><li>Farabundo Marti National Liberation Front (FMLN) (3375 events)</li><li>Nicaraguan Democratic Force (FDN) (894 events)</li><li>Nicaraguan Resistance (231 events)</li><li>Sandinista National Liberation Front (FSLN) (209 events)</li><li>People's Liberation Forces (FPL) (183 events)</li></ol></div>`)[0];
-                popup_695754e7fe13809c13e9a20ec055c59a.setContent(html_49048b4b270ddd6111fbef4649d085a6);
+                var html_f54b05c5183f6df1dba1761e80e8eb09 = $(`<div id="html_f54b05c5183f6df1dba1761e80e8eb09" style="width: 100.0%; height: 100.0%;"><strong>Dominican Republic</strong><br><strong>Unique Group Count:</strong> 3<br><strong>Groups:</strong><ul><li>Dominican Popular Movement (MPD)</li><li>MANO-D</li><li>Tony El Pelou Band</li></ul></div>`)[0];
+                popup_57a3af499cdab36a155ba793b0c6ac58.setContent(html_f54b05c5183f6df1dba1761e80e8eb09);
             
         
 
-        marker_b43098f2d215aac04aba4ea1214aac46.bindPopup(popup_695754e7fe13809c13e9a20ec055c59a)
+        marker_dc1c35170b4ac6966873f0f931ed41a3.bindPopup(popup_57a3af499cdab36a155ba793b0c6ac58)
         ;
 
         
     
     
-            marker_b43098f2d215aac04aba4ea1214aac46.bindTooltip(
+            marker_dc1c35170b4ac6966873f0f931ed41a3.bindTooltip(
                 `<div>
-                     Central America & Caribbean (Click for details)
+                     Dominican Republic (3 groups)
                  </div>`,
                 {
   "sticky": true,
 }
             );
+        
+    
+            marker_cluster_02c59ed672c39189ba839ea44b19b94b.addTo(map_62dc21aa1ff4517aee874bb5428ca767);
         
 </script>
 </html>

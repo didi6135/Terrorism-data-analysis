@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9cd968c3959a5d7efbcdd64f149434e7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9cd968c3959a5d7efbcdd64f149434e7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9cd968c3959a5d7efbcdd64f149434e7 = L.map(
+                "map_9cd968c3959a5d7efbcdd64f149434e7",
+                {
+                    center: [47.36865, 8.539182],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_071437fd2ec0a2a007f3544e558aa7f0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_071437fd2ec0a2a007f3544e558aa7f0.addTo(map_9cd968c3959a5d7efbcdd64f149434e7);
+        
+    
+            var circle_marker_7cc7fb2d9add8cfad46df0b332b900bc = L.circleMarker(
+                [47.36865, 8.539182],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9cd968c3959a5d7efbcdd64f149434e7);
+        
+    
+        var popup_59c9e2f117e4c48f29c1b98300420a12 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_31f2a61ce0789f4be82800b0a183be2d = $(`<div id="html_31f2a61ce0789f4be82800b0a183be2d" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Switzerland<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 47<br><b>Score:</b> 94</div>`)[0];
+                popup_59c9e2f117e4c48f29c1b98300420a12.setContent(html_31f2a61ce0789f4be82800b0a183be2d);
+            
+        
+
+        circle_marker_7cc7fb2d9add8cfad46df0b332b900bc.bindPopup(popup_59c9e2f117e4c48f29c1b98300420a12)
+        ;
+
+        
+    
+    
+            var circle_marker_76e68efe03a67978ea2f65b355925494 = L.circleMarker(
+                [46.198392, 6.142296],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9cd968c3959a5d7efbcdd64f149434e7);
+        
+    
+        var popup_0f6488bcb1c8731b086ae7b8d5cabc03 = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_34890cc717307b35f26adffb2ec27fcc = $(`<div id="html_34890cc717307b35f26adffb2ec27fcc" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Switzerland<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_0f6488bcb1c8731b086ae7b8d5cabc03.setContent(html_34890cc717307b35f26adffb2ec27fcc);
+            
+        
+
+        circle_marker_76e68efe03a67978ea2f65b355925494.bindPopup(popup_0f6488bcb1c8731b086ae7b8d5cabc03)
+        ;
+
+        
+    
+    
+            var circle_marker_ead1cd6b13faedc2c6acabc7bdf4740f = L.circleMarker(
+                [47.36865, 8.539182],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9cd968c3959a5d7efbcdd64f149434e7);
+        
+    
+        var popup_35e1d284e5fa44ec2e4ab4262e2936ed = L.popup({
+  "maxWidth": 300,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_9206f51ad3009ddbe1b7033b78b50b9d = $(`<div id="html_9206f51ad3009ddbe1b7033b78b50b9d" style="width: 100.0%; height: 100.0%;"><b>Event:</b> Unknown<br><b>Location Name:</b> Switzerland<br><b>Average Injured:</b> 0<br><b>Average Killed:</b> 0<br><b>Score:</b> 0</div>`)[0];
+                popup_35e1d284e5fa44ec2e4ab4262e2936ed.setContent(html_9206f51ad3009ddbe1b7033b78b50b9d);
+            
+        
+
+        circle_marker_ead1cd6b13faedc2c6acabc7bdf4740f.bindPopup(popup_35e1d284e5fa44ec2e4ab4262e2936ed)
+        ;
+
+        
+    
+</script>
+</html>

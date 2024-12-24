@@ -34,8 +34,8 @@ def most_deadly_attack_types():
         limit = request.args.get("limit", type=int, default=10)
 
         cache_key = f"most_deadly_attack_types:{limit}"
-        # cached_data = redis_client.get(cache_key)
-        cached_data = get_cached_data(cache_key)
+        cached_data = redis_client.get(cache_key)
+        # cached_data = get_cached_data(cache_key)
 
         if cached_data:
             return jsonify({"data": json.loads(cached_data)}), 200
@@ -43,7 +43,7 @@ def most_deadly_attack_types():
         attack_types = get_most_deadly_attack_types(limit)
         set_cache_data(cache_key, attack_types)
 
-        # redis_client.setex(cache_key, 3600, json.dumps(attack_types))
+        redis_client.setex(cache_key, 3600, json.dumps(attack_types))
         return jsonify({"data": attack_types}), 200
 
     except Exception as e:
