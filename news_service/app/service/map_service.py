@@ -1,6 +1,5 @@
 import os
 import random
-
 import folium
 
 from news_service.app.repository.elastic_repository import search_all_sources, search_real_time_articles, \
@@ -10,7 +9,7 @@ from news_service.app.repository.elastic_repository import search_all_sources, s
 def generate_map(
     search_type="all",
     keywords=None,
-    limit=100,
+    limit=1000,
     start_date=None,
     end_date=None,
     output_file="generated_map.html",
@@ -40,6 +39,7 @@ def generate_map(
     if not data:
         print("No data found for the given search parameters.")
         return None
+
     # Full path to save the file
     full_output_path = os.path.join(save_dir, output_file)
 
@@ -55,6 +55,11 @@ def generate_map(
     if not valid_events:
         print("No valid locations found to plot on the map.")
         return None
+
+    # Introduce a small offset to avoid overlapping markers
+    for event in valid_events:
+        event["latitude"] += random.uniform(-0.1000, 0.1000)  # Offset latitude slightly
+        event["longitude"] += random.uniform(-0.1000, 0.1000)  # Offset longitude slightly
 
     # Create a base map (centered at the first valid event)
     first_event = valid_events[0]

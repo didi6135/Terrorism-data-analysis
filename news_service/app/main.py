@@ -13,27 +13,33 @@ from news_service.app.utils.scheduler import fetch_and_process_news
 
 
 def run_scheduler():
-    """
-    Run the scheduler in a separate thread.
-    """
-    print("Starting scheduler...")
-    fetch_and_process_news()
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        print("Starting the news fetching scheduler...")
+        fetch_and_process_news()
+        time.sleep(50)
 
 
-app = Flask(__name__, template_folder='templates')
+def start_consumer():
+    print("Starting the consumer for new events...")
+    get_event_from_data_cleaning_consumer()
+
+
+app = Flask(__name__, template_folder="templates")
 CORS(app)
 app.register_blueprint(news_routes, url_prefix="/news")
 app.register_blueprint(init_route)
 
 
-
 if __name__ == "__main__":
+    # Create index for Elasticsearch
     create_index(index_name="news_articles", mapping=news_mapping)
-    # scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
-    # scheduler_thread.start()
-    # Start the Flask app
-    Thread(name='consumer_for_new_events', target=get_event_from_data_cleaning_consumer).start()
-    app.run(debug=True, host="0.0.0.0", port=5005)
+
+    # Start background threads for scheduler and consumer
+    scheduler_thread = Thread(target=run_scheduler, name="SchedulerThread", daemon=True)
+    consumer_thread = Thread(target=start_consumer, name="ConsumerThread", daemon=True)
+
+    scheduler_thread.start()
+    consumer_thread.start()
+    app.run(debug=True, host="localhost", port=5005)
+
+    # Run the Flask app

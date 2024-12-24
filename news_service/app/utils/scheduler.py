@@ -37,14 +37,5 @@ def fetch_and_process_news():
         print(f"Error fetching or processing articles: {e}")
 
 
-if __name__ == '__main__':
-    # Schedule the task every 2 minutes
-    # schedule.every(2).minutes.do(fetch_and_process_news)
-    print("Starting the news fetching scheduler...")
-    fetch_and_process_news()
-    time.sleep(50)
 
-    # Keep the script running
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
+

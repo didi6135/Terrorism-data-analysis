@@ -5,7 +5,7 @@ from Data_Cleaning_Service.app.settings.kafka_settings.init_topics import init_t
 if __name__ == '__main__':
     create_db()
     init_topics()
-    # process_csv("merged_terrorism_big_data.csv")
-    process_csv("test.csv")
+    process_csv("merged_terrorism_big_data.csv")
+    # process_csv("test.csv")
 
 
